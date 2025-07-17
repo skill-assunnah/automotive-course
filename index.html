@@ -47,32 +47,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(to bottom, #1a1a1a, #2d2d2d);
-            color: #d4af37;
+            background: #ffffff; /* White background */
+            color: #000000; /* Black text */
             font-family: 'Montserrat', sans-serif;
         }
+        h1, h2, h3 {
+            color: #008000; /* Green headings */
+        }
+        h1.text-3xl.font-extrabold.tracking-tight {
+            color: #ffffff; /* White color for Automotive title */
+        }
         .content-box, .overview-box {
-            background: #2a2a2a;
-            border: 2px solid #d4af37;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #f5f5f5; /* Light gray for contrast */
+            /* No border or box-shadow */
+            transition: transform 0.3s ease;
         }
         .content-box:hover, .overview-box:hover {
             transform: translateY(-5px);
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
+            /* No glowing effect */
         }
         .toggle-content { display: none; }
         .toggle-content.active { display: block; }
+        .toggle-btn {
+            text-align: left;
+            width: 100%;
+            color: #008000; /* Green for toggle buttons */
+        }
         .toggle-btn::before {
             content: '▶';
             display: inline-block;
             margin-right: 8px;
             transition: transform 0.2s;
-            color: #d4af37;
+            color: #008000;
         }
         .toggle-btn.active::before {
             content: '⠿';
             transform: rotate(90deg);
+        }
+        .toggle-btn:hover {
+            color: #006400; /* Darker green on hover */
         }
         .nav-menu a {
             position: relative;
@@ -80,10 +93,11 @@
             border-radius: 0.25rem;
             transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
             font-weight: 500;
+            color: #ffffff; /* White text for menu items */
         }
         .nav-menu a:hover {
-            color: #1a1a1a;
-            background-color: #d4af37;
+            color: #000000;
+            background-color: #d4af37; /* Golden hover for contrast */
             transform: scale(1.05);
         }
         .nav-menu a::after {
@@ -93,7 +107,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: #f1c40f;
+            background-color: #ffffff; /* White underline for hover */
             transition: width 0.3s ease;
         }
         .nav-menu a:hover::after {
@@ -102,8 +116,7 @@
         .sidebar {
             transform: translateX(-100%);
             transition: transform 0.3s ease;
-            background: linear-gradient(to bottom, #1a1a1a, #252525);
-            box-shadow: 2px 0 15px rgba(212, 175, 55, 0.3);
+            background: #0A3B1E; /* Dark green sidebar background */
         }
         .sidebar.active {
             transform: translateX(0);
@@ -111,7 +124,7 @@
         .menu-toggle::before {
             content: '⠿';
             font-size: 1.5rem;
-            color: #d4af37;
+            color: #ffffff; /* White toggle icon */
             transition: transform 0.3s ease;
         }
         .menu-toggle.active::before {
@@ -119,8 +132,8 @@
             transform: rotate(90deg);
         }
         header {
-            border-bottom: 1px solid #d4af37;
-            background: linear-gradient(to right, #1a1a1a, #2d2d2d);
+            border-bottom: 1px solid #d4af37; /* Golden bottom border */
+            background: #0A3B1E; /* Dark green navbar background */
         }
         .fade-in {
             animation: fadeIn 1s ease-in-out;
@@ -169,8 +182,11 @@
             }
             .sidebar .nav-menu a:hover {
                 border-left-color: #d4af37;
-                background-color: fcfcfc;
+                background-color: rgba(212, 175, 55, 0.1);
                 transform: scale(1.02);
+            }
+            .toggle-btn {
+                padding-left: 0; /* Left-aligned in mobile */
             }
         }
         @media (min-width: 641px) {
@@ -182,7 +198,7 @@
     </style>
 </head>
 <body class="font-sans min-h-screen">
-    <header class="bg-black text-[#d4af37] sticky top-0 z-10 shadow-md">
+    <header class="text-white sticky top-0 z-10 shadow-md">
         <nav class="container mx-auto p-4 flex justify-between items-center">
             <h1 class="text-3xl font-extrabold tracking-tight">Automotive</h1>
             <button class="menu-toggle" onclick="toggleSidebar()"></button>
@@ -205,14 +221,15 @@
     </header>
 
     <section class="container mx-auto p-6 overview-box rounded-lg mb-8 fade-in">
-        <h2 class="text-2xl font-bold text-[#d4af37] mb-2">Professional Automotive Technician Training</h2>  
-        <p class="text-lg text-gray-300 mb-2">3-Month Advanced Program</p>
-        <p class="text-lg text-gray-300 mb-4">Organized by: As Sunnah Skill Development Institute</p>
-        <h3 class="text-xl font-semibold text-[#d4af37] mb-2">Course Overview</h3>
-        <p class="text-gray-300 mb-4">The Professional Automotive Technician Training is a rigorous, 12-week intensive program meticulously designed to develop skilled, job-ready automotive technicians. Conducted by As Sunnah Skill Development Institute, this program combines foundational mechanical knowledge with modern diagnostic expertise, ensuring participants are fully prepared for careers in the local and international automotive service industry.</p>
-        <p class="text-gray-300 mb-4">Rooted in hands-on learning and real-world problem-solving, the curriculum balances technical skill-building, diagnostic confidence, and professional work ethics, producing technicians capable of servicing both conventional and modern vehicles. While secular in nature, the course subtly integrates Islamic ethical values—like responsibility, safety, and integrity—into areas such as workplace conduct, customer service, and safety awareness.</p>
-        <h3 class="text-xl font-semibold text-[#d4af37] mb-2">Key Highlights</h3>
-        <ul class="list-disc pl-6 text-gray-300">
+        <h2 class="text-2xl font-bold mb-2">Professional Automotive Technician Training</h2>
+        <hr class="border-t-2 border-[#d4af37] mb-4">
+        <p class="text-lg mb-2">3-Month Advanced Program</p>
+        <p class="text-lg mb-4">Organized by: As Sunnah Skill Development Institute</p>
+        <h3 class="text-xl font-semibold mb-2">Course Overview</h3>
+        <p class="mb-4">The Professional Automotive Technician Training is a rigorous, 12-week intensive program meticulously designed to develop skilled, job-ready automotive technicians. Conducted by As Sunnah Skill Development Institute, this program combines foundational mechanical knowledge with modern diagnostic expertise, ensuring participants are fully prepared for careers in the local and international automotive service industry.</p>
+        <p class="mb-4">Rooted in hands-on learning and real-world problem-solving, the curriculum balances technical skill-building, diagnostic confidence, and professional work ethics, producing technicians capable of servicing both conventional and modern vehicles. While secular in nature, the course subtly integrates Islamic ethical values—like responsibility, safety, and integrity—into areas such as workplace conduct, customer service, and safety awareness.</p>
+        <h3 class="text-xl font-semibold mb-2">Key Highlights</h3>
+        <ul class="list-disc pl-6">
             <li><strong>Duration:</strong> 3 Months (12 Weeks, Saturday–Thursday, 40 hours/week, ~240 hours total)</li>
             <li><strong>Course Format:</strong>
                 <ul class="list-[circle] pl-6">
@@ -245,12 +262,12 @@
 
     <main class="container mx-auto p-6">
         <section id="basic" class="content-section mb-8 fade-in">
-            <h2 class="text-2xl font-bold text-[#d4af37] mb-4">Basic Module (Weeks 1–4)</h2>
+            <h2 class="text-2xl font-bold mb-4">Basic Module (Weeks 1–4)</h2>
             <div class="content-box rounded-lg p-6">
                 <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold text-[#d4af37] hover:text-[#f1c40f]" onclick="toggleContent('safety')">1.1 Safety and Hazard</button>
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('safety')">1.1 Safety and Hazard</button>
                     <div id="safety" class="toggle-content mt-2 pl-6">
-                        <ul class="list-disc text-gray-300">
+                        <ul class="list-disc">
                             <li><strong>OHS:</strong> Workplace safety regulations, accident prevention, safe material handling, emergency procedures, hazard identification.</li>
                             <li><strong>PPE:</strong> Types (gloves, goggles, helmets, etc.), selection, usage, inspection, replacement.</li>
                             <li><strong>Workshop Ethics:</strong> Professional conduct, punctuality, cleanliness, teamwork, tool responsibility.</li>
@@ -258,9 +275,9 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold text-[#d4af37] hover:text-[#f1c40f]" onclick="toggleContent('tools')">1.2 Using Hand and Power Tools</button>
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('tools')">1.2 Using Hand and Power Tools</button>
                     <div id="tools" class="toggle-content mt-2 pl-6">
-                        <ul class="list-disc text-gray-300">
+                        <ul class="list-disc">
                             <li><strong>Identify and Inspect:</strong> Recognize hand tools (spanners, pliers) and power tools (drills, grinders); ensure suitability.</li>
                             <li><strong>Proper Use:</strong> Correct techniques, handling, torque application, manufacturer’s instructions.</li>
                             <li><strong>Maintenance:</strong> Clean tools, lubricate, store properly, routine checks.</li>
@@ -268,9 +285,9 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold text-[#d4af37] hover:text-[#f1c40f]" onclick="toggleContent('systems')">1.3 Major Systems of Automobiles</button>
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('systems')">1.3 Major Systems of Automobiles</button>
                     <div id="systems" class="toggle-content mt-2 pl-6">
-                        <ul class="list-disc text-gray-300">
+                        <ul class="list-disc">
                             <li><strong>Engine:</strong> Types (Inline, V-type), 4-stroke cycle, key components, combustion process.</li>
                             <li><strong>Fuel System:</strong> Tank, pump, filter, injectors; servicing, pressure checks, filter replacement.</li>
                             <li><strong>Cooling:</strong> Radiator, thermostat, hoses; heat exchange, leak checks, coolant maintenance.</li>
@@ -283,9 +300,9 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold text-[#d4af37] hover:text-[#f1c40f]" onclick="toggleContent('engine')">1.4 Engine System</button>
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('engine')">1.4 Engine System</button>
                     <div id="engine" class="toggle-content mt-2 pl-6">
-                        <ul class="list-disc text-gray-300">
+                        <ul class="list-disc">
                             <li><strong>SI vs CI Engines:</strong> Spark Ignition vs Compression Ignition differences.</li>
                             <li><strong>Operating Cycles:</strong> 4-stroke (Otto, Diesel), 2-stroke basics.</li>
                             <li><strong>Key Components:</strong> Cylinder block, pistons, crankshaft, valves, lubrication.</li>
@@ -295,9 +312,9 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold text-[#d4af37] hover:text-[#f1c40f]" onclick="toggleContent('assessments1')">1.5 Assessments</button>
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('assessments1')">1.5 Assessments</button>
                     <div id="assessments1" class="toggle-content mt-2 pl-6">
-                        <ul class="list-disc text-gray-300">
+                        <ul class="list-disc">
                             <li><strong>Written Test:</strong> MCQ/short questions on safety, tools, systems.</li>
                             <li><strong>Practical:</strong> Tool identification, engine components, servicing checks.</li>
                             <li><strong>Oral/Viva:</strong> Safety procedures, system functions.</li>
@@ -309,12 +326,12 @@
         </section>
 
         <section id="intermediate" class="content-section mb-8 fade-in">
-            <h2 class="text-2xl font-bold text-[#d4af37] mb-4">Intermediate Module (Weeks 5–8)</h2>
+            <h2 class="text-2xl font-bold mb-4">Intermediate Module (Weeks 5–8)</h2>
             <div class="content-box rounded-lg p-6">
                 <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold text-[#d4af37] hover:text-[#f1c40f]" onclick="toggleContent('powertrain')">5.1 Powertrain System</button>
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('powertrain')">5.1 Powertrain System</button>
                     <div id="powertrain" class="toggle-content mt-2 pl-6">
-                        <ul class="list-disc text-gray-300">
+                        <ul class="list-disc">
                             <li><strong>Components:</strong> Clutch, transmission, driveshaft, differential, CV joints.</li>
                             <li><strong>Function:</strong> Transmits engine power to wheels.</li>
                             <li><strong>Servicing:</strong> Inspect clutch, change transmission fluid, check CV joints.</li>
@@ -322,9 +339,9 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold text-[#d4af37] hover:text-[#f1c40f]" onclick="toggleContent('steering')">5.2 Steering System</button>
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('steering')">5.2 Steering System</button>
                     <div id="steering" class="toggle-content mt-2 pl-6">
-                        <ul class="list-disc text-gray-300">
+                        <ul class="list-disc">
                             <li><strong>Components:</strong> Steering wheel, rack, tie rods, power steering pump.</li>
                             <li><strong>Function:</strong> Controls vehicle direction.</li>
                             <li><strong>Servicing:</strong> Adjust linkage, check fluid, repair leaks.</li>
@@ -332,9 +349,9 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold text-[#d4af37] hover:text-[#f1c40f]" onclick="toggleContent('suspension')">6.1 Suspension System</button>
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('suspension')">6.1 Suspension System</button>
                     <div id="suspension" class="toggle-content mt-2 pl-6">
-                        <ul class="list-disc text-gray-300">
+                        <ul class="list-disc">
                             <li><strong>Components:</strong> Springs, shocks, struts, stabilizer bars.</li>
                             <li><strong>Function:</strong> Absorbs shocks, maintains stability.</li>
                             <li><strong>Servicing:</strong> Replace shocks, lubricate joints, check alignment.</li>
@@ -342,18 +359,18 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold text-[#d4af37] hover:text-[#f1c40f]" onclick="toggleContent('wheel')">6.2 Wheel Balancing and Alignment</button>
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('wheel')">6.2 Wheel Balancing and Alignment</button>
                     <div id="wheel" class="toggle-content mt-2 pl-6">
-                        <ul class="list-disc text-gray-300">
+                        <ul class="list-disc">
                             <li><strong>Function:</strong> Ensures even tire wear, eliminates wheel wobble, improves handling and fuel efficiency.</li>
                             <li><strong>Servicing:</strong> Balance wheels, adjust camber, toe, caster angles.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold text-[#d4af37] hover:text-[#f1c40f]" onclick="toggleContent('brakes')">7.1 Braking System</button>
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('brakes')">7.1 Braking System</button>
                     <div id="brakes" class="toggle-content mt-2 pl-6">
-                        <ul class="list-disc text-gray-300">
+                        <ul class="list-disc">
                             <li><strong>Types:</strong> Disc, drum, ABS, hydraulic systems.</li>
                             <li><strong>Components:</strong> Pedal, master cylinder, pads, calipers.</li>
                             <li><strong>Servicing:</strong> Replace pads, bleed lines, check fluid.</li>
@@ -361,9 +378,9 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold text-[#d4af37] hover:text-[#f1c40f]" onclick="toggleContent('ac')">7.2 Air Conditioning System</button>
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('ac')">7.2 Air Conditioning System</button>
                     <div id="ac" class="toggle-content mt-2 pl-6">
-                        <ul class="list-disc text-gray-300">
+                        <ul class="list-disc">
                             <li><strong>Components:</strong> Compressor, condenser, evaporator, refrigerant.</li>
                             <li><strong>Function:</strong> Cools cabin air.</li>
                             <li><strong>Maintenance:</strong> Check refrigerant, clean coils, replace filters.</li>
@@ -371,18 +388,18 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold text-[#d4af37] hover:text-[#f1c40f]" onclick="toggleContent('electrical')">8.1 Body Electrical and Electronics</button>
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('electrical')">8.1 Body Electrical and Electronics</button>
                     <div id="electrical" class="toggle-content mt-2 pl-6">
-                        <ul class="list-disc text-gray-300">
+                        <ul class="list-disc">
                             <li><strong>Components:</strong> Alternator, battery, lighting, sensors, ECU.</li>
                             <li><strong>Servicing:</strong> Diagnose faults, replace wiring, test sensors.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold text-[#d4af37] hover:text-[#f1c40f]" onclick="toggleContent('efi')">8.2 EFI System</button>
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('efi')">8.2 EFI System</button>
                     <div id="efi" class="toggle-content mt-2 pl-6">
-                        <ul class="list-disc text-gray-300">
+                        <ul class="list-disc">
                             <li><strong>Components:</strong> Injectors, ECU, sensors, fuel rail.</li>
                             <li><strong>Function:</strong> Controls fuel delivery for combustion.</li>
                             <li><strong>Servicing:</strong> Diagnose faults, clean injectors, test sensors.</li>
@@ -393,30 +410,30 @@
         </section>
 
         <section id="advanced" class="content-section mb-8 fade-in">
-            <h2 class="text-2xl font-bold text-[#d4af37] mb-4">Advanced Module (Weeks 9–11)</h2>
+            <h2 class="text-2xl font-bold mb-4">Advanced Module (Weeks 9–11)</h2>
             <div class="content-box rounded-lg p-6">
                 <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold text-[#d4af37] hover:text-[#f1c40f]" onclick="toggleContent('lpg')">9.1 LPG and CNG Conversion Kit</button>
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('lpg')">9.1 LPG and CNG Conversion Kit</button>
                     <div id="lpg" class="toggle-content mt-2 pl-6">
-                        <ul class="list-disc text-gray-300">
+                        <ul class="list-disc">
                             <li><strong>Components:</strong> Gas cylinders, regulators, ECU, safety valves.</li>
                             <li><strong>Installation:</strong> Mount cylinders, connect lines, calibrate system.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold text-[#d4af37] hover:text-[#f1c40f]" onclick="toggleContent('calibration')">9.2 LPG and CNG Calibration</button>
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('calibration')">9.2 LPG and CNG Calibration</button>
                     <div id="calibration" class="toggle-content mt-2 pl-6">
-                        <ul class="list-disc text-gray-300">
+                        <ul class="list-disc">
                             <li><strong>Purpose:</strong> Optimize air-fuel mixture, prevent misfiring.</li>
                             <li><strong>Steps:</strong> Test pressure, adjust ECU, monitor performance.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold text-[#d4af37] hover:text-[#f1c40f]" onclick="toggleContent('hybrid')">10.3 Hybrid and Electric Vehicles</button>
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('hybrid')">10.3 Hybrid and Electric Vehicles</button>
                     <div id="hybrid" class="toggle-content mt-2 pl-6">
-                        <ul class="list-disc text-gray-300">
+                        <ul class="list-disc">
                             <li><strong>Types:</strong> Mild hybrid, full hybrid, BEV, PHEV.</li>
                             <li><strong>Components:</strong> Electric motor, battery, inverter, BMS.</li>
                             <li><strong>Benefits:</strong> Lower emissions, better efficiency.</li>
@@ -424,9 +441,9 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold text-[#d4af37] hover:text-[#f1c40f]" onclick="toggleContent('diagnostics')">11.1 Automotive Electronics and Diagnostics</button>
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('diagnostics')">11.1 Automotive Electronics and Diagnostics</button>
                     <div id="diagnostics" class="toggle-content mt-2 pl-6">
-                        <ul class="list-disc text-gray-300">
+                        <ul class="list-disc">
                             <li><strong>Components:</strong> Sensors, actuators, ECU, CAN Bus.</li>
                             <li><strong>Tools:</strong> Multimeter, OBD-II scanner, oscilloscope.</li>
                             <li><strong>Diagnostics:</strong> Retrieve fault codes, test sensors, validate repairs.</li>
@@ -434,9 +451,9 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold text-[#d4af37] hover:text-[#f1c40f]" onclick="toggleContent('adas')">11.2 Advanced Driver Assistance Systems (ADAS)</button>
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('adas')">11.2 Advanced Driver Assistance Systems (ADAS)</button>
                     <div id="adas" class="toggle-content mt-2 pl-6">
-                        <ul class="list-disc text-gray-300">
+                        <ul class="list-disc">
                             <li><strong>Components:</strong> Cameras, radar, LiDAR, ECUs.</li>
                             <li><strong>Functions:</strong> Lane-keeping, adaptive cruise, emergency braking.</li>
                             <li><strong>Benefits:</strong> Enhanced safety, reduced collisions.</li>
@@ -447,9 +464,9 @@
         </section>
 
         <section id="final" class="content-section mb-8 fade-in">
-            <h2 class="text-2xl font-bold text-[#d4af37] mb-4">Week 12: Final Examination & Certification</h2>
+            <h2 class="text-2xl font-bold mb-4">Week 12: Final Examination & Certification</h2>
             <div class="content-box rounded-lg p-6">
-                <ul class="list-disc pl-6 text-gray-300">
+                <ul class="list-disc pl-6">
                     <li><strong>Written Exam:</strong> Comprehensive test on all modules.</li>
                     <li><strong>Practical Exam:</strong> Hands-on tasks (diagnostics, servicing).</li>
                     <li><strong>Oral/Viva:</strong> Q&A on concepts, troubleshooting.</li>
@@ -459,7 +476,7 @@
         </section>
     </main>
 
-    <footer class="bg-black text-[#d4af37] text-center p-4">
+    <footer class="bg-[#0A3B1E] text-white text-center p-4">
         <p class="text-sm">© 2025 Automotive Course. All rights reserved.</p>
     </footer>
 
