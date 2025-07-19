@@ -1,211 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automotive Course - As Sunnah Skill Development Institute</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Automotive Course - As Sunnah Skill Development Institute</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f2f8f5;
-            color: #333;
-            line-height: 1.6;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f8f5;
+      color: #333;
+      line-height: 1.6;
+    }
 
-        .navbar {
-            background-color: #0A3B1E;
-            color: white;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #FFD700;
-        }
+    .navbar {
+      background-color: #0A3B1E;
+      color: white;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #FFD700;
+      position: relative;
+      z-index: 1000;
+    }
 
-        .navbar .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-        }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
 
-        .navbar .logo:hover {
-            color: #FFD700;
-        }
+    .logo:hover {
+      color: #FFD700;
+    }
 
-        #nav-links {
-            list-style: none;
-            display: flex;
-        }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
 
-        #nav-links li {
-            margin-left: 2rem;
-        }
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+      transition: 0.3s ease;
+    }
 
-        #nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-            padding: 0.5rem 1rem;
-            transition: background-color 0.3s ease;
-        }
+    #nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
 
-        #nav-links a:hover {
-            background-color: #1a5c38;
-            border-radius: 4px;
-        }
+    #nav-links li a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      border-radius: 4px;
+    }
 
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
+    #nav-links li a:hover {
+      background-color: #1a5c38;
+    }
 
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 2px 0;
-            transition: all 0.3s ease;
-        }
+    .content {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .content {
-            max-width: 1200px;
-            margin: 2rem;
-            padding: 2rem;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
+    .hero-section {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
 
-        .hero-section {
-            text-align: center;
-            padding: 2rem 0;
-        }
+    .hero-section h1 {
+      font-size: 2.5rem;
+      color: #0A3B1E;
+      margin-bottom: 1rem;
+    }
 
-        .hero-section h1 {
-            color: #0A3B1E;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
+    .hero-section p {
+      font-size: 1.1rem;
+    }
 
-        .hero-section p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
+    .expandable-text {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
 
-        .expandable-text {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
+    .expandable-text.active {
+      max-height: 500px;
+    }
 
-        .expandable-text.active {
-            max-height: 500px; /* Adjust based on content */
-        }
+    .read-more-btn {
+      margin-top: 1rem;
+      background-color: #0A3B1E;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
 
-        .read-more-btn {
-            background-color: #0A3B1E;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-        }
+    .read-more-btn:hover {
+      background-color: #1a5c38;
+    }
 
-        .read-more-btn:hover {
-            background-color: #1a5c38;
-        }
+    .footer {
+      background-color: #0A3B1E;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      border-top: 2px solid #FFD700;
+    }
 
-        .footer {
-            background-color: #0A3B1E;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            border-top: 2px solid #FFD700;
-        }
+    /* Mobile sidebar menu */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
 
-        @media (max-width: 768px) {
-            #nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background-color: #0A3B1E;
-            }
+      #nav-links {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 200px;
+        height: 100vh;
+        background-color: #0A3B1E;
+        padding-top: 80px;
+        transition: left 0.3s ease;
+      }
 
-            #nav-links.active {
-                display: flex;
-            }
+      #nav-links.active {
+        left: 0;
+      }
 
-            #nav-links li {
-                margin: 1rem 0;
-                text-align: center;
-            }
+      #nav-links li {
+        margin: 1rem 0;
+        text-align: center;
+      }
 
-            .menu-toggle {
-                display: flex;
-            }
+      .content {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
 
-            .hero-section h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.html" class="logo">Automotive</a>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <ul id="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="course-outline.html">Course Outline</a></li>
-            <li><a href="syllabus.html">Syllabus</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>
-    </nav>
 
-    <div class="content">
-        <div class="hero-section">
-            <h1>Welcome to the Automotive Course</h1>
-            <p>
-                This comprehensive course offered by As Sunnah Skill Development Institute provides hands-on training in automotive repair and maintenance.
-                Learn essential skills to excel in the automotive industry.
-            </p>
-            <div id="expandable-content" class="expandable-text">
-                <p>
-                    Our curriculum covers everything from basic vehicle maintenance to advanced diagnostic techniques.
-                    You'll gain practical experience with real-world scenarios, guided by expert instructors.
-                    Topics include engine repair, electrical systems, brake systems, and more.
-                    By the end of the course, you'll be equipped to handle a wide range of automotive challenges and pursue a rewarding career.
-                </p>
-            </div>
-            <button class="read-more-btn" onclick="toggleExpandableText()">Read More</button>
-        </div>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">Automotive</a>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="course-outline.html">Course Outline</a></li>
+      <li><a href="syllabus.html">Syllabus</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
 
-    <footer class="footer">
-        <p>© 2025 As Sunnah Skill Development Institute. All rights reserved.</p>
-    </footer>
+  <!-- Main Content -->
+  <div class="content">
+    <div class="hero-section">
+      <h1>Welcome to the Automotive Course</h1>
+      <p>This comprehensive course offered by As Sunnah Skill Development Institute provides hands-on training in automotive repair and maintenance.</p>
 
-    <script src="scripts.js"></script>
+      <div id="expandable-content" class="expandable-text">
+        <p>
+          Our curriculum covers everything from basic vehicle maintenance to advanced diagnostic techniques.
+          You'll gain practical experience with real-world scenarios, guided by expert instructors.
+          Topics include engine repair, electrical systems, brake systems, and more.
+          By the end of the course, you'll be equipped to handle a wide range of automotive challenges and pursue a rewarding career.
+        </p>
+      </div>
+
+      <button class="read-more-btn" onclick="toggleExpandableText()" id="readToggle">
+        Read More <span id="arrow">▼</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 As Sunnah Skill Development Institute. All rights reserved.</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('nav-links');
+      nav.classList.toggle('active');
+    }
+
+    function toggleExpandableText() {
+      const content = document.getElementById('expandable-content');
+      const arrow = document.getElementById('arrow');
+      const button = document.getElementById('readToggle');
+
+      content.classList.toggle('active');
+
+      if (content.classList.contains('active')) {
+        arrow.textContent = '▲';
+        button.firstChild.textContent = 'Read Less ';
+      } else {
+        arrow.textContent = '▼';
+        button.firstChild.textContent = 'Read More ';
+      }
+    }
+  </script>
+
 </body>
 </html>
