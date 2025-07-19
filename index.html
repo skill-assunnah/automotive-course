@@ -1,245 +1,494 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Automotive Course - As Sunnah Skill Development Institute</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f2f8f5;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    .navbar {
-      background-color: #0A3B1E;
-      color: white;
-      padding: 1rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #FFD700;
-      position: relative;
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: white;
-      text-decoration: none;
-    }
-
-    .logo:hover {
-      color: #FFD700;
-    }
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .menu-toggle span {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 4px 0;
-      transition: 0.3s ease;
-    }
-
-    #nav-links {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    #nav-links li a {
-      color: white;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      transition: background-color 0.3s ease;
-      border-radius: 4px;
-    }
-
-    #nav-links li a:hover {
-      background-color: #1a5c38;
-    }
-
-    .content {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .hero-section {
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    .hero-section h1 {
-      font-size: 2.5rem;
-      color: #0A3B1E;
-      margin-bottom: 1rem;
-    }
-
-    .hero-section p {
-      font-size: 1.1rem;
-    }
-
-    .expandable-text {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-    }
-
-    .expandable-text.active {
-      max-height: 500px;
-    }
-
-    .read-more-btn {
-      margin-top: 1rem;
-      background-color: #0A3B1E;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 4px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .read-more-btn:hover {
-      background-color: #1a5c38;
-    }
-
-    .footer {
-      background-color: #0A3B1E;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      border-top: 2px solid #FFD700;
-    }
-
-    /* Mobile sidebar menu */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: flex;
-      }
-
-      #nav-links {
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: -250px;
-        width: 200px;
-        height: 100vh;
-        background-color: #0A3B1E;
-        padding-top: 80px;
-        transition: left 0.3s ease;
-      }
-
-      #nav-links.active {
-        left: 0;
-      }
-
-      #nav-links li {
-        margin: 1rem 0;
-        text-align: center;
-      }
-
-      .content {
-        margin: 1rem;
-        padding: 1.5rem;
-      }
-
-      .hero-section h1 {
-        font-size: 2rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automotive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #ffffff;
+            color: #000000;
+            font-family: 'Montserrat', sans-serif;
+        }
+        h1, h2, h3 {
+            color: #008000;
+        }
+        h1.text-3xl.font-extrabold.tracking-tight {
+            color: #ffffff;
+        }
+        .content-box, .overview-box {
+            background: #f5f5f5;
+            transition: transform 0.3s ease;
+        }
+        .content-box:hover, .overview-box:hover {
+            transform: translateY(-5px);
+        }
+        .toggle-content { display: none; }
+        .toggle-content.active { display: block; }
+        .toggle-btn {
+            text-align: left;
+            width: 100%;
+            color: #008000;
+        }
+        .toggle-btn::before {
+            content: '▶';
+            display: inline-block;
+            margin-right: 8px;
+            transition: transform 0.2s;
+            color: #008000;
+        }
+        .toggle-btn.active::before {
+            content: '⠿';
+            transform: rotate(90deg);
+        }
+        .toggle-btn:hover {
+            color: #006400;
+        }
+        .navbar {
+            background: #0A3B1E;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #d4af37;
+        }
+        .navbar .logo {
+            font-size: 1.875rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .navbar ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+        }
+        .navbar ul li a {
+            color: #ffffff;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .navbar ul li a:hover {
+            color: #000000;
+            background-color: #d4af37;
+            transform: scale(1.05);
+        }
+        .navbar ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ffffff;
+            transition: width 0.3s ease;
+        }
+        .navbar ul li a:hover::after {
+            width: 100%;
+        }
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #ffffff;
+            transition: all 0.3s ease;
+        }
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 640px) {
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 4rem;
+                left: 0;
+                width: 100%;
+                background: #0A3B1E;
+                padding: 1rem;
+                z-index: 10;
+            }
+            .navbar ul.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+            .content-section {
+                padding: 1rem;
+            }
+            .content-box, .overview-box {
+                margin-bottom: 1rem;
+            }
+            .toggle-btn {
+                padding-left: 0;
+            }
+        }
+        @media (min-width: 641px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="font-sans min-h-screen">
+    <header class="text-white sticky top-0 z-10 shadow-md">
+        <nav class="navbar">
+            <a href="index.html" class="logo">Automotive</a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="course-outline.html">Course Outline</a></li>
+                <li><a href="syllabus.html">Syllabus</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Navigation -->
-  <nav class="navbar">
-    <a href="index.html" class="logo">Automotive</a>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <ul id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="course-outline.html">Course Outline</a></li>
-      <li><a href="syllabus.html">Syllabus</a></li>
-      <li><a href="resources.html">Resources</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-  </nav>
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+            return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+            if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+                try {
+                    var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                    var firstSheetName = workbook.SheetNames[0];
+                    var worksheet = workbook.Sheets[firstSheetName];
+                    var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                    var filteredData = jsonData.filter(row => row.some(filledCell));
+                    var headerRowIndex = filteredData.findIndex((row, index) =>
+                        row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                    );
+                    if (headerRowIndex === -1 || headerRowIndex > 25) {
+                        headerRowIndex = 0;
+                    }
+                    var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
+                    csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                    return csv;
+                } catch (e) {
+                    console.error(e);
+                    return "";
+                }
+            }
+            return gk_fileData[filename] || "";
+        }
 
-  <!-- Main Content -->
-  <div class="content">
-    <div class="hero-section">
-      <h1>Welcome to the Automotive Course</h1>
-      <p>This comprehensive course offered by As Sunnah Skill Development Institute provides hands-on training in automotive repair and maintenance.</p>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            const button = content.previousElementSibling;
+            content.classList.toggle('active');
+            button.classList.toggle('active');
+        }
 
-      <div id="expandable-content" class="expandable-text">
-        <p>
-          Our curriculum covers everything from basic vehicle maintenance to advanced diagnostic techniques.
-          You'll gain practical experience with real-world scenarios, guided by expert instructors.
-          Topics include engine repair, electrical systems, brake systems, and more.
-          By the end of the course, you'll be equipped to handle a wide range of automotive challenges and pursue a rewarding career.
-        </p>
-      </div>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            const menuToggle = document.querySelector('.menu-toggle');
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+    </script>
 
-      <button class="read-more-btn" onclick="toggleExpandableText()" id="readToggle">
-        Read More <span id="arrow">▼</span>
-      </button>
-    </div>
-  </div>
+    <section class="container mx-auto p-6 overview-box rounded-lg mb-8 fade-in">
+        <h2 class="text-2xl font-bold mb-2">Professional Automotive Technician Training</h2>
+        <hr class="border-t-2 border-[#d4af37] mb-4">
+        <p class="text-lg mb-2">3-Month Advanced Program</p>
+        <p class="text-lg mb-4">Organized by: As Sunnah Skill Development Institute</p>
+        <div class="mb-4">
+            <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('overview')">Course Overview</button>
+            <div id="overview" class="toggle-content mt-2 pl-6">
+                <p class="mb-4">The Professional Automotive Technician Training is a rigorous, 12-week intensive program meticulously designed to develop skilled, job-ready automotive technicians. Conducted by As Sunnah Skill Development Institute, this program combines foundational mechanical knowledge with modern diagnostic expertise, ensuring participants are fully prepared for careers in the local and international automotive service industry.</p>
+                <p class="mb-4">Rooted in hands-on learning and real-world problem-solving, the curriculum balances technical skill-building, diagnostic confidence, and professional work ethics, producing technicians capable of servicing both conventional and modern vehicles. While secular in nature, the course subtly integrates Islamic ethical values—like responsibility, safety, and integrity—into areas such as workplace conduct, customer service, and safety awareness.</p>
+            </div>
+        </div>
+        <div class="mb-4">
+            <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('highlights')">Key Highlights</button>
+            <div id="highlights" class="toggle-content mt-2 pl-6">
+                <ul class="list-disc pl-6">
+                    <li><strong>Duration:</strong> 3 Months (12 Weeks, Saturday–Thursday, 40 hours/week, ~240 hours total)</li>
+                    <li><strong>Course Format:</strong>
+                        <ul class="list-[circle] pl-6">
+                            <li>50% Theory (lectures, diagrams, discussions)</li>
+                            <li>40% Practical (workshops, system servicing, diagnostics)</li>
+                            <li>10% Assessment (tests, evaluations, capstone)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Target Group:</strong>
+                        <ul class="list-[circle] pl-6">
+                            <li>Youth and adults (minimum SSC or equivalent)</li>
+                            <li>Aspiring mechanics, entrepreneurs, or job seekers in the automotive field</li>
+                        </ul>
+                    </li>
+                    <li><strong>Certification:</strong>
+                        <ul class="list-[circle] pl-6">
+                            <li>Upon completion, participants will earn the Professional Automotive Technician Certificate (3-Month) issued by As Sunnah Skill Development Institute</li>
+                        </ul>
+                    </li>
+                    <li><strong>Training Infrastructure:</strong>
+                        <ul class="list-[circle] pl-6">
+                            <li>Classrooms with multimedia setup (bilingual Bangla/English materials)</li>
+                            <li>Hands-on workshops with complete toolkits (including torque wrenches, OBD-II scanners, fuel system testers)</li>
+                            <li>Access to petrol & diesel engine models for servicing practice</li>
+                            <li>Qualified trainers with industry and instructional experience</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 As Sunnah Skill Development Institute. All rights reserved.</p>
-  </footer>
+    <main class="container mx-auto p-6">
+        <section id="basic" class="content-section mb-8 fade-in">
+            <h2 class="text-2xl font-bold mb-4">Basic Module (Weeks 1–4)</h2>
+            <div class="content-box rounded-lg p-6">
+                <div class="mb-4">
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('safety')">1.1 Safety and Hazard</button>
+                    <div id="safety" class="toggle-content mt-2 pl-6">
+                        <ul class="list-disc">
+                            <li><strong>OHS:</strong> Workplace safety regulations, accident prevention, safe material handling, emergency procedures, hazard identification.</li>
+                            <li><strong>PPE:</strong> Types (gloves, goggles, helmets, etc.), selection, usage, inspection, replacement.</li>
+                            <li><strong>Workshop Ethics:</strong> Professional conduct, punctuality, cleanliness, teamwork, tool responsibility.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('tools')">1.2 Using Hand and Power Tools</button>
+                    <div id="tools" class="toggle-content mt-2 pl-6">
+                        <ul class="list-disc">
+                            <li><strong>Identify and Inspect:</strong> Recognize hand tools (spanners, pliers) and power tools (drills, grinders); ensure suitability.</li>
+                            <li><strong>Proper Use:</strong> Correct techniques, handling, torque application, manufacturer’s instructions.</li>
+                            <li><strong>Maintenance:</strong> Clean tools, lubricate, store properly, routine checks.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('systems')">1.3 Major Systems of Automobiles</button>
+                    <div id="systems" class="toggle-content mt-2 pl-6">
+                        <ul class="list-disc">
+                            <li><strong>Engine:</strong> Types (Inline, V-type), 4-stroke cycle, key components, combustion process.</li>
+                            <li><strong>Fuel System:</strong> Tank, pump, filter, injectors; servicing, pressure checks, filter replacement.</li>
+                            <li><strong>Cooling:</strong> Radiator, thermostat, hoses; heat exchange, leak checks, coolant maintenance.</li>
+                            <li><strong>Transmission:</strong> Manual/automatic, clutch, CVT; lubrication, adjustments.</li>
+                            <li><strong>Brake:</strong> Disc/drum, ABS; fluid bleeding, pad replacement.</li>
+                            <li><strong>Steering/Suspension:</strong> Steering types, suspension components; inspections.</li>
+                            <li><strong>Electrical:</strong> Battery, alternator, fuses; diagnostics, wiring, fuse replacement.</li>
+                            <li><strong>Exhaust:</strong> Manifold, catalytic converter; leakage, emissions checks.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('engine')">1.4 Engine System</button>
+                    <div id="engine" class="toggle-content mt-2 pl-6">
+                        <ul class="list-disc">
+                            <li><strong>SI vs CI Engines:</strong> Spark Ignition vs Compression Ignition differences.</li>
+                            <li><strong>Operating Cycles:</strong> 4-stroke (Otto, Diesel), 2-stroke basics.</li>
+                            <li><strong>Key Components:</strong> Cylinder block, pistons, crankshaft, valves, lubrication.</li>
+                            <li><strong>Function:</strong> Energy conversion to mechanical power.</li>
+                            <li><strong>Lubrication/Cooling:</strong> Oil flow, heat management, measurements (bore, stroke).</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('assessments1')">1.5 Assessments</button>
+                    <div id="assessments1" class="toggle-content mt-2 pl-6">
+                        <ul class="list-disc">
+                            <li><strong>Written Test:</strong> MCQ/short questions on safety, tools, systems.</li>
+                            <li><strong>Practical:</strong> Tool identification, engine components, servicing checks.</li>
+                            <li><strong>Oral/Viva:</strong> Safety procedures, system functions.</li>
+                            <li><strong>Tool Handling:</strong> Observation of correct usage, safety compliance.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Script -->
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById('nav-links');
-      nav.classList.toggle('active');
-    }
+        <section id="intermediate" class="content-section mb-8 fade-in">
+            <h2 class="text-2xl font-bold mb-4">Intermediate Module (Weeks 5–8)</h2>
+            <div class="content-box rounded-lg p-6">
+                <div class="mb-4">
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('powertrain')">5.1 Powertrain System</button>
+                    <div id="powertrain" class="toggle-content mt-2 pl-6">
+                        <ul class="list-disc">
+                            <li><strong>Components:</strong> Clutch, transmission, driveshaft, differential, CV joints.</li>
+                            <li><strong>Function:</strong> Transmits engine power to wheels.</li>
+                            <li><strong>Servicing:</strong> Inspect clutch, change transmission fluid, check CV joints.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('steering')">5.2 Steering System</button>
+                    <div id="steering" class="toggle-content mt-2 pl-6">
+                        <ul class="list-disc">
+                            <li><strong>Components:</strong> Steering wheel, rack, tie rods, power steering pump.</li>
+                            <li><strong>Function:</strong> Controls vehicle direction.</li>
+                            <li><strong>Servicing:</strong> Adjust linkage, check fluid, repair leaks.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('suspension')">6.1 Suspension System</button>
+                    <div id="suspension" class="toggle-content mt-2 pl-6">
+                        <ul class="list-disc">
+                            <li><strong>Components:</strong> Springs, shocks, struts, stabilizer bars.</li>
+                            <li><strong>Function:</strong> Absorbs shocks, maintains stability.</li>
+                            <li><strong>Servicing:</strong> Replace shocks, lubricate joints, check alignment.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('wheel')">6.2 Wheel Balancing and Alignment</button>
+                    <div id="wheel" class="toggle-content mt-2 pl-6">
+                        <ul class="list-disc">
+                            <li><strong>Function:</strong> Ensures even tire wear, eliminates wheel wobble, improves handling and fuel efficiency.</li>
+                            <li><strong>Servicing:</strong> Balance wheels, adjust camber, toe, caster angles.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('brakes')">7.1 Braking System</button>
+                    <div id="brakes" class="toggle-content mt-2 pl-6">
+                        <ul class="list-disc">
+                            <li><strong>Types:</strong> Disc, drum, ABS, hydraulic systems.</li>
+                            <li><strong>Components:</strong> Pedal, master cylinder, pads, calipers.</li>
+                            <li><strong>Servicing:</strong> Replace pads, bleed lines, check fluid.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('ac')">7.2 Air Conditioning System</button>
+                    <div id="ac" class="toggle-content mt-2 pl-6">
+                        <ul class="list-disc">
+                            <li><strong>Components:</strong> Compressor, condenser, evaporator, refrigerant.</li>
+                            <li><strong>Function:</strong> Cools cabin air.</li>
+                            <li><strong>Maintenance:</strong> Check refrigerant, clean coils, replace filters.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('electrical')">8.1 Body Electrical and Electronics</button>
+                    <div id="electrical" class="toggle-content mt-2 pl-6">
+                        <ul class="list-disc">
+                            <li><strong>Components:</strong> Alternator, battery, lighting, sensors, ECU.</li>
+                            <li><strong>Servicing:</strong> Diagnose faults, replace wiring, test sensors.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('efi')">8.2 EFI System</button>
+                    <div id="efi" class="toggle-content mt-2 pl-6">
+                        <ul class="list-disc">
+                            <li><strong>Components:</strong> Injectors, ECU, sensors, fuel rail.</li>
+                            <li><strong>Function:</strong> Controls fuel delivery for combustion.</li>
+                            <li><strong>Servicing:</strong> Diagnose faults, clean injectors, test sensors.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    function toggleExpandableText() {
-      const content = document.getElementById('expandable-content');
-      const arrow = document.getElementById('arrow');
-      const button = document.getElementById('readToggle');
+        <section id="advanced" class="content-section mb-8 fade-in">
+            <h2 class="text-2xl font-bold mb-4">Advanced Module (Weeks 9–11)</h2>
+            <div class="content-box rounded-lg p-6">
+                <div class="mb-4">
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('lpg')">9.1 LPG and CNG Conversion Kit</button>
+                    <div id="lpg" class="toggle-content mt-2 pl-6">
+                        <ul class="list-disc">
+                            <li><strong>Components:</strong> Gas cylinders, regulators, ECU, safety valves.</li>
+                            <li><strong>Installation:</strong> Mount cylinders, connect lines, calibrate system.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('calibration')">9.2 LPG and CNG Calibration</button>
+                    <div id="calibration" class="toggle-content mt-2 pl-6">
+                        <ul class="list-disc">
+                            <li><strong>Purpose:</strong> Optimize air-fuel mixture, prevent misfiring.</li>
+                            <li><strong>Steps:</strong> Test pressure, adjust ECU, monitor performance.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('hybrid')">10.3 Hybrid and Electric Vehicles</button>
+                    <div id="hybrid" class="toggle-content mt-2 pl-6">
+                        <ul class="list-disc">
+                            <li><strong>Types:</strong> Mild hybrid, full hybrid, BEV, PHEV.</li>
+                            <li><strong>Components:</strong> Electric motor, battery, inverter, BMS.</li>
+                            <li><strong>Benefits:</strong> Lower emissions, better efficiency.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('diagnostics')">11.1 Automotive Electronics and Diagnostics</button>
+                    <div id="diagnostics" class="toggle-content mt-2 pl-6">
+                        <ul class="list-disc">
+                            <li><strong>Components:</strong> Sensors, actuators, ECU, CAN Bus.</li>
+                            <li><strong>Tools:</strong> Multimeter, OBD-II scanner, oscilloscope.</li>
+                            <li><strong>Diagnostics:</strong> Retrieve fault codes, test sensors, validate repairs.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('adas')">11.2 Advanced Driver Assistance Systems (ADAS)</button>
+                    <div id="adas" class="toggle-content mt-2 pl-6">
+                        <ul class="list-disc">
+                            <li><strong>Components:</strong> Cameras, radar, LiDAR, ECUs.</li>
+                            <li><strong>Functions:</strong> Lane-keeping, adaptive cruise, emergency braking.</li>
+                            <li><strong>Benefits:</strong> Enhanced safety, reduced collisions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      content.classList.toggle('active');
+        <section id="final" class="content-section mb-8 fade-in">
+            <h2 class="text-2xl font-bold mb-4">Week 12: Final Examination & Certification</h2>
+            <div class="content-box rounded-lg p-6">
+                <ul class="list-disc pl-6">
+                    <li><strong>Written Exam:</strong> Comprehensive test on all modules.</li>
+                    <li><strong>Practical Exam:</strong> Hands-on tasks (diagnostics, servicing).</li>
+                    <li><strong>Oral/Viva:</strong> Q&A on concepts, troubleshooting.</li>
+                    <li><strong>Certification:</strong> Issued to qualified trainees with feedback.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
 
-      if (content.classList.contains('active')) {
-        arrow.textContent = '▲';
-        button.firstChild.textContent = 'Read Less ';
-      } else {
-        arrow.textContent = '▼';
-        button.firstChild.textContent = 'Read More ';
-      }
-    }
-  </script>
-
+    <footer class="bg-[#0A3B1E] text-white text-center p-4">
+        <p class="text-sm">© 2025 Automotive Course. All rights reserved.</p>
+    </footer>
 </body>
 </html>
