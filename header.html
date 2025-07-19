@@ -1,0 +1,39 @@
+<<<<<<< HEAD
+<nav class="navbar">
+    <a href="index.html" class="logo">Automotive</a>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="course-outline.html">Course Outline</a></li>
+        <li><a href="syllabus.html">Syllabus</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
+=======
+<header class="text-white sticky top-0 z-10 shadow-md">
+    <nav class="container mx-auto p-4 flex justify-between items-center">
+        <h1 class="text-3xl font-extrabold tracking-tight">Automotive</h1>
+        <button class="menu-toggle" onclick="toggleSidebar()"></button>
+        <div class="desktop-nav flex gap-6 text-lg">
+            <a href="#basic">Basic Module</a>
+            <a href="#intermediate">Intermediate Module</a>
+            <a href="#advanced">Advanced Module</a>
+            <a href="#final">Final Exam</a>
+        </div>
+    </nav>
+    <div class="sidebar" id="sidebar">
+        <div class="nav-menu flex flex-col gap-4 text-lg p-4">
+            <a href="#basic" onclick="toggleSidebar()">Basic Module</a>
+            <a href="#intermediate" onclick="toggleSidebar()">Intermediate Module</a>
+            <a href="#advanced" onclick="toggleSidebar()">Advanced Module</a>
+            <a href="#final" onclick="toggleSidebar()">Final Exam</a>
+        </div>
+    </div>
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
+</header>
+>>>>>>> ffa8a5ac60b779047401c45d8f6ae979992debd1
