@@ -65,8 +65,9 @@ We welcome ideas, improvements, or language corrections. Submit a pull request o
 ## 📧 Contact
 
 **As Sunnah Skill Development Institute**  
-Email: [your-email@example.com]  
-Website: [coming soon]
+Email:  automobile.assunnah@gmail.com@example.com  
+Website:automobile.assunnahfoundation.online
+        automobile.skill.assunnahfoundation.org
 
 ---
 
