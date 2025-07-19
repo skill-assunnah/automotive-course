@@ -3,10 +3,9 @@ function toggleMenu() {
     navLinks.classList.toggle('active');
 }
 
-function showSection(sectionId) {
-    const sections = document.querySelectorAll('.content-section');
-    sections.forEach(section => {
-        section.classList.remove('active');
-    });
-    document.getElementById(sectionId).classList.add('active');
+function toggleExpandableText() {
+    const expandableContent = document.getElementById('expandable-content');
+    expandableContent.classList.toggle('active');
+    const button = document.querySelector('.read-more-btn');
+    button.textContent = expandableContent.classList.contains('active') ? 'Read Less' : 'Read More';
 }
