@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weekly Course Module - Automotive Technician Training</title>
+  <style>
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f8fb;
+      color: #333;
+      margin: 0;
+      padding: 30px 15px;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+    h1 {
+      color: #004080;
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: 700;
+      font-size: 2.2rem;
+    }
+    .header-info {
+      background-color: #004080;
+      color: #e3e8f1;
+      border-radius: 8px;
+      padding: 20px 25px;
+      margin-bottom: 30px;
+      font-weight: 600;
+      box-shadow: 0 3px 8px rgba(0,64,128,0.3);
+      user-select: none;
+    }
+    .header-info p {
+      margin: 6px 0;
+      font-size: 1.05rem;
+    }
+    details {
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      padding: 0;
+      background: #fefefe;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.05);
+      transition: box-shadow 0.3s ease;
+    }
+    details[open] {
+      box-shadow: 0 8px 20px rgba(0,64,128,0.15);
+    }
+    summary {
+      cursor: pointer;
+      padding: 18px 25px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #004080;
+      outline: none;
+      list-style: none;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 8px;
+      background-color: #e9f1ff;
+      transition: background-color 0.3s ease;
+    }
+    summary:hover,
+    summary:focus {
+      background-color: #d0e2ff;
+    }
+    summary::-webkit-details-marker {
+      display: none;
+    }
+    summary::after {
+      content: "▸";
+      font-size: 1.2rem;
+      transform-origin: center;
+      transition: transform 0.3s ease;
+      color: #004080;
+    }
+    details[open] summary::after {
+      transform: rotate(90deg);
+    }
+    .content {
+      padding: 15px 30px 25px 30px;
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+    }
+    .modules {
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #2a4365;
+      font-size: 1.1rem;
+    }
+    ul {
+      margin-top: 0;
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    ul li strong {
+      color: #1a365d;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px 15px;
+      }
+      summary {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📘 3-Month Weekly Lesson Plan: Module Breakdown</h1>
+    <div class="header-info" aria-label="Course Overview">
+      <p><strong>📅 Duration:</strong> 12 Weeks</p>
+      <p><strong>🗓️ Weekly Schedule:</strong> Saturday–Thursday (6 days/week)</p>
+      <p><strong>⏱️ Daily Load:</strong> 8 Classes/day (approx. 45–50 mins each)</p>
+      <p><strong>🔢 Total Classes/Week:</strong> 48 sessions</p>
+    </div>
+
+    <details open>
+      <summary>🔹 Week 1: Safety, Tools & Workshop Introduction</summary>
+      <div class="content">
+        <p class="modules">Modules: 1.1 Safety and Hazard, 1.2 Tools, 1.3 Major Systems Overview</p>
+        <ul>
+          <li><strong>Theory (T):</strong> OHS, PPE, Workshop Ethics, Tool Identification, Basic Systems</li>
+          <li><strong>Practical (P):</strong> PPE demo, safety drills, tool handling, tool inspection, system diagram overview</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>🔹 Week 2: Engine System & Basic Components</summary>
+      <div class="content">
+        <p class="modules">Module: 1.4 Engine System</p>
+        <ul>
+          <li><strong>Theory (T):</strong> SI vs CI engines, 4-stroke/2-stroke cycles, engine components, lubrication/cooling path</li>
+          <li><strong>Practical (P):</strong> Identify engine parts, oil circulation path, cooling system inspection, measurements (bore, stroke)</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>🔹 Week 3: Fuel, Cooling & Lubrication System</summary>
+      <div class="content">
+        <p class="modules">Modules: 2.1 Fuel System, 2.2 Cooling System, 2.3 Lubrication</p>
+        <ul>
+          <li><strong>Theory (T):</strong> Components and functions of each system</li>
+          <li><strong>Practical (P):</strong> Fuel filter change, coolant flush/refill, thermostat test, oil & filter change</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>🔹 Week 4: Starting, Ignition & Air Induction</summary>
+      <div class="content">
+        <p class="modules">Modules: 3.1 Starting, 3.2 Ignition, 3.3 Air Induction</p>
+        <ul>
+          <li><strong>Theory (T):</strong> Component roles and operational principles</li>
+          <li><strong>Practical (P):</strong> Spark plug replacement, starter testing, air filter/throttle body servicing</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>🔹 Week 5: Exhaust, SI & CI Engine Tune-Up</summary>
+      <div class="content">
+        <p class="modules">Modules: 4.1 Exhaust, 4.2 SI Engine, 4.3 Diesel Engine Tune-Up</p>
+        <ul>
+          <li><strong>Theory (T):</strong> Engine stroke cycles, tune-up objectives, emissions</li>
+          <li><strong>Practical (P):</strong> Tune-up of SI engine (timing, plug), diesel injector testing, exhaust leak check</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>🔹 Week 6: Powertrain & Steering Systems</summary>
+      <div class="content">
+        <p class="modules">Modules: 5.1 Powertrain, 5.2 Steering</p>
+        <ul>
+          <li><strong>Theory (T):</strong> Transmission, clutch, differential, steering types and linkages</li>
+          <li><strong>Practical (P):</strong> Clutch adjustment, fluid check, power steering diagnosis, CV joint inspection</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>🔹 Week 7: Suspension, Wheel Alignment & Balancing</summary>
+      <div class="content">
+        <p class="modules">Modules: 6.1 Suspension, 6.2 Alignment</p>
+        <ul>
+          <li><strong>Theory (T):</strong> Suspension theory, camber/caster/toe angles</li>
+          <li><strong>Practical (P):</strong> Inspect shocks, bushings, wheel balancing, alignment with tools</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>🔹 Week 8: Braking System & A/C Maintenance</summary>
+      <div class="content">
+        <p class="modules">Modules: 7.1 Brake System, 7.2 A/C</p>
+        <ul>
+          <li><strong>Theory (T):</strong> Brake types, ABS, A/C components and principles</li>
+          <li><strong>Practical (P):</strong> Brake bleeding, pad replacement, A/C refrigerant check, blower service</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>🔹 Week 9: Electrical, EFI & Charging System</summary>
+      <div class="content">
+        <p class="modules">Modules: 8.1 Electrical, 8.2 EFI, 8.3 Charging</p>
+        <ul>
+          <li><strong>Theory (T):</strong> Lighting, sensors, EFI logic, alternator</li>
+          <li><strong>Practical (P):</strong> Fuse replacement, multimeter testing, injector cleaning, scan tool use</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>🔹 Week 10: LPG/CNG System & Calibration</summary>
+      <div class="content">
+        <p class="modules">Modules: 9.1 LPG/CNG Install, 9.2 Calibration</p>
+        <ul>
+          <li><strong>Theory (T):</strong> CNG/LPG working, safety, tuning logic</li>
+          <li><strong>Practical (P):</strong> Gas leak test, regulator setup, calibration with tool/software</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>🔹 Week 11: Hybrid, EV, and Advanced Electronics</summary>
+      <div class="content">
+        <p class="modules">Modules: 10.3 Hybrid/EV, 11.1 Electronics & Diagnostics, 11.2 ADAS</p>
+        <ul>
+          <li><strong>Theory (T):</strong> EV components, CAN bus, diagnostics, ADAS</li>
+          <li><strong>Practical (P):</strong> Identify EV parts, simulate diagnostics, sensor testing, safety tools</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>🔹 Week 12: Final Exams & Certification</summary>
+      <div class="content">
+        <p class="modules">Modules: 12.1–12.4</p>
+        <ul>
+          <li><strong>Written Exam:</strong> Covering all modules</li>
+          <li><strong>Practical:</strong> Engine, brake, electrical, EFI, A/C tasks</li>
+          <li><strong>Oral:</strong> Troubleshooting logic, safety, diagnostic explanation</li>
+          <li><strong>Certification:</strong> Feedback, future guidance</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</body>
+</html>
