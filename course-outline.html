@@ -8,9 +8,11 @@
     <style>
         body { font-family: 'Arial', sans-serif; }
         .module { margin-bottom: 2rem; }
-        .week { margin-left: 1rem; }
+        .week { margin-left: 1rem; margin-bottom: 1.5rem; } /* Increased spacing between titles */
         .section { margin-left: 2rem; }
-        .accordion { cursor: pointer; color: #1a3c34; } /* Dark green for h3 titles */
+        .accordion { cursor: pointer; color: #1a3c34; display: flex; align-items: center; }
+        .accordion::before { content: '▶'; margin-right: 0.5rem; transition: transform 0.3s; }
+        .accordion.active::before { transform: rotate(90deg); }
         .accordion-content { display: none; }
         .accordion-content.active { display: block; }
     </style>
@@ -400,6 +402,7 @@
             accordion.addEventListener('click', () => {
                 const content = accordion.nextElementSibling;
                 content.classList.toggle('active');
+                accordion.classList.toggle('active');
             });
         });
     </script>
