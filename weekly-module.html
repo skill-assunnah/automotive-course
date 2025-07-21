@@ -3,178 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Course Outline – Automotive Technician Training</title>
-  <style>
-    /* Reset & Base */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f8fb;
-      color: #333;
-      line-height: 1.5;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* Header & Navigation */
-    header {
-      background-color: #002c5c;
-      color: white;
-      padding: 15px 20px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .header-container {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #fff;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    .nav-links {
-      display: flex;
-      gap: 20px;
-    }
-    .nav-links a {
-      color: #cbdaf1;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-    .nav-links a:hover {
-      color: #ffffff;
-    }
-
-    /* Container & Content */
-    .container {
-      max-width: 1000px;
-      margin: 30px auto;
-      background: white;
-      padding: 30px 40px;
-      border-radius: 10px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
-    h1 {
-      color: #004080;
-      text-align: center;
-      margin-bottom: 10px;
-      font-weight: 700;
-      font-size: 2.2rem;
-    }
-    .header-info {
-      background-color: #004080;
-      color: #e3e8f1;
-      border-radius: 8px;
-      padding: 20px 25px;
-      margin-bottom: 30px;
-      font-weight: 600;
-      box-shadow: 0 3px 8px rgba(0,64,128,0.3);
-    }
-    .header-info p {
-      margin: 6px 0;
-      font-size: 1.05rem;
-    }
-
-    /* Collapsible Details */
-    details {
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      background: #fefefe;
-      box-shadow: 0 4px 8px rgb(0 0 0 / 0.05);
-    }
-    details[open] {
-      box-shadow: 0 8px 20px rgba(0,64,128,0.1);
-    }
-    summary {
-      cursor: pointer;
-      padding: 18px 25px;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #004080;
-      background-color: #e9f1ff;
-      border-radius: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    summary::after {
-      content: "▸";
-      font-size: 1.2rem;
-      transition: transform 0.3s ease;
-    }
-    details[open] summary::after {
-      transform: rotate(90deg);
-    }
-    .content {
-      padding: 15px 30px 25px 30px;
-      font-size: 1rem;
-    }
-    .modules {
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: #2a4365;
-      font-size: 1.1rem;
-    }
-    ul {
-      padding-left: 20px;
-      margin: 0;
-    }
-    ul li {
-      margin-bottom: 8px;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #002c5c;
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      font-size: 0.9rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .header-container {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
-      }
-      .container {
-        padding: 20px;
-      }
-    }
-  </style>
+  <title>Automobile Technician Training</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- Header -->
   <header>
     <div class="header-container">
-      <a href="index.html" class="logo">🚗Automotive</a>
+      <a href="index.html" class="logo">🚗Automobile</a>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
       <nav>
-        <div class="nav-links">
+        <div class="nav-links" id="navLinks">
           <a href="index.html">Home</a>
           <a href="course-outline.html">Course Outline</a>
           <a href="syllabus.html">Syllabus</a>
@@ -185,77 +29,180 @@
     </div>
   </header>
 
-  <!-- Main Container -->
-  <div class="container">
-    <h1>📘 3-Month Weekly Lesson Plan</h1>
-    <div class="header-info">
-      <p><strong>📅 Duration:</strong> 12 Weeks</p>
-      <p><strong>🗓️ Weekly Schedule:</strong> Saturday–Thursday (6 days/week)</p>
-      <p><strong>⏱️ Daily Load:</strong> 8 Classes/day (approx. 45–50 mins each)</p>
-      <p><strong>🔢 Total Classes/Week:</strong> 48 sessions</p>
-    </div>
-
-    <!-- Week 1-12 Details -->
-    <!-- (REUSE same <details> ... structure for each week) -->
-    <!-- Week 1 -->
-    <details open>
-      <summary>🔹 Week 1: Safety, Tools & Workshop Introduction</summary>
-      <div class="content">
-        <p class="modules">Modules: 1.1 Safety and Hazard, 1.2 Tools, 1.3 Major Systems Overview</p>
-        <ul>
-          <li><strong>Theory (T):</strong> OHS, PPE, Workshop Ethics, Tool Identification, Basic Systems</li>
-          <li><strong>Practical (P):</strong> PPE demo, safety drills, tool handling, tool inspection, system diagram overview</li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- Week 2 -->
-    <details>
-      <summary>🔹 Week 2: Engine System & Basic Components</summary>
-      <div class="content">
-        <p class="modules">Module: 1.4 Engine System</p>
-        <ul>
-          <li><strong>Theory (T):</strong> SI vs CI engines, 4-stroke/2-stroke cycles, engine components, lubrication/cooling path</li>
-          <li><strong>Practical (P):</strong> Identify engine parts, oil circulation path, cooling system inspection, measurements (bore, stroke)</li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- Week 3–12 -->
-    <!-- Repeat the same <details> format from previous responses for Week 3 to 12 -->
-
-    <!-- Week 3 -->
-    <details>
-      <summary>🔹 Week 3: Fuel, Cooling & Lubrication System</summary>
-      <div class="content">
-        <p class="modules">Modules: 2.1 Fuel System, 2.2 Cooling System, 2.3 Lubrication</p>
-        <ul>
-          <li><strong>Theory (T):</strong> Components and functions of each system</li>
-          <li><strong>Practical (P):</strong> Fuel filter change, coolant flush/refill, thermostat test, oil & filter change</li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- Include Week 4 to Week 12 as already formatted in your previous module -->
-
-    <!-- Week 12 -->
-    <details>
-      <summary>🔹 Week 12: Final Exams & Certification</summary>
-      <div class="content">
-        <p class="modules">Modules: 12.1–12.4</p>
-        <ul>
-          <li><strong>Written Exam:</strong> Covering all modules</li>
-          <li><strong>Practical:</strong> Engine, brake, electrical, EFI, A/C tasks</li>
-          <li><strong>Oral:</strong> Troubleshooting logic, safety, diagnostic explanation</li>
-          <li><strong>Certification:</strong> Feedback, future guidance</li>
-        </ul>
-      </div>
-    </details>
+  <!-- Main Content Area -->
+  <main>
+    <section class="weekly-plan">
+  <h1>📘 Weekly Lesson Plan: Module Breakdown</h1>
+  <p><strong>📅 Duration:</strong> 12 Weeks<br>
+  <strong>🗓️ Weekly Schedule:</strong> Saturday–Thursday (6 days/week)<br>
+  <strong>⏱️ Daily Load:</strong> 8 Classes/day (approx. 45–50 mins each)<br>
+  <strong>Total Classes/Week:</strong> 48 sessions</p>
+  
+  <div class="week">
+    <h2>Week 1: Safety, Tools & Workshop Introduction</h2>
+    <p><strong>Module:</strong> 1.1 Safety and Hazard, 1.2 Tools, 1.3 Major Systems Overview</p>
+    <ul>
+      <li><strong>Theory (T):</strong> OHS, PPE, Workshop Ethics, Tool Identification, Basic Systems</li>
+      <li><strong>Practical (P):</strong> PPE demo, safety drills, tool handling, tool inspection, system diagram overview</li>
+    </ul>
   </div>
+
+  <div class="week">
+    <h2>Week 2: Engine System & Basic Components</h2>
+    <p><strong>Module:</strong> 1.4 Engine System</p>
+    <ul>
+      <li><strong>Theory (T):</strong> SI vs CI engines, 4-stroke/2-stroke cycles, engine components, lubrication/cooling path</li>
+      <li><strong>Practical (P):</strong> Identify engine parts, oil circulation path, cooling system inspection, measurements (bore, stroke)</li>
+    </ul>
+  </div>
+
+  <div class="week">
+    <h2>Week 3: Fuel, Cooling & Lubrication System</h2>
+    <p><strong>Modules:</strong> 2.1 Fuel System, 2.2 Cooling System, 2.3 Lubrication</p>
+    <ul>
+      <li><strong>Theory (T):</strong> Components and functions of each system</li>
+      <li><strong>Practical (P):</strong> Fuel filter change, coolant flush/refill, thermostat test, oil & filter change</li>
+    </ul>
+  </div>
+
+  <div class="week">
+    <h2>Week 4: Starting, Ignition & Air Induction</h2>
+    <p><strong>Modules:</strong> 3.1 Starting, 3.2 Ignition, 3.3 Air Induction</p>
+    <ul>
+      <li><strong>Theory (T):</strong> Component roles and operational principles</li>
+      <li><strong>Practical (P):</strong> Spark plug replacement, starter testing, air filter/throttle body servicing</li>
+    </ul>
+  </div>
+
+  <div class="week">
+    <h2>Week 5: Exhaust, SI & CI Engine Tune-Up</h2>
+    <p><strong>Modules:</strong> 4.1 Exhaust, 4.2 SI Engine, 4.3 Diesel Engine Tune-Up</p>
+    <ul>
+      <li><strong>Theory (T):</strong> Engine stroke cycles, tune-up objectives, emissions</li>
+      <li><strong>Practical (P):</strong> Tune-up of SI engine (timing, plug), diesel injector testing, exhaust leak check</li>
+    </ul>
+  </div>
+
+  <div class="week">
+    <h2>Week 6: Powertrain & Steering Systems</h2>
+    <p><strong>Modules:</strong> 5.1 Powertrain, 5.2 Steering</p>
+    <ul>
+      <li><strong>Theory (T):</strong> Transmission, clutch, differential, steering types and linkages</li>
+      <li><strong>Practical (P):</strong> Clutch adjustment, fluid check, power steering diagnosis, CV joint inspection</li>
+    </ul>
+  </div>
+
+  <div class="week">
+    <h2>Week 7: Suspension, Wheel Alignment & Balancing</h2>
+    <p><strong>Modules:</strong> 6.1 Suspension, 6.2 Alignment</p>
+    <ul>
+      <li><strong>Theory (T):</strong> Suspension theory, camber/caster/toe angles</li>
+      <li><strong>Practical (P):</strong> Inspect shocks, bushings, wheel balancing, alignment with tools</li>
+    </ul>
+  </div>
+
+  <div class="week">
+    <h2>Week 8: Braking System & A/C Maintenance</h2>
+    <p><strong>Modules:</strong> 7.1 Brake System, 7.2 A/C</p>
+    <ul>
+      <li><strong>Theory (T):</strong> Brake types, ABS, A/C components and principles</li>
+      <li><strong>Practical (P):</strong> Brake bleeding, pad replacement, A/C refrigerant check, blower service</li>
+    </ul>
+  </div>
+
+  <div class="week">
+    <h2>Week 9: Electrical, EFI & Charging System</h2>
+    <p><strong>Modules:</strong> 8.1 Electrical, 8.2 EFI, 8.3 Charging</p>
+    <ul>
+      <li><strong>Theory (T):</strong> Lighting, sensors, EFI logic, alternator</li>
+      <li><strong>Practical (P):</strong> Fuse replacement, multimeter testing, injector cleaning, scan tool use</li>
+    </ul>
+  </div>
+
+  <div class="week">
+    <h2>Week 10: LPG/CNG System & Calibration</h2>
+    <p><strong>Modules:</strong> 9.1 LPG/CNG Install, 9.2 Calibration</p>
+    <ul>
+      <li><strong>Theory (T):</strong> CNG/LPG working, safety, tuning logic</li>
+      <li><strong>Practical (P):</strong> Gas leak test, regulator setup, calibration with tool/software</li>
+    </ul>
+  </div>
+
+  <div class="week">
+    <h2>Week 11: Hybrid, EV, and Advanced Electronics</h2>
+    <p><strong>Modules:</strong> 10.3 Hybrid/EV, 11.1 Electronics & Diagnostics, 11.2 ADAS</p>
+    <ul>
+      <li><strong>Theory (T):</strong> EV components, CAN bus, diagnostics, ADAS</li>
+      <li><strong>Practical (P):</strong> Identify EV parts, simulate diagnostics, sensor testing, safety tools</li>
+    </ul>
+  </div>
+
+  <div class="week">
+    <h2>Week 12: Final Exams & Certification</h2>
+    <p><strong>Modules:</strong> 12.1–12.4</p>
+    <ul>
+      <li><strong>Written Exam:</strong> Covering all modules</li>
+      <li><strong>Practical:</strong> Engine, brake, electrical, EFI, A/C tasks</li>
+      <li><strong>Oral:</strong> Troubleshooting logic, safety, diagnostic explanation</li>
+      <li><strong>Certification:</strong> Feedback, future guidance</li>
+    </ul>
+  </div>
+</section>
+
+    <button id="downloadPdfBtn" style="margin-top: 20px; padding: 10px 20px; font-size: 1rem; cursor: pointer;">
+  Download PDF
+</button>
+
+  </main>
 
   <!-- Footer -->
   <footer>
     &copy; 2025 Automobile. All rights reserved.
   </footer>
+
+  <!-- JavaScript for Menu Toggle -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+  <!-- JavaScript for Download PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  document.getElementById('downloadPdfBtn').addEventListener('click', async () => {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF('p', 'pt', 'a4');
+
+    // Select the main content area
+    const mainContent = document.querySelector('main');
+
+    // Get title from first <h1> in main content for filename
+    const titleElem = mainContent.querySelector('h1');
+    let fileName = 'document.pdf';
+    if(titleElem && titleElem.textContent.trim() !== '') {
+      fileName = titleElem.textContent.trim().replace(/[\\\/:*?"<>|]/g, '') + '.pdf';
+    }
+
+    // Use html2canvas to create a canvas from the main content, increase scale for better resolution
+    const canvas = await html2canvas(mainContent, { scale: 2 });
+
+    // Convert canvas to image data
+    const imgData = canvas.toDataURL('image/png');
+
+    // Calculate image dimensions to fit A4
+    const imgProps = doc.getImageProperties(imgData);
+    const pdfWidth = doc.internal.pageSize.getWidth();
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+    // Add image to PDF
+    doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+
+    // Save the PDF with the title-based filename
+    doc.save(fileName);
+  });
+</script>
+
+
 </body>
 </html>
