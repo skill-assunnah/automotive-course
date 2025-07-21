@@ -1,912 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automotive</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background: #ffffff;
-            color: #000000;
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        .page-container {
-            display: flex;
-            flex: 1;
-            flex-direction: row;
-            min-height: calc(100vh - 68px - 60px);
-        }
-        h1, h2, h3 {
-            color: #008000;
-        }
-        h1.text-3xl.font-extrabold.tracking-tight {
-            color: #ffffff;
-        }
-        .content-box, .overview-box {
-            background: #f5f5f5;
-            transition: transform 0.3s ease;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        .content-box:hover, .overview-box:hover {
-            transform: translateY(-5px);
-        }
-        .toggle-content { display: none; }
-        .toggle-content.active { display: block; }
-        .toggle-btn {
-            text-align: left;
-            width: 100%;
-            color: #008000;
-            padding: 0.5rem;
-        }
-        .toggle-btn::before {
-            content: '▶';
-            display: inline-block;
-            margin-right: 8px;
-            transition: transform 0.2s;
-            color: #008000;
-        }
-        .toggle-btn.active::before {
-            content: '⠿';
-            transform: rotate(90deg);
-        }
-        .toggle-btn:hover {
-            color: #006400;
-            background-color: #e6f3e6;
-            border-radius: 0.25rem;
-        }
-        .navbar {
-            background: #0A3B1E;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #d4af37;
-            position: sticky;
-            top: 0;
-            z-index: 20;
-        }
-        .navbar .logo {
-            font-size: 1.875rem;
-            font-weight: 800;
-            color: #ffffff;
-            text-decoration: none;
-        }
-        .navbar ul {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-            margin: 0;
-        }
-        .navbar ul li a {
-            color: #ffffff;
-            font-weight: 500;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 0.25rem;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        .navbar ul li a:hover {
-            color: #000000;
-            background-color: #d4af37;
-            transform: scale(1.05);
-        }
-        .navbar ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #ffffff;
-            transition: width 0.3s ease;
-        }
-        .navbar ul li a:hover::after {
-            width: 100%;
-        }
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: #ffffff;
-            transition: all 0.3s ease;
-        }
-        .menu-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        .menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .menu-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-        .sidebar {
-            width: 250px;
-            background: #1A4B2E;
-            color: #ffffff;
-            padding: 2rem 1rem;
-            transition: transform 0.3s ease;
-            z-index: 10;
-            overflow-y: auto;
-        }
-        .sidebar.active {
-            transform: translateX(0);
-        }
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar ul li {
-            margin-bottom: 0.5rem;
-        }
-        .sidebar ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            padding: 0.75rem 1rem;
-            display: block;
-            border-radius: 0.25rem;
-            transition: all 0.3s ease;
-        }
-        .sidebar ul li a:hover {
-            background-color: #d4af37;
-            color: #000000;
-        }
-        .sidebar .submenu {
-            padding-left: 1.5rem;
-            display: none;
-        }
-        .sidebar .submenu.active {
-            display: block;
-        }
-        .sidebar-toggle {
-            display: none;
-            position: fixed;
-            top: 1rem;
-            left: 1rem;
-            z-index: 40;
-            cursor: pointer;
-        }
-        .sidebar-toggle span {
-            width: 25px;
-            height: 3px;
-            background: #ffffff;
-            margin: 5px 0;
-            display: block;
-            transition: all 0.3s ease;
-        }
-        .sidebar-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        .sidebar-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .sidebar-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-        .main-content {
-            flex: 1;
-            padding: 2rem;
-        }
-        .fade-in {
-            animation: fadeIn 1s ease-in-out;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(10px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        footer {
-            background: #0A3B1E;
-            color: #ffffff;
-            text-align: center;
-            padding: 1rem;
-        }
-        @media (max-width: 768px) {
-            .page-container {
-                flex-direction: column;
-            }
-            .sidebar {
-                position: fixed;
-                top: 68px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 68px - 60px);
-                transform: translateX(-100%);
-            }
-            .sidebar.active {
-                transform: translateX(0);
-            }
-            .main-content {
-                padding: 1rem;
-            }
-            .navbar ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 68px;
-                left: 0;
-                width: 100%;
-                background: #0A3B1E;
-                padding: 1rem;
-                z-index: 10;
-            }
-            .navbar ul.active {
-                display: flex;
-            }
-            .menu-toggle {
-                display: flex;
-            }
-            .sidebar-toggle {
-                display: block;
-            }
-        }
-        @media (min-width: 769px) {
-            .sidebar {
-                position: sticky;
-                top: 68px;
-                height: calc(100vh - 68px - 60px);
-            }
-            .menu-toggle {
-                display: none;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Automobile Technician Training</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="text-white sticky top-0 z-20 shadow-md">
-        <nav class="navbar">
-            <a href="index.html" class="logo">Automotive</a>
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="course-outline.html">Course Outline</a></li>
-                <li><a href="syllabus.html">Syllabus</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <div class="page-container">
-        <div class="sidebar-toggle" onclick="toggleSidebar()">
-            <span></span>
-            <span></span>
-            <span></span>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">🚗Automobile</a>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <nav>
+        <div class="nav-links" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="course-outline.html">Course Outline</a>
+          <a href="syllabus.html">Syllabus</a>
+          <a href="resources.html">Resources</a>
+          <a href="about.html">About</a>
         </div>
-        <aside class="sidebar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li class="menu-item" onclick="toggleSubmenu('lesson-plan')">
-                    <a href="#">Lesson Plan</a>
-                    <ul id="lesson-plan" class="submenu">
-                        <li><a href="weekly-module.html">Weekly Lesson Plan</a></li>
-                        <li><a href="daily-module.html">Daily Lesson Plan</a></li>
-                    </ul>
-                </li>
-                <li><a href="class-routine.html">Class Routine</a></li>
-                <li><a href="dummy1.html">Resources</a></li>
-                <li><a href="dummy2.html">Assignments</a></li>
-                <li><a href="dummy3.html">Exams</a></li>
-                <li><a href="dummy4.html">Contact</a></li>
-            </ul>
-        </aside>
-        <main class="main-content">
-            <section class="container mx-auto overview-box rounded-lg mb-8 fade-in">
-                <h2 class="text-2xl font-bold mb-4">Course Program</h2>
-                <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('program-content')">Program Details</button>
-                    <div id="program-content" class="toggle-content mt-2 pl-4">
-                        <div class="content-box rounded-lg p-6">
-                            <p class="text-lg mb-2">3-Month Advanced Program</p>
-                            <p class="text-lg mb-4">Organized by: As Sunnah Skill Development Institute</p>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('overview')">Course Overview</button>
-                                <div id="overview reinitialize" class="toggle-content mt-2 pl-6">
-                                    <p class="mb-4">The Professional Automotive Technician Training is a rigorous, 12-week intensive program meticulously designed to develop skilled, job-ready automotive technicians. Conducted by As Sunnah Skill Development Institute, this program combines foundational mechanical knowledge with modern diagnostic expertise, ensuring participants are fully prepared for careers in the local and international automotive service industry.</p>
-                                    <p class="mb-4">Rooted in hands-on learning and real-world problem-solving, the curriculum balances technical skill-building, diagnostic confidence, and professional work ethics, producing technicians capable of servicing both conventional and modern vehicles. While secular in nature, the course subtly integrates Islamic ethical values—like responsibility, safety, and integrity—into areas such as workplace conduct, customer service, and safety awareness.</p>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('highlights')">Key Highlights</button>
-                                <div id="highlights" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc pl-6">
-                                        <li><strong>Duration:</strong> 3 Months (12 Weeks, Saturday–Thursday, 40 hours/week, ~240 hours total)</li>
-                                        <li><strong>Course Format:</strong>
-                                            <ul class="list-[circle] pl-6">
-                                                <li>50% Theory (lectures, diagrams, discussions)</li>
-                                                <li>40% Practical (workshops, system servicing, diagnostics)</li>
-                                                <li>10% Assessment (tests, evaluations, capstone)</li>
-                                            </ul>
-                                        </li>
-                                        <li><strong>Target Group:</strong>
-                                            <ul class="list-[circle] pl-6">
-                                                <li>Youth and adults (minimum SSC or equivalent)</li>
-                                                <li>Aspiring mechanics, entrepreneurs, or job seekers in the automotive field</li>
-                                            </ul>
-                                        </li>
-                                        <li><strong>Certification:</strong>
-                                            <ul class="list-[circle] pl-6">
-                                                <li>Upon completion, participants will earn the Professional Automotive Technician Certificate (3-Month) issued by As Sunnah Skill Development Institute</li>
-                                            </ul>
-                                        </li>
-                                        <li><strong>Training Infrastructure:</strong>
-                                            <ul class="list-[circle] pl-6">
-                                                <li>Classrooms with multimedia setup (bilingual Bangla/English materials)</li>
-                                                <li>Hands-on workshops with complete toolkits (including torque wrenches, OBD-II scanners, fuel system testers)</li>
-                                                <li>Access to petrol & diesel engine models for servicing practice</li>
-                                                <li>Qualified trainers with industry and instructional experience</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="basic" class="content-section mb-8 fade-in">
-                <h2 class="text-2xl font-bold mb-4">Basic Module (Weeks 1–4)</h2>
-                <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('basic-module')">Basic Module Content</button>
-                    <div id="basic-module" class="toggle-content mt-2 pl-4">
-                        <div class="content-box rounded-lg p-6">
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('safety')">1.1 Safety and Hazard</button>
-                                <div id="safety" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>OHS:</strong> Workplace safety regulations, accident prevention, safe material handling, emergency procedures, hazard identification.</li>
-                                        <li><strong>PPE:</strong> Types (gloves, goggles, helmets, etc.), selection, usage, inspection, replacement.</li>
-                                        <li><strong>Workshop Ethics:</strong> Professional conduct, punctuality, cleanliness, teamwork, tool responsibility.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('tools')">1.2 Using Hand and Power Tools</button>
-                                <div id="tools" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Identify and Inspect:</strong> Recognize hand tools (spanners, pliers) and power tools (drills, grinders); ensure suitability.</li>
-                                        <li><strong>Proper Use:</strong> Correct techniques, handling, torque application, manufacturer’s instructions.</li>
-                                        <li><strong>Maintenance:</strong> Clean tools, lubricate, store properly, routine checks.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('systems')">1.3 Major Systems of Automobiles</button>
-                                <div id="systems" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Engine:</strong> Types (Inline, V-type), 4-stroke cycle, key components, combustion process.</li>
-                                        <li><strong>Fuel System:</strong> Tank, pump, filter, injectors; servicing, pressure checks, filter replacement.</li>
-                                        <li><strong>Cooling:</strong> Radiator, thermostat, hoses; heat exchange, leak checks, coolant maintenance.</li>
-                                        <li><strong>Transmission:</strong> Manual/automatic, clutch, CVT; lubrication, adjustments.</li>
-                                        <li><strong>Brake:</strong> Disc/drum, ABS; fluid bleeding, pad replacement.</li>
-                                        <li><strong>Steering/Suspension:</strong> Steering types, suspension components; inspections.</li>
-                                        <li><strong>Electrical:</strong> Battery, alternator, fuses; diagnostics, wiring, fuse replacement.</li>
-                                        <li><strong>Exhaust:</strong> Manifold, catalytic converter; leakage, emissions checks.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('engine')">1.4 Engine System</button>
-                                <div id="engine" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>SI vs CI Engines:</strong> Spark Ignition vs Compression Ignition differences.</li>
-                                        <li><strong>Operating Cycles:</strong> 4-stroke (Otto, Diesel), 2-stroke basics.</li>
-                                        <li><strong>Key Components:</strong> Cylinder block, pistons, crankshaft, valves, lubrication.</li>
-                                        <li><strong>Function:</strong> Energy conversion to mechanical power.</li>
-                                        <li><strong>Lubrication/Cooling:</strong> Oil flow, heat management, measurements (bore, stroke).</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('assessments1')">1.5 Assessments</button>
-                                <div id="assessments1" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Written Test:</strong> MCQ/short questions on safety, tools, systems.</li>
-                                        <li><strong>Practical:</strong> Tool identification, engine components, servicing checks.</li>
-                                        <li><strong>Oral/Viva:</strong> Safety procedures, system functions.</li>
-                                        <li><strong>Tool Handling:</strong> Observation of correct usage, safety compliance.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('fuel-system')">2.1 Servicing and Replacing Fuel System Components</button>
-                                <div id="fuel-system" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Main Components of Fuel System:</strong> Fuel tank, fuel pump (mechanical/electrical), fuel filter, fuel lines, fuel injectors, carburetor (in older models), fuel rail.</li>
-                                        <li><strong>Function of Fuel System:</strong> Stores and supplies clean fuel to the engine at the correct pressure and flow rate for combustion; enables efficient engine performance.</li>
-                                        <li><strong>Servicing and Replacing Tasks:</strong> Inspect and replace fuel filters, clean injectors, test fuel pressure, check for leaks in hoses/lines, replace worn-out pumps or others.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('cooling-system')">2.2 Servicing and Maintaining Cooling System</button>
-                                <div id="cooling-system" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Main Components of Cooling System:</strong> Radiator, water pump, thermostat, radiator fan (mechanical/electric), coolant reservoir, hoses, temperature sensor.</li>
-                                        <li><strong>Function of Cooling System:</strong> Regulates engine temperature by dissipating heat from the engine; prevents overheating, ensures optimal engine efficiency.</li>
-                                        <li><strong>Servicing Tasks:</strong> Check coolant level and condition, pressure-test the radiator cap, flush and refill coolant, inspect/replace hoses and clamps, test thermostat and fan operation.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('lubrication-system')">2.3 Servicing and Maintaining Lubrication System</button>
-                                <div id="lubrication-system" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Main Components of Lubricating System:</strong> Oil sump (pan), oil pump, oil filter, pressure relief valve, oil galleries, dipstick.</li>
-                                        <li><strong>Function of Lubricating System:</strong> Reduces friction between engine parts, removes heat, cleans internal engine components, provides sealing and rust protection.</li>
-                                        <li><strong>Servicing Tasks:</strong> Drain old engine oil, replace oil filter, refill with correct grade oil, check oil pressure, inspect for leaks and worn gaskets.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('assessments2')">2.4 Assessments</button>
-                                <div id="assessments2" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Written Test:</strong> Questions on fuel, cooling, and lubrication systems — covering components, functions, and servicing steps.</li>
-                                        <li><strong>Practical Evaluation:</strong> Demonstration of draining and refilling coolant and engine oil, replacing fuel/oil filters, leak inspection.</li>
-                                        <li><strong>Tool Handling Observation:</strong> Evaluate proper use of tools such as oil drain pan, filter wrench, funnel, and coolant tester.</li>
-                                        <li><strong>Oral/Viva Assessment:</strong> Explain purpose of thermostat, oil pressure system, and fuel delivery system in own words.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('starting-system')">3.1 Diagnosing and Servicing Starting System</button>
-                                <div id="starting-system" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Main Components of Starting System:</strong> Battery, ignition switch, starter motor, solenoid, flywheel ring gear, wiring harness.</li>
-                                        <li><strong>Function of Starting System:</strong> Converts electrical energy from the battery into mechanical motion to crank and start the engine.</li>
-                                        <li><strong>Servicing Tasks:</strong> Check battery charge and connections, test starter motor operation, inspect solenoid relay, clean terminals, diagnose abnormal noises.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('ignition-system')">3.2 Servicing and Replacing Ignition System</button>
-                                <div id="ignition-system" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Main Components of Ignition System:</strong> Ignition coil, distributor (in older systems), spark plugs, ignition switch, crankshaft position sensor, control module (in modern vehicles), wiring harness.</li>
-                                        <li><strong>Function of Ignition System:</strong> Provides high-voltage spark at the right time to ignite the air-fuel mixture in petrol (SI) engines.</li>
-                                        <li><strong>Servicing and Replacing Tasks:</strong> Inspect and replace spark plugs, test and replace ignition coil, adjust timing (if applicable), check wiring and connectors, diagnose misfire or no-start conditions.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('air-induction')">3.3 Repair and Service Air Induction System</button>
-                                <div id="air-induction" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Main Components of Air Induction System:</strong> Air filter, intake manifold, throttle body, air flow sensor (MAF/MAP), intercooler (in turbo engines), ducting and hoses.</li>
-                                        <li><strong>Function of Air Induction System:</strong> Supplies clean, filtered air to the engine; regulates air quantity for combustion; contributes to fuel efficiency and emissions control.</li>
-                                        <li><strong>Repair and Servicing Tasks:</strong> Clean or replace air filter, inspect ducting for cracks or leaks, clean throttle body, test air sensors, reseal or replace gaskets if needed.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('assessments3')">3.4 Assessments</button>
-                                <div id="assessments3" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Written Test:</strong> Multiple choice or short answers covering ignition, starting, and air induction system components, functions, and procedures.</li>
-                                        <li><strong>Practical Evaluation:</strong> Demonstrate spark plug replacement, starter motor testing, air filter servicing, throttle body cleaning.</li>
-                                        <li><strong>Tool Handling Observation:</strong> Safe and correct use of multimeter, plug spanner, throttle cleaner, and basic diagnostic tools.</li>
-                                        <li><strong>Oral/Viva Assessment:</strong> Explain ignition sequence, signs of faulty air intake, or differences between SI and CI ignition methods.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('exhaust-system')">4.1 Servicing and Repairing Exhaust System</button>
-                                <div id="exhaust-system" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Main Components of Exhaust System:</strong> Exhaust manifold, catalytic converter, muffler/silencer, exhaust pipes, oxygen sensors, resonator.</li>
-                                        <li><strong>Function of Exhaust System:</strong> Directs exhaust gases safely away from the engine and cabin, reduces emissions, and minimizes noise.</li>
-                                        <li><strong>Repair and Servicing Tasks:</strong> Inspect and replace damaged pipes, clean or replace catalytic converter, check oxygen sensors, repair leaks, and ensure mounting.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('si-tuneup')">4.2 Perform Spark Ignition (SI) Engine Tune-Up</button>
-                                <div id="si-tuneup" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>4-Stroke SI Engine Cycle:</strong> Intake, Compression, Power, and Exhaust strokes; how each stage works to convert fuel into mechanical energy.</li>
-                                        <li><strong>Function of SI Engine:</strong> Uses spark plug ignition to ignite the air-fuel mixture in petrol engines for power generation.</li>
-                                        <li><strong>SI Engine Tune-Up Tasks:</strong> Adjust ignition timing, clean or replace spark plugs, check and adjust carburetor/fuel injection, inspect valves and ignition system components.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('diesel-tuneup')">4.3 Perform Compression Ignition (Diesel) Engine Tune-Up</button>
-                                <div id="diesel-tuneup" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>4-Stroke Diesel Engine Cycle:</strong> Intake, Compression, Power, and Exhaust strokes; fuel injected under high pressure, ignited by compressed air heat.</li>
-                                        <li><strong>Function of Diesel Engine:</strong> Converts fuel into mechanical power using compression ignition; typically, more torque and fuel-efficient than SI engines.</li>
-                                        <li><strong>SI Engine Tune-Up Tasks:</strong> Adjust injector timing, clean/replace fuel injectors, check glow plugs, inspect valves and filters, verify compression levels.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('assessments4')">4.4 Assessments</button>
-                                <div id="assessments4" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Written Test:</strong> Questions covering SI and Diesel engine cycles, functions, and tune-up procedures.</li>
-                                        <li><strong>Practical Evaluation:</strong> Demonstrate spark plug replacement, injector cleaning, timing adjustments, and valve inspection.</li>
-                                        <li><strong>Tool Handling Observation:</strong> Correct use of timing light, injector cleaner, compression tester, and hand tools.</li>
-                                        <li><strong>Oral/Viva Assessment:</strong> Explain differences between SI and Diesel engines, tune-up importance, and diagnostic steps.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="intermediate" class="content-section mb-8 fade-in">
-                <h2 class="text-2xl font-bold mb-4">Intermediate Module (Weeks 5–8)</h2>
-                <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('intermediate-module')">Intermediate Module Content</button>
-                    <div id="intermediate-module" class="toggle-content mt-2 pl-4">
-                        <div class="content-box rounded-lg p-6">
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('powertrain')">5.1 Overhauling and Servicing Powertrain System</button>
-                                <div id="powertrain" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Main Components of Power Train System:</strong> Clutch assembly, transmission (manual/automatic), driveshaft, differential, axle shafts, CV joints.</li>
-                                        <li><strong>Function of Power Train System:</strong> Transmits engine power to wheels, enabling vehicle movement with appropriate torque and speed control.</li>
-                                        <li><strong>Servicing Tasks:</strong> Inspect clutch wear, adjust linkage, change transmission fluid, check driveshaft and CV joints, replace worn components.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('steering')">5.2 Servicing and Repairing Steering System</button>
-                                <div id="steering" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Main Components of Steering System:</strong> Steering wheel, steering column, steering rack and pinion, tie rods, power steering pump, hydraulic lines.</li>
-                                        <li><strong>Function of Steering System:</strong> Allows the driver to control the direction of the vehicle by turning the front wheels.</li>
-                                        <li><strong>Servicing Tasks:</strong> Inspect and adjust steering linkage, check power steering fluid level and condition, repair leaks, replace worn tie rods or seals.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('assessments5')">5.3 Assessments</button>
-                                <div id="assessments5" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Written Test:</strong> Questions covering powertrain and steering system components, functions, and servicing tasks.</li>
-                                        <li><strong>Practical Evaluation:</strong> Demonstrate inspection and adjustment of steering linkage, clutch adjustment, and transmission fluid check.</li>
-                                        <li><strong>Tool Handling Observation:</strong> Proper use of torque wrench, fluid tester, steering wheel puller, and inspection tools.</li>
-                                        <li><strong>Oral/Viva Assessment:</strong> Explain powertrain functions, steering system components, and common troubleshooting methods.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('suspension')">6.1 Servicing and Inspecting Suspension System</button>
-                                <div id="suspension" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Main Components of Suspension System:</strong> Springs (coil, leaf), shock absorbers, control arms, bushings, struts, stabilizer bars.</li>
-                                        <li><strong>Function of Suspension System:</strong> Absorbs shocks from road irregularities, maintains vehicle stability and ride comfort.</li>
-                                        <li><strong>Servicing Tasks:</strong> Inspect and replace worn shocks and bushings, lubricate joints, check alignment, test suspension travel and rebound.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('wheel')">6.2 Perform Wheel Balancing and Alignment</button>
-                                <div id="wheel" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Function of Wheel Balancing and Alignment:</strong> Ensures even tire wear, smooth vehicle handling, reduces vibration, and improves fuel efficiency.</li>
-                                        <li><strong>Servicing Tasks:</strong> Use balancing machines to correct wheel imbalance, adjust camber, toe, and caster angles; inspect tires and suspension for alignment.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('assessments6')">6.3 Assessments</button>
-                                <div id="assessments6" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Written Test:</strong> Questions on suspension, wheel balancing, and alignment theory and procedures.</li>
-                                        <li><strong>Practical Evaluation:</strong> Demonstrate wheel balancing, alignment adjustments, and suspension inspection.</li>
-                                        <li><strong>Tool Handling Observation:</strong> Proper use of balancing machine, alignment tools, and suspension measuring instruments.</li>
-                                        <li><strong>Oral/Viva Assessment:</strong> Explain importance of wheel alignment and balancing and common symptoms of misalignment.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('brakes')">7.1 Servicing and Repairing Braking System</button>
-                                <div id="brakes" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Types of Brake System:</strong> Disc brakes, drum brakes, anti-lock braking system (ABS), hydraulic and pneumatic systems.</li>
-                                        <li><strong>Main Components of Brake System:</strong> Brake pedal, master cylinder, brake lines, brake calipers, brake pads/shoes, wheel cylinders.</li>
-                                        <li><strong>Function of Brake System:</strong> Converts driver input into hydraulic pressure to slow or stop vehicle by applying friction to wheels.</li>
-                                        <li><strong>Repair and Servicing Tasks:</strong> Inspect and replace brake pads/shoes, bleed brake lines, check and refill brake fluid, repair leaks, inspect ABS sensors and wiring.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('ac')">7.2 Perform Basic Maintenance of Air Conditioning System</button>
-                                <div id="ac" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Main Components of A/C System:</strong> Compressor, condenser, evaporator, expansion valve, refrigerant lines, blower motor.</li>
-                                        <li><strong>Function of the A/C System:</strong> Cools and dehumidifies air inside the vehicle cabin by circulating refrigerant.</li>
-                                        <li><strong>Basic A/C Maintenance Tasks:</strong> Check refrigerant level and refill, inspect belts and hoses, clean condenser and evaporator coils, replace cabin air filter, check blower.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('assessments7')">7.3 Assessments</button>
-                                <div id="assessments7" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Written Test:</strong> Questions on components, functions, and A/C system maintenance.</li>
-                                        <li><strong>Practical Evaluation:</strong> Demonstrate brake pad replacement, brake bleeding, A/C refrigerant level check, and filter replacement.</li>
-                                        <li><strong>Tool Handling Observation:</strong> Proper use of brake bleeding kit, refrigerant gauge, and A/C diagnostic tools.</li>
-                                        <li><strong>Oral/Viva Assessment:</strong> Explain brake system safety checks and common A/C system issues.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('electrical')">8.1 Servicing Body Electrical and Electronics System</button>
-                                <div id="electrical" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Main Components of Electrical/Electronics:</strong>
-                                            <ul class="list-[circle] pl-6">
-                                                <li><strong>Charging System:</strong> Alternator, battery, voltage regulator, wiring; responsible for electrical energy generation and storage.</li>
-                                                <li><strong>Lighting System:</strong> Headlights, tail lights, indicators, brake lights, interior lights; ensures vehicle visibility and signaling.</li>
-                                                <li><strong>Horn and Alarm System:</strong> Audio signaling and security alarms for safety and theft prevention.</li>
-                                                <li><strong>Interior Electronics:</strong> Power windows, door locks, infotainment systems, climate controls.</li>
-                                                <li><strong>Wiring and Fuses:</strong> Wiring harnesses, fuse boxes, connectors; essential for circuit protection and connectivity.</li>
-                                                <li><strong>Instrument Cluster:</strong> Speedometer, tachometer, fuel gauge, warning lights; provides driver information.</li>
-                                                <li><strong>Sensor, Actuator, ECU:</strong> Input devices (temp, oxygen sensors), output devices (fuel injectors, relays), and electronic control unit for engine and system management.</li>
-                                            </ul>
-                                        </li>
-                                        <li><strong>Repair/Servicing Tasks:</strong> Diagnose electrical faults using scan tools, replace faulty wiring/fuses, repair or replace sensors and actuators, troubleshoot ECU errors.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('efi')">8.2 Diagnosing, Servicing and Repairing EFI System</button>
-                                <div id="efi" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Main Components of EFI System:</strong> Fuel injectors, electronic control unit (ECU), fuel pump, sensors (MAF, oxygen, throttle position), fuel rail, wiring harness.</li>
-                                        <li><strong>Function of the EFI System:</strong> Controls precise fuel delivery electronically for optimal combustion, improved efficiency, and reduced emissions.</li>
-                                        <li><strong>Servicing/Repair Tasks:</strong> Diagnose EFI faults using scan tools, clean or replace fuel injectors, test and replace sensors, inspect wiring and connectors, calibrate ECU.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('charging-system')">8.3 Servicing and Repairing Charging System</button>
-                                <div id="charging-system" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Main Components of Charging System:</strong> Alternator, voltage regulator, battery, drive belt, wiring harness.</li>
-                                        <li><strong>Function of Charging System:</strong> Generates and regulates electrical power to charge the battery and power vehicle electrical systems.</li>
-                                        <li><strong>Servicing Tasks:</strong> Test alternator output, inspect and replace drive belts, check voltage regulator, clean battery terminals, check wiring for corrosion.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('assessments8')">8.4 Assessments</button>
-                                <div id="assessments8" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Written Test:</strong> Covering EFI system, charging system, and general vehicle electronics.</li>
-                                        <li><strong>Practical Evaluation:</strong> Diagnose EFI faults using scan tools, test alternator and battery condition, replace faulty sensors or wiring components.</li>
-                                        <li><strong>Tool Handling Observation:</strong> Use of diagnostic tools such as multimeter, scan tools, and battery testers.</li>
-                                        <li><strong>Oral/Viva Assessment:</strong> Explain EFI functions, charging system components, and common troubleshooting procedures.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="advanced" class="content-section mb-8 fade-in">
-                <h2 class="text-2xl font-bold mb-4">Advanced Module (Weeks 9–11)</h2>
-                <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('advanced-module')">Advanced Module Content</button>
-                    <div id="advanced-module" class="toggle-content mt-2 pl-4">
-                        <div class="content-box rounded-lg p-6">
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('lpg-install')">9.1 Installing LPG and CNG Conversion Kit</button>
-                                <div id="lpg-install" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Main Components of LPG and CNG Kits:</strong> Pressure regulator, fuel injectors or mixers, gas cylinders, electronic control unit (ECU), safety valves, hoses, and mounting brackets.</li>
-                                        <li><strong>Installation Tasks:</strong> Safely mount gas cylinders, connect fuel lines and regulators, install ECU and sensors, perform leak tests, ensure compliance with safety standards, calibrate system for engine compatibility.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('lpg-calibration')">9.2 Testing and Adjusting LPG and CNG Calibration</button>
-                                <div id="lpg-calibration" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Purpose of Calibration:</strong> Ensure optimal air–fuel mixture for performance, fuel efficiency, and reduced emissions; prevent engine knocking or misfiring.</li>
-                                        <li><strong>Steps to Test and Adjust Calibration:</strong> Connect diagnostic tool or manual tuning device, measure pressure and flow, fine-tune fuel delivery using ECU or regulator, perform test drive, monitor exhaust and engine response, adjust timing if required.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('assessments9')">9.3 Assessments</button>
-                                <div id="assessments9" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Written Test:</strong> Questions on components and functions of LPG/CNG kits, safety protocols, and calibration procedures.</li>
-                                        <li><strong>Practical Evaluation:</strong> Demonstrate installation of gas cylinder and regulator, leak test, calibration using scanner or manual method.</li>
-                                        <li><strong>Tool Handling Observation:</strong> Proper use of gas leak detectors, calibration tools, and ECU interfaces.</li>
-                                        <li><strong>Oral/Viva Assessment:</strong> Explain the importance of correct calibration, safety measures, and fuel switching process.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('cng-lpg-service')">10.1 Servicing Automotive CNG and LPG System</button>
-                                <div id="cng-lpg-service" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Main Components to Be Serviced:</strong> CNG/LPG tank and valves, regulator, injectors or mixer, ECU, filters, fuel lines, pressure relief devices.</li>
-                                        <li><strong>Typical Servicing Tasks:</strong> Inspect for gas leaks, test regulator pressure, clean or replace filters, check injector/mixer function, verify ECU diagnostics, perform routine safety inspection.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('assessments10')">10.2 Assessments</button>
-                                <div id="assessments10" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Written Test:</strong> On CNG/LPG system functions, servicing intervals, and safety checks.</li>
-                                        <li><strong>Practical Evaluation:</strong> Pressure tests, leak detection, component cleaning, system reset.</li>
-                                        <li><strong>Tool Handling Observation:</strong> Use of gas leak detectors, pressure gauges, and protective equipment.</li>
-                                        <li><strong>Oral/Viva Assessment:</strong> Explain routine CNG/LPG maintenance, symptoms of failure, and emergency handling procedures.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('hybrid-ev')">10.3 Basics of Hybrid and Electric Vehicle (EV)</button>
-                                <div id="hybrid-ev" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Types of Vehicles:</strong> Mild hybrid, full hybrid, plug-in hybrid (PHEV), battery electric vehicles (BEV), extended-range EVs.</li>
-                                        <li><strong>Key Components:</strong> Electric motor, inverter, battery pack, battery management system (BMS), regenerative braking, high-voltage cables.</li>
-                                        <li><strong>Function of Hybrid/EV:</strong> Use electric motors alone or in combination with internal combustion engines to reduce emissions and improve fuel efficiency.</li>
-                                        <li><strong>Benefits of Hybrid/EV:</strong> Lower operating costs, reduced emissions, improved energy efficiency, government incentives, quieter operation.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('assessments10-4')">10.4 Assessments</button>
-                                <div id="assessments10-4" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Written Test:</strong> Questions on hybrid/EV types, components (motor, inverter, battery), benefits, and basic functions.</li>
-                                        <li><strong>Practical Evaluation:</strong> Identify hybrid/EV system components on a training vehicle or diagram, simulate safe shutdown of HV system.</li>
-                                        <li><strong>Tool Handling Observation:</strong> Proper use of insulated tools, safety gloves, and voltage testers for EVs.</li>
-                                        <li><strong>Oral/Viva Assessment:</strong> Regenerative braking, hybrid configurations, and high-voltage safety.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('diagnostics')">11.1 Basics Automotive Electronics and Advanced Diagnostics</button>
-                                <div id="diagnostics" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Key Components:</strong> Sensors (e.g., oxygen, throttle, crankshaft), actuators (e.g., injectors, relays), ECUs, wiring, CAN Bus system.</li>
-                                        <li><strong>Tools Used:</strong> Multimeter, OBD-II scanner, oscilloscope, diagnostic software tools.</li>
-                                        <li><strong>Diagnostic Steps:</strong> Retrieve fault codes using OBD-II, interpret live data, perform guided tests, inspect wiring/sensor signal, clear fault codes and validate repair.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('adas')">11.2 Advanced Driver Assistance Systems (ADAS)</button>
-                                <div id="adas" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Common ADAS Components:</strong> Cameras, ultrasonic sensors, radar, LiDAR, ECUs, steering and braking actuators.</li>
-                                        <li><strong>Main Functions of ADAS:</strong> Lane-keeping assist, adaptive cruise control, automatic emergency braking (AEB), blind-spot detection, parking assist.</li>
-                                        <li><strong>Benefits of ADAS:</strong> Enhances driver safety, reduces collisions, supports semi-autonomous driving, lowers driver fatigue.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('assessments11')">11.3 Assessments</button>
-                                <div id="assessments11" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Written Test:</strong> Questions on automotive electronics, OBD diagnostics, and ADAS components and functions.</li>
-                                        <li><strong>Practical Evaluation:</strong> Retrieve and interpret OBD fault codes, perform sensor tests, demonstrate basic ADAS function check (e.g., camera/sensor alignment).</li>
-                                        <li><strong>Tool Handling Observation:</strong> Safe use of diagnostic tools: OBD-II scanner, multimeter, calibration interface tools.</li>
-                                        <li><strong>Oral/Viva Assessment:</strong> Explain CAN Bus system, ADAS safety features, and sensor/actuator roles in modern diagnostics.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="final" class="content-section mb-8 fade-in">
-                <h2 class="text-2xl font-bold mb-4">Week 12: Final Examination & Certification</h2>
-                <div class="mb-4">
-                    <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('final-module')">Final Examination & Certification Content</button>
-                    <div id="final-module" class="toggle-content mt-2 pl-4">
-                        <div class="content-box rounded-lg p-6">
-                            <div class="mb-4">
-                                <button class="toggle-btn text-lg font-semibold" onclick="toggleContent('final-exam')">12.1 Final Examination & Certification</button>
-                                <div id="final-exam" class="toggle-content mt-2 pl-6">
-                                    <ul class="list-disc">
-                                        <li><strong>Final Written Examination:</strong> Comprehensive theory test covering all modules: safety, systems, diagnostics, EFI, hybrid/EV, and ADAS.</li>
-                                        <li><strong>Final Practical Examination:</strong> Hands-on tasks from each module — diagnostics, servicing key systems (engine, brakes, electronics), EFI tuning, A/C servicing, etc.</li>
-                                        <li><strong>Oral/Viva Evaluation:</strong> Panel Q&A testing conceptual understanding, troubleshooting approach, and communication skills.</li>
-                                        <li><strong>Certification & Feedback:</strong> Issuing certificates to qualified trainees, performance review, career guidance, and final feedback session.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
+      </nav>
     </div>
+  </header>
 
-    <footer>
-        <p class="text-sm">© 2025 Automotive Course. All rights reserved.</p>
-    </footer>
+  <!-- Main Content Area -->
+  <main>
+    <h1>Professional Automotive Technician Training</h1>
+    <hr>
+    <h2>3-Month Advanced Program</h2>
+    <p><strong>Organized by:</strong> As Sunnah Skill Development Institute</p>
 
-    <script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-            return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-            if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-                try {
-                    var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                    var firstSheetName = workbook.SheetNames[0];
-                    var worksheet = workbook.Sheets[firstSheetName];
-                    var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                    var filteredData = jsonData.filter(row => row.some(filledCell));
-                    var headerRowIndex = filteredData.findIndex((row, index) =>
-                        row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                    );
-                    if (headerRowIndex === -1 || headerRowIndex > 25) {
-                        headerRowIndex = 0;
-                    }
-                    var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
-                    csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                    return csv;
-                } catch (e) {
-                    console.error(e);
-                    return "";
-                }
-            }
-            return gk_fileData[filename] || "";
-        }
+    <h3>Course Overview</h3>
+    <p>The Professional Automotive Technician Training is a rigorous, 12-week intensive program meticulously designed to develop skilled, job-ready automotive technicians. Conducted by As Sunnah Skill Development Institute, this program combines foundational mechanical knowledge with modern diagnostic expertise, ensuring participants are fully prepared for careers in the local and international automotive service industry.</p>
 
-        function toggleContent(id) {
-            const content = document.getElementById(id);
-            const button = content.previousElementSibling;
-            content.classList.toggle('active');
-            button.classList.toggle('active');
-        }
+    <p>Rooted in hands-on learning and real-world problem-solving, the curriculum balances technical skill-building, diagnostic confidence, and professional work ethics, producing technicians capable of servicing both conventional and modern vehicles. While secular in nature, the course subtly integrates Islamic ethical values—like responsibility, safety, and integrity—into areas such as workplace conduct, customer service, and safety awareness.</p>
 
-        function toggleMenu() {
-            const navLinks = document.getElementById('nav-links');
-            const menuToggle = document.querySelector('.menu-toggle');
-            navLinks.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        }
+    <h3>Key Highlights</h3>
+    <ul>
+      <li>Duration: 3 Months (12 Weeks, Saturday–Thursday, 40 hours/week, ~240 hours total)</li>
+      <li>Course Format:
+        <ul>
+          <li>▸ 50% Theory (lectures, diagrams, discussions)</li>
+          <li>▸ 40% Practical (workshops, system servicing, diagnostics)</li>
+          <li>▸ 10% Assessment (tests, evaluations, capstone)</li>
+        </ul>
+      </li>
+      <li>Target Group:
+        <ul>
+          <li>▸ Youth and adults (minimum SSC or equivalent)</li>
+          <li>▸ Aspiring mechanics, entrepreneurs, or job seekers in the automotive field</li>
+        </ul>
+      </li>
+      <li>Certification:
+        <ul>
+          <li>▸ Upon completion, participants will earn the Professional Automotive Technician Certificate (3-Month) issued by As Sunnah Skill Development Institute</li>
+        </ul>
+      </li>
+      <li>Training Infrastructure:
+        <ul>
+          <li>▸ Classrooms with multimedia setup (bilingual Bangla/English materials)</li>
+          <li>▸ Hands-on workshops with complete toolkits (including torque wrenches, OBD-II scanners, fuel system testers)</li>
+          <li>▸ Access to petrol & diesel engine models for servicing practice</li>
+          <li>▸ Qualified trainers with industry and instructional experience</li>
+        </ul>
+      </li>
+    </ul>
 
-        function toggleSidebar() {
-            const sidebar = document.querySelector('.sidebar');
-            const sidebarToggle = document.querySelector('.sidebar-toggle');
-            sidebar.classList.toggle('active');
-            sidebarToggle.classList.toggle('active');
-        }
+    <h3>Curriculum Structure</h3>
+    <ul>
+      <li><strong>Module 1 – Basic Level (Weeks 1–4):</strong>
+        <ul>
+          <li>Workshop safety, PPE, tool usage, and work ethics</li>
+          <li>Identification of major vehicle systems (engine, fuel, cooling, electrical, braking, transmission)</li>
+          <li>Basic servicing routines and inspections</li>
+        </ul>
+      </li>
+      <li><strong>Module 2 – Intermediate Level (Weeks 5–8):</strong>
+        <ul>
+          <li>Repair and maintenance of critical systems</li>
+          <li>Servicing electronic systems (EFI, charging, lighting, sensors, instrument cluster)</li>
+          <li>Engine diagnostics and tune-ups for petrol and diesel vehicles</li>
+        </ul>
+      </li>
+      <li><strong>Module 3 – Advanced Level (Weeks 9–11):</strong>
+        <ul>
+          <li>Installation and calibration of LPG/CNG kits</li>
+          <li>Introduction to Hybrid and Electric Vehicles (EVs)</li>
+          <li>Advanced diagnostics using OBD-II, CAN Bus, ADAS fundamentals</li>
+        </ul>
+      </li>
+      <li><strong>Week 12 – Final Evaluation & Certification:</strong>
+        <ul>
+          <li>Written, practical, and oral exams</li>
+          <li>Capstone project</li>
+          <li>Certification and career guidance</li>
+        </ul>
+      </li>
+    </ul>
 
-        function toggleSubmenu(id) {
-            const submenu = document.getElementById(id);
-            const menuItem = submenu.parentElement;
-            submenu.classList.toggle('active');
-            menuItem.classList.toggle('active');
-        }
-    </script>
+    <h3>Course Objectives</h3>
+    <ul>
+      <li>✅ Master the operation and servicing of all major vehicle systems</li>
+      <li>✅ Perform diagnostics using analog and digital tools (e.g., OBD-II, multimeter)</li>
+      <li>✅ Execute system-specific repairs and tune-ups with confidence</li>
+      <li>✅ Apply safety standards, workplace ethics, and customer protocols</li>
+      <li>✅ Install and calibrate LPG/CNG systems following regulations</li>
+      <li>✅ Understand Hybrid & EV technology and ADAS fundamentals</li>
+      <li>✅ Be job-ready for technician roles or able to start an auto repair business</li>
+    </ul>
+
+    <h3>What Trainees Will Be Able to Do</h3>
+    <ul>
+      <li>✔️ Safely use hand tools, power tools, and diagnostic instruments</li>
+      <li>✔️ Diagnose and repair faults in engine, fuel, electrical, and brake systems</li>
+      <li>✔️ Tune-up both petrol (SI) and diesel (CI) engines</li>
+      <li>✔️ Install and calibrate LPG/CNG kits</li>
+      <li>✔️ Service basic Hybrid & EV components</li>
+      <li>✔️ Read fault codes with OBD-II and interpret live vehicle data</li>
+      <li>✔️ Perform wheel alignment, suspension checks, and A/C maintenance</li>
+      <li>✔️ Apply workshop discipline and professional ethics</li>
+      <li>✔️ Troubleshoot issues like fluid leaks, misfires, battery and sensor failures</li>
+      <li>✔️ Pursue careers in auto servicing or start a garage business</li>
+    </ul>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Automobile. All rights reserved.
+  </footer>
+
+  <!-- JavaScript for Menu Toggle -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
