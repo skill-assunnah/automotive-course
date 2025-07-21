@@ -1,1 +1,2301 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Automobile Technician Training</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">🚗Automobile</a>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <nav>
+        <div class="nav-links" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="course-outline.html">Course Outline</a>
+          <a href="syllabus.html">Syllabus</a>
+          <a href="resources.html">Resources</a>
+          <a href="about.html">About</a>
+        </div>
+      </nav>
+    </div>
+    <button id="download-pdf-btn">📄 Download PDF</button>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    <!-- Week Selector with Polished Styling -->
+<style>
+  .week-dropdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+    max-width: 900px;
+    padding: 1rem;
+  }
+
+  .week-dropdown-container h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  .dropdown-wrapper {
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+  }
+
+  .dropdown-select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #2980b9;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+  }
+
+  .dropdown-select:hover {
+    border-color: #1c5980;
+    background-color: #e1ecf4;
+  }
+
+  .week-content {
+    display: none;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .week-content.active {
+    display: block;
+  }
+</style>
+
+<div class="week-dropdown-container">
+  <h2>📅 Select a Training Week</h2>
+  <div class="dropdown-wrapper">
+    <select id="weekSelector" class="dropdown-select">
+      <option value="week1">Week 1: Safety & Ethics</option>
+      <option value="week2">Week 2: Tools & Maintenance</option>
+      <option value="week3">Week 3: Engine Basics</option>
+      <option value="week4">Week 4: Fuel & Cooling</option>
+      <option value="week5">Week 5: Braking & Hydraulics</option>
+      <option value="week6">Week 6: Suspension & Steering</option>
+      <option value="week7">Week 7: Transmission</option>
+      <option value="week8">Week 8: Electrical Systems</option>
+      <option value="week9">Week 9: A/C & HVAC</option>
+      <option value="week10">Week 10: LPG/CNG</option>
+      <option value="week11">Week 11: Hybrid/EV</option>
+      <option value="week12">Week 12: Final Assessment</option>
+    </select>
+  </div>
+
+  <!-- Week Contents -->
+  <div id="week1" class="week-content active">
+    <main id="main-content">
+  <div class="daily-lesson-plan">
+    <h1>Week 1: Safety, Tools & Workshop Introduction</h1>
+    <p><strong>Modules Covered:</strong> 1.1 Safety and Hazard, 1.2 Tools, 1.3 Major Systems Overview</p>
+    <p><strong>Objective:</strong> Introduce students to workshop safety protocols, essential tools, and basic automotive systems to prepare for hands-on learning in upcoming weeks.</p>
+
+    <!-- Day 1 -->
+    <section>
+      <h2>Day 1 – Saturday</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Session</th>
+            <th>Topic</th>
+            <th>Type</th>
+            <th>Objective</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Occupational Health and Safety (OHS)</td><td>Theory</td><td>Understand importance of safety in an automotive workshop</td></tr>
+          <tr><td>2</td><td>Personal Protective Equipment (PPE)</td><td>Theory</td><td>Identify and explain the use of PPE</td></tr>
+          <tr><td>3</td><td>Workshop Rules and Ethics</td><td>Theory</td><td>Discuss conduct, cleanliness, and discipline</td></tr>
+          <tr><td>4</td><td>Fire Hazards and Emergency Procedures</td><td>Theory</td><td>Learn how to respond to fire and accidents</td></tr>
+          <tr><td>5</td><td>PPE Demonstration</td><td>Practical</td><td>Practice wearing and inspecting PPE</td></tr>
+          <tr><td>6</td><td>Safety Drill &amp; Emergency Response</td><td>Practical</td><td>Simulate emergency situations and appropriate responses</td></tr>
+          <tr><td>7</td><td>Hazard Sign Identification</td><td>Practical</td><td>Recognize common workshop hazard signs</td></tr>
+          <tr><td>8</td><td>Safety Equipment Usage</td><td>Practical</td><td>Use fire extinguishers and first aid kit</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 2 -->
+    <section>
+      <h2>Day 2 – Sunday</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Session</th>
+            <th>Topic</th>
+            <th>Type</th>
+            <th>Objective</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Introduction to Hand Tools</td><td>Theory</td><td>Identify basic hand tools and their functions</td></tr>
+          <tr><td>2</td><td>Power Tools Overview</td><td>Theory</td><td>Understand usage and safety concerns of power tools</td></tr>
+          <tr><td>3</td><td>Tool Classification</td><td>Theory</td><td>Learn categories: fastening, cutting, measuring</td></tr>
+          <tr><td>4</td><td>Tool Storage and Maintenance</td><td>Theory</td><td>Importance of tool care and organized storage</td></tr>
+          <tr><td>5</td><td>Toolbox Familiarization</td><td>Practical</td><td>Identify tools in a standard mechanic's toolbox</td></tr>
+          <tr><td>6</td><td>Measuring Tool Handling</td><td>Practical</td><td>Use vernier caliper, ruler, micrometer</td></tr>
+          <tr><td>7</td><td>Safe Operation of Power Tools</td><td>Practical</td><td>Drill, grinder, impact gun handling</td></tr>
+          <tr><td>8</td><td>Daily Tool Check Routine</td><td>Practical</td><td>Practice inspecting tools for wear or damage</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 3 -->
+    <section>
+      <h2>Day 3 – Monday</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Session</th>
+            <th>Topic</th>
+            <th>Type</th>
+            <th>Objective</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Introduction to Automotive Systems</td><td>Theory</td><td>Learn major systems: engine, transmission, electrical</td></tr>
+          <tr><td>2</td><td>Basic Vehicle Layout</td><td>Theory</td><td>Identify engine placement, drivetrain configurations</td></tr>
+          <tr><td>3</td><td>Engine and Drivetrain Overview</td><td>Theory</td><td>Understand engine block, gearbox, and drive systems</td></tr>
+          <tr><td>4</td><td>Suspension, Steering &amp; Brake Intro</td><td>Theory</td><td>Briefly explain purpose of each system</td></tr>
+          <tr><td>5</td><td>System Diagram Identification</td><td>Practical</td><td>Label components in a vehicle schematic</td></tr>
+          <tr><td>6</td><td>Engine Bay Walkthrough</td><td>Practical</td><td>Locate major systems under the hood</td></tr>
+          <tr><td>7</td><td>Brake System Component Identification</td><td>Practical</td><td>Show pads, discs, drums, calipers</td></tr>
+          <tr><td>8</td><td>Suspension and Steering Inspection (Basic)</td><td>Practical</td><td>Observe suspension layout, bushings, joints</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 4 -->
+    <section>
+      <h2>Day 4 – Tuesday</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Session</th>
+            <th>Topic</th>
+            <th>Type</th>
+            <th>Objective</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Workshop Zones and Layout</td><td>Theory</td><td>Understand areas: lift bay, tool area, safety zones</td></tr>
+          <tr><td>2</td><td>Air Compressor &amp; Pneumatic Tools</td><td>Theory</td><td>Learn usage and safety of air-powered tools</td></tr>
+          <tr><td>3</td><td>Vehicle Lifting Techniques</td><td>Theory</td><td>Types of lifts and jacking points</td></tr>
+          <tr><td>4</td><td>Workstation Etiquette</td><td>Theory</td><td>Professionalism and respect in shared workspace</td></tr>
+          <tr><td>5</td><td>Demonstration: Safe Vehicle Lift</td><td>Practical</td><td>Use hydraulic jack and jack stands</td></tr>
+          <tr><td>6</td><td>Pneumatic Tool Operation Practice</td><td>Practical</td><td>Use impact wrench, air ratchet</td></tr>
+          <tr><td>7</td><td>Vehicle Walkaround Inspection</td><td>Practical</td><td>Conduct external check: lights, tires, leaks</td></tr>
+          <tr><td>8</td><td>Engine Start-up Checklist</td><td>Practical</td><td>Steps before cranking engine for the first time</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 5 -->
+    <section>
+      <h2>Day 5 – Wednesday</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Session</th>
+            <th>Topic</th>
+            <th>Type</th>
+            <th>Objective</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Workshop Communication Tools</td><td>Theory</td><td>Learn use of job cards, service records, logs</td></tr>
+          <tr><td>2</td><td>Introduction to Service Manuals</td><td>Theory</td><td>Understand service guides, torque specs, and diagrams</td></tr>
+          <tr><td>3</td><td>Workshop Cleanliness &amp; Waste Disposal</td><td>Theory</td><td>Manage oil, filters, and waste parts responsibly</td></tr>
+          <tr><td>4</td><td>Work Time &amp; Task Management</td><td>Theory</td><td>Prioritize and schedule repair tasks efficiently</td></tr>
+          <tr><td>5</td><td>Vehicle Identification Number (VIN)</td><td>Practical</td><td>Locate and decode VIN for vehicle data</td></tr>
+          <tr><td>6</td><td>Create &amp; Use Job Cards</td><td>Practical</td><td>Fill out sample job cards for mock repairs</td></tr>
+          <tr><td>7</td><td>Clean-Up Drill</td><td>Practical</td><td>Clean and organize personal and shared work areas</td></tr>
+          <tr><td>8</td><td>Waste Sorting &amp; Disposal Exercise</td><td>Practical</td><td>Sort used fluids, filters, and scrap safely</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 6 -->
+    <section>
+      <h2>Day 6 – Thursday</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Session</th>
+            <th>Topic</th>
+            <th>Type</th>
+            <th>Objective</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Weekly Knowledge Review</td><td>Review</td><td>Recap core lessons on safety, tools, and systems</td></tr>
+          <tr><td>2</td><td>Group Safety Presentation</td><td>Assessment</td><td>Present group findings on a safety topic</td></tr>
+          <tr><td>3</td><td>Tool Recognition Quiz</td><td>Assessment</td><td>Identify tools by image or use</td></tr>
+          <tr><td>4</td><td>Practical Test: PPE &amp; Safety Use</td><td>Assessment</td><td>Demonstrate PPE use and emergency procedures</td></tr>
+          <tr><td>5</td><td>Practical Test: Tool Handling</td><td>Assessment</td><td>Select and handle correct tools for tasks</td></tr>
+          <tr><td>6</td><td>Vehicle System Quiz (Basic)</td><td>Assessment</td><td>Match vehicle parts to correct system</td></tr>
+          <tr><td>7</td><td>Feedback and Q&amp;A Session</td><td>Review</td><td>Clarify doubts and reinforce important areas</td></tr>
+          <tr><td>8</td><td>Orientation for Week 2</td><td>Theory</td><td>Preview of electrical systems and battery intro</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</main>
+
+<style>
+  #main-content .daily-lesson-plan {
+    max-width: 900px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    color: #222;
+  }
+  #main-content .daily-lesson-plan h1 {
+    color: #004080;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  #main-content .daily-lesson-plan h2 {
+    color: #003366;
+    border-left: 5px solid #004080;
+    padding-left: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  #main-content .daily-lesson-plan table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
+  }
+  #main-content .daily-lesson-plan th,
+  #main-content .daily-lesson-plan td {
+    border: 1px solid #cbd5e1;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  #main-content .daily-lesson-plan th {
+    background-color: #004080;
+    color: white;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
+    background-color: #f6f9ff;
+  }
+</style>
+
+  </div>
+  <div id="week2" class="week-content">
+    <main id="main-content">
+  <div class="daily-lesson-plan">
+    <h1>Week 2: Engine System &amp; Basic Components</h1>
+    <p><strong>Modules Covered:</strong> 1.4 Engine System</p>
+    <p><strong>Objective:</strong> Develop students’ understanding of engine types and working principles, with hands-on experience identifying components, lubrication, and cooling systems.</p>
+
+    <!-- Day 1 -->
+    <section>
+      <h2>Day 1 – Saturday</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Session</th><th>Topic</th><th>Type</th><th>Objective</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Major Engine Components Overview</td><td>Theory</td><td>Identify cylinder block, head, piston, crankshaft, camshaft</td></tr>
+          <tr><td>2</td><td>Lubrication System Pathway</td><td>Theory</td><td>Understand oil pump, filter, galleries, and flow direction</td></tr>
+          <tr><td>3</td><td>Cooling System Flow &amp; Components</td><td>Theory</td><td>Explain radiator, thermostat, water pump, fan</td></tr>
+          <tr><td>4</td><td>Measurement Tools: Bore &amp; Stroke</td><td>Theory</td><td>Introduce vernier caliper, depth gauge</td></tr>
+          <tr><td>5</td><td>Practical: Identify Engine Parts</td><td>Practical</td><td>Locate and name components on dismantled engine</td></tr>
+          <tr><td>6</td><td>Practical: Trace Lubrication Path</td><td>Practical</td><td>Use diagram/engine to trace oil circulation</td></tr>
+          <tr><td>7</td><td>Practical: Trace Cooling Path</td><td>Practical</td><td>Follow coolant flow using pipes and components</td></tr>
+          <tr><td>8</td><td>Practice: Bore and Stroke Measure</td><td>Practical</td><td>Measure bore and stroke using calipers on actual engine block</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 2 -->
+    <section>
+      <h2>Day 2 – Sunday</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Session</th><th>Topic</th><th>Type</th><th>Objective</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Engine Types: SI vs CI</td><td>Theory</td><td>Understand spark ignition vs compression ignition engines</td></tr>
+          <tr><td>2</td><td>Engine Configurations</td><td>Theory</td><td>Learn about inline, V-type, boxer, etc.</td></tr>
+          <tr><td>3</td><td>4-Stroke Cycle</td><td>Theory</td><td>Explain intake, compression, power, exhaust strokes</td></tr>
+          <tr><td>4</td><td>2-Stroke Cycle</td><td>Theory</td><td>Compare operation with 4-stroke</td></tr>
+          <tr><td>5</td><td>Identify Engine Parts</td><td>Practical</td><td>Recognize cylinder, piston, crankshaft, valves, etc.</td></tr>
+          <tr><td>6</td><td>Engine Cutaway Observation</td><td>Practical</td><td>Study real or model engine internals</td></tr>
+          <tr><td>7</td><td>Engine Lubrication Path</td><td>Practical</td><td>Trace oil path through engine</td></tr>
+          <tr><td>8</td><td>Engine Cooling Path</td><td>Practical</td><td>Trace coolant circulation and components</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 3 -->
+    <section>
+      <h2>Day 3 – Monday</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Session</th><th>Topic</th><th>Type</th><th>Objective</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Combustion Process in Petrol Engine</td><td>Theory</td><td>Explain ignition, air-fuel mixture, spark timing</td></tr>
+          <tr><td>2</td><td>Combustion Process in Diesel Engine</td><td>Theory</td><td>Explain compression ignition, injection timing</td></tr>
+          <tr><td>3</td><td>Intake &amp; Exhaust Systems</td><td>Theory</td><td>Understand manifold, valves, ports, muffler</td></tr>
+          <tr><td>4</td><td>Valve Timing &amp; Camshaft Mechanism</td><td>Theory</td><td>Learn about camshaft, rocker arms, timing chain/belt</td></tr>
+          <tr><td>5</td><td>Practical: Observe Combustion Parts</td><td>Practical</td><td>Inspect cylinder head, piston crown, injector/spark plug area</td></tr>
+          <tr><td>6</td><td>Practical: Identify Intake System</td><td>Practical</td><td>Trace air path from filter to combustion chamber</td></tr>
+          <tr><td>7</td><td>Practical: Observe Exhaust Routing</td><td>Practical</td><td>Trace exhaust gases from valves to tailpipe</td></tr>
+          <tr><td>8</td><td>Camshaft Drive Observation</td><td>Practical</td><td>View camshaft rotation and timing in a demo engine</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 4 -->
+    <section>
+      <h2>Day 4 – Tuesday</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Session</th><th>Topic</th><th>Type</th><th>Objective</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Engine Friction &amp; Losses</td><td>Theory</td><td>Understand internal friction and ways to reduce wear</td></tr>
+          <tr><td>2</td><td>Engine Balancing &amp; Vibration</td><td>Theory</td><td>Discuss counterweights, mounts, and balance shafts</td></tr>
+          <tr><td>3</td><td>Cylinder Arrangement Effects</td><td>Theory</td><td>Compare inline vs V vs boxer in terms of performance</td></tr>
+          <tr><td>4</td><td>Thermal Efficiency Concept</td><td>Theory</td><td>Basic intro to efficiency and heat loss in engine cycles</td></tr>
+          <tr><td>5</td><td>Friction Demo Using Models</td><td>Practical</td><td>Demonstrate drag in rotating parts and lubrication effects</td></tr>
+          <tr><td>6</td><td>Vibration Observation</td><td>Practical</td><td>Feel and compare vibration in different engine types</td></tr>
+          <tr><td>7</td><td>Engine Mount Inspection</td><td>Practical</td><td>Locate and inspect engine mounting points</td></tr>
+          <tr><td>8</td><td>Cooling Fan &amp; Thermostat Test</td><td>Practical</td><td>Test cooling fan switch and thermostat in circuit</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 5 -->
+    <section>
+      <h2>Day 5 – Wednesday</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Session</th><th>Topic</th><th>Type</th><th>Objective</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Engine Sensors Overview</td><td>Theory</td><td>Learn about temp, oil pressure, and crank sensors</td></tr>
+          <tr><td>2</td><td>Lubrication System Failures</td><td>Theory</td><td>Causes: blockage, low pressure, oil degradation</td></tr>
+          <tr><td>3</td><td>Cooling System Fault Diagnosis</td><td>Theory</td><td>Symptoms: overheating, leaks, fan failure</td></tr>
+          <tr><td>4</td><td>Oil Grade &amp; Viscosity Explanation</td><td>Theory</td><td>Understand SAE ratings, multi-grade oils</td></tr>
+          <tr><td>5</td><td>Sensor Location Practice</td><td>Practical</td><td>Locate common engine sensors on live or demo engine</td></tr>
+          <tr><td>6</td><td>Lubrication Fault Simulation</td><td>Practical</td><td>Simulate oil path restriction and effects</td></tr>
+          <tr><td>7</td><td>Coolant Leak Detection</td><td>Practical</td><td>Inspect hoses, radiator, pump, and gaskets</td></tr>
+          <tr><td>8</td><td>Thermostat Function Testing</td><td>Practical</td><td>Heat and observe thermostat operation</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 6 -->
+    <section>
+      <h2>Day 6 – Thursday</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Session</th><th>Topic</th><th>Type</th><th>Objective</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Week 2 Theory Review</td><td>Review</td><td>Recap key engine theory: types, cycles, lubrication, cooling</td></tr>
+          <tr><td>2</td><td>Group Q&amp;A Discussion</td><td>Review</td><td>Discuss doubts and misconceptions</td></tr>
+          <tr><td>3</td><td>Engine Parts Label Quiz</td><td>Assessment</td><td>Identify parts from diagrams or actual engine</td></tr>
+          <tr><td>4</td><td>Bore &amp; Stroke Measurement Test</td><td>Assessment</td><td>Perform and record bore/stroke using measuring tools</td></tr>
+          <tr><td>5</td><td>Practical Test: Lubrication Path</td><td>Assessment</td><td>Trace oil flow and identify key lubrication components</td></tr>
+          <tr><td>6</td><td>Practical Test: Cooling System</td><td>Assessment</td><td>Trace cooling system components and function</td></tr>
+          <tr><td>7</td><td>Observation Feedback &amp; Correction</td><td>Review</td><td>Instructor feedback on performance and correction of errors</td></tr>
+          <tr><td>8</td><td>Orientation for Week 3</td><td>Theory</td><td>Preview of ignition, fuel, and intake systems</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</main>
+
+<style>
+  #main-content .daily-lesson-plan {
+    max-width: 900px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    color: #222;
+  }
+  #main-content .daily-lesson-plan h1 {
+    color: #004080;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  #main-content .daily-lesson-plan h2 {
+    color: #003366;
+    border-left: 5px solid #004080;
+    padding-left: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  #main-content .daily-lesson-plan table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
+  }
+  #main-content .daily-lesson-plan th,
+  #main-content .daily-lesson-plan td {
+    border: 1px solid #cbd5e1;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  #main-content .daily-lesson-plan th {
+    background-color: #004080;
+    color: white;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
+    background-color: #f6f9ff;
+  }
+</style>
+
+  </div>
+  <div id="week3" class="week-content">
+    <main id="main-content">
+  <div class="daily-lesson-plan">
+    <h1>Week 3: Fuel, Cooling &amp; Lubrication System</h1>
+    <p><strong>Modules Covered:</strong> 2.1 Fuel System, 2.2 Cooling System, 2.3 Lubrication</p>
+    <p><strong>Objective:</strong> Understand the function and components of fuel, cooling, and lubrication systems. Perform basic maintenance tasks such as filter changes, coolant flushes, and oil service.</p>
+
+    <!-- Day 1 -->
+    <section>
+      <h2>Day 1 – Saturday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Introduction to Fuel Systems</td><td>Theory</td><td>Learn function of fuel tanks, pumps, filters, and injectors</td></tr>
+          <tr><td>2</td><td>Fuel Delivery Types</td><td>Theory</td><td>Compare carburetor vs fuel injection systems</td></tr>
+          <tr><td>3</td><td>Fuel Filters &amp; Lines</td><td>Theory</td><td>Understand filter placement, line routing, and pressure roles</td></tr>
+          <tr><td>4</td><td>Fuel Tank Ventilation &amp; Safety</td><td>Theory</td><td>Learn about evaporative control and explosion prevention</td></tr>
+          <tr><td>5</td><td>Practical: Fuel System Walkthrough</td><td>Practical</td><td>Identify components on vehicle and diagram</td></tr>
+          <tr><td>6</td><td>Practical: Fuel Filter Replacement</td><td>Practical</td><td>Remove and replace fuel filter safely</td></tr>
+          <tr><td>7</td><td>Fuel Pressure Check (Demo)</td><td>Practical</td><td>Observe use of pressure gauge in fuel line</td></tr>
+          <tr><td>8</td><td>Safety Precautions in Fuel Work</td><td>Practical</td><td>Learn safety steps in fuel system service</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 2 -->
+    <section>
+      <h2>Day 2 – Sunday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Introduction to Cooling Systems</td><td>Theory</td><td>Understand radiator, pump, thermostat, fan, hoses</td></tr>
+          <tr><td>2</td><td>Coolant Types and Properties</td><td>Theory</td><td>Learn coolant functions and types (glycol, antifreeze)</td></tr>
+          <tr><td>3</td><td>Cooling Circuit &amp; Flow Path</td><td>Theory</td><td>Diagrammatic understanding of coolant route</td></tr>
+          <tr><td>4</td><td>Overheating Causes &amp; Symptoms</td><td>Theory</td><td>Identify causes: leaks, blocked radiator, failed fan</td></tr>
+          <tr><td>5</td><td>Practical: Cooling System Inspection</td><td>Practical</td><td>Check radiator cap, hoses, coolant level</td></tr>
+          <tr><td>6</td><td>Practical: Thermostat Test</td><td>Practical</td><td>Heat thermostat in water and observe opening</td></tr>
+          <tr><td>7</td><td>Coolant Flush Demonstration</td><td>Practical</td><td>Observe coolant draining and flushing process</td></tr>
+          <tr><td>8</td><td>Coolant Refill Practice</td><td>Practical</td><td>Refill system and bleed air properly</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 3 -->
+    <section>
+      <h2>Day 3 – Monday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Introduction to Lubrication</td><td>Theory</td><td>Understand role of lubrication and oil flow path</td></tr>
+          <tr><td>2</td><td>Oil Grades and Viscosity</td><td>Theory</td><td>Explain SAE ratings, multi-grade oil choices</td></tr>
+          <tr><td>3</td><td>Lubrication System Components</td><td>Theory</td><td>Learn about sump, pump, filter, galleries</td></tr>
+          <tr><td>4</td><td>Engine Wear and Oil Failure</td><td>Theory</td><td>Discuss effects of poor lubrication</td></tr>
+          <tr><td>5</td><td>Practical: Engine Oil Check</td><td>Practical</td><td>Use dipstick, observe oil level and color</td></tr>
+          <tr><td>6</td><td>Practical: Oil &amp; Filter Change</td><td>Practical</td><td>Drain oil, replace filter, and refill new oil</td></tr>
+          <tr><td>7</td><td>Used Oil Inspection</td><td>Practical</td><td>Observe oil contamination, color, and smell</td></tr>
+          <tr><td>8</td><td>Oil Disposal and Environmental Safety</td><td>Practical</td><td>Practice safe disposal of used oil and filter</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 4 -->
+    <section>
+      <h2>Day 4 – Tuesday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Week 3 Summary &amp; Review</td><td>Review</td><td>Recap key concepts: fuel, cooling, lubrication systems</td></tr>
+          <tr><td>2</td><td>Fuel System Quiz</td><td>Assessment</td><td>Identify parts and functions from diagrams</td></tr>
+          <tr><td>3</td><td>Cooling System Fault Diagnosis Quiz</td><td>Assessment</td><td>Assess ability to identify failure causes</td></tr>
+          <tr><td>4</td><td>Lubrication System Fault Analysis</td><td>Assessment</td><td>Match symptoms to lubrication issues</td></tr>
+          <tr><td>5</td><td>Practical Test: Fuel Filter Change</td><td>Assessment</td><td>Replace filter with correct procedure and safety</td></tr>
+          <tr><td>6</td><td>Practical Test: Coolant Flush</td><td>Assessment</td><td>Perform complete flush and refill process</td></tr>
+          <tr><td>7</td><td>Practical Test: Oil &amp; Filter Change</td><td>Assessment</td><td>Complete oil service task independently</td></tr>
+          <tr><td>8</td><td>Orientation for Week 4</td><td>Theory</td><td>Preview ignition, intake, and exhaust systems</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 5 -->
+    <section>
+      <h2>Day 5 – Wednesday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Fuel System Fault Diagnosis</td><td>Theory</td><td>Identify causes of poor fuel delivery and injector problems</td></tr>
+          <tr><td>2</td><td>Cooling System Troubleshooting</td><td>Theory</td><td>Analyze symptoms of overheating, leaks, and thermostat failure</td></tr>
+          <tr><td>3</td><td>Oil System Malfunctions</td><td>Theory</td><td>Learn causes of low oil pressure and engine knocking</td></tr>
+          <tr><td>4</td><td>Repair Procedures &amp; Checklists</td><td>Theory</td><td>Review standard steps for servicing each system</td></tr>
+          <tr><td>5</td><td>Practical: Fuel Leak Inspection</td><td>Practical</td><td>Trace and detect fuel leaks using safe practices</td></tr>
+          <tr><td>6</td><td>Practical: Radiator &amp; Hose Check</td><td>Practical</td><td>Inspect radiator core and hoses for damage or clogs</td></tr>
+          <tr><td>7</td><td>Practical: Oil Pressure Test Demo</td><td>Practical</td><td>Observe how to measure engine oil pressure using a test kit</td></tr>
+          <tr><td>8</td><td>Workshop Clean-Up &amp; Tool Audit</td><td>Practical</td><td>Perform end-of-day tool check and workstation organization</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 6 -->
+    <section>
+      <h2>Day 6 – Thursday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Weekly Knowledge Review</td><td>Review</td><td>Recap key lessons: fuel, cooling, and lubrication systems</td></tr>
+          <tr><td>2</td><td>Group Discussion: Common Faults</td><td>Review</td><td>Discuss case studies of real-world system failures</td></tr>
+          <tr><td>3</td><td>Fuel System Identification Quiz</td><td>Assessment</td><td>Test knowledge on fuel component identification</td></tr>
+          <tr><td>4</td><td>Cooling System Component Quiz</td><td>Assessment</td><td>Evaluate recognition of cooling parts from diagrams/photos</td></tr>
+          <tr><td>5</td><td>Oil System Component Quiz</td><td>Assessment</td><td>Match oil system parts to names/functions</td></tr>
+          <tr><td>6</td><td>Safety &amp; Environmental Practices</td><td>Assessment</td><td>Check student understanding of disposal and safety procedures</td></tr>
+          <tr><td>7</td><td>Peer Review &amp; Performance Feedback</td><td>Review</td><td>Evaluate peer tasks and provide constructive feedback</td></tr>
+          <tr><td>8</td><td>Orientation for Week 4</td><td>Theory</td><td>Introduce upcoming modules on ignition, intake, and exhaust</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</main>
+
+<style>
+  #main-content .daily-lesson-plan {
+    max-width: 900px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    color: #222;
+  }
+  #main-content .daily-lesson-plan h1 {
+    color: #004080;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  #main-content .daily-lesson-plan h2 {
+    color: #003366;
+    border-left: 5px solid #004080;
+    padding-left: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  #main-content .daily-lesson-plan table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
+  }
+  #main-content .daily-lesson-plan th,
+  #main-content .daily-lesson-plan td {
+    border: 1px solid #cbd5e1;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  #main-content .daily-lesson-plan th {
+    background-color: #004080;
+    color: white;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
+    background-color: #f6f9ff;
+  }
+</style>
+
+  </div>
+  <div id="week4" class="week-content">
+    <main id="main-content">
+  <div class="daily-lesson-plan">
+    <h1>Week 4: Starting, Ignition &amp; Air Induction</h1>
+    <p><strong>Modules Covered:</strong> 3.1 Starting, 3.2 Ignition, 3.3 Air Induction</p>
+    <p><strong>Objective:</strong> Understand the operational principles and key components of the starting system, ignition system, and air induction system. Develop practical skills in diagnosing faults and servicing spark plugs, air filters, and starting circuits.</p>
+
+    <!-- Day 1 -->
+    <section>
+      <h2>Day 1 – Saturday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Introduction to Starting System</td><td>Theory</td><td>Understand purpose and layout of starting system</td></tr>
+          <tr><td>2</td><td>Starter Motor Components</td><td>Theory</td><td>Identify solenoid, armature, brushes, pinion</td></tr>
+          <tr><td>3</td><td>Starter Circuit &amp; Wiring</td><td>Theory</td><td>Learn wiring path, fuses, relays in starting system</td></tr>
+          <tr><td>4</td><td>Starting System Faults</td><td>Theory</td><td>Diagnose common starter issues (clicking, no crank)</td></tr>
+          <tr><td>5</td><td>Practical: Starter Location &amp; Access</td><td>Practical</td><td>Locate starter on various engine types</td></tr>
+          <tr><td>6</td><td>Practical: Starter Motor Test</td><td>Practical</td><td>Test starter using jumper wires/multimeter</td></tr>
+          <tr><td>7</td><td>Practical: Relay &amp; Fuse Check</td><td>Practical</td><td>Test starter relay, inspect fuses in circuit</td></tr>
+          <tr><td>8</td><td>Daily Maintenance Practice</td><td>Practical</td><td>Clean terminals, check battery-starter cable connection</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 2 -->
+    <section>
+      <h2>Day 2 – Sunday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Overview of Ignition System</td><td>Theory</td><td>Explain types: conventional, electronic, distributor-less</td></tr>
+          <tr><td>2</td><td>Spark Plug Function &amp; Design</td><td>Theory</td><td>Understand heat range, gap, and electrode wear</td></tr>
+          <tr><td>3</td><td>Ignition Coil &amp; Distributor</td><td>Theory</td><td>Learn roles in voltage step-up and timing</td></tr>
+          <tr><td>4</td><td>Firing Order &amp; Timing Basics</td><td>Theory</td><td>Study spark sequence and ignition timing control</td></tr>
+          <tr><td>5</td><td>Practical: Spark Plug Removal</td><td>Practical</td><td>Remove plugs safely and inspect condition</td></tr>
+          <tr><td>6</td><td>Practical: Gapping &amp; Reinstall</td><td>Practical</td><td>Measure and adjust spark plug gap using tools</td></tr>
+          <tr><td>7</td><td>Practical: Coil Pack Testing</td><td>Practical</td><td>Test ignition coil resistance with multimeter</td></tr>
+          <tr><td>8</td><td>Distributor Cap &amp; Rotor Check</td><td>Practical</td><td>Inspect distributor cap for wear and cracks</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 3 -->
+    <section>
+      <h2>Day 3 – Monday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Introduction to Air Induction</td><td>Theory</td><td>Purpose and function in combustion process</td></tr>
+          <tr><td>2</td><td>Air Filter Types &amp; Maintenance</td><td>Theory</td><td>Understand dry vs oil-type filters and service intervals</td></tr>
+          <tr><td>3</td><td>Throttle Body &amp; Intake Manifold</td><td>Theory</td><td>Learn air path and throttle operation</td></tr>
+          <tr><td>4</td><td>Sensors in Air Intake (MAF, MAP)</td><td>Theory</td><td>Function and location of key airflow sensors</td></tr>
+          <tr><td>5</td><td>Practical: Air Filter Replacement</td><td>Practical</td><td>Remove, inspect, and replace dirty air filter</td></tr>
+          <tr><td>6</td><td>Practical: Throttle Body Service</td><td>Practical</td><td>Clean throttle body and check for carbon build-up</td></tr>
+          <tr><td>7</td><td>Practical: Intake Duct Inspection</td><td>Practical</td><td>Check intake hose for leaks or cracks</td></tr>
+          <tr><td>8</td><td>Practical: MAF/MAP Sensor Check</td><td>Practical</td><td>Locate and visually inspect sensor condition</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 4 -->
+    <section>
+      <h2>Day 4 – Tuesday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Fault Diagnosis: Starting System</td><td>Theory</td><td>Common issues: no crank, slow crank, starter drag</td></tr>
+          <tr><td>2</td><td>Fault Diagnosis: Ignition System</td><td>Theory</td><td>Misfire, no spark, backfire causes</td></tr>
+          <tr><td>3</td><td>Fault Diagnosis: Air Induction</td><td>Theory</td><td>Symptoms of clogged filters, throttle lag</td></tr>
+          <tr><td>4</td><td>Diagnostic Tools &amp; Procedures</td><td>Theory</td><td>Use of scan tools, spark testers, vacuum gauges</td></tr>
+          <tr><td>5</td><td>Practical: Simulated No-Start Test</td><td>Practical</td><td>Use battery/starter test on mock-up circuit</td></tr>
+          <tr><td>6</td><td>Practical: Spark Test Procedure</td><td>Practical</td><td>Perform spark output test using inline tester</td></tr>
+          <tr><td>7</td><td>Practical: Intake Leak Check</td><td>Practical</td><td>Use carb cleaner or smoke test (demo)</td></tr>
+          <tr><td>8</td><td>Tool Clean-Up &amp; System Recheck</td><td>Practical</td><td>Clean all used tools and inspect serviced components</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 5 -->
+    <section>
+      <h2>Day 5 – Wednesday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Role of ECU in Starting &amp; Ignition</td><td>Theory</td><td>Understand how ECU controls ignition and starter circuit</td></tr>
+          <tr><td>2</td><td>Ignition Timing Adjustment</td><td>Theory</td><td>Introduction to setting basic ignition timing</td></tr>
+          <tr><td>3</td><td>Air-Fuel Ratio &amp; Induction</td><td>Theory</td><td>How air intake affects fuel delivery and combustion quality</td></tr>
+          <tr><td>4</td><td>Integrated System Interaction</td><td>Theory</td><td>Learn how starting, ignition, and intake systems work together</td></tr>
+          <tr><td>5</td><td>Practical: Live ECU Monitoring</td><td>Practical</td><td>Observe ignition data via scan tool (demo or real-time)</td></tr>
+          <tr><td>6</td><td>Practical: Manual Timing Check</td><td>Practical</td><td>Use timing light on distributor engines (if available)</td></tr>
+          <tr><td>7</td><td>Practical: Idle Air Control Check</td><td>Practical</td><td>Inspect IAC valve and idle circuit</td></tr>
+          <tr><td>8</td><td>Peer Practice &amp; Recap</td><td>Practical</td><td>Review all servicing steps in rotation groups</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 6 -->
+    <section>
+      <h2>Day 6 – Thursday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Weekly Knowledge Review</td><td>Review</td><td>Recap: starting, ignition, and air intake systems</td></tr>
+          <tr><td>2</td><td>Group Fault Diagnosis Challenge</td><td>Review</td><td>Troubleshoot faults collaboratively using provided symptoms</td></tr>
+          <tr><td>3</td><td>Ignition System Quiz</td><td>Assessment</td><td>Test theory on spark plugs, coils, and firing order</td></tr>
+          <tr><td>4</td><td>Starting System Quiz</td><td>Assessment</td><td>Evaluate knowledge on motor, wiring, circuit</td></tr>
+          <tr><td>5</td><td>Practical Test: Spark Plug Service</td><td>Assessment</td><td>Remove, inspect, gap, and refit spark plugs</td></tr>
+          <tr><td>6</td><td>Practical Test: Air Filter Service</td><td>Assessment</td><td>Perform air filter replacement and throttle inspection</td></tr>
+          <tr><td>7</td><td>Feedback &amp; Performance Review</td><td>Review</td><td>Group performance reflection and Q&amp;A</td></tr>
+          <tr><td>8</td><td>Orientation for Week 5</td><td>Theory</td><td>Preview of braking systems and hydraulics</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</main>
+
+<style>
+  #main-content .daily-lesson-plan {
+    max-width: 900px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    color: #222;
+  }
+  #main-content .daily-lesson-plan h1 {
+    color: #004080;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  #main-content .daily-lesson-plan h2 {
+    color: #003366;
+    border-left: 5px solid #004080;
+    padding-left: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  #main-content .daily-lesson-plan table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
+  }
+  #main-content .daily-lesson-plan th,
+  #main-content .daily-lesson-plan td {
+    border: 1px solid #cbd5e1;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  #main-content .daily-lesson-plan th {
+    background-color: #004080;
+    color: white;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
+    background-color: #f6f9ff;
+  }
+</style>
+
+  </div>
+  <div id="week5" class="week-content">
+    <main id="main-content">
+  <div class="daily-lesson-plan">
+    <h1>Week 5: Braking System & Hydraulics</h1>
+    <p><strong>Modules Covered:</strong> 4.1 Braking System, 4.2 Hydraulic System</p>
+    <p><strong>Objective:</strong> Understand the structure and function of braking and hydraulic systems. Gain hands-on experience in diagnosing and servicing brake pads, master cylinders, and brake fluid systems.</p>
+
+    <!-- Day 1 -->
+    <section>
+      <h2>Day 1 – Saturday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Introduction to Braking System</td><td>Theory</td><td>Understand the purpose and types of braking systems</td></tr>
+          <tr><td>2</td><td>Mechanical vs Hydraulic Brakes</td><td>Theory</td><td>Compare system types and common components</td></tr>
+          <tr><td>3</td><td>Brake System Layout</td><td>Theory</td><td>Study master cylinder, lines, calipers, drums</td></tr>
+          <tr><td>4</td><td>Drum vs Disc Brakes</td><td>Theory</td><td>Learn structure, working principles, pros & cons</td></tr>
+          <tr><td>5</td><td>Practical: Vehicle Brake Identification</td><td>Practical</td><td>Identify type of brakes in various vehicles</td></tr>
+          <tr><td>6</td><td>Practical: Brake Inspection</td><td>Practical</td><td>Visually inspect wear pads and rotors/drums</td></tr>
+          <tr><td>7</td><td>Practical: Brake Tool Handling</td><td>Practical</td><td>Introduce caliper wind-back tool, C-clamp</td></tr>
+          <tr><td>8</td><td>Daily Cleaning Practice</td><td>Practical</td><td>Clean brake dust and debris safely</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 2 -->
+    <section>
+      <h2>Day 2 – Sunday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Hydraulic Principles in Braking</td><td>Theory</td><td>Learn Pascal’s Law and pressure transmission</td></tr>
+          <tr><td>2</td><td>Master Cylinder Components</td><td>Theory</td><td>Understand reservoir, piston, seals</td></tr>
+          <tr><td>3</td><td>Brake Lines & Hoses</td><td>Theory</td><td>Types of lines, routing, material</td></tr>
+          <tr><td>4</td><td>Brake Fluid Properties</td><td>Theory</td><td>Types (DOT3, DOT4), boiling point, handling</td></tr>
+          <tr><td>5</td><td>Practical: Fluid Level Check</td><td>Practical</td><td>Check reservoir level and condition</td></tr>
+          <tr><td>6</td><td>Practical: Brake Bleeding (Demo)</td><td>Practical</td><td>Show pressure/manual bleeding steps</td></tr>
+          <tr><td>7</td><td>Practical: Brake Line Inspection</td><td>Practical</td><td>Check for cracks, leaks, bulges</td></tr>
+          <tr><td>8</td><td>Team Practice</td><td>Practical</td><td>Review brake parts and safety handling</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 3 -->
+    <section>
+      <h2>Day 3 – Monday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Brake Pads & Shoes</td><td>Theory</td><td>Material types, wear indicators, heat tolerance</td></tr>
+          <tr><td>2</td><td>Brake Calipers & Pistons</td><td>Theory</td><td>Sliding vs fixed, piston function</td></tr>
+          <tr><td>3</td><td>Drum Brake Assembly</td><td>Theory</td><td>Components: shoe, return spring, adjuster</td></tr>
+          <tr><td>4</td><td>Brake Fade & Overheating</td><td>Theory</td><td>Understand causes and prevention</td></tr>
+          <tr><td>5</td><td>Practical: Pad Removal</td><td>Practical</td><td>Remove worn pads using correct tools</td></tr>
+          <tr><td>6</td><td>Practical: Caliper Service</td><td>Practical</td><td>Clean, inspect, lubricate guide pins</td></tr>
+          <tr><td>7</td><td>Practical: Shoe Adjustment</td><td>Practical</td><td>Manually adjust drum brakes</td></tr>
+          <tr><td>8</td><td>Peer Demo & Discussion</td><td>Practical</td><td>Present work and correct each other</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 4 -->
+    <section>
+      <h2>Day 4 – Tuesday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>ABS Overview</td><td>Theory</td><td>Anti-lock Braking System purpose & sensors</td></tr>
+          <tr><td>2</td><td>ABS Components</td><td>Theory</td><td>Speed sensors, module, modulator</td></tr>
+          <tr><td>3</td><td>ABS vs Non-ABS Brakes</td><td>Theory</td><td>Compare braking behavior in emergency</td></tr>
+          <tr><td>4</td><td>Diagnostics in Brake Systems</td><td>Theory</td><td>Read ABS warning, scan tool basics</td></tr>
+          <tr><td>5</td><td>Practical: ABS Sensor Location</td><td>Practical</td><td>Identify ABS sensor positions in vehicle</td></tr>
+          <tr><td>6</td><td>Practical: Basic ABS Check</td><td>Practical</td><td>Use scan tool to view live data (demo)</td></tr>
+          <tr><td>7</td><td>Practical: Fault Code Reading</td><td>Practical</td><td>Read brake-related DTCs from ECU</td></tr>
+          <tr><td>8</td><td>Daily Review & Clean-up</td><td>Practical</td><td>Group review and workshop cleaning</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 5 -->
+    <section>
+      <h2>Day 5 – Wednesday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Brake Performance Issues</td><td>Theory</td><td>Pulling, spongy pedal, grinding causes</td></tr>
+          <tr><td>2</td><td>Emergency Brake System</td><td>Theory</td><td>Types: lever, foot, electric</td></tr>
+          <tr><td>3</td><td>Hydraulic Leakage Test</td><td>Theory</td><td>Detect and isolate fluid leaks</td></tr>
+          <tr><td>4</td><td>Brake Pedal Freeplay</td><td>Theory</td><td>Measure and adjust pedal travel</td></tr>
+          <tr><td>5</td><td>Practical: Emergency Brake Check</td><td>Practical</td><td>Inspect handbrake cable and adjustment</td></tr>
+          <tr><td>6</td><td>Practical: Fluid Leak Inspection</td><td>Practical</td><td>Check undercarriage for signs of leaks</td></tr>
+          <tr><td>7</td><td>Practical: Brake Pedal Adjust</td><td>Practical</td><td>Set proper pedal height and feel</td></tr>
+          <tr><td>8</td><td>Peer Teaching Rotation</td><td>Practical</td><td>Students explain service steps to each other</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 6 -->
+    <section>
+      <h2>Day 6 – Thursday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Weekly Review: Brakes & Hydraulics</td><td>Review</td><td>Summarize key topics and system links</td></tr>
+          <tr><td>2</td><td>Group Diagnosis Challenge</td><td>Review</td><td>Identify faults using symptoms and tools</td></tr>
+          <tr><td>3</td><td>Brake Theory Quiz</td><td>Assessment</td><td>Assess knowledge of system components</td></tr>
+          <tr><td>4</td><td>Hydraulics Theory Quiz</td><td>Assessment</td><td>Evaluate understanding of pressure, fluid</td></tr>
+          <tr><td>5</td><td>Practical Test: Pad Replacement</td><td>Assessment</td><td>Demonstrate safe pad removal and install</td></tr>
+          <tr><td>6</td><td>Practical Test: Fluid Top-up</td><td>Assessment</td><td>Check and top up brake fluid</td></tr>
+          <tr><td>7</td><td>Performance Feedback</td><td>Review</td><td>Review strengths and improvement areas</td></tr>
+          <tr><td>8</td><td>Orientation for Week 6</td><td>Theory</td><td>Preview of suspension system topics</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</main>
+
+<style>
+  #main-content .daily-lesson-plan {
+    max-width: 900px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    color: #222;
+  }
+  #main-content .daily-lesson-plan h1 {
+    color: #004080;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  #main-content .daily-lesson-plan h2 {
+    color: #003366;
+    border-left: 5px solid #004080;
+    padding-left: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  #main-content .daily-lesson-plan table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
+  }
+  #main-content .daily-lesson-plan th,
+  #main-content .daily-lesson-plan td {
+    border: 1px solid #cbd5e1;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  #main-content .daily-lesson-plan th {
+    background-color: #004080;
+    color: white;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
+    background-color: #f6f9ff;
+  }
+</style>
+
+  </div>
+  <div id="week6" class="week-content">
+    <main id="main-content">
+  <div class="daily-lesson-plan">
+    <h1>Week 6: Powertrain & Steering Systems</h1>
+    <p><strong>Modules Covered:</strong> 5.1 Powertrain, 5.2 Steering System</p>
+    <p><strong>Objective:</strong> Understand the major components of the powertrain and steering system. Gain hands-on skills in identifying, inspecting, and servicing clutches, gearboxes, differentials, and steering linkages.</p>
+
+    <!-- Day 1 -->
+    <section>
+      <h2>Day 1 – Saturday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Introduction to Powertrain System</td><td>Theory</td><td>Define powertrain and its components</td></tr>
+          <tr><td>2</td><td>Transmission System Basics</td><td>Theory</td><td>Explain gear types and shifting mechanisms</td></tr>
+          <tr><td>3</td><td>Clutch Operation and Types</td><td>Theory</td><td>Understand single plate, diaphragm, and hydraulic clutch types</td></tr>
+          <tr><td>4</td><td>Differential and Driveshaft</td><td>Theory</td><td>Learn the function of the differential and final drive system</td></tr>
+          <tr><td>5</td><td>Practical: Gearbox Identification</td><td>Practical</td><td>Identify manual vs automatic transmission components</td></tr>
+          <tr><td>6</td><td>Practical: Clutch Linkage Inspection</td><td>Practical</td><td>Examine clutch cable/hydraulic systems</td></tr>
+          <tr><td>7</td><td>Practical: Differential Layout Demo</td><td>Practical</td><td>Explore exploded diagram or real unit</td></tr>
+          <tr><td>8</td><td>Practical: Driveshaft Inspection</td><td>Practical</td><td>Check for wear, vibration, and boot damage</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 2 -->
+    <section>
+      <h2>Day 2 – Sunday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Clutch Wear and Adjustment</td><td>Theory</td><td>Learn symptoms of wear and need for free play adjustment</td></tr>
+          <tr><td>2</td><td>Gearbox Mounting & Linkage Issues</td><td>Theory</td><td>Understand vibration, shifting problems</td></tr>
+          <tr><td>3</td><td>Transmission Fluid & Service</td><td>Theory</td><td>Learn how to check and replace gear oil</td></tr>
+          <tr><td>4</td><td>Introduction to CV Joints</td><td>Theory</td><td>Learn role of CV joints and boots in power transfer</td></tr>
+          <tr><td>5</td><td>Practical: Clutch Pedal Adjustment</td><td>Practical</td><td>Adjust free play and test clutch engagement</td></tr>
+          <tr><td>6</td><td>Practical: Transmission Fluid Check</td><td>Practical</td><td>Check and top-up gear/transaxle oil</td></tr>
+          <tr><td>7</td><td>Practical: CV Joint Inspection</td><td>Practical</td><td>Identify wear, torn boots, and clicking noises</td></tr>
+          <tr><td>8</td><td>Practical: Transmission Mount Check</td><td>Practical</td><td>Inspect gearbox mounting points for damage</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 3 -->
+    <section>
+      <h2>Day 3 – Monday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Power Loss and Vibration Causes</td><td>Theory</td><td>Understand driveline imbalance and clutch slip</td></tr>
+          <tr><td>2</td><td>Gear Ratio and Torque Multiplication</td><td>Theory</td><td>Learn how gear ratio affects speed and power</td></tr>
+          <tr><td>3</td><td>Automatic vs Manual Transmission</td><td>Theory</td><td>Compare operation and service approach</td></tr>
+          <tr><td>4</td><td>Full Powertrain Review (Diagram-based)</td><td>Theory</td><td>Visualize the complete flow of power from engine to wheels</td></tr>
+          <tr><td>5</td><td>Practical: Road Test Clutch Function</td><td>Practical</td><td>Observe clutch slipping, jerking, or hard engagement</td></tr>
+          <tr><td>6</td><td>Practical: Transmission Drain & Fill</td><td>Practical</td><td>Remove drain plug, fill up correct grade oil</td></tr>
+          <tr><td>7</td><td>Practical: CV Axle Boot Replacement</td><td>Practical</td><td>Simulated boot removal and re-fit procedure</td></tr>
+          <tr><td>8</td><td>Practical: Group Inspection Task</td><td>Practical</td><td>Students inspect full driveline and record issues</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 4 -->
+    <section>
+      <h2>Day 4 – Tuesday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Introduction to Steering System</td><td>Theory</td><td>Understand steering geometry and system purpose</td></tr>
+          <tr><td>2</td><td>Mechanical Steering Mechanism</td><td>Theory</td><td>Explain worm & roller, rack & pinion systems</td></tr>
+          <tr><td>3</td><td>Power Steering System</td><td>Theory</td><td>Learn hydraulic and electric power steering system</td></tr>
+          <tr><td>4</td><td>Steering Linkage Components</td><td>Theory</td><td>Identify tie rods, pitman arm, idler arm</td></tr>
+          <tr><td>5</td><td>Practical: Rack & Pinion Inspection</td><td>Practical</td><td>Inspect system for free play and damage</td></tr>
+          <tr><td>6</td><td>Practical: Steering Pump Check</td><td>Practical</td><td>Diagnose fluid level and pump noise</td></tr>
+          <tr><td>7</td><td>Practical: Power Steering Fluid Top-Up</td><td>Practical</td><td>Locate reservoir and refill fluid</td></tr>
+          <tr><td>8</td><td>Practical: Front Wheel Alignment Basics</td><td>Practical</td><td>Visual check for toe-in/out and steering center</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 5 -->
+    <section>
+      <h2>Day 5 – Wednesday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Steering Fault Diagnosis</td><td>Theory</td><td>Identify hard steering, pulling, vibration causes</td></tr>
+          <tr><td>2</td><td>Steering Geometry Concepts</td><td>Theory</td><td>Learn camber, caster, toe, and their effect</td></tr>
+          <tr><td>3</td><td>Manual vs Power Steering Comparison</td><td>Theory</td><td>Differentiate by effort, parts, and maintenance needs</td></tr>
+          <tr><td>4</td><td>Steering Column and Linkage Inspection</td><td>Theory</td><td>Review shaft, joints, and bush inspections</td></tr>
+          <tr><td>5</td><td>Practical: Tie Rod End Check</td><td>Practical</td><td>Test for looseness and damage</td></tr>
+          <tr><td>6</td><td>Practical: Steering Box Adjustment</td><td>Practical</td><td>Adjust worm gear tension (if available)</td></tr>
+          <tr><td>7</td><td>Practical: Power Steering System Flush</td><td>Practical</td><td>Simulate fluid flush process</td></tr>
+          <tr><td>8</td><td>Steering Feedback & Road Feel Test</td><td>Practical</td><td>Observe vehicle behavior during road simulation</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 6 -->
+    <section>
+      <h2>Day 6 – Thursday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Weekly Recap & Diagram Review</td><td>Review</td><td>Recap powertrain and steering systems using visuals</td></tr>
+          <tr><td>2</td><td>Powertrain System Quiz</td><td>Assessment</td><td>Evaluate transmission, clutch, differential understanding</td></tr>
+          <tr><td>3</td><td>Steering System Quiz</td><td>Assessment</td><td>Test knowledge of manual and power steering</td></tr>
+          <tr><td>4</td><td>Practical Test: Clutch Adjustment</td><td>Assessment</td><td>Demonstrate correct pedal free play setup</td></tr>
+          <tr><td>5</td><td>Practical Test: CV Joint Inspection</td><td>Assessment</td><td>Identify damaged or worn CV joint parts</td></tr>
+          <tr><td>6</td><td>Practical Test: Power Steering Check</td><td>Assessment</td><td>Perform fluid and function check</td></tr>
+          <tr><td>7</td><td>Feedback & Discussion</td><td>Review</td><td>Clarify topics and answer student queries</td></tr>
+          <tr><td>8</td><td>Orientation for Week 7</td><td>Theory</td><td>Preview brake systems, master cylinder, and ABS intro</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</main>
+
+<style>
+  #main-content .daily-lesson-plan {
+    max-width: 900px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    color: #222;
+  }
+  #main-content .daily-lesson-plan h1 {
+    color: #004080;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  #main-content .daily-lesson-plan h2 {
+    color: #003366;
+    border-left: 5px solid #004080;
+    padding-left: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  #main-content .daily-lesson-plan table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
+  }
+  #main-content .daily-lesson-plan th,
+  #main-content .daily-lesson-plan td {
+    border: 1px solid #cbd5e1;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  #main-content .daily-lesson-plan th {
+    background-color: #004080;
+    color: white;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
+    background-color: #f6f9ff;
+  }
+</style>
+
+  </div>
+  <div id="week7" class="week-content">
+    <main id="main-content">
+  <div class="daily-lesson-plan">
+    <h1>Week 7: Suspension, Wheel Alignment & Balancing</h1>
+    <p><strong>Modules Covered:</strong> 6.1 Suspension System, 6.2 Wheel Alignment</p>
+    <p><strong>Objective:</strong> Understand the construction and function of suspension components and alignment principles. Gain hands-on skills in inspecting shocks, bushings, and performing wheel balancing and alignment procedures.</p>
+
+    <!-- Day 1 -->
+    <section>
+      <h2>Day 1 – Saturday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Introduction to Suspension System</td><td>Theory</td><td>Define suspension types and function (comfort, control)</td></tr>
+          <tr><td>2</td><td>Suspension Components Overview</td><td>Theory</td><td>Learn about springs, dampers, arms, bushings</td></tr>
+          <tr><td>3</td><td>Types of Suspension Systems</td><td>Theory</td><td>Compare independent, rigid axle, MacPherson strut, double wishbone</td></tr>
+          <tr><td>4</td><td>Role of Shock Absorbers & Springs</td><td>Theory</td><td>Understand how dampers and springs work together</td></tr>
+          <tr><td>5</td><td>Practical: Suspension System Walkthrough</td><td>Practical</td><td>Identify components on live or cutaway vehicle</td></tr>
+          <tr><td>6</td><td>Practical: Shock Absorber Inspection</td><td>Practical</td><td>Check for oil leaks, bounce test</td></tr>
+          <tr><td>7</td><td>Practical: Spring & Arm Check</td><td>Practical</td><td>Examine coil springs, control arms, links</td></tr>
+          <tr><td>8</td><td>Practical: Bush Inspection</td><td>Practical</td><td>Detect worn or cracked suspension bushings</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 2 -->
+    <section>
+      <h2>Day 2 – Sunday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Suspension Fault Symptoms</td><td>Theory</td><td>Identify noises, uneven ride, tire wear</td></tr>
+          <tr><td>2</td><td>Suspension Geometry Basics</td><td>Theory</td><td>Understand suspension angles and alignment impact</td></tr>
+          <tr><td>3</td><td>Wheel Alignment Introduction</td><td>Theory</td><td>Define camber, caster, toe</td></tr>
+          <tr><td>4</td><td>Alignment Effects on Handling</td><td>Theory</td><td>Learn how poor alignment affects safety and performance</td></tr>
+          <tr><td>5</td><td>Practical: Bounce Test & Visual Check</td><td>Practical</td><td>Perform bounce test and visual inspection</td></tr>
+          <tr><td>6</td><td>Practical: Jack and Inspect Suspension</td><td>Practical</td><td>Use jack to inspect front and rear suspension systems</td></tr>
+          <tr><td>7</td><td>Practical: Identify Geometry Issues</td><td>Practical</td><td>Spot visible misalignment in wheel orientation</td></tr>
+          <tr><td>8</td><td>Practical: Shock Removal (Demo)</td><td>Practical</td><td>Observe or perform basic shock removal process</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 3 -->
+    <section>
+      <h2>Day 3 – Monday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Introduction to Wheel Balancing</td><td>Theory</td><td>Understand need for dynamic and static wheel balancing</td></tr>
+          <tr><td>2</td><td>Tyre and Rim Basics</td><td>Theory</td><td>Learn tyre structure and how rim/tyre balance affects motion</td></tr>
+          <tr><td>3</td><td>Types of Tyre Wear</td><td>Theory</td><td>Identify patterns caused by misalignment or unbalance</td></tr>
+          <tr><td>4</td><td>Wheel Alignment Tools Overview</td><td>Theory</td><td>Learn use of alignment machine, bubble gauge, string method</td></tr>
+          <tr><td>5</td><td>Practical: Tyre Inspection</td><td>Practical</td><td>Examine tread depth, wear pattern, and tyre pressure</td></tr>
+          <tr><td>6</td><td>Practical: Wheel Removal & Refit</td><td>Practical</td><td>Safely remove and refit wheel using proper torque</td></tr>
+          <tr><td>7</td><td>Practical: Wheel Balancing Demo</td><td>Practical</td><td>Observe weight placement and machine use</td></tr>
+          <tr><td>8</td><td>Practical: Simulated Tyre Rotation</td><td>Practical</td><td>Rotate tyres based on wear pattern and vehicle type</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 4 -->
+    <section>
+      <h2>Day 4 – Tuesday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Camber, Caster & Toe Angle Explained</td><td>Theory</td><td>Understand each angle and its role in handling and wear</td></tr>
+          <tr><td>2</td><td>Signs of Misalignment</td><td>Theory</td><td>Identify symptoms like pulling, tire scrub, crooked steering</td></tr>
+          <tr><td>3</td><td>Alignment Correction Methods</td><td>Theory</td><td>Learn how adjustments are made on different suspension types</td></tr>
+          <tr><td>4</td><td>2-Wheel vs 4-Wheel Alignment</td><td>Theory</td><td>Understand when and why each type is used</td></tr>
+          <tr><td>5</td><td>Practical: Camber/Toe Visual Check</td><td>Practical</td><td>Use visual cues and simple tools to assess basic angles</td></tr>
+          <tr><td>6</td><td>Practical: Front Alignment Setup</td><td>Practical</td><td>Prepare car for alignment (center steering, wheel position)</td></tr>
+          <tr><td>7</td><td>Practical: Use of Alignment Tools</td><td>Practical</td><td>Operate bubble gauge or alignment machine (if available)</td></tr>
+          <tr><td>8</td><td>Practical: Road Test Observation</td><td>Practical</td><td>Observe behavior on short test drive post-alignment</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 5 -->
+    <section>
+      <h2>Day 5 – Wednesday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Advanced Suspension Fault Diagnosis</td><td>Theory</td><td>Learn to trace advanced faults: sagging, bushing failure</td></tr>
+          <tr><td>2</td><td>Wheel Bearing and Hub Overview</td><td>Theory</td><td>Understand bearing role and signs of failure</td></tr>
+          <tr><td>3</td><td>Ride Height and Load Impact</td><td>Theory</td><td>Study effects of extra load or lowered suspension</td></tr>
+          <tr><td>4</td><td>Alignment & Suspension Service Routine</td><td>Theory</td><td>Learn standard servicing procedures</td></tr>
+          <tr><td>5</td><td>Practical: Wheel Bearing Inspection</td><td>Practical</td><td>Check for noise/play in hub assembly</td></tr>
+          <tr><td>6</td><td>Practical: Ride Height Check</td><td>Practical</td><td>Measure distance from chassis to ground</td></tr>
+          <tr><td>7</td><td>Practical: Bushing Replacement Demo</td><td>Practical</td><td>Observe or perform removal of control arm bushing</td></tr>
+          <tr><td>8</td><td>Practical: Re-inspect Suspension</td><td>Practical</td><td>Ensure repairs/alignment made resolved prior issues</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 6 -->
+    <section>
+      <h2>Day 6 – Thursday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Weekly Recap on Suspension & Alignment</td><td>Review</td><td>Recap core theory and practical lessons</td></tr>
+          <tr><td>2</td><td>Suspension System Quiz</td><td>Assessment</td><td>Evaluate student understanding of suspension components</td></tr>
+          <tr><td>3</td><td>Alignment Angle Identification</td><td>Assessment</td><td>Match tire wear with misalignment causes</td></tr>
+          <tr><td>4</td><td>Practical Test: Shock/Bushing Check</td><td>Assessment</td><td>Demonstrate proper inspection of suspension elements</td></tr>
+          <tr><td>5</td><td>Practical Test: Wheel Alignment Setup</td><td>Assessment</td><td>Setup and simulate alignment with available tools</td></tr>
+          <tr><td>6</td><td>Practical Test: Wheel Balancing</td><td>Assessment</td><td>Place weights and operate balancing machine</td></tr>
+          <tr><td>7</td><td>Group Discussion & Feedback</td><td>Review</td><td>Share challenges, clarify doubts, reinforce concepts</td></tr>
+          <tr><td>8</td><td>Orientation for Week 8</td><td>Theory</td><td>Preview brake system components and hydraulics</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</main>
+
+<style>
+  #main-content .daily-lesson-plan {
+    max-width: 900px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    color: #222;
+  }
+  #main-content .daily-lesson-plan h1 {
+    color: #004080;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  #main-content .daily-lesson-plan h2 {
+    color: #003366;
+    border-left: 5px solid #004080;
+    padding-left: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  #main-content .daily-lesson-plan table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
+  }
+  #main-content .daily-lesson-plan th,
+  #main-content .daily-lesson-plan td {
+    border: 1px solid #cbd5e1;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  #main-content .daily-lesson-plan th {
+    background-color: #004080;
+    color: white;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
+    background-color: #f6f9ff;
+  }
+</style>
+
+  </div>
+  <div id="week8" class="week-content">
+    <main id="main-content">
+  <div class="daily-lesson-plan">
+    <h1>Week 8: Braking System & A/C Maintenance</h1>
+    <p><strong>Modules Covered:</strong> 7.1 Brake System, 7.2 Air Conditioning System (A/C)</p>
+    <p><strong>Objective:</strong> Provide comprehensive understanding of braking systems and vehicle A/C operation. Students will perform practical servicing of brakes and A/C units including bleeding, pad replacement, and refrigerant checks.</p>
+
+    <!-- Day 1 -->
+    <section>
+      <h2>Day 1 – Saturday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Introduction to Braking System</td><td>Theory</td><td>Understand purpose and types of braking systems</td></tr>
+          <tr><td>2</td><td>Hydraulic Brake Principles</td><td>Theory</td><td>Learn about fluid dynamics in brake systems</td></tr>
+          <tr><td>3</td><td>Brake System Components</td><td>Theory</td><td>Identify master cylinder, calipers, drums, discs</td></tr>
+          <tr><td>4</td><td>Types of Brakes (Disc vs Drum)</td><td>Theory</td><td>Compare disc and drum brake operation</td></tr>
+          <tr><td>5</td><td>Practical: Brake Component Walkthrough</td><td>Practical</td><td>Identify parts on actual vehicle</td></tr>
+          <tr><td>6</td><td>Practical: Brake Pad Inspection</td><td>Practical</td><td>Check for pad wear and rotor condition</td></tr>
+          <tr><td>7</td><td>Practical: Drum Brake Check</td><td>Practical</td><td>Open and inspect drum brakes</td></tr>
+          <tr><td>8</td><td>Practical: Brake Fluid Check</td><td>Practical</td><td>Locate reservoir, check level and condition</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 2 -->
+    <section>
+      <h2>Day 2 – Sunday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>ABS and Brake Assist Systems</td><td>Theory</td><td>Understand working of ABS, EBD, and brake assist</td></tr>
+          <tr><td>2</td><td>Brake System Troubleshooting</td><td>Theory</td><td>Learn common issues like noise, fade, pulling</td></tr>
+          <tr><td>3</td><td>Brake Fluids: Types & Safety</td><td>Theory</td><td>Learn DOT standards, hygroscopic nature, safety concerns</td></tr>
+          <tr><td>4</td><td>Brake Bleeding Methods</td><td>Theory</td><td>Understand manual, vacuum, and pressure bleeding techniques</td></tr>
+          <tr><td>5</td><td>Practical: Brake Pad Replacement</td><td>Practical</td><td>Remove and replace front disc brake pads</td></tr>
+          <tr><td>6</td><td>Practical: Brake Bleeding Procedure</td><td>Practical</td><td>Perform step-by-step brake bleeding</td></tr>
+          <tr><td>7</td><td>Practical: Brake Line Inspection</td><td>Practical</td><td>Check for leaks and corrosion</td></tr>
+          <tr><td>8</td><td>Practical: ABS Sensor Cleaning</td><td>Practical</td><td>Locate and clean ABS wheel speed sensor</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 3 -->
+    <section>
+      <h2>Day 3 – Monday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Introduction to Automotive A/C System</td><td>Theory</td><td>Learn the need and function of A/C in vehicles</td></tr>
+          <tr><td>2</td><td>A/C System Components Overview</td><td>Theory</td><td>Study compressor, condenser, evaporator, and expansion valve</td></tr>
+          <tr><td>3</td><td>Refrigerant Cycle</td><td>Theory</td><td>Understand how heat is transferred and circulated</td></tr>
+          <tr><td>4</td><td>Types of Refrigerants & Safety</td><td>Theory</td><td>Know R-134a, R-1234yf, safety while handling gases</td></tr>
+          <tr><td>5</td><td>Practical: A/C Component Identification</td><td>Practical</td><td>Identify A/C parts under hood and in cabin</td></tr>
+          <tr><td>6</td><td>Practical: Blower Motor Check</td><td>Practical</td><td>Test airflow strength and motor sound</td></tr>
+          <tr><td>7</td><td>Practical: Cabin Filter Inspection</td><td>Practical</td><td>Check and replace pollen/cabin air filter</td></tr>
+          <tr><td>8</td><td>Practical: A/C Belt & Pulley Inspection</td><td>Practical</td><td>Check belt tension and wear on pulley</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 4 -->
+    <section>
+      <h2>Day 4 – Tuesday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>A/C Electrical Control System</td><td>Theory</td><td>Understand relays, sensors, and ECU control of A/C</td></tr>
+          <tr><td>2</td><td>Climate Control vs Manual A/C</td><td>Theory</td><td>Compare auto climate systems with manual units</td></tr>
+          <tr><td>3</td><td>Common A/C System Faults</td><td>Theory</td><td>Diagnose issues like low cooling, noise, bad smells</td></tr>
+          <tr><td>4</td><td>A/C Service Tools Overview</td><td>Theory</td><td>Learn about gauges, vacuum pump, refrigerant recovery tools</td></tr>
+          <tr><td>5</td><td>Practical: Refrigerant Pressure Test</td><td>Practical</td><td>Use manifold gauge to check high/low side pressures</td></tr>
+          <tr><td>6</td><td>Practical: Compressor Function Test</td><td>Practical</td><td>Check engagement and clutch operation</td></tr>
+          <tr><td>7</td><td>Practical: Condenser Fan Check</td><td>Practical</td><td>Test fan operation during A/C run</td></tr>
+          <tr><td>8</td><td>Practical: A/C System Visual Leak Check</td><td>Practical</td><td>Inspect for oil or dye at hoses and fittings</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 5 -->
+    <section>
+      <h2>Day 5 – Wednesday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Brake Maintenance Schedule</td><td>Theory</td><td>Understand service intervals and preventive maintenance</td></tr>
+          <tr><td>2</td><td>A/C Performance Efficiency Factors</td><td>Theory</td><td>Learn what affects cooling efficiency (gas, fan, airflow)</td></tr>
+          <tr><td>3</td><td>Legal and Environmental A/C Practices</td><td>Theory</td><td>Understand refrigerant recycling and legal responsibilities</td></tr>
+          <tr><td>4</td><td>Integrated HVAC Systems</td><td>Theory</td><td>Learn about heater cores and climate integration</td></tr>
+          <tr><td>5</td><td>Practical: Final Brake Inspection</td><td>Practical</td><td>Conduct full visual and performance check</td></tr>
+          <tr><td>6</td><td>Practical: A/C Performance Test</td><td>Practical</td><td>Measure vent temperature vs ambient</td></tr>
+          <tr><td>7</td><td>Practical: Heater System Check</td><td>Practical</td><td>Test heater operation and coolant flow</td></tr>
+          <tr><td>8</td><td>Practical: A/C Odor Elimination</td><td>Practical</td><td>Apply foam/cleaner for evaporator and ducts</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 6 -->
+    <section>
+      <h2>Day 6 – Thursday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Weekly Review on Brake and A/C Systems</td><td>Review</td><td>Recap core theory and practical sessions</td></tr>
+          <tr><td>2</td><td>Brake System Quiz</td><td>Assessment</td><td>Assess knowledge of braking system components and function</td></tr>
+          <tr><td>3</td><td>A/C System Knowledge Quiz</td><td>Assessment</td><td>Test understanding of refrigerant cycle and parts</td></tr>
+          <tr><td>4</td><td>Practical Test: Brake Bleeding & Pads</td><td>Assessment</td><td>Perform full pad replacement and bleeding procedure</td></tr>
+          <tr><td>5</td><td>Practical Test: A/C Diagnosis</td><td>Assessment</td><td>Conduct pressure test and identify potential A/C issue</td></tr>
+          <tr><td>6</td><td>Group Discussion: Brake/Air Conditioning</td><td>Review</td><td>Share service experience and real-life fault scenarios</td></tr>
+          <tr><td>7</td><td>Safety & Environmental Quiz (A/C focus)</td><td>Assessment</td><td>Test on refrigerant safety and environmental regulations</td></tr>
+          <tr><td>8</td><td>Orientation for Week 9</td><td>Theory</td><td>Preview of electrical wiring, sensors, and meters</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</main>
+
+<style>
+  #main-content .daily-lesson-plan {
+    max-width: 900px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    color: #222;
+  }
+  #main-content .daily-lesson-plan h1 {
+    color: #004080;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  #main-content .daily-lesson-plan h2 {
+    color: #003366;
+    border-left: 5px solid #004080;
+    padding-left: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  #main-content .daily-lesson-plan table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
+  }
+  #main-content .daily-lesson-plan th,
+  #main-content .daily-lesson-plan td {
+    border: 1px solid #cbd5e1;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  #main-content .daily-lesson-plan th {
+    background-color: #004080;
+    color: white;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
+    background-color: #f6f9ff;
+  }
+</style>
+
+  </div>
+  <div id="week9" class="week-content">
+    <main id="main-content">
+  <div class="daily-lesson-plan">
+    <h1>Week 9: Electrical, EFI & Charging System</h1>
+    <p><strong>Modules Covered:</strong> 8.1 Electrical System, 8.2 Electronic Fuel Injection (EFI), 8.3 Charging System</p>
+    <p><strong>Objective:</strong> Provide foundational and diagnostic knowledge of vehicle electrical systems, EFI operation, and charging components. Students will engage in hands-on diagnostics using multimeters, scan tools, and component testing.</p>
+
+    <!-- Day 1 -->
+    <section>
+      <h2>Day 1 – Saturday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Introduction to Automotive Electricity</td><td>Theory</td><td>Understand voltage, current, resistance, and Ohm's Law</td></tr>
+          <tr><td>2</td><td>Vehicle Electrical Circuit Basics</td><td>Theory</td><td>Learn open/closed circuits, shorts, and grounding</td></tr>
+          <tr><td>3</td><td>Wiring Diagrams & Symbols</td><td>Theory</td><td>Read and interpret vehicle wiring diagrams</td></tr>
+          <tr><td>4</td><td>Lighting Systems Overview</td><td>Theory</td><td>Study headlights, taillights, interior lights</td></tr>
+          <tr><td>5</td><td>Practical: Electrical Circuit Tracing</td><td>Practical</td><td>Follow a circuit using diagram and vehicle wiring</td></tr>
+          <tr><td>6</td><td>Practical: Fuse Box Familiarization</td><td>Practical</td><td>Locate and identify fuses and relays</td></tr>
+          <tr><td>7</td><td>Practical: Replace Blown Fuses</td><td>Practical</td><td>Safely test and replace faulty fuses</td></tr>
+          <tr><td>8</td><td>Practical: Wire & Terminal Inspection</td><td>Practical</td><td>Check for corrosion, breaks, and loose connectors</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 2 -->
+    <section>
+      <h2>Day 2 – Sunday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Multimeter Basics & Functions</td><td>Theory</td><td>Learn voltage, resistance, and continuity testing</td></tr>
+          <tr><td>2</td><td>EFI System Introduction</td><td>Theory</td><td>Understand basics of electronic fuel injection</td></tr>
+          <tr><td>3</td><td>EFI Sensors and Actuators</td><td>Theory</td><td>Learn about MAF, TPS, O2 sensor, injectors, etc.</td></tr>
+          <tr><td>4</td><td>EFI Wiring and ECU Inputs</td><td>Theory</td><td>Understand ECU logic and sensor feedback</td></tr>
+          <tr><td>5</td><td>Practical: Use Multimeter (Voltage)</td><td>Practical</td><td>Measure battery and circuit voltage</td></tr>
+          <tr><td>6</td><td>Practical: Use Multimeter (Resistance)</td><td>Practical</td><td>Test sensor and wire resistance</td></tr>
+          <tr><td>7</td><td>Practical: EFI Sensor Pin Testing</td><td>Practical</td><td>Measure signal voltage from TPS, ECT, or O2</td></tr>
+          <tr><td>8</td><td>Practical: Injector Power Supply Test</td><td>Practical</td><td>Confirm injector signal using multimeter or test light</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 3 -->
+    <section>
+      <h2>Day 3 – Monday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Fuel Delivery in EFI System</td><td>Theory</td><td>Understand fuel pump, filter, pressure regulator</td></tr>
+          <tr><td>2</td><td>Injector Operation & Firing</td><td>Theory</td><td>Learn about pulse width modulation and injector timing</td></tr>
+          <tr><td>3</td><td>Charging System Introduction</td><td>Theory</td><td>Understand function of alternator and battery charging</td></tr>
+          <tr><td>4</td><td>Alternator Components</td><td>Theory</td><td>Learn about stator, rotor, rectifier, voltage regulator</td></tr>
+          <tr><td>5</td><td>Practical: Fuel Pressure Test Demo</td><td>Practical</td><td>Observe safe pressure testing method</td></tr>
+          <tr><td>6</td><td>Practical: Injector Cleaning</td><td>Practical</td><td>Perform external or basic ultrasonic cleaning</td></tr>
+          <tr><td>7</td><td>Practical: Alternator Belt Check</td><td>Practical</td><td>Inspect and adjust belt tension</td></tr>
+          <tr><td>8</td><td>Practical: Charging Voltage Test</td><td>Practical</td><td>Measure battery voltage during idle and throttle</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 4 -->
+    <section>
+      <h2>Day 4 – Tuesday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Battery Construction and Rating</td><td>Theory</td><td>Understand battery types, CCA rating, maintenance</td></tr>
+          <tr><td>2</td><td>Battery Charging & Testing</td><td>Theory</td><td>Learn how to test and charge a vehicle battery</td></tr>
+          <tr><td>3</td><td>Advanced EFI Diagnostics</td><td>Theory</td><td>Introduction to live data, freeze frame, fuel trims</td></tr>
+          <tr><td>4</td><td>OBD & Scan Tool Functionality</td><td>Theory</td><td>Understand onboard diagnostics and scan tool categories</td></tr>
+          <tr><td>5</td><td>Practical: Battery Load Testing</td><td>Practical</td><td>Use load tester or multimeter to assess battery health</td></tr>
+          <tr><td>6</td><td>Practical: Scan Tool Connection</td><td>Practical</td><td>Plug into OBD port and read trouble codes</td></tr>
+          <tr><td>7</td><td>Practical: Live Data Analysis</td><td>Practical</td><td>Read RPM, MAP, injector timing on scan tool</td></tr>
+          <tr><td>8</td><td>Practical: Clear Trouble Codes</td><td>Practical</td><td>Safely erase codes and monitor return behavior</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 5 -->
+    <section>
+      <h2>Day 5 – Wednesday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Troubleshooting Charging Problems</td><td>Theory</td><td>Diagnose overcharging, undercharging, and battery drain</td></tr>
+          <tr><td>2</td><td>Sensor Signal Interpretation</td><td>Theory</td><td>Understand waveform and voltage behavior of key sensors</td></tr>
+          <tr><td>3</td><td>Voltage Drop and Ground Faults</td><td>Theory</td><td>Learn techniques for finding bad grounds and poor wiring</td></tr>
+          <tr><td>4</td><td>Electrical Safety Procedures</td><td>Theory</td><td>Safe practices for handling batteries, wires, and modules</td></tr>
+          <tr><td>5</td><td>Practical: Ground Circuit Testing</td><td>Practical</td><td>Measure voltage drop across grounds</td></tr>
+          <tr><td>6</td><td>Practical: Voltage Drop Testing</td><td>Practical</td><td>Identify power loss across connectors and terminals</td></tr>
+          <tr><td>7</td><td>Practical: Troubleshoot Charging System</td><td>Practical</td><td>Confirm alternator failure or poor wiring</td></tr>
+          <tr><td>8</td><td>Practical: Replace Electrical Sensor</td><td>Practical</td><td>Remove and install TPS, coolant temp, or cam sensor</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Day 6 -->
+    <section>
+      <h2>Day 6 – Thursday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Weekly Review of Electrical & EFI</td><td>Review</td><td>Recap all major systems and diagnostics</td></tr>
+          <tr><td>2</td><td>Theory Quiz – Electrical/Charging</td><td>Assessment</td><td>Test on multimeter use, alternator, battery, circuits</td></tr>
+          <tr><td>3</td><td>Theory Quiz – EFI Components</td><td>Assessment</td><td>Test knowledge of EFI parts and functions</td></tr>
+          <tr><td>4</td><td>Practical Test: Multimeter Skills</td><td>Assessment</td><td>Measure voltage, resistance, continuity accurately</td></tr>
+          <tr><td>5</td><td>Practical Test: Injector/Scan Tool</td><td>Assessment</td><td>Clean or test injector, retrieve code using scanner</td></tr>
+          <tr><td>6</td><td>Group Activity: Diagram Tracing</td><td>Practical</td><td>Work in groups to trace and explain a full EFI circuit</td></tr>
+          <tr><td>7</td><td>Fault Simulation & Diagnosis</td><td>Practical</td><td>Simulate fault and identify via scan tool/multimeter</td></tr>
+          <tr><td>8</td><td>Orientation for Week 10</td><td>Theory</td><td>Introduction to transmission and differential systems</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</main>
+
+<style>
+  #main-content .daily-lesson-plan {
+    max-width: 900px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    color: #222;
+  }
+  #main-content .daily-lesson-plan h1 {
+    color: #004080;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  #main-content .daily-lesson-plan h2 {
+    color: #003366;
+    border-left: 5px solid #004080;
+    padding-left: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  #main-content .daily-lesson-plan table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
+  }
+  #main-content .daily-lesson-plan th,
+  #main-content .daily-lesson-plan td {
+    border: 1px solid #cbd5e1;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  #main-content .daily-lesson-plan th {
+    background-color: #004080;
+    color: white;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
+    background-color: #f6f9ff;
+  }
+</style>
+
+  </div>
+  <div id="week10" class="week-content">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Week 10: LPG/CNG System & Calibration</title>
+  <style>
+    #main-content .daily-lesson-plan {
+      max-width: 900px;
+      margin: auto;
+      font-family: Arial, sans-serif;
+      color: #222;
+    }
+    #main-content .daily-lesson-plan h1 {
+      color: #004080;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    #main-content .daily-lesson-plan h2 {
+      color: #003366;
+      border-left: 5px solid #004080;
+      padding-left: 0.75rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    #main-content .daily-lesson-plan p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    #main-content .daily-lesson-plan table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
+    }
+    #main-content .daily-lesson-plan th,
+    #main-content .daily-lesson-plan td {
+      border: 1px solid #cbd5e1;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    #main-content .daily-lesson-plan th {
+      background-color: #004080;
+      color: white;
+      font-weight: 600;
+    }
+    #main-content .daily-lesson-plan tbody tr:nth-child(even) {
+      background-color: #f6f9ff;
+    }
+  </style>
+</head>
+<body>
+  <div id="main-content">
+    <div class="daily-lesson-plan">
+      <h1>Week 10: LPG/CNG System & Calibration</h1>
+      <p><strong>Modules Covered:</strong> 9.1 LPG/CNG Install, 9.2 Calibration</p>
+      <p><strong>Objective:</strong> Equip students with knowledge and skills to safely install, calibrate, and service LPG/CNG conversion kits including leak detection, regulator setup, and ECU diagnostics.</p>
+
+      <h2>Day 1 – Saturday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Introduction to LPG/CNG Kits</td><td>Theory</td><td>Overview of LPG/CNG system components and operation</td></tr>
+          <tr><td>2</td><td>Safety Procedures for Gas Systems</td><td>Theory</td><td>Understand hazards and safety protocols</td></tr>
+          <tr><td>3</td><td>Components: Tank, Valves, Regulators</td><td>Theory</td><td>Identify and explain function of main parts</td></tr>
+          <tr><td>4</td><td>ECU and Sensors Overview</td><td>Theory</td><td>Learn role of ECU, gas sensors, and wiring</td></tr>
+          <tr><td>5</td><td>Practical: Gas Cylinder Mounting</td><td>Practical</td><td>Proper mounting and securing of gas cylinders</td></tr>
+          <tr><td>6</td><td>Practical: Regulator Installation</td><td>Practical</td><td>Install pressure regulator and related fittings</td></tr>
+          <tr><td>7</td><td>Practical: Hose and Line Routing</td><td>Practical</td><td>Correct routing to avoid leaks and damage</td></tr>
+          <tr><td>8</td><td>Practical: Safety Leak Test</td><td>Practical</td><td>Perform leak detection using soap solution or detectors</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Day 2 – Sunday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Calibration Principles</td><td>Theory</td><td>Understand air–fuel ratio, timing, and tuning basics</td></tr>
+          <tr><td>2</td><td>Use of Diagnostic Tools</td><td>Theory</td><td>Learn software and scanner functions for calibration</td></tr>
+          <tr><td>3</td><td>Manual Calibration Methods</td><td>Theory</td><td>Steps to adjust regulator pressure and fuel delivery</td></tr>
+          <tr><td>4</td><td>Practical: Connect Calibration Tool</td><td>Practical</td><td>Use diagnostic tool for LPG/CNG system calibration</td></tr>
+          <tr><td>5</td><td>Practical: Adjust Fuel Maps</td><td>Practical</td><td>Fine-tune fuel delivery using ECU interface</td></tr>
+          <tr><td>6</td><td>Practical: Perform Test Drive</td><td>Practical</td><td>Monitor engine response and emissions</td></tr>
+          <tr><td>7</td><td>Practical: Adjust Timing</td><td>Practical</td><td>Modify ignition timing if necessary</td></tr>
+          <tr><td>8</td><td>Practical: Confirm Leak-Free Operation</td><td>Practical</td><td>Final leak check post-calibration</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Day 3 – Monday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Routine Maintenance Overview</td><td>Theory</td><td>Importance of regular servicing and inspections</td></tr>
+          <tr><td>2</td><td>Tank and Valve Servicing</td><td>Theory</td><td>Common issues and servicing tasks</td></tr>
+          <tr><td>3</td><td>Regulator and Injector Servicing</td><td>Theory</td><td>Cleaning and replacement intervals</td></tr>
+          <tr><td>4</td><td>Filters and Fuel Lines Care</td><td>Theory</td><td>Inspection and replacement procedures</td></tr>
+          <tr><td>5</td><td>Practical: Inspect Gas Tank and Valves</td><td>Practical</td><td>Check for leaks, corrosion, and valve operation</td></tr>
+          <tr><td>6</td><td>Practical: Pressure Testing</td><td>Practical</td><td>Use pressure gauges to test regulator and lines</td></tr>
+          <tr><td>7</td><td>Practical: Clean or Replace Filters</td><td>Practical</td><td>Service filters to maintain fuel quality</td></tr>
+          <tr><td>8</td><td>Practical: ECU Diagnostic Reset</td><td>Practical</td><td>Use scan tool to reset and clear system faults</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Day 4 – Tuesday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Troubleshooting LPG/CNG Systems</td><td>Theory</td><td>Identify common faults and corrective measures</td></tr>
+          <tr><td>2</td><td>Fuel Switching Process</td><td>Theory</td><td>Explain gas to petrol switching mechanism</td></tr>
+          <tr><td>3</td><td>Emergency Handling Procedures</td><td>Theory</td><td>Steps during gas leaks or system failures</td></tr>
+          <tr><td>4</td><td>Safety Checks before Startup</td><td>Theory</td><td>Checklist for safe system operation</td></tr>
+          <tr><td>5</td><td>Practical: Leak Detection Drill</td><td>Practical</td><td>Simulate and detect leaks using gas detectors</td></tr>
+          <tr><td>6</td><td>Practical: Injector Function Test</td><td>Practical</td><td>Verify injector operation and spray pattern</td></tr>
+          <tr><td>7</td><td>Practical: ECU Fault Code Reading</td><td>Practical</td><td>Identify and clear faults related to LPG/CNG systems</td></tr>
+          <tr><td>8</td><td>Practical: Emergency Shutdown Testing</td><td>Practical</td><td>Practice emergency valve and system shutdown</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Day 5 – Wednesday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>System Diagnosis and Data Logging</td><td>Theory</td><td>Using diagnostic tools for fault finding</td></tr>
+          <tr><td>2</td><td>Software Updates & Calibration</td><td>Theory</td><td>Importance of ECU software updates</td></tr>
+          <tr><td>3</td><td>Performance Monitoring</td><td>Theory</td><td>Analyze data logs for fuel efficiency and emissions</td></tr>
+          <tr><td>4</td><td>Practical: Scan Tool Data Review</td><td>Practical</td><td>Interpret real-time data and fault codes</td></tr>
+          <tr><td>5</td><td>Practical: Leak Testing with Detector</td><td>Practical</td><td>Use advanced leak detectors for accuracy</td></tr>
+          <tr><td>6</td><td>Practical: Adjust Calibration Software</td><td>Practical</td><td>Update calibration maps via software</td></tr>
+          <tr><td>7</td><td>Practical: Test Drive Analysis</td><td>Practical</td><td>Monitor and document performance post-calibration</td></tr>
+          <tr><td>8</td><td>Group Discussion: System Troubleshooting</td><td>Review</td><td>Share case studies and problem-solving strategies</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Day 6 – Thursday</h2>
+      <table>
+        <thead>
+          <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Written Test: LPG/CNG System</td><td>Assessment</td><td>Evaluate theoretical understanding of components, safety, and procedures</td></tr>
+          <tr><td>2</td><td>Practical Test: Installation & Leak Check</td><td>Assessment</td><td>Demonstrate correct installation and safety checks</td></tr>
+          <tr><td>3</td><td>Practical Test: Calibration Accuracy</td><td>Assessment</td><td>Show proficiency in using diagnostic tools and adjusting parameters</td></tr>
+          <tr><td>4</td><td>Tool Handling Observation</td><td>Assessment</td><td>Proper use of gas leak detectors, pressure gauges, and scan tools</td></tr>
+          <tr><td>5</td><td>Oral/Viva Assessment</td><td>Assessment</td><td>Explain LPG/CNG system functioning and safety protocols</td></tr>
+          <tr><td>6</td><td>Feedback and Q&A Session</td><td>Review</td><td>Address questions and reinforce learning</td></tr>
+          <tr><td>7</td><td>Overview of Next Week’s Module</td><td>Theory</td><td>Introduction to Hybrid, EV, and Advanced Electronics</td></tr>
+          <tr><td>8</td><td>Workshop Cleanup and Safety Review</td><td>Practical</td><td>Maintain workshop safety and tool care</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
+
+  </div>
+  <div id="week11" class="week-content">
+    <div id="main-content">
+  <style>
+    #main-content .daily-lesson-plan {
+      max-width: 900px;
+      margin: auto;
+      font-family: Arial, sans-serif;
+      color: #222;
+    }
+    #main-content .daily-lesson-plan h1 {
+      color: #004080;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    #main-content .daily-lesson-plan h2 {
+      color: #003366;
+      border-left: 5px solid #004080;
+      padding-left: 0.75rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    #main-content .daily-lesson-plan p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    #main-content .daily-lesson-plan table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
+    }
+    #main-content .daily-lesson-plan th,
+    #main-content .daily-lesson-plan td {
+      border: 1px solid #cbd5e1;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    #main-content .daily-lesson-plan th {
+      background-color: #004080;
+      color: white;
+      font-weight: 600;
+    }
+    #main-content .daily-lesson-plan tbody tr:nth-child(even) {
+      background-color: #f6f9ff;
+    }
+  </style>
+
+  <div class="daily-lesson-plan">
+    <h1>Week 11: Hybrid, EV, and Advanced Electronics</h1>
+    <p><strong>Modules Covered:</strong><br>
+      • 10.3 Hybrid/EV<br>
+      • 11.1 Electronics & Diagnostics<br>
+      • 11.2 ADAS (Advanced Driver Assistance Systems)
+    </p>
+    <p><strong>Objective:</strong><br>
+      Introduce students to hybrid/EV components, EV safety procedures, CAN bus communication, diagnostics, and advanced driver assistance systems (ADAS) including sensor testing and scan tool simulation.
+    </p>
+
+    <h2>Day 1 – Saturday</h2>
+    <table>
+      <thead>
+        <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Introduction to Hybrid and EV</td><td>Theory</td><td>Learn key differences from conventional vehicles</td></tr>
+        <tr><td>2</td><td>EV System Components Overview</td><td>Theory</td><td>Identify motor, inverter, battery, charger, and control modules</td></tr>
+        <tr><td>3</td><td>Hybrid Vehicle Types</td><td>Theory</td><td>Compare series, parallel, and plug-in hybrids</td></tr>
+        <tr><td>4</td><td>EV High-Voltage Safety Standards</td><td>Theory</td><td>Understand isolation, personal protection, and emergency response</td></tr>
+        <tr><td>5</td><td>Practical: EV Component Identification</td><td>Practical</td><td>Locate and label EV powertrain components</td></tr>
+        <tr><td>6</td><td>Practical: High Voltage Safety Tools</td><td>Practical</td><td>Demonstrate use of insulation gloves, rescue hooks, and HV signs</td></tr>
+        <tr><td>7</td><td>Practical: Pre-Service Inspection Checklist</td><td>Practical</td><td>Practice safety steps before EV/hybrid maintenance</td></tr>
+        <tr><td>8</td><td>Practical: Battery Pack Handling Demo</td><td>Practical</td><td>Show proper lifting, disconnecting, and securing of high-voltage batteries</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Day 2 – Sunday</h2>
+    <table>
+      <thead>
+        <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Introduction to Automotive Electronics</td><td>Theory</td><td>Understand electronic control systems and modules</td></tr>
+        <tr><td>2</td><td>CAN Bus Communication</td><td>Theory</td><td>Learn how vehicle modules communicate via CAN network</td></tr>
+        <tr><td>3</td><td>Sensor Types in Modern Vehicles</td><td>Theory</td><td>Identify basic sensors: MAP, TPS, O2, wheel speed</td></tr>
+        <tr><td>4</td><td>Introduction to Diagnostic Tools</td><td>Theory</td><td>Know scan tools, oscilloscopes, and multimeters</td></tr>
+        <tr><td>5</td><td>Practical: CAN Bus Topology Demo</td><td>Practical</td><td>Trace network and verify signals using diagrams</td></tr>
+        <tr><td>6</td><td>Practical: Multimeter Use</td><td>Practical</td><td>Measure voltage, resistance, and continuity in circuits</td></tr>
+        <tr><td>7</td><td>Practical: Scan Tool Live Data</td><td>Practical</td><td>Retrieve and interpret live sensor readings</td></tr>
+        <tr><td>8</td><td>Practical: Sensor Testing (MAP, TPS)</td><td>Practical</td><td>Use tools to check response curves of typical automotive sensors</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Day 3 – Monday</h2>
+    <table>
+      <thead>
+        <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Introduction to ADAS</td><td>Theory</td><td>Understand purpose and scope of ADAS features</td></tr>
+        <tr><td>2</td><td>ADAS Components Overview</td><td>Theory</td><td>Learn camera, radar, ultrasonic sensor, and LIDAR functionality</td></tr>
+        <tr><td>3</td><td>Lane Assist, ACC, Emergency Braking</td><td>Theory</td><td>Understand working principles of key ADAS systems</td></tr>
+        <tr><td>4</td><td>Diagnostic Trouble Codes (DTCs)</td><td>Theory</td><td>Learn how to interpret and troubleshoot based on DTCs</td></tr>
+        <tr><td>5</td><td>Practical: Radar and Camera Location</td><td>Practical</td><td>Identify ADAS component positions on a vehicle</td></tr>
+        <tr><td>6</td><td>Practical: ADAS Sensor Simulation</td><td>Practical</td><td>Use simulation tools to visualize inputs and warnings</td></tr>
+        <tr><td>7</td><td>Practical: DTC Reading & Clearing</td><td>Practical</td><td>Use scan tool to extract and erase diagnostic codes</td></tr>
+        <tr><td>8</td><td>Practical: Check Alignment of Sensors</td><td>Practical</td><td>Observe mounting angles and calibrate using alignment marks</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Day 4 – Tuesday</h2>
+    <table>
+      <thead>
+        <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>EV Charging Methods</td><td>Theory</td><td>Understand Level 1, 2, and fast-charging systems</td></tr>
+        <tr><td>2</td><td>Thermal Management in EVs</td><td>Theory</td><td>Learn how EVs cool battery, motor, and inverter</td></tr>
+        <tr><td>3</td><td>Regenerative Braking</td><td>Theory</td><td>Explain how braking recovers energy</td></tr>
+        <tr><td>4</td><td>EV Range & Efficiency Factors</td><td>Theory</td><td>Explore factors affecting mileage and performance</td></tr>
+        <tr><td>5</td><td>Practical: Charging Connector Demo</td><td>Practical</td><td>Identify types of plugs and simulate charge setup</td></tr>
+        <tr><td>6</td><td>Practical: Thermal Sensor Check</td><td>Practical</td><td>Test temperature sensors in EV cooling systems</td></tr>
+        <tr><td>7</td><td>Practical: Brake Pedal Sensor Function</td><td>Practical</td><td>Demonstrate role in regen braking and safety features</td></tr>
+        <tr><td>8</td><td>Practical: Range Estimation Analysis</td><td>Practical</td><td>Analyze real-time data to estimate vehicle range</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Day 5 – Wednesday</h2>
+    <table>
+      <thead>
+        <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>EV Software Updates & Firmware</td><td>Theory</td><td>Understand OTA updates and their effect on performance</td></tr>
+        <tr><td>2</td><td>EV System Fault Detection</td><td>Theory</td><td>Learn how to identify common EV faults</td></tr>
+        <tr><td>3</td><td>Remote Diagnostics and Telemetry</td><td>Theory</td><td>Overview of cloud-based diagnostics and data logging</td></tr>
+        <tr><td>4</td><td>Scan Tool Advanced Functions</td><td>Theory</td><td>Use of bidirectional control and freeze-frame data</td></tr>
+        <tr><td>5</td><td>Practical: Update ECU Software</td><td>Practical</td><td>Simulate firmware update or reset procedures</td></tr>
+        <tr><td>6</td><td>Practical: Scan & Log Live EV Data</td><td>Practical</td><td>Record sensor data and check fault history</td></tr>
+        <tr><td>7</td><td>Practical: Simulate Fault Scenarios</td><td>Practical</td><td>Inject dummy faults and diagnose with tools</td></tr>
+        <tr><td>8</td><td>Review Quiz: Hybrid, EV & ADAS Concepts</td><td>Assessment</td><td>Assess theoretical understanding of covered topics</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Day 6 – Thursday</h2>
+    <table>
+      <thead>
+        <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Written Assessment: EV Systems</td><td>Assessment</td><td>Evaluate theoretical understanding of Hybrid, EV, and ADAS</td></tr>
+        <tr><td>2</td><td>Practical Test: EV Component ID</td><td>Assessment</td><td>Identify EV, ADAS, and diagnostic components</td></tr>
+        <tr><td>3</td><td>Practical Test: Scan & Diagnose</td><td>Assessment</td><td>Use tools to read codes, live data, and interpret diagnostics</td></tr>
+        <tr><td>4</td><td>Sensor Test & Calibration Demo</td><td>Assessment</td><td>Show proper method of testing and calibrating sensors</td></tr>
+        <tr><td>5</td><td>Oral Viva & Knowledge Review</td><td>Assessment</td><td>Answer instructor questions based on real-world faults</td></tr>
+        <tr><td>6</td><td>Safety Recap and Tool Handling</td><td>Review</td><td>Revisit safety protocols for high-voltage systems</td></tr>
+        <tr><td>7</td><td>Workshop Debrief and Cleanup</td><td>Practical</td><td>Organize tools and reset workstations</td></tr>
+        <tr><td>8</td><td>Orientation: Week 12 – Final Project</td><td>Theory</td><td>Introduce next week’s final project tasks and expectations</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  </div>
+  <div id="week12" class="week-content">
+    <style>
+  #main-content .daily-lesson-plan {
+    max-width: 900px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    color: #222;
+  }
+  #main-content .daily-lesson-plan h1 {
+    color: #004080;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  #main-content .daily-lesson-plan h2 {
+    color: #003366;
+    border-left: 5px solid #004080;
+    padding-left: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  #main-content .daily-lesson-plan table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
+  }
+  #main-content .daily-lesson-plan th,
+  #main-content .daily-lesson-plan td {
+    border: 1px solid #cbd5e1;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  #main-content .daily-lesson-plan th {
+    background-color: #004080;
+    color: white;
+    font-weight: 600;
+  }
+  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
+    background-color: #f6f9ff;
+  }
+</style>
+
+<div id="main-content">
+  <div class="daily-lesson-plan">
+    <h1>Week 12: Final Exams & Certification</h1>
+    <p><strong>Modules Covered:</strong></p>
+    <ul>
+      <li>12.1 Final Practical</li>
+      <li>12.2 Final Written</li>
+      <li>12.3 Oral Exam</li>
+      <li>12.4 Certification & Feedback</li>
+    </ul>
+    <p><strong>Objective:</strong><br>
+      Assess students' theoretical understanding, practical competency, and diagnostic reasoning across all modules.
+      Provide constructive feedback and recognize achievements with certification.
+    </p>
+
+    <h2>Day 1 – Saturday</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Session</th>
+          <th>Topic</th>
+          <th>Type</th>
+          <th>Objective</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Weekly Recap & Instructions</td><td>Review</td><td>Outline exam format, assessment areas, and guidelines</td></tr>
+        <tr><td>2</td><td>Mock Written Test</td><td>Assessment</td><td>Practice exam environment with sample theoretical questions</td></tr>
+        <tr><td>3</td><td>Practical Warm-Up: Tools & PPE</td><td>Practical</td><td>Ensure readiness with equipment handling and safety preparation</td></tr>
+        <tr><td>4</td><td>Troubleshooting Review</td><td>Theory</td><td>Go over common diagnostic logic and error patterns</td></tr>
+        <tr><td>5</td><td>Practical Demo: Engine System</td><td>Practical</td><td>Demonstrate engine part diagnosis and procedure</td></tr>
+        <tr><td>6</td><td>Practical Demo: Brake Bleeding</td><td>Practical</td><td>Review key steps and mistakes in hydraulic brake servicing</td></tr>
+        <tr><td>7</td><td>Practical Demo: EFI Diagnosis</td><td>Practical</td><td>Show scan tool operation, injector, and sensor troubleshooting</td></tr>
+        <tr><td>8</td><td>Orientation for Exam Days</td><td>Theory</td><td>Final instructions and Q&A before exams begin</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Day 2 – Sunday</h2>
+    <table>
+      <thead>
+        <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Written Final Exam (Part 1)</td><td>Assessment</td><td>Assess knowledge of modules 1–6: safety, engine, fuel, ignition, etc.</td></tr>
+        <tr><td>2</td><td>Written Final Exam (Part 2)</td><td>Assessment</td><td>Assess modules 7–11: electronics, EFI, EV, diagnostics, ADAS</td></tr>
+        <tr><td>3</td><td>Break & Exam Discussion</td><td>Review</td><td>Informal review and clarification after test</td></tr>
+        <tr><td>4</td><td>Oral Exam Preparation</td><td>Theory</td><td>Tips and examples for answering technical oral questions</td></tr>
+        <tr><td>5</td><td>Practical Setup Check</td><td>Practical</td><td>Prepare tools, parts, and workstations for next day’s assessments</td></tr>
+        <tr><td>6</td><td>Group Quiz Game: Automotive Trivia</td><td>Assessment</td><td>Reinforce learning in a fun, competitive format</td></tr>
+        <tr><td>7</td><td>Practical Scenario Discussion</td><td>Theory</td><td>Analyze case studies to prepare for troubleshooting</td></tr>
+        <tr><td>8</td><td>Instructor Feedback Session</td><td>Review</td><td>Address individual performance and encouragement</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Day 3 – Monday</h2>
+    <table>
+      <thead>
+        <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Practical Exam 1: Engine Task</td><td>Assessment</td><td>Perform identification and measurement on engine components</td></tr>
+        <tr><td>2</td><td>Practical Exam 2: Braking Task</td><td>Assessment</td><td>Demonstrate brake pad replacement or brake bleeding procedure</td></tr>
+        <tr><td>3</td><td>Practical Exam 3: EFI Testing</td><td>Assessment</td><td>Use scan tool to read and interpret EFI data</td></tr>
+        <tr><td>4</td><td>Practical Exam 4: Electrical</td><td>Assessment</td><td>Test circuits, replace fuses, trace wiring</td></tr>
+        <tr><td>5</td><td>Rotation for Practical Teams</td><td>Practical</td><td>Allow staggered teams for hands-on exams</td></tr>
+        <tr><td>6</td><td>Instructor Observation</td><td>Assessment</td><td>Evaluate each student based on checklist and criteria</td></tr>
+        <tr><td>7</td><td>Final Task Feedback</td><td>Review</td><td>Provide immediate feedback for each practical task</td></tr>
+        <tr><td>8</td><td>Workspace Clean-up</td><td>Practical</td><td>Organize tools, clean workstations, and ensure safety compliance</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Day 4 – Tuesday</h2>
+    <table>
+      <thead>
+        <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Oral Exam: Troubleshooting Q&A</td><td>Assessment</td><td>Explain causes and solutions to vehicle faults</td></tr>
+        <tr><td>2</td><td>Oral Exam: Safety Protocols</td><td>Assessment</td><td>Answer questions on PPE, fire hazards, emergency response</td></tr>
+        <tr><td>3</td><td>Oral Exam: System Diagnostics</td><td>Assessment</td><td>Respond to scenario-based diagnosis with reasoning</td></tr>
+        <tr><td>4</td><td>Practical Retest (if needed)</td><td>Assessment</td><td>Give second chance for missed or incomplete tasks</td></tr>
+        <tr><td>5</td><td>Group Review of Exam Experience</td><td>Review</td><td>Share challenges, insights, and what was learned</td></tr>
+        <tr><td>6</td><td>Instructor Evaluation Review</td><td>Review</td><td>Explain evaluation scores and skill progression</td></tr>
+        <tr><td>7</td><td>Peer Feedback Exchange</td><td>Review</td><td>Encourage feedback and teamwork reflection</td></tr>
+        <tr><td>8</td><td>Certification Rehearsal & Prep</td><td>Theory</td><td>Prepare for award ceremony and speech</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Day 5 – Wednesday</h2>
+    <table>
+      <thead>
+        <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Certificate Distribution Prep</td><td>Practical</td><td>Finalize paperwork, verify names, print certificates</td></tr>
+        <tr><td>2</td><td>Photo & Video Documentation</td><td>Practical</td><td>Capture photos of tools, teams, classroom activities</td></tr>
+        <tr><td>3</td><td>Final Practical Clean-Up</td><td>Practical</td><td>Store all equipment and reset workshop for next batch</td></tr>
+        <tr><td>4</td><td>Student Presentation Session</td><td>Assessment</td><td>Present final insights, favorite lessons, future goals</td></tr>
+        <tr><td>5</td><td>Instructor Closing Remarks</td><td>Review</td><td>Summarize training achievements and program overview</td></tr>
+        <tr><td>6</td><td>Feedback Collection (Forms)</td><td>Review</td><td>Gather student feedback for course improvement</td></tr>
+        <tr><td>7</td><td>Certification Ceremony</td><td>Certification</td><td>Awarding certificates to successful students</td></tr>
+        <tr><td>8</td><td>Celebration & Photos</td><td>Social</td><td>Group celebration and closing photo session</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Day 6 – Thursday</h2>
+    <table>
+      <thead>
+        <tr><th>Session</th><th>Topic</th><th>Type</th><th>Objective</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>One-on-One Feedback & Guidance</td><td>Review</td><td>Individual discussion with students about their future plans</td></tr>
+        <tr><td>2</td><td>Job Market Orientation</td><td>Theory</td><td>Discuss automotive career paths and opportunities</td></tr>
+        <tr><td>3</td><td>Resume & Interview Skills</td><td>Theory</td><td>Tips on CV building and job interviews</td></tr>
+        <tr><td>4</td><td>Next Steps: Internships/Apprentice</td><td>Theory</td><td>Explore placement and hands-on opportunities post-training</td></tr>
+        <tr><td>5</td><td>Community Skills Discussion</td><td>Review</td><td>Discuss how to apply knowledge in local and freelance work</td></tr>
+        <tr><td>6</td><td>Course Summary Video Screening</td><td>Review</td><td>Watch class journey, behind-the-scenes moments</td></tr>
+        <tr><td>7</td><td>Instructor Sign-Off</td><td>Certification</td><td>Officially close training with acknowledgments</td></tr>
+        <tr><td>8</td><td>Departure & Final Thanks</td><td>Social</td><td>Say farewell and express appreciation for students' hard work</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  </div>
+</div>
+
+<script>
+  document.getElementById("weekSelector").addEventListener("change", function () {
+    const selected = this.value;
+    document.querySelectorAll(".week-content").forEach(function (el) {
+      el.classList.remove("active");
+    });
+    document.getElementById(selected).classList.add("active");
+  });
+</script>
+
+
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Automobile. All rights reserved.
+  </footer>
+
+  <!-- JavaScript for Menu Toggle -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+
+  <!-- JavaScript for PDF -->
+<script>
+  document.getElementById("download-pdf-btn").addEventListener("click", function () {
+    const element = document.getElementById("main-content");
+    
+    const opt = {
+      margin: 0.5,
+      filename: 'Weekly_Lesson_Plan.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+    };
+    
+    html2pdf().set(opt).from(element).save();
+  });
+</script>
+
+</body>
+</html>
