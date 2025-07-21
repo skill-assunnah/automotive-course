@@ -128,6 +128,10 @@
       <li>✔️ Troubleshoot issues like fluid leaks, misfires, battery and sensor failures</li>
       <li>✔️ Pursue careers in auto servicing or start a garage business</li>
     </ul>
+    <button id="downloadPdfBtn" style="margin-top: 20px; padding: 10px 20px; font-size: 1rem; cursor: pointer;">
+  Download PDF
+</button>
+
   </main>
 
   <!-- Footer -->
@@ -141,5 +145,43 @@
       document.getElementById("navLinks").classList.toggle("active");
     }
   </script>
+  <!-- JavaScript for Download PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  document.getElementById('downloadPdfBtn').addEventListener('click', async () => {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF('p', 'pt', 'a4');
+
+    // Select the main content area
+    const mainContent = document.querySelector('main');
+
+    // Get title from first <h1> in main content for filename
+    const titleElem = mainContent.querySelector('h1');
+    let fileName = 'document.pdf';
+    if(titleElem && titleElem.textContent.trim() !== '') {
+      fileName = titleElem.textContent.trim().replace(/[\\\/:*?"<>|]/g, '') + '.pdf';
+    }
+
+    // Use html2canvas to create a canvas from the main content, increase scale for better resolution
+    const canvas = await html2canvas(mainContent, { scale: 2 });
+
+    // Convert canvas to image data
+    const imgData = canvas.toDataURL('image/png');
+
+    // Calculate image dimensions to fit A4
+    const imgProps = doc.getImageProperties(imgData);
+    const pdfWidth = doc.internal.pageSize.getWidth();
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+    // Add image to PDF
+    doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+
+    // Save the PDF with the title-based filename
+    doc.save(fileName);
+  });
+</script>
+
+
 </body>
 </html>
