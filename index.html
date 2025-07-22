@@ -1,183 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Automobile Technician Training</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Professional Automotive Technician Training</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f5;
+      color: #1F453D;
+    }
+
+    nav {
+      background-color: #1F453D;
+      padding: 12px 20px;
+      position: relative;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #d2ede4;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 8px 12px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      flex-direction: column;
+      background-color: #2d5c51;
+      border-radius: 6px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+
+    .dropdown-content a {
+      padding: 10px 20px;
+      white-space: nowrap;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: flex;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #1F453D;
+        width: 100%;
+        padding: 15px 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: relative;
+        background-color: #2d5c51;
+        box-shadow: none;
+        margin-top: 5px;
+        padding-left: 10px;
+      }
+
+      .dropdown.open .dropdown-content {
+        display: flex;
+      }
+
+      .dropdown > a::after {
+        content: ' ▼';
+        font-size: 12px;
+      }
+    }
+
+    .main-content {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .main-content h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .main-content h2 {
+      font-size: 24px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    .main-content p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .button-group {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .button-group a {
+      background-color: #1F453D;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .button-group a:hover {
+      background-color: #16362f;
+    }
+
+    footer {
+      background-color: #1F453D;
+      color: #d2ede4;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="header-container">
-      <a href="index.html" class="logo">🚗Automobile</a>
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <nav>
-        <div class="nav-links" id="navLinks">
-          <a href="index.html">Home</a>
-          <a href="course-outline.html">Course Outline</a>
-          <div class="dropdown" onclick="this.classList.toggle('open')">
-          	<a href="syllabus.html">Syllabus ▾</a>
-      			<div class="dropdown-content">
-        			<a href="weekly-module.html">Weekly Module</a>
-        			<a href="daily-module.html">Daily Module</a>
-      			</div>
-          </div>
-          <a href="syllabus.html">Syllabus</a>
-          <a href="resources.html">Resources</a>
-          <a href="about.html">About</a>
+<!-- Navigation -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">Automobile</div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="course-outline.html">Course Outline</a>
+
+      <div class="dropdown" onclick="toggleDropdown(event)">
+        <a href="syllabus.html">Syllabus</a>
+        <div class="dropdown-content">
+          <a href="weekly-module.html">Weekly Module</a>
+          <a href="daily-module.html">Daily Module</a>
         </div>
-      </nav>
-    </div>   
-  </header>
+      </div>
 
-  <!-- Main Content Area -->
-  <main>
-    <h1>Professional Automotive Technician Training</h1>
-    <hr>
-    <h2>3-Month Advanced Program</h2>
-    <p><strong>Organized by:</strong> As Sunnah Skill Development Institute</p>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
 
-    <h3>Course Overview</h3>
-    <p>The Professional Automotive Technician Training is a rigorous, 12-week intensive program meticulously designed to develop skilled, job-ready automotive technicians. Conducted by As Sunnah Skill Development Institute, this program combines foundational mechanical knowledge with modern diagnostic expertise, ensuring participants are fully prepared for careers in the local and international automotive service industry.</p>
+<!-- Main Content Area -->
+<div class="main-content">
+  <h1>Welcome to the Professional Automotive Technician Training</h1>
+  <p>
+    This course is designed to prepare individuals for real-world automotive servicing. The training includes theoretical knowledge and hands-on practical sessions across engine systems, electronics, diagnostics, hybrid technologies, and more.
+  </p>
 
-    <p>Rooted in hands-on learning and real-world problem-solving, the curriculum balances technical skill-building, diagnostic confidence, and professional work ethics, producing technicians capable of servicing both conventional and modern vehicles. While secular in nature, the course subtly integrates Islamic ethical values—like responsibility, safety, and integrity—into areas such as workplace conduct, customer service, and safety awareness.</p>
+  <h2>Course Sections</h2>
+  <p>
+    Navigate through the essential components of the course using the buttons below. Each section provides valuable resources, structured plans, and access to lessons.
+  </p>
 
-    <h3>Key Highlights</h3>
-    <ul>
-      <li>Duration: 3 Months (12 Weeks, Saturday–Thursday, 40 hours/week, ~240 hours total)</li>
-      <li>Course Format:
-        <ul>
-          <li>▸ 50% Theory (lectures, diagrams, discussions)</li>
-          <li>▸ 40% Practical (workshops, system servicing, diagnostics)</li>
-          <li>▸ 10% Assessment (tests, evaluations, capstone)</li>
-        </ul>
-      </li>
-      <li>Target Group:
-        <ul>
-          <li>▸ Youth and adults (minimum SSC or equivalent)</li>
-          <li>▸ Aspiring mechanics, entrepreneurs, or job seekers in the automotive field</li>
-        </ul>
-      </li>
-      <li>Certification:
-        <ul>
-          <li>▸ Upon completion, participants will earn the Professional Automotive Technician Certificate (3-Month) issued by As Sunnah Skill Development Institute</li>
-        </ul>
-      </li>
-      <li>Training Infrastructure:
-        <ul>
-          <li>▸ Classrooms with multimedia setup (bilingual Bangla/English materials)</li>
-          <li>▸ Hands-on workshops with complete toolkits (including torque wrenches, OBD-II scanners, fuel system testers)</li>
-          <li>▸ Access to petrol & diesel engine models for servicing practice</li>
-          <li>▸ Qualified trainers with industry and instructional experience</li>
-        </ul>
-      </li>
-    </ul>
+  <div class="button-group">
+    <a href="course-outline.html">📘 Course Outline</a>
+    <a href="syllabus.html">📚 Syllabus</a>
+    <a href="weekly-module.html">📅 Weekly Modules</a>
+    <a href="daily-module.html">🗓️ Daily Modules</a>
+    <a href="resources.html">🔧 Resources</a>
+    <a href="about.html">ℹ️ About</a>
+  </div>
 
-    <h3>Curriculum Structure</h3>
-    <ul>
-      <li><strong>Module 1 – Basic Level (Weeks 1–4):</strong>
-        <ul>
-          <li>Workshop safety, PPE, tool usage, and work ethics</li>
-          <li>Identification of major vehicle systems (engine, fuel, cooling, electrical, braking, transmission)</li>
-          <li>Basic servicing routines and inspections</li>
-        </ul>
-      </li>
-      <li><strong>Module 2 – Intermediate Level (Weeks 5–8):</strong>
-        <ul>
-          <li>Repair and maintenance of critical systems</li>
-          <li>Servicing electronic systems (EFI, charging, lighting, sensors, instrument cluster)</li>
-          <li>Engine diagnostics and tune-ups for petrol and diesel vehicles</li>
-        </ul>
-      </li>
-      <li><strong>Module 3 – Advanced Level (Weeks 9–11):</strong>
-        <ul>
-          <li>Installation and calibration of LPG/CNG kits</li>
-          <li>Introduction to Hybrid and Electric Vehicles (EVs)</li>
-          <li>Advanced diagnostics using OBD-II, CAN Bus, ADAS fundamentals</li>
-        </ul>
-      </li>
-      <li><strong>Week 12 – Final Evaluation & Certification:</strong>
-        <ul>
-          <li>Written, practical, and oral exams</li>
-          <li>Capstone project</li>
-          <li>Certification and career guidance</li>
-        </ul>
-      </li>
-    </ul>
+  <h2>Program Objectives</h2>
+  <ul>
+    <li>Train professional automotive technicians with practical expertise.</li>
+    <li>Ensure safety, efficiency, and quality in vehicle diagnostics and repair.</li>
+    <li>Support career advancement through certification and industry readiness.</li>
+  </ul>
 
-    <h3>Course Objectives</h3>
-    <ul>
-      <li>✅ Master the operation and servicing of all major vehicle systems</li>
-      <li>✅ Perform diagnostics using analog and digital tools (e.g., OBD-II, multimeter)</li>
-      <li>✅ Execute system-specific repairs and tune-ups with confidence</li>
-      <li>✅ Apply safety standards, workplace ethics, and customer protocols</li>
-      <li>✅ Install and calibrate LPG/CNG systems following regulations</li>
-      <li>✅ Understand Hybrid & EV technology and ADAS fundamentals</li>
-      <li>✅ Be job-ready for technician roles or able to start an auto repair business</li>
-    </ul>
+  <h2>Who Should Join?</h2>
+  <p>
+    This program is ideal for aspiring mechanics, automotive hobbyists, technical students, and professionals looking to expand their knowledge in modern vehicle systems.
+  </p>
+</div>
 
-    <h3>What Trainees Will Be Able to Do</h3>
-    <ul>
-      <li>✔️ Safely use hand tools, power tools, and diagnostic instruments</li>
-      <li>✔️ Diagnose and repair faults in engine, fuel, electrical, and brake systems</li>
-      <li>✔️ Tune-up both petrol (SI) and diesel (CI) engines</li>
-      <li>✔️ Install and calibrate LPG/CNG kits</li>
-      <li>✔️ Service basic Hybrid & EV components</li>
-      <li>✔️ Read fault codes with OBD-II and interpret live vehicle data</li>
-      <li>✔️ Perform wheel alignment, suspension checks, and A/C maintenance</li>
-      <li>✔️ Apply workshop discipline and professional ethics</li>
-      <li>✔️ Troubleshoot issues like fluid leaks, misfires, battery and sensor failures</li>
-      <li>✔️ Pursue careers in auto servicing or start a garage business</li>
-    </ul>
-    <style>
-#main-content {
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-  padding: 1em;
-}
-#main-content h2, #main-content h3 {
-  page-break-before: always;
-}
-</style>
+<!-- Footer -->
+<footer>
+  &copy; 2025 As Sunnah Skill Development Institute. All rights reserved. | Designed for the Professional Automotive Technician Training Program
+</footer>
 
-
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Automobile. All rights reserved.
-  </footer>
-
-  <!-- JavaScript for Menu Toggle -->
-  <script>
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
-    }
-  </script>
-
-  <!-- JavaScript for PDF -->
 <script>
-  document.getElementById("download-pdf-btn").addEventListener("click", function () {
-    const element = document.getElementById("main-content");
-    
-    const opt = {
-      margin: 0.5,
-      filename: 'Weekly_Lesson_Plan.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
-      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-    };
-    
-    html2pdf().set(opt).from(element).save();
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+
+  function toggleDropdown(event) {
+    const dropdown = event.currentTarget;
+    dropdown.classList.toggle("open");
+    event.stopPropagation();
+  }
+
+  window.addEventListener('click', function () {
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
   });
 </script>
 
