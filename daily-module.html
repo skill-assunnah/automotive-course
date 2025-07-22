@@ -4,47 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Automobile Technician Training</title>
-  <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-</head>
-<body>
-
-  <!-- Header -->
-  <header>
-    <div class="header-container">
-      <a href="index.html" class="logo">🚗Automobile</a>
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <nav>
-        <div class="nav-links" id="navLinks">
-          <a href="index.html">Home</a>
-          <a href="course-outline.html">Course Outline</a>
-          <a href="syllabus.html">Syllabus</a>
-          <a href="resources.html">Resources</a>
-          <a href="about.html">About</a>
-        </div>
-      </nav>
-    </div>
-    
-  </header>
-
-  <!-- Main Content Area -->
-  <main>
-    <button id="download-pdf-btn" style="float: right; margin: 1rem; padding: 0.5rem 1rem; background-color: #8c9b90; color: white; border: none; border-radius: 5px; cursor: pointer;">
-  📄 Download PDF
-</button>
-    <!-- Week Selector with Polished Styling -->
-<style>
-  .week-dropdown-container {
+  <title>Automobile Technician Training</title>
+  <style>
+.week-dropdown-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 2rem auto;
-    max-width: 900px;
+    max-width: 1080px;
     padding: 1rem;
   }
 
@@ -91,7 +59,68 @@
   .week-content.active {
     display: block;
   }
+ 
+  table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #4C5F72;
+    color: #fff;
+    text-align: center;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+tr th:first-child,
+tr td:first-child {
+  text-align: center;
+}
+
+
 </style>
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">🚗Automobile</a>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <nav>
+        <div class="nav-links" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="course-outline.html">Course Outline</a>
+          <a href="syllabus.html">Syllabus</a>
+          <a href="resources.html">Resources</a>
+          <a href="about.html">About</a>
+        </div>
+      </nav>
+    </div>
+    
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    <button id="download-pdf-btn" style="float: right; margin: 1rem; padding: 0.5rem 1rem; background-color: #8c9b90; color: white; border: none; border-radius: 5px; cursor: pointer;">
+  📄 Download PDF
+</button>
+    <!-- Week Selector with Polished Styling -->
+
 
 <div class="week-dropdown-container">
   <h2>📅 Select a Training Week</h2>
@@ -272,52 +301,7 @@
   </div>
 </main>
 
-<style>
-  #main-content .daily-lesson-plan {
-    max-width: 900px;
-    margin: auto;
-    font-family: Arial, sans-serif;
-    color: #222;
-  }
-  #main-content .daily-lesson-plan h1 {
-    color: #004080;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  #main-content .daily-lesson-plan h2 {
-    color: #003366;
-    border-left: 5px solid #004080;
-    padding-left: 0.75rem;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  #main-content .daily-lesson-plan table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
-  }
-  #main-content .daily-lesson-plan th,
-  #main-content .daily-lesson-plan td {
-    border: 1px solid #cbd5e1;
-    padding: 8px 12px;
-    text-align: left;
-  }
-  #main-content .daily-lesson-plan th {
-    background-color: #004080;
-    color: white;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
-    background-color: #f6f9ff;
-  }
-</style>
+
 
   </div>
   <div id="week2" class="week-content">
@@ -461,52 +445,7 @@
   </div>
 </main>
 
-<style>
-  #main-content .daily-lesson-plan {
-    max-width: 900px;
-    margin: auto;
-    font-family: Arial, sans-serif;
-    color: #222;
-  }
-  #main-content .daily-lesson-plan h1 {
-    color: #004080;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  #main-content .daily-lesson-plan h2 {
-    color: #003366;
-    border-left: 5px solid #004080;
-    padding-left: 0.75rem;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  #main-content .daily-lesson-plan table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
-  }
-  #main-content .daily-lesson-plan th,
-  #main-content .daily-lesson-plan td {
-    border: 1px solid #cbd5e1;
-    padding: 8px 12px;
-    text-align: left;
-  }
-  #main-content .daily-lesson-plan th {
-    background-color: #004080;
-    color: white;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
-    background-color: #f6f9ff;
-  }
-</style>
+
 
   </div>
   <div id="week3" class="week-content">
@@ -638,52 +577,7 @@
   </div>
 </main>
 
-<style>
-  #main-content .daily-lesson-plan {
-    max-width: 900px;
-    margin: auto;
-    font-family: Arial, sans-serif;
-    color: #222;
-  }
-  #main-content .daily-lesson-plan h1 {
-    color: #004080;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  #main-content .daily-lesson-plan h2 {
-    color: #003366;
-    border-left: 5px solid #004080;
-    padding-left: 0.75rem;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  #main-content .daily-lesson-plan table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
-  }
-  #main-content .daily-lesson-plan th,
-  #main-content .daily-lesson-plan td {
-    border: 1px solid #cbd5e1;
-    padding: 8px 12px;
-    text-align: left;
-  }
-  #main-content .daily-lesson-plan th {
-    background-color: #004080;
-    color: white;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
-    background-color: #f6f9ff;
-  }
-</style>
+
 
   </div>
   <div id="week4" class="week-content">
@@ -815,52 +709,7 @@
   </div>
 </main>
 
-<style>
-  #main-content .daily-lesson-plan {
-    max-width: 900px;
-    margin: auto;
-    font-family: Arial, sans-serif;
-    color: #222;
-  }
-  #main-content .daily-lesson-plan h1 {
-    color: #004080;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  #main-content .daily-lesson-plan h2 {
-    color: #003366;
-    border-left: 5px solid #004080;
-    padding-left: 0.75rem;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  #main-content .daily-lesson-plan table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
-  }
-  #main-content .daily-lesson-plan th,
-  #main-content .daily-lesson-plan td {
-    border: 1px solid #cbd5e1;
-    padding: 8px 12px;
-    text-align: left;
-  }
-  #main-content .daily-lesson-plan th {
-    background-color: #004080;
-    color: white;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
-    background-color: #f6f9ff;
-  }
-</style>
+
 
   </div>
   <div id="week5" class="week-content">
@@ -992,52 +841,7 @@
   </div>
 </main>
 
-<style>
-  #main-content .daily-lesson-plan {
-    max-width: 900px;
-    margin: auto;
-    font-family: Arial, sans-serif;
-    color: #222;
-  }
-  #main-content .daily-lesson-plan h1 {
-    color: #004080;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  #main-content .daily-lesson-plan h2 {
-    color: #003366;
-    border-left: 5px solid #004080;
-    padding-left: 0.75rem;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  #main-content .daily-lesson-plan table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
-  }
-  #main-content .daily-lesson-plan th,
-  #main-content .daily-lesson-plan td {
-    border: 1px solid #cbd5e1;
-    padding: 8px 12px;
-    text-align: left;
-  }
-  #main-content .daily-lesson-plan th {
-    background-color: #004080;
-    color: white;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
-    background-color: #f6f9ff;
-  }
-</style>
+
 
   </div>
   <div id="week6" class="week-content">
@@ -1169,52 +973,7 @@
   </div>
 </main>
 
-<style>
-  #main-content .daily-lesson-plan {
-    max-width: 900px;
-    margin: auto;
-    font-family: Arial, sans-serif;
-    color: #222;
-  }
-  #main-content .daily-lesson-plan h1 {
-    color: #004080;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  #main-content .daily-lesson-plan h2 {
-    color: #003366;
-    border-left: 5px solid #004080;
-    padding-left: 0.75rem;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  #main-content .daily-lesson-plan table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
-  }
-  #main-content .daily-lesson-plan th,
-  #main-content .daily-lesson-plan td {
-    border: 1px solid #cbd5e1;
-    padding: 8px 12px;
-    text-align: left;
-  }
-  #main-content .daily-lesson-plan th {
-    background-color: #004080;
-    color: white;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
-    background-color: #f6f9ff;
-  }
-</style>
+
 
   </div>
   <div id="week7" class="week-content">
@@ -1346,52 +1105,7 @@
   </div>
 </main>
 
-<style>
-  #main-content .daily-lesson-plan {
-    max-width: 900px;
-    margin: auto;
-    font-family: Arial, sans-serif;
-    color: #222;
-  }
-  #main-content .daily-lesson-plan h1 {
-    color: #004080;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  #main-content .daily-lesson-plan h2 {
-    color: #003366;
-    border-left: 5px solid #004080;
-    padding-left: 0.75rem;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  #main-content .daily-lesson-plan table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
-  }
-  #main-content .daily-lesson-plan th,
-  #main-content .daily-lesson-plan td {
-    border: 1px solid #cbd5e1;
-    padding: 8px 12px;
-    text-align: left;
-  }
-  #main-content .daily-lesson-plan th {
-    background-color: #004080;
-    color: white;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
-    background-color: #f6f9ff;
-  }
-</style>
+
 
   </div>
   <div id="week8" class="week-content">
@@ -1523,52 +1237,7 @@
   </div>
 </main>
 
-<style>
-  #main-content .daily-lesson-plan {
-    max-width: 900px;
-    margin: auto;
-    font-family: Arial, sans-serif;
-    color: #222;
-  }
-  #main-content .daily-lesson-plan h1 {
-    color: #004080;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  #main-content .daily-lesson-plan h2 {
-    color: #003366;
-    border-left: 5px solid #004080;
-    padding-left: 0.75rem;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  #main-content .daily-lesson-plan table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
-  }
-  #main-content .daily-lesson-plan th,
-  #main-content .daily-lesson-plan td {
-    border: 1px solid #cbd5e1;
-    padding: 8px 12px;
-    text-align: left;
-  }
-  #main-content .daily-lesson-plan th {
-    background-color: #004080;
-    color: white;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
-    background-color: #f6f9ff;
-  }
-</style>
+
 
   </div>
   <div id="week9" class="week-content">
@@ -1700,52 +1369,7 @@
   </div>
 </main>
 
-<style>
-  #main-content .daily-lesson-plan {
-    max-width: 900px;
-    margin: auto;
-    font-family: Arial, sans-serif;
-    color: #222;
-  }
-  #main-content .daily-lesson-plan h1 {
-    color: #004080;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  #main-content .daily-lesson-plan h2 {
-    color: #003366;
-    border-left: 5px solid #004080;
-    padding-left: 0.75rem;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  #main-content .daily-lesson-plan table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
-  }
-  #main-content .daily-lesson-plan th,
-  #main-content .daily-lesson-plan td {
-    border: 1px solid #cbd5e1;
-    padding: 8px 12px;
-    text-align: left;
-  }
-  #main-content .daily-lesson-plan th {
-    background-color: #004080;
-    color: white;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
-    background-color: #f6f9ff;
-  }
-</style>
+
 
   </div>
   <div id="week10" class="week-content">
@@ -1755,52 +1379,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Week 10: LPG/CNG System & Calibration</title>
-  <style>
-    #main-content .daily-lesson-plan {
-      max-width: 900px;
-      margin: auto;
-      font-family: Arial, sans-serif;
-      color: #222;
-    }
-    #main-content .daily-lesson-plan h1 {
-      color: #004080;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    #main-content .daily-lesson-plan h2 {
-      color: #003366;
-      border-left: 5px solid #004080;
-      padding-left: 0.75rem;
-      margin-top: 2rem;
-      margin-bottom: 0.75rem;
-      font-weight: 600;
-    }
-    #main-content .daily-lesson-plan p {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
-    #main-content .daily-lesson-plan table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
-    }
-    #main-content .daily-lesson-plan th,
-    #main-content .daily-lesson-plan td {
-      border: 1px solid #cbd5e1;
-      padding: 8px 12px;
-      text-align: left;
-    }
-    #main-content .daily-lesson-plan th {
-      background-color: #004080;
-      color: white;
-      font-weight: 600;
-    }
-    #main-content .daily-lesson-plan tbody tr:nth-child(even) {
-      background-color: #f6f9ff;
-    }
-  </style>
+  
 </head>
 <body>
   <div id="main-content">
@@ -1918,52 +1497,7 @@
   </div>
   <div id="week11" class="week-content">
     <div id="main-content">
-  <style>
-    #main-content .daily-lesson-plan {
-      max-width: 900px;
-      margin: auto;
-      font-family: Arial, sans-serif;
-      color: #222;
-    }
-    #main-content .daily-lesson-plan h1 {
-      color: #004080;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    #main-content .daily-lesson-plan h2 {
-      color: #003366;
-      border-left: 5px solid #004080;
-      padding-left: 0.75rem;
-      margin-top: 2rem;
-      margin-bottom: 0.75rem;
-      font-weight: 600;
-    }
-    #main-content .daily-lesson-plan p {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
-    #main-content .daily-lesson-plan table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
-    }
-    #main-content .daily-lesson-plan th,
-    #main-content .daily-lesson-plan td {
-      border: 1px solid #cbd5e1;
-      padding: 8px 12px;
-      text-align: left;
-    }
-    #main-content .daily-lesson-plan th {
-      background-color: #004080;
-      color: white;
-      font-weight: 600;
-    }
-    #main-content .daily-lesson-plan tbody tr:nth-child(even) {
-      background-color: #f6f9ff;
-    }
-  </style>
+  
 
   <div class="daily-lesson-plan">
     <h1>Week 11: Hybrid, EV, and Advanced Electronics</h1>
@@ -2082,52 +1616,7 @@
 
   </div>
   <div id="week12" class="week-content">
-    <style>
-  #main-content .daily-lesson-plan {
-    max-width: 900px;
-    margin: auto;
-    font-family: Arial, sans-serif;
-    color: #222;
-  }
-  #main-content .daily-lesson-plan h1 {
-    color: #004080;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  #main-content .daily-lesson-plan h2 {
-    color: #003366;
-    border-left: 5px solid #004080;
-    padding-left: 0.75rem;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  #main-content .daily-lesson-plan table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 8px rgb(0 64 128 / 0.1);
-  }
-  #main-content .daily-lesson-plan th,
-  #main-content .daily-lesson-plan td {
-    border: 1px solid #cbd5e1;
-    padding: 8px 12px;
-    text-align: left;
-  }
-  #main-content .daily-lesson-plan th {
-    background-color: #004080;
-    color: white;
-    font-weight: 600;
-  }
-  #main-content .daily-lesson-plan tbody tr:nth-child(even) {
-    background-color: #f6f9ff;
-  }
-</style>
+    
 
 <div id="main-content">
   <div class="daily-lesson-plan">
