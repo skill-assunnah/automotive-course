@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+   <!-- Header -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Automobile Technician Training</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
- <style>
+
+    <div class="header-container">
+      <a href="index.html" class="logo">🚗Automobile</a>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <nav>
+        <div class="nav-links" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="course-outline.html">Course Outline</a>
+          <a href="syllabus.html">Syllabus</a>
+          <a href="resources.html">Resources</a>
+          <a href="about.html">About</a>
+        </div>
+      </nav>
+    </div>
+     <style>
 .week-dropdown-container {
     display: flex;
     flex-direction: column;
@@ -85,33 +104,7 @@ tr th:first-child,
 tr td:first-child {
   text-align: center;
 }
-
-
 </style>
-
-</head>
-<body>
-
-  <!-- Header -->
-  <header>
-    <div class="header-container">
-      <a href="index.html" class="logo">🚗Automobile</a>
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <nav>
-        <div class="nav-links" id="navLinks">
-          <a href="index.html">Home</a>
-          <a href="course-outline.html">Course Outline</a>
-          <a href="syllabus.html">Syllabus</a>
-          <a href="resources.html">Resources</a>
-          <a href="about.html">About</a>
-        </div>
-      </nav>
-    </div>
-    
   </header>
 
   <!-- Main Content Area -->
