@@ -3,6 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Professional Automotive Technician Training</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Professional Automotive Technician Training by As Sunnah Skill Development Institute – a 3-month certified course to become a job-ready automotive technician.">
+  <meta name="keywords" content="automotive training, technician course, As Sunnah, vehicle diagnostics, hybrid vehicle, ADAS, CNG installation">
+  <meta name="author" content="As Sunnah Skill Development Institute">
+  <meta property="og:title" content="Professional Automotive Technician Training">
+  <meta property="og:description" content="Become a certified, job-ready technician in 3 months. Organized by As Sunnah Skill Development Institute.">
+  <meta property="og:image" content="cover-image.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
   <style>
     body {
       margin: 0;
@@ -48,6 +58,10 @@
 
     .nav-links a:hover {
       color: #ffffff;
+    }
+
+    .nav-links a.active {
+      border-bottom: 2px solid #FFD700;
     }
 
     .dropdown {
@@ -188,7 +202,7 @@
 </head>
 <body>
 
-<nav>
+<nav role="navigation" aria-label="Main navigation">
   <div class="nav-container">
     <div class="logo">Automobile</div>
     <div class="menu-toggle" onclick="toggleMenu()">
@@ -197,7 +211,7 @@
       <div></div>
     </div>
     <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="course-outline.html">Course Outline</a>
       <div class="dropdown" onclick="toggleDropdown(event)">
         <a href="syllabus.html">Syllabus</a>
