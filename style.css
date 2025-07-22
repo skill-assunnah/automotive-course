@@ -1,136 +1,186 @@
-/* Reset & Base */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f8fb;
-  color: #333;
-  line-height: 1.5;
-}
-a {
-  text-decoration: none;
-  color: inherit;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f5;
+  color: #1F453D;
 }
 
-/* Header & Navigation */
-header {
-  background-color: #002c5c;
-  color: white;
-  padding: 15px 20px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+nav {
+  background-color: #1F453D;
+  padding: 12px 20px;
+  position: relative;
+  border-bottom: 2px solid #FFD700;
 }
-.header-container {
-  max-width: 1100px;
-  margin: auto;
+
+.nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
 .logo {
-  font-size: 1.5rem;
+  color: #ffffff;
+  font-size: 20px;
   font-weight: bold;
-  color: #fff;
 }
-nav {
-  position: relative;
-}
+
 .nav-links {
   display: flex;
   gap: 20px;
+  align-items: center;
 }
+
 .nav-links a {
-  color: #cbdaf1;
+  color: #d2ede4;
   font-weight: 500;
+  text-decoration: none;
+  padding: 8px 12px;
   transition: color 0.2s ease;
 }
+
 .nav-links a:hover {
   color: #ffffff;
 }
-/* Dropdown */
-  .dropdown {
-    position: relative;
-  }
 
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    flex-direction: column;
-    background-color: #003566;
-    padding: 8px 0;
-    border-radius: 6px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    z-index: 10;
-  }
+.nav-links a.active {
+  border-bottom: 2px solid #FFD700;
+}
 
-  .dropdown-content a {
-    padding: 8px 16px;
-    white-space: nowrap;
-  }
+.dropdown {
+  position: relative;
+}
 
-  .dropdown:hover .dropdown-content {
-    display: flex;
-  }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  background-color: #2d5c51;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
 
-/* Toggle Button */
+.dropdown-content a {
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
 .menu-toggle {
   display: none;
   flex-direction: column;
   cursor: pointer;
+  gap: 4px;
 }
+
 .menu-toggle div {
   width: 25px;
   height: 3px;
   background-color: white;
-  margin: 4px 0;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
     position: absolute;
-    right: 0;
     top: 60px;
-    background-color: #002c5c;
-    padding: 10px;
-    width: 200px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    border-radius: 8px;
+    right: 0;
+    background-color: #1F453D;
+    width: 100%;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
   }
+
   .nav-links.active {
     display: flex;
   }
-  .menu-toggle {
+
+  .dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #2d5c51;
+    box-shadow: none;
+    margin-top: 5px;
+    padding-left: 10px;
+  }
+
+  .dropdown.open .dropdown-content {
     display: flex;
+  }
+
+  .dropdown > a::after {
+    content: ' ▼';
+    font-size: 12px;
   }
 }
 
-/* Main Container */
-main {
+.main-content {
   max-width: 1000px;
-  margin: 30px auto;
-  background: white;
-  padding: 30px 40px;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  margin: 2rem auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer */
+.main-content h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.main-content h2 {
+  font-size: 24px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.main-content p,
+.main-content ul,
+.main-content li {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.button-group {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.button-group a {
+  background-color: #1F453D;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.button-group a:hover {
+  background-color: #16362f;
+}
+
 footer {
-  background-color: #002c5c;
-  color: #ccc;
+  background-color: #1F453D;
+  color: #d2ede4;
   text-align: center;
+  border-top: 2px solid #FFD700;
   padding: 20px;
   margin-top: 40px;
-  font-size: 0.9rem;
 }
