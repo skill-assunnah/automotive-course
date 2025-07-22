@@ -53,6 +53,32 @@ nav {
 .nav-links a:hover {
   color: #ffffff;
 }
+/* Dropdown */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    background-color: #003566;
+    padding: 8px 0;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 10;
+  }
+
+  .dropdown-content a {
+    padding: 8px 16px;
+    white-space: nowrap;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: flex;
+  }
 
 /* Toggle Button */
 .menu-toggle {
