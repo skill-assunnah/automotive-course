@@ -123,16 +123,82 @@
       tr td:first-child {
         text-align: center;
       }
+	.download-btn {
+      display: block;
+      text-align: right;
+      margin-bottom: 1.5rem;
+    }
+
+    .download-btn button {
+      background-color: #8c9b90;
+      color: #fff;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-btn button:hover {
+      background-color: #667069
+    }
 	</style>
  
     <!-- Week Selector with Polished Styling -->	
- 
+ <!-- Download PDF Section -->
+<div class="download-section">
+  <style>
+    .download-section {
+      text-align: right;
+      margin: 0.5rem 0;
+    }
+
+    .download-section button {
+      background-color: #8c9b90;
+      color: #fff;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-section button:hover {
+      background-color: #667069;
+    }
+  </style>
+
+  <button onclick="downloadPageAsPDF()">📄 Download PDF</button>
+</div>
+
+<!-- Script: Include only once per page -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+  function downloadPageAsPDF() {
+    const content = document.body; // Or use document.getElementById('main-content')
+    const titleElement = document.querySelector("h1");
+    const title = titleElement
+      ? titleElement.innerText.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '')
+      : "Automotive_Document";
+
+    const options = {
+      margin: 0.5,
+      filename: `${title}.pdf`,
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+
+    html2pdf().set(options).from(content).save();
+  }
+</script>
+
 <div class="week-dropdown-container">
-	<div style="display: flex; justify-content: space-between; align-items: center; width:100%; max-width: 900px;">
-   		<button id="download-pdf-btn" style="margin-left: auto; padding: 0.5rem 1rem; background-color:#8c9b90; color: white; border: none; border-radius: 5px; cursor: pointer;">📄 Download PDF
-    	</button>
+	<div style="display: flex; justify-content: space-between; align-items: center; width:100%; max-width: 900px;">  		
     </div>
-  
+   
     <h2>📅 Select a Training Week</h2>
     <div class="dropdown-wrapper">
       <select id="weekSelector" class="dropdown-select">
@@ -1765,62 +1831,6 @@
   });
 </script>
 
-
-  <!-- JavaScript for PDF -->
-<script>
-  document.getElementById("download-pdf-btn").addEventListener("click", function () {
-    const element = document.getElementById("main-content");
-    
-    const opt = {
-      margin: 0.5,
-      filename: 'Weekly_Lesson_Plan.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
-      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-    };
-    
-    html2pdf().set(opt).from(element).save();
-  });
-</script>
-
- 
-  <!-- JavaScript for Download PDF -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script>
-  document.getElementById('downloadPdfBtn').addEventListener('click', async () => {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF('p', 'pt', 'a4');
-
-    // Select the main content area
-    const mainContent = document.querySelector('main');
-
-    // Get title from first <h1> in main content for filename
-    const titleElem = mainContent.querySelector('h1');
-    let fileName = 'document.pdf';
-    if(titleElem && titleElem.textContent.trim() !== '') {
-      fileName = titleElem.textContent.trim().replace(/[\\\/:*?"<>|]/g, '') + '.pdf';
-    }
-
-    // Use html2canvas to create a canvas from the main content, increase scale for better resolution
-    const canvas = await html2canvas(mainContent, { scale: 2 });
-
-    // Convert canvas to image data
-    const imgData = canvas.toDataURL('image/png');
-
-    // Calculate image dimensions to fit A4
-    const imgProps = doc.getImageProperties(imgData);
-    const pdfWidth = doc.internal.pageSize.getWidth();
-    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-
-    // Add image to PDF
-    doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-
-    // Save the PDF with the title-based filename
-    doc.save(fileName);
-  });
-</script>
 
   <div class="button-group">
     <a href="course-outline.html">📘 Course Outline</a>
