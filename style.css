@@ -127,17 +127,28 @@ nav {
   }
 }
 <!-- Style download button Right Alignment, No Underline, Custom Color -->
-  .download-section {
-    text-align: right;
-    margin: 1rem 0;
-  }
+ .download-section {
+  text-align: right;
+  margin: 1rem 0;
+}
 
-  .download-section a {
-    color: #8c9b90;
-    text-decoration: none;
-    font-weight: 500;
-    font-family: Arial, sans-serif;
+.download-section a {
+  color: #8c9b90;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+
+/* Optional: prevent breaks inside important blocks */
+.no-break {
+  page-break-inside: avoid;
+}
+
+@media print {
+  .download-section {
+    display: none;
   }
+}
+
 
 .main-content {
   max-width: 1000px;
