@@ -127,15 +127,16 @@ nav {
   }
 }
 <!-- Style download button Right Alignment, No Underline, Custom Color -->
- .download-section {
+.download-section {
   text-align: right;
   margin: 1rem 0;
 }
-
 .download-section a {
   color: #8c9b90;
   text-decoration: none;
   font-family: Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
 }
 
 /* Optional: prevent breaks inside important blocks */
