@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Professional Automotive Technician Training</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Professional Automotive Technician Training by As Sunnah Skill Development Institute – a 3-month certified course to become a job-ready automotive technician.">
+  <meta name="keywords" content="automotive training, technician course, As Sunnah, vehicle diagnostics, hybrid vehicle, ADAS, CNG installation">
+  <meta name="author" content="As Sunnah Skill Development Institute">
+  <meta property="og:title" content="Professional Automotive Technician Training">
+  <meta property="og:description" content="Become a certified, job-ready technician in 3 months. Organized by As Sunnah Skill Development Institute.">
+  <meta property="og:image" content="cover-image.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <div class="logo">Automobile</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="course-outline.html">Course Outline</a>
+      <div class="dropdown" onclick="toggleDropdown(event)">
+        <a href="syllabus.html">Syllabus</a>
+        <div class="dropdown-content">
+          <a href="weekly-module.html">Weekly Module</a>
+          <a href="daily-module.html">Daily Module</a>
+        </div>
+      </div>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<div class="main-content">
+  <div class="about-page">
+  <style>
+    .about-page {
+      max-width: 900px;
+      margin: 2rem auto;
+      font-family: Arial, sans-serif;
+      color: #222;
+      line-height: 1.7;
+      padding: 1rem;
+    }
+
+    .about-page h1 {
+      color: #004080;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .about-page h2 {
+      color: #003366;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      border-left: 5px solid #004080;
+      padding-left: 0.75rem;
+    }
+
+    .about-page p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-page ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-page li {
+      margin-bottom: 0.5rem;
+    }
+
+    .about-page strong {
+      color: #004080;
+    }
+  </style>
+
+  <h1>About the Program</h1>
+  
+  <p>
+    The <strong>Professional Automotive Technician Training</strong> course is a comprehensive 3-month program designed to equip aspiring technicians with in-depth knowledge and practical skills in modern automobile systems.
+    Our training combines theory, hands-on sessions, and diagnostics to ensure students graduate ready to work in real-world automotive service environments.
+  </p>
+
+  <h2>Objectives</h2>
+  <ul>
+    <li>Develop core competencies in mechanical, electrical, and diagnostic automotive systems.</li>
+    <li>Ensure safety awareness, ethical workshop practices, and tool proficiency.</li>
+    <li>Prepare students for entry-level technician roles or advanced study in automotive engineering.</li>
+  </ul>
+
+  <h2>Who Should Enroll?</h2>
+  <p>
+    This program is ideal for:
+  </p>
+  <ul>
+    <li>Students with a passion for vehicles and technology</li>
+    <li>Beginners looking to enter the automotive industry</li>
+    <li>Workshop assistants wanting to upgrade their skills</li>
+    <li>Technicians aiming to specialize in diagnostics or hybrid systems</li>
+  </ul>
+
+  <h2>Training Highlights</h2>
+  <ul>
+    <li>12 weeks of structured, hands-on learning</li>
+    <li>Modern tools and diagnostic equipment</li>
+    <li>Guidance from certified instructors</li>
+    <li>Final certification upon successful completion</li>
+  </ul>
+
+  <h2>Offered by</h2>
+  <p><strong>As Sunnah Skill Development Institute</strong> is committed to providing industry-relevant vocational education that empowers individuals with life-changing skills. Our mission is to blend technical knowledge with ethical values to create responsible, skilled professionals.</p>
+</div>
+
+
+<footer>
+  &copy; 2025 As Sunnah Skill Development Institute. All rights reserved.
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+
+  function toggleDropdown(event) {
+    const dropdown = event.currentTarget;
+    dropdown.classList.toggle("open");
+    event.stopPropagation();
+  }
+
+  window.addEventListener('click', function () {
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+  });
+</script>
+
+</body>
+</html>
