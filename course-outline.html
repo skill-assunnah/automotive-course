@@ -1,410 +1,568 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automotive Technology Course</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        body { font-family: 'Arial', sans-serif; }
-        .module { margin-bottom: 2rem; }
-        .week { margin-left: 1rem; margin-bottom: 1.5rem; } /* Increased spacing between titles */
-        .section { margin-left: 2rem; }
-        .accordion { cursor: pointer; color: #1a3c34; display: flex; align-items: center; }
-        .accordion::before { content: '▶'; margin-right: 0.5rem; transition: transform 0.3s; }
-        .accordion.active::before { transform: rotate(90deg); }
-        .accordion-content { display: none; }
-        .accordion-content.active { display: block; }
-    </style>
+  <meta charset="UTF-8">
+  <title>Professional Automotive Technician Training</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Professional Automotive Technician Training by As Sunnah Skill Development Institute – a 3-month certified course to become a job-ready automotive technician.">
+  <meta name="keywords" content="automotive training, technician course, As Sunnah, vehicle diagnostics, hybrid vehicle, ADAS, CNG installation">
+  <meta name="author" content="As Sunnah Skill Development Institute">
+  <meta property="og:title" content="Professional Automotive Technician Training">
+  <meta property="og:description" content="Become a certified, job-ready technician in 3 months. Organized by As Sunnah Skill Development Institute.">
+  <meta property="og:image" content="cover-image.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-100">
-    <div class="container mx-auto p-4">
-        <h1 class="text-3xl font-bold text-center mb-8">Automotive Technology Course Outline</h1>
+<body>
 
-        <!-- Basic Module -->
-        <div class="module bg-white p-6 rounded-lg shadow-md">
-            <h2 class="text-2xl font-semibold mb-4">Basic Module (Weeks 1–4)</h2>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">1.1 Safety and Hazard</h3>
-                <div class="section accordion-content">
-                    <p><strong>1.1.1 OHS (Occupational Health and Safety):</strong> Workplace safety regulations, accident prevention, safe material handling, emergency procedures, hazard identification.</p>
-                    <p><strong>1.1.2 PPE (Personal Protective Equipment):</strong> Types (gloves, goggles, helmets, overalls, earplugs), selection, usage, inspection, replacement.</p>
-                    <p><strong>1.1.3 Workshop Ethics:</strong> Professional conduct, punctuality, discipline, cleanliness, teamwork, tool and environment responsibility.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">1.2 Using Hand and Power Tools</h3>
-                <div class="section accordion-content">
-                    <p><strong>1.2.1 Identify and Inspect Tools:</strong> Recognize hand tools (spanners, pliers, hammers) and power tools (drills, grinders); ensure suitability.</p>
-                    <p><strong>1.2.2 Proper Use of Tools:</strong> Correct techniques, handling positions, torque application, manufacturer’s instructions.</p>
-                    <p><strong>1.2.3 Cleaning and Maintenance:</strong> Clean tools, lubricate, store properly, routine maintenance checks.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">1.3 Interpret Major Systems of Automobiles</h3>
-                <div class="section accordion-content">
-                    <p><strong>1.3.1 Engine System:</strong> Engine types (Inline, V-type), 4-stroke cycle, cylinder block, timing system, crankshaft, oil sump, head gasket, combustion.</p>
-                    <p><strong>1.3.2 Fuel System & Servicing:</strong> Fuel tank, lines, filter, pump, carburetor/injector, throttle body; servicing, pressure check, filter replacement.</p>
-                    <p><strong>1.3.3 Cooling System & Servicing:</strong> Radiator, fan, thermostat, water pump, hoses; heat exchange, leak checks, radiator flushing, coolant maintenance.</p>
-                    <p><strong>1.3.4 Transmission System:</strong> Manual/automatic gearboxes, clutch, CVT, torque converter; lubrication, clutch adjustment, oil change.</p>
-                    <p><strong>1.3.5 Brake System:</strong> Disc/drum brakes, master/wheel cylinder, lines, caliper, ABS; fluid bleeding, pad replacement.</p>
-                    <p><strong>1.3.6 Steering and Suspension:</strong> Steering types (manual, power, EPS), suspension (coil/leaf spring, shock absorber); inspection.</p>
-                    <p><strong>1.3.7 Electrical System:</strong> Battery, alternator, starter, fuses, lighting; diagnostics, wiring trace, fuse replacement.</p>
-                    <p><strong>1.3.8 Exhaust System:</strong> Manifold, catalytic converter, muffler, tailpipe; leakage, rust, emissions, sound reduction.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">1.4 Engine System</h3>
-                <div class="section accordion-content">
-                    <p><strong>1.4.1 Types of Engines (SI vs CI):</strong> Spark Ignition vs Compression Ignition; fuel systems and diagnostics.</p>
-                    <p><strong>1.4.2 Operating Cycles:</strong> 4-stroke (Otto, Diesel), 2-stroke; troubleshooting foundation.</p>
-                    <p><strong>1.4.3 Key Components:</strong> Cylinder block, piston, crankshaft, camshaft, valves, timing chain/belt, spark plug (SI), injector (CI), lubrication.</p>
-                    <p><strong>1.4.4 Function:</strong> Converts energy to mechanical power.</p>
-                    <p><strong>1.4.5 Lubrication Path:</strong> Oil flow through moving parts, wear reduction.</p>
-                    <p><strong>1.4.6 Cooling Overview:</strong> Engine cooling methods.</p>
-                    <p><strong>1.4.7 Measurements:</strong> Bore, stroke, displacement, compression ratio.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">1.5 Assessments</h3>
-                <div class="section accordion-content">
-                    <p><strong>1.5.1 Written Test:</strong> MCQs/short questions on safety, tools, systems.</p>
-                    <p><strong>1.5.2 Practical Evaluation:</strong> Tool/component identification, basic servicing.</p>
-                    <p><strong>1.5.3 Oral/Viva:</strong> Safety, system functions, component roles.</p>
-                    <p><strong>1.5.4 Tool Handling:</strong> Correct usage, posture, safety compliance.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">2.1 Servicing and Replacing Fuel System Components</h3>
-                <div class="section accordion-content">
-                    <p><strong>2.1.1 Components:</strong> Fuel tank, pump, filter, lines, injectors, carburetor, fuel rail.</p>
-                    <p><strong>2.1.2 Function:</strong> Supplies clean fuel at correct pressure for combustion.</p>
-                    <p><strong>2.1.3 Servicing:</strong> Inspect/replace filters, clean injectors, test pressure, check leaks.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">2.2 Servicing and Maintaining Cooling System</h3>
-                <div class="section accordion-content">
-                    <p><strong>2.2.1 Components:</strong> Radiator, water pump, thermostat, fan, coolant reservoir, hoses, sensor.</p>
-                    <p><strong>2.2.2 Function:</strong> Regulates engine temperature, prevents overheating.</p>
-                    <p><strong>2.2.3 Servicing:</strong> Check coolant, pressure-test cap, flush/refill, inspect hoses, test thermostat/fan.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">2.3 Servicing and Maintaining Lubrication System</h3>
-                <div class="section accordion-content">
-                    <p><strong>2.3.1 Components:</strong> Oil sump, pump, filter, pressure valve, galleries, dipstick.</p>
-                    <p><strong>2.3.2 Function:</strong> Reduces friction, removes heat, cleans engine, protects against rust.</p>
-                    <p><strong>2.3.3 Servicing:</strong> Drain oil, replace filter, refill oil, check pressure, inspect leaks.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">2.4 Assessments</h3>
-                <div class="section accordion-content">
-                    <p><strong>2.4.1 Written Test:</strong> Fuel, cooling, lubrication systems components/functions/servicing.</p>
-                    <p><strong>2.4.2 Practical Evaluation:</strong> Drain/refill coolant/oil, replace filters, leak inspection.</p>
-                    <p><strong>2.4.3 Tool Handling:</strong> Oil drain pan, filter wrench, funnel, coolant tester.</p>
-                    <p><strong>2.4.4 Oral/Viva:</strong> Explain thermostat, oil pressure, fuel delivery purpose.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">3.1 Diagnosing and Servicing Starting System</h3>
-                <div class="section accordion-content">
-                    <p><strong>3.1.1 Components:</strong> Battery, ignition switch, starter motor, solenoid, flywheel ring gear, wiring.</p>
-                    <p><strong>3.1.2 Function:</strong> Converts electrical energy to crank engine.</p>
-                    <p><strong>3.1.3 Servicing:</strong> Check battery, test starter, inspect solenoid, clean terminals, diagnose noises.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">3.2 Servicing and Replacing Ignition System</h3>
-                <div class="section accordion-content">
-                    <p><strong>3.2.1 Components:</strong> Ignition coil, distributor, spark plugs, switch, crankshaft sensor, control module, wiring.</p>
-                    <p><strong>3.2.2 Function:</strong> Provides spark to ignite air-fuel mixture in SI engines.</p>
-                    <p><strong>3.2.3 Servicing:</strong> Inspect/replace spark plugs, test/replace coil, adjust timing, check wiring, diagnose misfire/no-start.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">3.3 Repair and Service Air Induction System</h3>
-                <div class="section accordion-content">
-                    <p><strong>3.3.1 Components:</strong> Air filter, intake manifold, throttle body, air flow sensor, intercooler, hoses.</p>
-                    <p><strong>3.3.2 Function:</strong> Supplies clean air, regulates combustion air, improves efficiency/emissions.</p>
-                    <p><strong>3.3.3 Servicing:</strong> Clean/replace filter, inspect ducts, clean throttle body, test sensors, reseal gaskets.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">3.4 Assessments</h3>
-                <div class="section accordion-content">
-                    <p><strong>3.4.1 Written Test:</strong> Ignition, starting, air induction components/functions/procedures.</p>
-                    <p><strong>3.4.2 Practical Evaluation:</strong> Spark plug replacement, starter testing, air filter/throttle body servicing.</p>
-                    <p><strong>3.4.3 Tool Handling:</strong> Multimeter, plug spanner, throttle cleaner, diagnostic tools.</p>
-                    <p><strong>3.4.4 Oral/Viva:</strong> Ignition sequence, faulty intake signs, SI vs CI ignition.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">4.1 Servicing and Repairing Exhaust System</h3>
-                <div class="section accordion-content">
-                    <p><strong>4.1.1 Components:</strong> Exhaust manifold, catalytic converter, muffler, pipes, oxygen sensors, resonator.</p>
-                    <p><strong>4.1.2 Function:</strong> Directs exhaust gases, reduces emissions/noise.</p>
-                    <p><strong>4.1.3 Servicing:</strong> Inspect/replace pipes, clean/replace converter, check sensors, repair leaks.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">4.2 Perform Spark Ignition (SI) Engine Tune-Up</h3>
-                <div class="section accordion-content">
-                    <p><strong>4.2.1 Cycle:</strong> Intake, Compression, Power, Exhaust strokes; converts fuel to energy.</p>
-                    <p><strong>4.2.2 Function:</strong> Uses spark plug to ignite air-fuel mixture in SI engines.</p>
-                    <p><strong>4.2.3 Tune-Up:</strong> Adjust timing, clean/replace spark plugs, check carburetor/injection, inspect valves/ignition.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">4.3 Perform Compression Ignition (Diesel) Engine Tune-Up</h3>
-                <div class="section accordion-content">
-                    <p><strong>4.3.1 Cycle:</strong> Intake, Compression, Power, Exhaust; fuel ignited by compressed air.</p>
-                    <p><strong>4.3.2 Function:</strong> Converts fuel to power via compression ignition; high torque, efficient.</p>
-                    <p><strong>4.3.3 Tune-Up:</strong> Adjust injector timing, clean/replace injectors, check glow plugs, verify compression.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">4.4 Assessments</h3>
-                <div class="section accordion-content">
-                    <p><strong>4.4.1 Written Test:</strong> SI/Diesel cycles, functions, tune-up procedures.</p>
-                    <p><strong>4.4.2 Practical Evaluation:</strong> Spark plug/injector replacement, timing adjustments, valve inspection.</p>
-                    <p><strong>4.4.3 Tool Handling:</strong> Timing light, injector cleaner, compression tester.</p>
-                    <p><strong>4.4.4 Oral/Viva:</strong> SI vs Diesel differences, tune-up importance, diagnostics.</p>
-                </div>
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <div class="logo">Automobile</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="course-outline.html">Course Outline</a>
+      <div class="dropdown" onclick="toggleDropdown(event)">
+        <a href="syllabus.html">Syllabus</a>
+        <div class="dropdown-content">
+          <a href="weekly-module.html">Weekly Module</a>
+          <a href="daily-module.html">Daily Module</a>
+        </div>
+      </div>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<div class="main-content">
+  <div class="course-container max-w-4xl mx-auto p-6">
+    <style>
+        /* General Styling */
+        .course-container {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: #f4f6f9;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1a202c;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .module {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .module:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2d3748;
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .week {
+            margin-bottom: 1rem;
+        }
+
+        .accordion {
+            color: #2b6cb0;
+            font-size: 1.25rem;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 0.75rem 1rem;
+            background-color: #edf2f7;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .accordion:hover {
+            background-color: #e2e8f0;
+            color: #1a4971;
+        }
+
+        .accordion-content {
+            padding: 1rem;
+            background-color: #f7fafc;
+            border-left: 4px solid #2b6cb0;
+            border-radius: 0 6px 6px 0;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .accordion-content.active {
+            display: block;
+        }
+
+        p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .course-container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .accordion {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+
+    <h1>Automotive Technology Course Outline</h1>
+
+    <!-- Basic Module -->
+    <div class="module">
+        <h2>Basic Module (Weeks 1–4)</h2>
+        <div class="week">
+            <h3 class="accordion">1.1 Safety and Hazard</h3>
+            <div class="section accordion-content">
+                <p><strong>1.1.1 OHS (Occupational Health and Safety):</strong> Workplace safety regulations, accident prevention, safe material handling, emergency procedures, hazard identification.</p>
+                <p><strong>1.1.2 PPE (Personal Protective Equipment):</strong> Types (gloves, goggles, helmets, overalls, earplugs), selection, usage, inspection, replacement.</p>
+                <p><strong>1.1.3 Workshop Ethics:</strong> Professional conduct, punctuality, discipline, cleanliness, teamwork, tool and environment responsibility.</p>
             </div>
         </div>
-
-        <!-- Intermediate Module -->
-        <div class="module bg-white p-6 rounded-lg shadow-md">
-            <h2 class="text-2xl font-semibold mb-4">Intermediate Module (Weeks 5–8)</h2>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">5.1 Overhauling and Servicing Powertrain System</h3>
-                <div class="section accordion-content">
-                    <p><strong>5.1.1 Components:</strong> Clutch, transmission, driveshaft, differential, axle shafts, CV joints.</p>
-                    <p><strong>5.1.2 Function:</strong> Transmits engine power to wheels, torque/speed control.</p>
-                    <p><strong>5.1.3 Servicing:</strong> Inspect clutch, adjust linkage, change fluid, check driveshaft/CV joints.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">5.2 Servicing and Repairing Steering System</h3>
-                <div class="section accordion-content">
-                    <p><strong>5.2.1 Components:</strong> Steering wheel, column, rack/pinion, tie rods, power steering pump.</p>
-                    <p><strong>5.2.2 Function:</strong> Controls vehicle direction via front wheels.</p>
-                    <p><strong>5.2.3 Servicing:</strong> Inspect/adjust linkage, check fluid, repair leaks, replace tie rods/seals.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">5.3 Assessments</h3>
-                <div class="section accordion-content">
-                    <p><strong>5.3.1 Written Test:</strong> Powertrain/steering components, functions, servicing.</p>
-                    <p><strong>5.3.2 Practical Evaluation:</strong> Steering linkage/clutch adjustment, fluid check.</p>
-                    <p><strong>5.3.3 Tool Handling:</strong> Torque wrench, fluid tester, steering puller.</p>
-                    <p><strong>5.3.4 Oral/Viva:</strong> Powertrain/steering functions, troubleshooting.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">6.1 Servicing and Inspecting Suspension System</h3>
-                <div class="section accordion-content">
-                    <p><strong>6.1.1 Components:</strong> Springs, shocks, control arms, bushings, struts, stabilizer bars.</p>
-                    <p><strong>6.1.2 Function:</strong> Absorbs shocks, maintains stability/ride comfort.</p>
-                    <p><strong>6.1.3 Servicing:</strong> Inspect/replace shocks/bushings, lubricate joints, check alignment.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">6.2 Wheel Balancing and Alignment</h3>
-                <div class="section accordion-content">
-                    <p><strong>6.2.1 Function:</strong> Ensures even tire wear, smooth handling, reduced vibration.</p>
-                    <p><strong>6.2.2 Servicing:</strong> Balance wheels, adjust camber/toe/caster, inspect tires/suspension.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">6.3 Assessments</h3>
-                <div class="section accordion-content">
-                    <p><strong>6.3.1 Written Test:</strong> Suspension, balancing, alignment theory/procedures.</p>
-                    <p><strong>6.3.2 Practical Evaluation:</strong> Wheel balancing, alignment, suspension inspection.</p>
-                    <p><strong>6.3.3 Tool Handling:</strong> Balancing machine, alignment tools, suspension instruments.</p>
-                    <p><strong>6.3.4 Oral/Viva:</strong> Importance of alignment/balancing, misalignment symptoms.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">7.1 Servicing and Repairing Braking System</h3>
-                <div class="section accordion-content">
-                    <p><strong>7.1.1 Types:</strong> Disc, drum, ABS, hydraulic/pneumatic systems.</p>
-                    <p><strong>7.1.2 Components:</strong> Brake pedal, master cylinder, lines, calipers, pads/shoes, wheel cylinders.</p>
-                    <p><strong>7.1.3 Function:</strong> Converts driver input to hydraulic pressure to slow/stop vehicle.</p>
-                    <p><strong>7.1.4 Servicing:</strong> Inspect/replace pads/shoes, bleed lines, check/refill fluid, repair leaks, inspect ABS.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">7.2 Perform Basic Maintenance of Air Conditioning System</h3>
-                <div class="section accordion-content">
-                    <p><strong>7.2.1 Components:</strong> Compressor, condenser, evaporator, expansion valve, refrigerant lines, blower.</p>
-                    <p><strong>7.2.2 Function:</strong> Cools/dehumidifies cabin air via refrigerant circulation.</p>
-                    <p><strong>7.2.3 Maintenance:</strong> Check/refill refrigerant, inspect belts/hoses, clean coils, replace cabin filter, check blower.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">7.3 Assessments</h3>
-                <div class="section accordion-content">
-                    <p><strong>7.3.1 Written Test:</strong> Brake/A/C components, functions, maintenance.</p>
-                    <p><strong>7.3.2 Practical Evaluation:</strong> Brake pad replacement, bleeding, refrigerant check, filter replacement.</p>
-                    <p><strong>7.3.3 Tool Handling:</strong> Brake bleeding kit, refrigerant gauge, A/C diagnostic tools.</p>
-                    <p><strong>7.3.4 Oral/Viva:</strong> Brake safety checks, A/C system issues.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">8.1 Servicing Body Electrical and Electronics System</h3>
-                <div class="section accordion-content">
-                    <p><strong>8.1.1 Components:</strong> Charging, lighting, horn, interior electronics, wiring, fuses, instrument cluster, sensors, actuators, ECU.</p>
-                    <p><strong>8.1.2 Charging System:</strong> Alternator, battery, voltage regulator; generates/stores electrical energy.</p>
-                    <p><strong>8.1.3 Lighting System:</strong> Headlights, tail lights, indicators; ensures visibility/signaling.</p>
-                    <p><strong>8.1.4 Horn/Alarm:</strong> Audio signaling, security alarms.</p>
-                    <p><strong>8.1.5 Interior Electronics:</strong> Power windows, locks, infotainment, climate controls.</p>
-                    <p><strong>8.1.6 Wiring/Fuses:</strong> Harnesses, fuse boxes, connectors; circuit protection.</p>
-                    <p><strong>8.1.7 Instrument Cluster:</strong> Speedometer, tachometer, gauges, warning lights.</p>
-                    <p><strong>8.1.8 Sensors, Actuators, ECU:</strong> Temp/oxygen sensors, injectors, relays; engine/system management.</p>
-                    <p><strong>8.1.9 Servicing:</strong> Diagnose faults, replace wiring/fuses, repair sensors/actuators, troubleshoot ECU.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">8.2 Diagnosing, Servicing, and Repairing EFI System</h3>
-                <div class="section accordion-content">
-                    <p><strong>8.2.1 Components:</strong> Fuel injectors, ECU, fuel pump, sensors (MAF, oxygen, throttle), fuel rail, wiring.</p>
-                    <p><strong>8.2.2 Function:</strong> Controls precise fuel delivery for combustion, efficiency, reduced emissions.</p>
-                    <p><strong>8.2.3 Servicing:</strong> Diagnose faults, clean/replace injectors, test sensors, inspect wiring, calibrate ECU.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">8.3 Servicing and Repairing Charging System</h3>
-                <div class="section accordion-content">
-                    <p><strong>8.3.1 Components:</strong> Alternator, voltage regulator, battery, drive belt, wiring.</p>
-                    <p><strong>8.3.2 Function:</strong> Generates/regulates power to charge battery, power systems.</p>
-                    <p><strong>8.3.3 Servicing:</strong> Test alternator, inspect/replace belts, check regulator, clean terminals, inspect wiring.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">8.4 Assessments</h3>
-                <div class="section accordion-content">
-                    <p><strong>8.4.1 Written Test:</strong> EFI, charging, vehicle electronics.</p>
-                    <p><strong>8.4.2 Practical Evaluation:</strong> Diagnose EFI, test alternator/battery, replace sensors/wiring.</p>
-                    <p><strong>8.4.3 Tool Handling:</strong> Multimeter, scan tools, battery testers.</p>
-                    <p><strong>8.4.4 Oral/Viva:</strong> EFI functions, charging components, troubleshooting.</p>
-                </div>
+        <div class="week">
+            <h3 class="accordion">1.2 Using Hand and Power Tools</h3>
+            <div class="section accordion-content">
+                <p><strong>1.2.1 Identify and Inspect Tools:</strong> Recognize hand tools (spanners, pliers, hammers) and power tools (drills, grinders); ensure suitability.</p>
+                <p><strong>1.2.2 Proper Use of Tools:</strong> Correct techniques, handling positions, torque application, manufacturer’s instructions.</p>
+                <p><strong>1.2.3 Cleaning and Maintenance:</strong> Clean tools, lubricate, store properly, routine maintenance checks.</p>
             </div>
         </div>
-
-        <!-- Advanced Module -->
-        <div class="module bg-white p-6 rounded-lg shadow-md">
-            <h2 class="text-2xl font-semibold mb-4">Advanced Module (Weeks 9–11)</h2>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">9.1 Installing LPG and CNG Conversion Kit</h3>
-                <div class="section accordion-content">
-                    <p><strong>9.1.1 Components:</strong> Pressure regulator, injectors/mixers, gas cylinders, ECU, safety valves.</p>
-                    <p><strong>9.1.2 Installation:</strong> Mount cylinders, connect fuel lines, install ECU/sensors, leak test, calibrate.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">9.2 Testing and Adjusting LPG/CNG Calibration</h3>
-                <div class="section accordion-content">
-                    <p><strong>9.2.1 Purpose:</strong> Optimize air-fuel mixture, prevent knocking/misfiring.</p>
-                    <p><strong>9.2.2 Steps:</strong> Use diagnostic tool, measure pressure/flow, fine-tune ECU, test drive.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">9.3 Assessments</h3>
-                <div class="section accordion-content">
-                    <p><strong>9.3.1 Written Test:</strong> LPG/CNG components, safety, calibration.</p>
-                    <p><strong>9.3.2 Practical Evaluation:</strong> Install cylinder/regulator, leak test, calibration.</p>
-                    <p><strong>9.3.3 Tool Handling:</strong> Gas leak detectors, calibration tools, ECU interfaces.</p>
-                    <p><strong>9.3.4 Oral/Viva:</strong> Calibration importance, safety, fuel switching.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">10.1 Servicing Automotive CNG and LPG System</h3>
-                <div class="section accordion-content">
-                    <p><strong>10.1.1 Components:</strong> Tank/valves, regulator, injectors/mixer, ECU, filters.</p>
-                    <p><strong>10.1.2 Servicing:</strong> Inspect leaks, test regulator, clean/replace filters, ECU diagnostics.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">10.2 Assessments</h3>
-                <div class="section accordion-content">
-                    <p><strong>10.2.1 Written Test:</strong> CNG/LPG functions, servicing, safety.</p>
-                    <p><strong>10.2.2 Practical Evaluation:</strong> Pressure tests, leak detection, component cleaning.</p>
-                    <p><strong>10.2.3 Tool Handling:</strong> Gas leak detectors, pressure gauges, PPE.</p>
-                    <p><strong>10.2.4 Oral/Viva:</strong> Maintenance, failure symptoms, emergency procedures.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">10.3 Basics of Hybrid and Electric Vehicle (EV)</h3>
-                <div class="section accordion-content">
-                    <p><strong>10.3.1 Types:</strong> Mild/full/plug-in hybrid, BEV, extended-range EVs.</p>
-                    <p><strong>10.3.2 Components:</strong> Electric motor, inverter, battery, BMS, regenerative braking.</p>
-                    <p><strong>10.3.3 Function:</strong> Reduce emissions, improve efficiency with electric motors.</p>
-                    <p><strong>10.3.4 Benefits:</strong> Lower costs, reduced emissions, quieter operation.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">10.4 Assessments</h3>
-                <div class="section accordion-content">
-                    <p><strong>10.4.1 Written Test:</strong> Hybrid/EV types, components, benefits.</p>
-                    <p><strong>10.4.2 Practical Evaluation:</strong> Identify components, simulate HV shutdown.</p>
-                    <p><strong>10.4.3 Tool Handling:</strong> Insulated tools, safety gloves, voltage testers.</p>
-                    <p><strong>10.4.4 Oral/Viva:</strong> Regenerative braking, hybrid configs, HV safety.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">11.1 Basics Automotive Electronics and Advanced Diagnostics</h3>
-                <div class="section accordion-content">
-                    <p><strong>11.1.1 Components:</strong> Sensors (oxygen, throttle, crankshaft), actuators (injectors, relays), ECUs, wiring, CAN Bus.</p>
-                    <p><strong>11.1.2 Tools:</strong> Multimeter, OBD-II scanner, oscilloscope, diagnostic software.</p>
-                    <p><strong>11.1.3 Diagnostics:</strong> Retrieve fault codes, interpret live data, perform tests, inspect wiring, clear codes.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">11.2 Advanced Driver Assistance Systems (ADAS)</h3>
-                <div class="section accordion-content">
-                    <p><strong>11.2.1 Components:</strong> Cameras, ultrasonic sensors, radar, LiDAR, ECUs, steering/braking actuators.</p>
-                    <p><strong>11.2.2 Functions:</strong> Lane-keeping, adaptive cruise, emergency braking, blind-spot detection, parking assist.</p>
-                    <p><strong>11.2.3 Benefits:</strong> Enhances safety, reduces collisions, supports semi-autonomous driving.</p>
-                </div>
-            </div>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">11.3 Assessments</h3>
-                <div class="section accordion-content">
-                    <p><strong>11.3.1 Written Test:</strong> Electronics, OBD diagnostics, ADAS components/functions.</p>
-                    <p><strong>11.3.2 Practical Evaluation:</strong> Retrieve/interpret OBD codes, sensor tests, ADAS function check.</p>
-                    <p><strong>11.3.3 Tool Handling:</strong> OBD-II scanner, multimeter, calibration tools.</p>
-                    <p><strong>11.3.4 Oral/Viva:</strong> CAN Bus, ADAS features, sensor/actuator roles.</p>
-                </div>
+        <div class="week">
+            <h3 class="accordion">1.3 Interpret Major Systems of Automobiles</h3>
+            <div class="section accordion-content">
+                <p><strong>1.3.1 Engine System:</strong> Engine types (Inline, V-type), 4-stroke cycle, cylinder block, timing system, crankshaft, oil sump, head gasket, combustion.</p>
+                <p><strong>1.3.2 Fuel System & Servicing:</strong> Fuel tank, lines, filter, pump, carburetor/injector, throttle body; servicing, pressure check, filter replacement.</p>
+                <p><strong>1.3.3 Cooling System & Servicing:</strong> Radiator, fan, thermostat, water pump, hoses; heat exchange, leak checks, radiator flushing, coolant maintenance.</p>
+                <p><strong>1.3.4 Transmission System:</strong> Manual/automatic gearboxes, clutch, CVT, torque converter; lubrication, clutch adjustment, oil change.</p>
+                <p><strong>1.3.5 Brake System:</strong> Disc/drum brakes, master/wheel cylinder, lines, caliper, ABS; fluid bleeding, pad replacement.</p>
+                <p><strong>1.3.6 Steering and Suspension:</strong> Steering types (manual, power, EPS), suspension (coil/leaf spring, shock absorber); inspection.</p>
+                <p><strong>1.3.7 Electrical System:</strong> Battery, alternator, starter, fuses, lighting; diagnostics, wiring trace, fuse replacement.</p>
+                <p><strong>1.3.8 Exhaust System:</strong> Manifold, catalytic converter, muffler, tailpipe; leakage, rust, emissions, sound reduction.</p>
             </div>
         </div>
+        <div class="week">
+            <h3 class="accordion">1.4 Engine System</h3>
+            <div class="section accordion-content">
+                <p><strong>1.4.1 Types of Engines (SI vs CI):</strong> Spark Ignition vs Compression Ignition; fuel systems and diagnostics.</p>
+                <p><strong>1.4.2 Operating Cycles:</strong> 4-stroke (Otto, Diesel), 2-stroke; troubleshooting foundation.</p>
+                <p><strong>1.4.3 Key Components:</strong> Cylinder block, piston, crankshaft, camshaft, valves, timing chain/belt, spark plug (SI), injector (CI), lubrication.</p>
+                <p><strong>1.4.4 Function:</strong> Converts energy to mechanical power.</p>
+                <p><strong>1.4.5 Lubrication Path:</strong> Oil flow through moving parts, wear reduction.</p>
+                <p><strong>1.4.6 Cooling Overview:</strong> Engine cooling methods.</p>
+                <p><strong>1.4.7 Measurements:</strong> Bore, stroke, displacement, compression ratio.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">1.5 Assessments</h3>
+            <div class="section accordion-content">
+                <p><strong>1.5.1 Written Test:</strong> MCQs/short questions on safety, tools, systems.</p>
+                <p><strong>1.5.2 Practical Evaluation:</strong> Tool/component identification, basic servicing.</p>
+                <p><strong>1.5.3 Oral/Viva:</strong> Safety, system functions, component roles.</p>
+                <p><strong>1.5.4 Tool Handling:</strong> Correct usage, posture, safety compliance.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">2.1 Servicing and Replacing Fuel System Components</h3>
+            <div class="section accordion-content">
+                <p><strong>2.1.1 Components:</strong> Fuel tank, pump, filter, lines, injectors, carburetor, fuel rail.</p>
+                <p><strong>2.1.2 Function:</strong> Supplies clean fuel at correct pressure for combustion.</p>
+                <p><strong>2.1.3 Servicing:</strong> Inspect/replace filters, clean injectors, test pressure, check leaks.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">2.2 Servicing and Maintaining Cooling System</h3>
+            <div class="section accordion-content">
+                <p><strong>2.2.1 Components:</strong> Radiator, water pump, thermostat, fan, coolant reservoir, hoses, sensor.</p>
+                <p><strong>2.2.2 Function:</strong> Regulates engine temperature, prevents overheating.</p>
+                <p><strong>2.2.3 Servicing:</strong> Check coolant, pressure-test cap, flush/refill, inspect hoses, test thermostat/fan.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">2.3 Servicing and Maintaining Lubrication System</h3>
+            <div class="section accordion-content">
+                <p><strong>2.3.1 Components:</strong> Oil sump, pump, filter, pressure valve, galleries, dipstick.</p>
+                <p><strong>2.3.2 Function:</strong> Reduces friction, removes heat, cleans engine, protects against rust.</p>
+                <p><strong>2.3.3 Servicing:</strong> Drain oil, replace filter, refill oil, check pressure, inspect leaks.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">2.4 Assessments</h3>
+            <div class="section accordion-content">
+                <p><strong>2.4.1 Written Test:</strong> Fuel, cooling, lubrication systems components/functions/servicing.</p>
+                <p><strong>2.4.2 Practical Evaluation:</strong> Drain/refill coolant/oil, replace filters, leak inspection.</p>
+                <p><strong>2.4.3 Tool Handling:</strong> Oil drain pan, filter wrench, funnel, coolant tester.</p>
+                <p><strong>2.4.4 Oral/Viva:</strong> Explain thermostat, oil pressure, fuel delivery purpose.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">3.1 Diagnosing and Servicing Starting System</h3>
+            <div class="section accordion-content">
+                <p><strong>3.1.1 Components:</strong> Battery, ignition switch, starter motor, solenoid, flywheel ring gear, wiring.</p>
+                <p><strong>3.1.2 Function:</strong> Converts electrical energy to crank engine.</p>
+                <p><strong>3.1.3 Servicing:</strong> Check battery, test starter, inspect solenoid, clean terminals, diagnose noises.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">3.2 Servicing and Replacing Ignition System</h3>
+            <div class="section accordion-content">
+                <p><strong>3.2.1 Components:</strong> Ignition coil, distributor, spark plugs, switch, crankshaft sensor, control module, wiring.</p>
+                <p><strong>3.2.2 Function:</strong> Provides spark to ignite air-fuel mixture in SI engines.</p>
+                <p><strong>3.2.3 Servicing:</strong> Inspect/replace spark plugs, test/replace coil, adjust timing, check wiring, diagnose misfire/no-start.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">3.3 Repair and Service Air Induction System</h3>
+            <div class="section accordion-content">
+                <p><strong>3.3.1 Components:</strong> Air filter, intake manifold, throttle body, air flow sensor, intercooler, hoses.</p>
+                <p><strong>3.3.2 Function:</strong> Supplies clean air, regulates combustion air, improves efficiency/emissions.</p>
+                <p><strong>3.3.3 Servicing:</strong> Clean/replace filter, inspect ducts, clean throttle body, test sensors, reseal gaskets.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">3.4 Assessments</h3>
+            <div class="section accordion-content">
+                <p><strong>3.4.1 Written Test:</strong> Ignition, starting, air induction components/functions/procedures.</p>
+                <p><strong>3.4.2 Practical Evaluation:</strong> Spark plug replacement, starter testing, air filter/throttle body servicing.</p>
+                <p><strong>3.4.3 Tool Handling:</strong> Multimeter, plug spanner, throttle cleaner, diagnostic tools.</p>
+                <p><strong>3.4.4 Oral/Viva:</strong> Ignition sequence, faulty intake signs, SI vs CI ignition.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">4.1 Servicing and Repairing Exhaust System</h3>
+            <div class="section accordion-content">
+                <p><strong>4.1.1 Components:</strong> Exhaust manifold, catalytic converter, muffler, pipes, oxygen sensors, resonator.</p>
+                <p><strong>4.1.2 Function:</strong> Directs exhaust gases, reduces emissions/noise.</p>
+                <p><strong>4.1.3 Servicing:</strong> Inspect/replace pipes, clean/replace converter, check sensors, repair leaks.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">4.2 Perform Spark Ignition (SI) Engine Tune-Up</h3>
+            <div class="section accordion-content">
+                <p><strong>4.2.1 Cycle:</strong> Intake, Compression, Power, Exhaust strokes; converts fuel to energy.</p>
+                <p><strong>4.2.2 Function:</strong> Uses spark plug to ignite air-fuel mixture in SI engines.</p>
+                <p><strong>4.2.3 Tune-Up:</strong> Adjust timing, clean/replace spark plugs, check carburetor/injection, inspect valves/ignition.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">4.3 Perform Compression Ignition (Diesel) Engine Tune-Up</h3>
+            <div class="section accordion-content">
+                <p><strong>4.3.1 Cycle:</strong> Intake, Compression, Power, Exhaust; fuel ignited by compressed air.</p>
+                <p><strong>4.3.2 Function:</strong> Converts fuel to power via compression ignition; high torque, efficient.</p>
+                <p><strong>4.3.3 Tune-Up:</strong> Adjust injector timing, clean/replace injectors, check glow plugs, verify compression.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">4.4 Assessments</h3>
+            <div class="section accordion-content">
+                <p><strong>4.4.1 Written Test:</strong> SI/Diesel cycles, functions, tune-up procedures.</p>
+                <p><strong>4.4.2 Practical Evaluation:</strong> Spark plug/injector replacement, timing adjustments, valve inspection.</p>
+                <p><strong>4.4.3 Tool Handling:</strong> Timing light, injector cleaner, compression tester.</p>
+                <p><strong>4.4.4 Oral/Viva:</strong> SI vs Diesel differences, tune-up importance, diagnostics.</p>
+            </div>
+        </div>
+    </div>
 
-        <!-- Final Examination -->
-        <div class="module bg-white p-6 rounded-lg shadow-md">
-            <h2 class="text-2xl font-semibold mb-4">Week 12: Final Examination & Certification</h2>
-            <div class="week">
-                <h3 class="text-xl font-medium accordion">12.1 Final Assessments</h3>
-                <div class="section accordion-content">
-                    <p><strong>12.1.1 Written Examination:</strong> Comprehensive test on all modules.</p>
-                    <p><strong>12.1.2 Practical Examination:</strong> Diagnostics, servicing, EFI tuning, A/C.</p>
-                    <p><strong>12.1.3 Oral/Viva:</strong> Conceptual understanding, troubleshooting, communication.</p>
-                    <p><strong>12.1.4 Certification:</strong> Issue certificates, performance review, career guidance.</p>
-                </div>
+    <!-- Intermediate Module -->
+    <div class="module">
+        <h2>Intermediate Module (Weeks 5–8)</h2>
+        <div class="week">
+            <h3 class="accordion">5.1 Overhauling and Servicing Powertrain System</h3>
+            <div class="section accordion-content">
+                <p><strong>5.1.1 Components:</strong> Clutch, transmission, driveshaft, differential, axle shafts, CV joints.</p>
+                <p><strong>5.1.2 Function:</strong> Transmits engine power to wheels, torque/speed control.</p>
+                <p><strong>5.1.3 Servicing:</strong> Inspect clutch, adjust linkage, change fluid, check driveshaft/CV joints.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">5.2 Servicing and Repairing Steering System</h3>
+            <div class="section accordion-content">
+                <p><strong>5.2.1 Components:</strong> Steering wheel, column, rack/pinion, tie rods, power steering pump.</p>
+                <p><strong>5.2.2 Function:</strong> Controls vehicle direction via front wheels.</p>
+                <p><strong>5.2.3 Servicing:</strong> Inspect/adjust linkage, check fluid, repair leaks, replace tie rods/seals.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">5.3 Assessments</h3>
+            <div class="section accordion-content">
+                <p><strong>5.3.1 Written Test:</strong> Powertrain/steering components, functions, servicing.</p>
+                <p><strong>5.3.2 Practical Evaluation:</strong> Steering linkage/clutch adjustment, fluid check.</p>
+                <p><strong>5.3.3 Tool Handling:</strong> Torque wrench, fluid tester, steering puller.</p>
+                <p><strong>5.3.4 Oral/Viva:</strong> Powertrain/steering functions, troubleshooting.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">6.1 Servicing and Inspecting Suspension System</h3>
+            <div class="section accordion-content">
+                <p><strong>6.1.1 Components:</strong> Springs, shocks, control arms, bushings, struts, stabilizer bars.</p>
+                <p><strong>6.1.2 Function:</strong> Absorbs shocks, maintains stability/ride comfort.</p>
+                <p><strong>6.1.3 Servicing:</strong> Inspect/replace shocks/bushings, lubricate joints, check alignment.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">6.2 Wheel Balancing and Alignment</h3>
+            <div class="section accordion-content">
+                <p><strong>6.2.1 Function:</strong> Ensures even tire wear, smooth handling, reduced vibration.</p>
+                <p><strong>6.2.2 Servicing:</strong> Balance wheels, adjust camber/toe/caster, inspect tires/suspension.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">6.3 Assessments</h3>
+            <div class="section accordion-content">
+                <p><strong>6.3.1 Written Test:</strong> Suspension, balancing, alignment theory/procedures.</p>
+                <p><strong>6.3.2 Practical Evaluation:</strong> Wheel balancing, alignment, suspension inspection.</p>
+                <p><strong>6.3.3 Tool Handling:</strong> Balancing machine, alignment tools, suspension instruments.</p>
+                <p><strong>6.3.4 Oral/Viva:</strong> Importance of alignment/balancing, misalignment symptoms.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">7.1 Servicing and Repairing Braking System</h3>
+            <div class="section accordion-content">
+                <p><strong>7.1.1 Types:</strong> Disc, drum, ABS, hydraulic/pneumatic systems.</p>
+                <p><strong>7.1.2 Components:</strong> Brake pedal, master cylinder, lines, calipers, pads/shoes, wheel cylinders.</p>
+                <p><strong>7.1.3 Function:</strong> Converts driver input to hydraulic pressure to slow/stop vehicle.</p>
+                <p><strong>7.1.4 Servicing:</strong> Inspect/replace pads/shoes, bleed lines, check/refill fluid, repair leaks, inspect ABS.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">7.2 Perform Basic Maintenance of Air Conditioning System</h3>
+            <div class="section accordion-content">
+                <p><strong>7.2.1 Components:</strong> Compressor, condenser, evaporator, expansion valve, refrigerant lines, blower.</p>
+                <p><strong>7.2.2 Function:</strong> Cools/dehumidifies cabin air via refrigerant circulation.</p>
+                <p><strong>7.2.3 Maintenance:</strong> Check/refill refrigerant, inspect belts/hoses, clean coils, replace cabin filter, check blower.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">7.3 Assessments</h3>
+            <div class="section accordion-content">
+                <p><strong>7.3.1 Written Test:</strong> Brake/A/C components, functions, maintenance.</p>
+                <p><strong>7.3.2 Practical Evaluation:</strong> Brake pad replacement, bleeding, refrigerant check, filter replacement.</p>
+                <p><strong>7.3.3 Tool Handling:</strong> Brake bleeding kit, refrigerant gauge, A/C diagnostic tools.</p>
+                <p><strong>7.3.4 Oral/Viva:</strong> Brake safety checks, A/C system issues.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">8.1 Servicing Body Electrical and Electronics System</h3>
+            <div class="section accordion-content">
+                <p><strong>8.1.1 Components:</strong> Charging, lighting, horn, interior electronics, wiring, fuses, instrument cluster, sensors, actuators, ECU.</p>
+                <p><strong>8.1.2 Charging System:</strong> Alternator, battery, voltage regulator; generates/stores electrical energy.</p>
+                <p><strong>8.1.3 Lighting System:</strong> Headlights, tail lights, indicators; ensures visibility/signaling.</p>
+                <p><strong>8.1.4 Horn/Alarm:</strong> Audio signaling, security alarms.</p>
+                <p><strong>8.1.5 Interior Electronics:</strong> Power windows, locks, infotainment, climate controls.</p>
+                <p><strong>8.1.6 Wiring/Fuses:</strong> Harnesses, fuse boxes, connectors; circuit protection.</p>
+                <p><strong>8.1.7 Instrument Cluster:</strong> Speedometer, tachometer, gauges, warning lights.</p>
+                <p><strong>8.1.8 Sensors, Actuators, ECU:</strong> Temp/oxygen sensors, injectors, relays; engine/system management.</p>
+                <p><strong>8.1.9 Servicing:</strong> Diagnose faults, replace wiring/fuses, repair sensors/actuators, troubleshoot ECU.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">8.2 Diagnosing, Servicing, and Repairing EFI System</h3>
+            <div class="section accordion-content">
+                <p><strong>8.2.1 Components:</strong> Fuel injectors, ECU, fuel pump, sensors (MAF, oxygen, throttle), fuel rail, wiring.</p>
+                <p><strong>8.2.2 Function:</strong> Controls precise fuel delivery for combustion, efficiency, reduced emissions.</p>
+                <p><strong>8.2.3 Servicing:</strong> Diagnose faults, clean/replace injectors, test sensors, inspect wiring, calibrate ECU.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">8.3 Servicing and Repairing Charging System</h3>
+            <div class="section accordion-content">
+                <p><strong>8.3.1 Components:</strong> Alternator, voltage regulator, battery, drive belt, wiring.</p>
+                <p><strong>8.3.2 Function:</strong> Generates/regulates power to charge battery, power systems.</p>
+                <p><strong>8.3.3 Servicing:</strong> Test alternator, inspect/replace belts, check regulator, clean terminals, inspect wiring.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">8.4 Assessments</h3>
+            <div class="section accordion-content">
+                <p><strong>8.4.1 Written Test:</strong> EFI, charging, vehicle electronics.</p>
+                <p><strong>8.4.2 Practical Evaluation:</strong> Diagnose EFI, test alternator/battery, replace sensors/wiring.</p>
+                <p><strong>8.4.3 Tool Handling:</strong> Multimeter, scan tools, battery testers.</p>
+                <p><strong>8.4.4 Oral/Viva:</strong> EFI functions, charging components, troubleshooting.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Advanced Module -->
+    <div class="module">
+        <h2>Advanced Module (Weeks 9–11)</h2>
+        <div class="week">
+            <h3 class="accordion">9.1 Installing LPG and CNG Conversion Kit</h3>
+            <div class="section accordion-content">
+                <p><strong>9.1.1 Components:</strong> Pressure regulator, injectors/mixers, gas cylinders, ECU, safety valves.</p>
+                <p><strong>9.1.2 Installation:</strong> Mount cylinders, connect fuel lines, install ECU/sensors, leak test, calibrate.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">9.2 Testing and Adjusting LPG/CNG Calibration</h3>
+            <div class="section accordion-content">
+                <p><strong>9.2.1 Purpose:</strong> Optimize air-fuel mixture, prevent knocking/misfiring.</p>
+                <p><strong>9.2.2 Steps:</strong> Use diagnostic tool, measure pressure/flow, fine-tune ECU, test drive.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">9.3 Assessments</h3>
+            <div class="section accordion-content">
+                <p><strong>9.3.1 Written Test:</strong> LPG/CNG components, safety, calibration.</p>
+                <p><strong>9.3.2 Practical Evaluation:</strong> Install cylinder/regulator, leak test, calibration.</p>
+                <p><strong>9.3.3 Tool Handling:</strong> Gas leak detectors, calibration tools, ECU interfaces.</p>
+                <p><strong>9.3.4 Oral/Viva:</strong> Calibration importance, safety, fuel switching.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">10.1 Servicing Automotive CNG and LPG System</h3>
+            <div class="section accordion-content">
+                <p><strong>10.1.1 Components:</strong> Tank/valves, regulator, injectors/mixer, ECU, filters.</p>
+                <p><strong>10.1.2 Servicing:</strong> Inspect leaks, test regulator, clean/replace filters, ECU diagnostics.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">10.2 Assessments</h3>
+            <div class="section accordion-content">
+                <p><strong>10.2.1 Written Test:</strong> CNG/LPG functions, servicing, safety.</p>
+                <p><strong>10.2.2 Practical Evaluation:</strong> Pressure tests, leak detection, component cleaning.</p>
+                <p><strong>10.2.3 Tool Handling:</strong> Gas leak detectors, pressure gauges, PPE.</p>
+                <p><strong>10.2.4 Oral/Viva:</strong> Maintenance, failure symptoms, emergency procedures.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">10.3 Basics of Hybrid and Electric Vehicle (EV)</h3>
+            <div class="section accordion-content">
+                <p><strong>10.3.1 Types:</strong> Mild/full/plug-in hybrid, BEV, extended-range EVs.</p>
+                <p><strong>10.3.2 Components:</strong> Electric motor, inverter, battery, BMS, regenerative braking.</p>
+                <p><strong>10.3.3 Function:</strong> Reduce emissions, improve efficiency with electric motors.</p>
+                <p><strong>10.3.4 Benefits:</strong> Lower costs, reduced emissions, quieter operation.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">10.4 Assessments</h3>
+            <div class="section accordion-content">
+                <p><strong>10.4.1 Written Test:</strong> Hybrid/EV types, components, benefits.</p>
+                <p><strong>10.4.2 Practical Evaluation:</strong> Identify components, simulate HV shutdown.</p>
+                <p><strong>10.4.3 Tool Handling:</strong> Insulated tools, safety gloves, voltage testers.</p>
+                <p><strong>10.4.4 Oral/Viva:</strong> Regenerative braking, hybrid configs, HV safety.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">11.1 Basics Automotive Electronics and Advanced Diagnostics</h3>
+            <div class="section accordion-content">
+                <p><strong>11.1.1 Components:</strong> Sensors (oxygen, throttle, crankshaft), actuators (injectors, relays), ECUs, wiring, CAN Bus.</p>
+                <p><strong>11.1.2 Tools:</strong> Multimeter, OBD-II scanner, oscilloscope, diagnostic software.</p>
+                <p><strong>11.1.3 Diagnostics:</strong> Retrieve fault codes, interpret live data, perform tests, inspect wiring, clear codes.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">11.2 Advanced Driver Assistance Systems (ADAS)</h3>
+            <div class="section accordion-content">
+                <p><strong>11.2.1 Components:</strong> Cameras, ultrasonic sensors, radar, LiDAR, ECUs, steering/braking actuators.</p>
+                <p><strong>11.2.2 Functions:</strong> Lane-keeping, adaptive cruise, emergency braking, blind-spot detection, parking assist.</p>
+                <p><strong>11.2.3 Benefits:</strong> Enhances safety, reduces collisions, supports semi-autonomous driving.</p>
+            </div>
+        </div>
+        <div class="week">
+            <h3 class="accordion">11.3 Assessments</h3>
+            <div class="section accordion-content">
+                <p><strong>11.3.1 Written Test:</strong> Electronics, OBD diagnostics, ADAS components/functions.</p>
+                <p><strong>11.3.2 Practical Evaluation:</strong> Retrieve/interpret OBD codes, sensor tests, ADAS function check.</p>
+                <p><strong>11.3.3 Tool Handling:</strong> OBD-II scanner, multimeter, calibration tools.</p>
+                <p><strong>11.3.4 Oral/Viva:</strong> CAN Bus, ADAS features, sensor/actuator roles.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Examination -->
+    <div class="module">
+        <h2>Week 12: Final Examination & Certification</h2>
+        <div class="week">
+            <h3 class="accordion">12.1 Final Assessments</h3>
+            <div class="section accordion-content">
+                <p><strong>12.1.1 Written Examination:</strong> Comprehensive test on all modules.</p>
+                <p><strong>12.1.2 Practical Examination:</strong> Diagnostics, servicing, EFI tuning, A/C.</p>
+                <p><strong>12.1.3 Oral/Viva:</strong> Conceptual understanding, troubleshooting, communication.</p>
+                <p><strong>12.1.4 Certification:</strong> Issue certificates, performance review, career guidance.</p>
             </div>
         </div>
     </div>
 
     <script>
-        const accordions = document.querySelectorAll('.accordion');
-        accordions.forEach(accordion => {
-            accordion.addEventListener('click', () => {
-                const content = accordion.nextElementSibling;
+        // JavaScript for accordion functionality
+        document.querySelectorAll('.accordion').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
                 content.classList.toggle('active');
-                accordion.classList.toggle('active');
             });
         });
     </script>
+</div>
+
+  <div class="button-group">
+    <a href="course-outline.html">📘 Course Outline</a>
+    <a href="syllabus.html">📚 Syllabus</a>
+    <a href="weekly-module.html">📅 Weekly Modules</a>
+    <a href="daily-module.html">🗓️ Daily Modules</a>
+    <a href="resources.html">🔧 Resources</a>
+    <a href="about.html">ℹ️ About</a>
+    <a href="brochure.pdf" download>📄 Download Brochure</a>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 As Sunnah Skill Development Institute. All rights reserved.
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+
+  function toggleDropdown(event) {
+    const dropdown = event.currentTarget;
+    dropdown.classList.toggle("open");
+    event.stopPropagation();
+  }
+
+  window.addEventListener('click', function () {
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+  });
+</script>
+
 </body>
 </html>
