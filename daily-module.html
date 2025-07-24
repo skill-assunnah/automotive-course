@@ -1,138 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-   <!-- Header -->
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Automobile Technician Training</title>
+  <meta charset="UTF-8">
+  <title>Professional Automotive Technician Training</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Professional Automotive Technician Training by As Sunnah Skill Development 	Institute – a 3-month certified course to become a job-ready automotive technician.">
+  <meta name="keywords" content="automotive training, technician course, As Sunnah, vehicle diagnostics, hybrid vehicle, ADAS, CNG installation">
+  <meta name="author" content="As Sunnah Skill Development Institute">
+  <meta property="og:title" content="Professional Automotive Technician Training">
+  <meta property="og:description" content="Become a certified, job-ready technician in 3 months. Organized by As Sunnah Skill Development Institute.">
+  <meta property="og:image" content="cover-image.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
 
-    <div class="header-container">
-      <a href="index.html" class="logo">🚗Automobile</a>
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="logo">Automobile</div>
       <div class="menu-toggle" onclick="toggleMenu()">
         <div></div>
         <div></div>
         <div></div>
       </div>
-      <nav>
-        <div class="nav-links" id="navLinks">
-          <a href="index.html">Home</a>
-          <a href="course-outline.html">Course Outline</a>
-          <a href="syllabus.html">Syllabus</a>
-          <a href="resources.html">Resources</a>
-          <a href="about.html">About</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="course-outline.html">Course Outline</a>
+        <div class="dropdown" onclick="toggleDropdown(event)">
+          <a href="syllabus.html"class="active">Syllabus</a>
+          <div class="dropdown-content">
+            <a href="weekly-module.html">Weekly Module</a>
+            <a href="daily-module.html">Daily Module</a>
+          </div>
         </div>
-      </nav>
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
+      </div>
     </div>
+  </nav>
+  
+<div class="main-content"> <!-- Main Content Area -->
+       
      <style>
-.week-dropdown-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 2rem auto;
-    max-width: 1080px;
-    padding: 1rem;
-  }
+            
+      .week-dropdown-container {
+          display: flex;
+          max-width: 1080px;
+          flex-direction: column;
+          align-items: center;
+          margin: 2rem auto;
+          padding: 1rem;
+        }
 
-  .week-dropdown-container h2 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
-    font-weight: bold;
-  }
+        .week-dropdown-container h2 {
+          color: #2c3e50;
+          margin-bottom: 1rem;
+          font-size: 1.8rem;
+          font-weight: bold;
+        }
 
-  .dropdown-wrapper {
-    width: 100%;
-    max-width: 300px;
-    position: relative;
-  }
+        .dropdown-wrapper {
+          width: 100%;
+          max-width: 400px;
+          position: relative;
+        }
 
-  .dropdown-select {
-    width: 100%;
-    padding: 10px 14px;
-    border: 2px solid #2980b9;
-    border-radius: 6px;
-    font-size: 1rem;
-    background-color: #ecf0f1;
-    color: #2c3e50;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    appearance: none;
-  }
+        .dropdown-select {
+          width: 100%;
+          padding: 10px 14px;
+          border: 2px solid #2980b9;
+          border-radius: 6px;
+          font-size: 1rem;
+          background-color: #ecf0f1;
+          color: #2c3e50;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          appearance: none;
+        }
 
-  .dropdown-select:hover {
-    border-color: #1c5980;
-    background-color: #e1ecf4;
-  }
+        .dropdown-select:hover {
+          border-color: #1c5980;
+          background-color: #e1ecf4;
+        }
 
-  .week-content {
-    display: none;
-    margin-top: 2rem;
-    padding: 1.5rem;
-    border-radius: 8px;
-    background-color: #f8f9fa;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  }
+        .week-content {
+          display: none;
+          width: 95%;
+          margin-top: 2rem;
+          padding: 1.5rem; 
+          border-radius: 8px;
+          background-color: #f8f9fa;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
 
-  .week-content.active {
-    display: block;
-  }
+        .week-content.active {
+          display: block;
+        }
+
+        table {
+          border: 1px solid #ccc;
+          border-collapse: collapse;
+          width: 100%;
+        }
+
+        th, td {
+          border: 1px solid #ccc;
+          padding: 8px;
+          text-align: left;
+        }
+
+        th {
+          background-color: #4C5F72;
+          color: #fff;
+          text-align: center;
+        }
+
+        tr:nth-child(even) {
+          background-color: #f9f9f9;
+        }
+      tr th:first-child,
+      tr td:first-child {
+        text-align: center;
+      }
+	</style>
  
-  table {
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-    width: 100%;
-  }
-
-  th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: left;
-  }
-
-  th {
-    background-color: #4C5F72;
-    color: #fff;
-    text-align: center;
-  }
-
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-tr th:first-child,
-tr td:first-child {
-  text-align: center;
-}
-</style>
-  </header>
-
-  <!-- Main Content Area -->
-  <main>
-    <button id="download-pdf-btn" style="float: right; margin: 1rem; padding: 0.5rem 1rem; background-color: #8c9b90; color: white; border: none; border-radius: 5px; cursor: pointer;">
-  📄 Download PDF
-</button>
-    <!-- Week Selector with Polished Styling -->
-
-
+    <!-- Week Selector with Polished Styling -->	
+ 
 <div class="week-dropdown-container">
-  <h2>📅 Select a Training Week</h2>
-  <div class="dropdown-wrapper">
-    <select id="weekSelector" class="dropdown-select">
-      <option value="week1">Week 1: Safety & Ethics</option>
-      <option value="week2">Week 2: Tools & Maintenance</option>
-      <option value="week3">Week 3: Engine Basics</option>
-      <option value="week4">Week 4: Fuel & Cooling</option>
-      <option value="week5">Week 5: Braking & Hydraulics</option>
-      <option value="week6">Week 6: Suspension & Steering</option>
-      <option value="week7">Week 7: Transmission</option>
-      <option value="week8">Week 8: Electrical Systems</option>
-      <option value="week9">Week 9: A/C & HVAC</option>
-      <option value="week10">Week 10: LPG/CNG</option>
-      <option value="week11">Week 11: Hybrid/EV</option>
-      <option value="week12">Week 12: Final Assessment</option>
-    </select>
-  </div>
+	<div style="display: flex; justify-content: space-between; align-items: center; width:100%; max-width: 900px;">
+   		<button id="download-pdf-btn" style="margin-left: auto; padding: 0.5rem 1rem; background-color:#8c9b90; color: white; border: none; border-radius: 5px; cursor: pointer;">📄 Download PDF
+    	</button>
+    </div>
+  
+    <h2>📅 Select a Training Week</h2>
+    <div class="dropdown-wrapper">
+      <select id="weekSelector" class="dropdown-select">
+        <option value="week1">Week 1: Safety & Ethics</option>
+        <option value="week2">Week 2: Tools & Maintenance</option>
+        <option value="week3">Week 3: Engine Basics</option>
+        <option value="week4">Week 4: Fuel & Cooling</option>
+        <option value="week5">Week 5: Braking & Hydraulics</option>
+        <option value="week6">Week 6: Suspension & Steering</option>
+        <option value="week7">Week 7: Transmission</option>
+        <option value="week8">Week 8: Electrical Systems</option>
+        <option value="week9">Week 9: A/C & HVAC</option>
+        <option value="week10">Week 10: LPG/CNG</option>
+        <option value="week11">Week 11: Hybrid/EV</option>
+        <option value="week12">Week 12: Final Assessment</option>
+      </select>
+    </div>
 
   <!-- Week Contents -->
   <div id="week1" class="week-content active">
@@ -1749,21 +1766,6 @@ tr td:first-child {
 </script>
 
 
-
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Automobile. All rights reserved.
-  </footer>
-
-  <!-- JavaScript for Menu Toggle -->
-  <script>
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
-    }
-  </script>
-
   <!-- JavaScript for PDF -->
 <script>
   document.getElementById("download-pdf-btn").addEventListener("click", function () {
@@ -1779,6 +1781,75 @@ tr td:first-child {
     };
     
     html2pdf().set(opt).from(element).save();
+  });
+</script>
+
+ 
+  <!-- JavaScript for Download PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  document.getElementById('downloadPdfBtn').addEventListener('click', async () => {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF('p', 'pt', 'a4');
+
+    // Select the main content area
+    const mainContent = document.querySelector('main');
+
+    // Get title from first <h1> in main content for filename
+    const titleElem = mainContent.querySelector('h1');
+    let fileName = 'document.pdf';
+    if(titleElem && titleElem.textContent.trim() !== '') {
+      fileName = titleElem.textContent.trim().replace(/[\\\/:*?"<>|]/g, '') + '.pdf';
+    }
+
+    // Use html2canvas to create a canvas from the main content, increase scale for better resolution
+    const canvas = await html2canvas(mainContent, { scale: 2 });
+
+    // Convert canvas to image data
+    const imgData = canvas.toDataURL('image/png');
+
+    // Calculate image dimensions to fit A4
+    const imgProps = doc.getImageProperties(imgData);
+    const pdfWidth = doc.internal.pageSize.getWidth();
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+    // Add image to PDF
+    doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+
+    // Save the PDF with the title-based filename
+    doc.save(fileName);
+  });
+</script>
+
+  <div class="button-group">
+    <a href="course-outline.html">📘 Course Outline</a>
+    <a href="syllabus.html">📚 Syllabus</a>
+    <a href="weekly-module.html">📅 Weekly Modules</a>
+    <a href="daily-module.html">🗓️ Daily Modules</a>
+    <a href="resources.html">🔧 Resources</a>
+    <a href="about.html">ℹ️ About</a>
+    <a href="brochure.pdf" download>📄 Download Brochure</a>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 As Sunnah Skill Development Institute. All rights reserved.
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+
+  function toggleDropdown(event) {
+    const dropdown = event.currentTarget;
+    dropdown.classList.toggle("open");
+    event.stopPropagation();
+  }
+
+  window.addEventListener('click', function () {
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
   });
 </script>
 
