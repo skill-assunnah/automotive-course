@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Automobile Technician Training</title>
+  <meta charset="UTF-8">
+  <title>Professional Automotive Technician Training</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Professional Automotive Technician Training by As Sunnah Skill Development Institute – a 3-month certified course to become a job-ready automotive technician.">
+  <meta name="keywords" content="automotive training, technician course, As Sunnah, vehicle diagnostics, hybrid vehicle, ADAS, CNG installation">
+  <meta name="author" content="As Sunnah Skill Development Institute">
+  <meta property="og:title" content="Professional Automotive Technician Training">
+  <meta property="og:description" content="Become a certified, job-ready technician in 3 months. Organized by As Sunnah Skill Development Institute.">
+  <meta property="og:image" content="cover-image.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="header-container">
-      <a href="index.html" class="logo">🚗Automobile</a>
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <nav>
-        <div class="nav-links" id="navLinks">
-          <a href="index.html">Home</a>
-          <a href="course-outline.html">Course Outline</a>
-          <a href="syllabus.html">Syllabus</a>
-          <a href="resources.html">Resources</a>
-          <a href="about.html">About</a>
-        </div>
-      </nav>
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <div class="logo">Automobile</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-  </header>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="course-outline.html">Course Outline</a>
+      <div class="dropdown" onclick="toggleDropdown(event)">
+        <a href="syllabus.html">Syllabus</a>
+        <div class="dropdown-content">
+          <a href="weekly-module.html">Weekly Module</a>
+          <a href="daily-module.html">Daily Module</a>
+        </div>
+      </div>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
 
-  <!-- Main Content Area -->
+<div class="main-content">
   <main>
     <button id="download-pdf-btn" style="float: right; margin: 1rem; padding: 0.5rem 1rem; background-color: #8c9b90; color: white; border: none; border-radius: 5px; cursor: pointer;">
   📄 Download PDF
@@ -223,6 +234,36 @@ main .content-block .week p {
   });
 </script>
 
+  <div class="button-group">
+    <a href="course-outline.html">📘 Course Outline</a>
+    <a href="syllabus.html">📚 Syllabus</a>
+    <a href="weekly-module.html">📅 Weekly Modules</a>
+    <a href="daily-module.html">🗓️ Daily Modules</a>
+    <a href="resources.html">🔧 Resources</a>
+    <a href="about.html">ℹ️ About</a>
+    <a href="brochure.pdf" download>📄 Download Brochure</a>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 As Sunnah Skill Development Institute. All rights reserved.
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+
+  function toggleDropdown(event) {
+    const dropdown = event.currentTarget;
+    dropdown.classList.toggle("open");
+    event.stopPropagation();
+  }
+
+  window.addEventListener('click', function () {
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+  });
+</script>
 
 </body>
 </html>
