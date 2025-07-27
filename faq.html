@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FAQ - Professional Automotive Technician Training</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Frequently Asked Questions - Professional Automotive Technician Training by As Sunnah Skill Development Institute.">
+  <meta name="keywords" content="automotive training, FAQ, technician course, job-ready automotive skills">
+  <meta name="author" content="As Sunnah Skill Development Institute">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <style>
+    .faq-section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .faq-section h1 {
+      text-align: center;
+      color: #1f453d;
+      margin-bottom: 1.5rem;
+    }
+
+    .faq {
+      margin-bottom: 1.5rem;
+      background-color: #ffffff;
+      border: 1px solid #d4ebe1;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+
+    .faq h3 {
+      margin-top: 0;
+      color: #2b6358;
+    }
+
+    .faq p {
+      margin-bottom: 0;
+      color: #333;
+    }
+
+    .button-group {
+      margin-top: 20px;
+      display: flex; 
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    .button-group a {
+      background-color: #2b6358;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-weight: 460;
+      transition: background-color 0.3s;
+    }
+
+    .button-group a:hover {
+      background-color: #1e967d;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="site-logo">
+        <img src="logo.png" alt="Automotive" />
+      </a>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div><div></div><div></div>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="course-outline.html">Course Outline</a>
+        <div class="dropdown" onclick="toggleDropdown(event)">
+          <a href="syllabus.html">Syllabus</a>
+          <div class="dropdown-content">
+            <a href="weekly-module.html">Weekly Module</a>
+            <a href="daily-module.html">Daily Module</a>
+          </div>
+        </div>
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="faq-section">
+    <h1>Frequently Asked Questions (FAQ)</h1>
+
+    <div class="faq">
+      <h3>❓ Who can join this course?</h3>
+      <p>Anyone interested in becoming a skilled automotive technician. No prior experience is necessary, but basic literacy is preferred.</p>
+    </div>
+
+    <div class="faq">
+      <h3>❓ How long is the training?</h3>
+      <p>The training runs for 3 months (12 weeks), 6 days a week, with hands-on practical and theoretical sessions.</p>
+    </div>
+
+    <div class="faq">
+      <h3>❓ What kind of certificate will I receive?</h3>
+      <p>You'll receive a professional certificate from As Sunnah Skill Development Institute upon successful completion of the course.</p>
+    </div>
+
+    <div class="faq">
+      <h3>❓ Is there job placement support?</h3>
+      <p>Yes, we offer career guidance and job placement assistance in local workshops, companies, or freelance work.</p>
+    </div>
+
+    <div class="faq">
+      <h3>❓ What topics are covered?</h3>
+      <p>Our curriculum includes engine systems, electrical/electronic systems, hybrid/EV technology, diagnostics, ADAS, CNG/LPG conversion, and more.</p>
+    </div>
+
+    <div class="faq">
+      <h3>❓ Is the course practical or theoretical?</h3>
+      <p>It's a balanced mix: roughly 50% theory and 50% hands-on practical sessions in a real workshop setting.</p>
+    </div>
+
+    <div class="faq">
+      <h3>❓ How much does it cost?</h3>
+      <p>Please contact us directly or visit the course brochure for updated pricing and scholarship info.</p>
+    </div>
+
+    <div class="button-group">
+      <a href="course-outline.html">📘 Course Outline</a>
+      <a href="class-routine.html">🕒 Class Routine</a>
+      <a href="job-sector.html">📚 Job Sector</a>
+      <a href="tools.html">🔧 Tools & Equipment</a>
+      <a href="brochure.pdf" download>📄 Download Brochure</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 As Sunnah Skill Development Institute. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    function toggleDropdown(event) {
+      const dropdown = event.currentTarget;
+      dropdown.classList.toggle("open");
+      event.stopPropagation();
+    }
+
+    window.addEventListener('click', function () {
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+    });
+  </script>
+
+</body>
+</html>
