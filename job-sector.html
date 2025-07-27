@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Professional Automotive Technician Training</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Professional Automotive Technician Training by As Sunnah Skill Development 	Institute – a 3-month certified course to become a job-ready automotive technician.">
+    <meta name="keywords" content="automotive training, technician course, As Sunnah, vehicle diagnostics, hybrid vehicle, ADAS, CNG installation">
+    <meta name="author" content="As Sunnah Skill Development Institute">
+    <meta property="og:title" content="Professional Automotive Technician Training">
+    <meta property="og:description" content="Become a certified, job-ready technician in 3 months. Organized by As Sunnah Skill Development Institute.">
+    <meta property="og:image" content="cover-image.jpg">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+<body>
+
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="nav-container">       
+     <a href="index.html" class="site-logo">
+      <img src="logo.png" alt="Automotive" />
+    </a>  
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="course-outline.html">Course Outline</a>
+        <div class="dropdown" onclick="toggleDropdown(event)">
+          <a href="syllabus.html">Syllabus</a>
+          <div class="dropdown-content">
+            <a href="weekly-module.html">Weekly Module</a>
+            <a href="daily-module.html">Daily Module</a>
+          </div>
+        </div>
+        <a href="resources.html"class="active">Resources</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </nav>
+  
+	<div class="main-content"> <!-- Main Content Area -->
+     <!-- Right-aligned PDF download button -->
+  		<div class="download-section">
+    		<a href="#" onclick="downloadPageAsPDF()">📄 Download PDF</a>
+  		</div>
+     
+ <style>
+  .button-group {
+    margin-top: 10px;
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .button-group a {
+    background-color: #2b6358;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 460;
+    transition: background-color 0.3s;
+  }
+
+  .button-group a:hover {
+    background-color: #1e967d;
+    text-decoration: none;
+  }
+
+  h1 {
+    text-align: center;
+  }
+</style>
+   <div class="button-group">
+      <a href="course-outline.html">📘 Course Outline</a>
+     <a href="class-routine.html">📘  Class routine</a>
+      <a href="job-sector.html">📚 Job Sector</a>    
+      <a href="tools.html">🔧 Tools & eqpt</a>    
+      <a href="brochure.pdf" download>📄 Brochure</a>  
+      <a href="faq.html">ℹ️ FAQ</a>    
+    </div>
+  
+  <style>    
+    .routine {
+      padding: 2rem 1rem;
+    }
+
+    .routine h3.highlight {
+      background-color: #3fD700;
+      display: inline-block;
+      padding: 0.3rem 1.2rem;
+      border-radius: 6px;
+      color: #1f453d;
+      font-size: 1.2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      border: 1px solid #aaa;
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    th {
+      background-color: #d4ebe1;
+      color: #1f453d;
+    }
+
+    .routine td:first-child {
+      background-color: #b4e3c0;
+      font-weight: bold;
+    }
+
+    .instructor-list {
+      margin-top: 2rem;
+      padding-left: 0.5rem;
+      max-width: 400px;
+    }
+
+    .instructor-list h4 {
+      margin-bottom: 0.4rem;
+      color: #1f453d;
+      text-align: left;
+    }
+
+    .instructor-list ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      color: #333;
+    }
+
+    @media screen and (max-width: 768px) {
+      table {
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+
+  <div class="main-content">
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f5;
+      color: #1f453d;
+      margin: 0;
+      padding: 0;
+    }
+
+    .job-sectors {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .job-sectors h1 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+
+    .sector {
+      margin-bottom: 2.5rem;
+      padding: 1rem;
+      border-left: 4px solid #1f453d;
+      background-color: #f8fbfa;
+    }
+
+    .sector h2 {
+      color: #2c3e50;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .job-sectors ul {
+      padding-left: 1.2rem;
+      list-style-type: disc;
+      color: #333;
+    }
+
+    .job-sectors ul li {
+      margin-bottom: 0.3rem;
+      line-height: 1.6;
+    }
+
+    .job-sectors p {
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    .job-sectors small {
+      display: block;
+      margin-top: 2rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+  </style>
+
+
+  <div class="job-sectors">
+    <h1>Career Paths in Automotive & Vehicle Maintenance</h1>
+    <p>Explore job roles, salary expectations, and top employers for skilled automotive professionals in Bangladesh.</p>
+
+    <div class="sector">
+      <h2>🔧 Auto Mechanic / Automotive Technician</h2>
+      <ul>
+        <li><strong>Salary (Bangladesh, monthly):</strong> BDT 13,000–30,000 (majority of workers)</li>
+        <li><strong>Glassdoor average (Dhaka):</strong> BDT 3,700/month</li>
+        <li><strong>Employers:</strong> ACI Motors, Nitol Motors, Walton Motors, Runner Automobiles, Pragoti Industries</li>
+      </ul>
+    </div>
+
+    <div class="sector">
+      <h2>🧰 Vehicle Mechanic / Workshop Technician</h2>
+      <ul>
+        <li><strong>Salary Range:</strong> BDT 5,000–50,000/month (varies by experience)</li>
+        <li><strong>Workplaces:</strong> Local garages, motorcycle repair centers, heavy-duty workshops</li>
+      </ul>
+    </div>
+
+    <div class="sector">
+      <h2>🔩 Service Technician / Field Technician</h2>
+      <ul>
+        <li><strong>Jobs:</strong> Battery Technician, AC Technician, Workshop Assistant, Field Servicer</li>
+        <li><strong>Salary:</strong> BDT 15,000–35,000/month</li>
+        <li><strong>Employers:</strong> Rahimafrooz, Energypac, regional service centers</li>
+      </ul>
+    </div>
+
+    <div class="sector">
+      <h2>🧑‍🏭 Supervisor / Senior Technician</h2>
+      <ul>
+        <li><strong>Roles:</strong> Workshop Supervisor, Technician Lead, Maintenance Officer</li>
+        <li><strong>Salary:</strong> BDT 25,000–45,000/month</li>
+        <li><strong>Hiring Sectors:</strong> Private auto firms, foreign companies, logistics hubs</li>
+      </ul>
+    </div>
+
+    <div class="sector">
+      <h2>⚙️ Automotive Engineer / Mechanical Engineer</h2>
+      <ul>
+        <li><strong>Entry Salary:</strong> BDT 20,000–35,000/month</li>
+        <li><strong>With Experience:</strong> BDT 45,000–60,000/month and higher</li>
+        <li><strong>Employers:</strong> Pragoti Industries, Fair Technology (Hyundai), workshops and factories</li>
+      </ul>
+    </div>
+
+    <div class="sector">
+      <h2>🚗 Specialized Technician (EV, LPG/CNG, ADAS)</h2>
+      <ul>
+        <li><strong>Emerging Jobs:</strong> EV Mechanic, Calibration Expert, Sensor Specialist</li>
+        <li><strong>Salary:</strong> BDT 25,000–40,000/month</li>
+        <li><strong>Employers:</strong> Electric vehicle centers, diagnostic service units, calibration labs</li>
+      </ul>
+    </div>
+
+    <p><strong>Career Progression:</strong></p>
+    <ul>
+      <li>Fresher → Junior Technician → Senior Mechanic</li>
+      <li>→ Workshop In‑Charge → Supervisor → Engineer</li>
+    </ul>
+
+    <small><strong>Note:</strong> Salary and job data are based on July 2025 market insights from BDJobs, Paylab, Glassdoor, Jora, and local portals. Figures are approximations and may vary by location, skills, and experience.</small>
+  </div>
+
+
+    </div>
+  </div>
+
+<footer>
+  &copy; 2025 As Sunnah Skill Development Institute. All rights reserved.
+</footer>
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+  function toggleDropdown(event) {
+    const dropdown = event.currentTarget;
+    dropdown.classList.toggle("open");
+    event.stopPropagation();
+  }
+  window.addEventListener('click', function () {
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+  });
+</script>
+
+</body>
+</html>
