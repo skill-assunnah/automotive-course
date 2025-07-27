@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Professional Automotive Technician Training</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Professional Automotive Technician Training by As Sunnah Skill Development 	Institute – a 3-month certified course to become a job-ready automotive technician.">
+  <meta name="keywords" content="automotive training, technician course, As Sunnah, vehicle diagnostics, hybrid vehicle, ADAS, CNG installation">
+  <meta name="author" content="As Sunnah Skill Development Institute">
+  <meta property="og:title" content="Professional Automotive Technician Training">
+  <meta property="og:description" content="Become a certified, job-ready technician in 3 months. Organized by As Sunnah Skill Development Institute.">
+  <meta property="og:image" content="cover-image.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="nav-container">       
+     <a href="index.html" class="site-logo">
+      <img src="logo.png" alt="Automotive" />
+    </a>  
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="course-outline.html">Course Outline</a>
+        <div class="dropdown" onclick="toggleDropdown(event)">
+          <a href="syllabus.html">Syllabus</a>
+          <div class="dropdown-content">
+            <a href="weekly-module.html">Weekly Module</a>
+            <a href="daily-module.html">Daily Module</a>
+          </div>
+        </div>
+        <a href="resources.html"class="active">Resources</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </nav>
+  
+<div class="main-content"> <!-- Main Content Area -->
+     <!-- Right-aligned PDF download button -->
+    
+  <style>
+    .resources {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #2c3e50;
+    }   
+ .button-group {
+  margin-top: 10px;
+  display: flex; 
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.button-group a {
+  background-color: #2b6358;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 460;
+  transition: background-color 0.3s;
+}
+
+.button-group a:hover {
+  background-color: #1e967d;
+  text-decoration: none;
+}
+  </style>
+ <div class="button-group">
+    <a href="pre-admission.html">📘 Pre-Admission</a>
+   <a href="class-routine.html">📘  Class routine</a>
+    <a href="job-sector.html">📚 Job Sector</a>    
+    <a href="tools.html">🔧 Tools & eqpt</a>    
+    <a href="brochure.pdf" download>📄 Brochure</a>  
+    <a href="faq.html">ℹ️ FAQ</a>    
+  </div>
+  
+  <style>
+    
+    .glossary-container h1 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 1.5rem;
+    }
+
+    .glossary-container dl {
+      column-count: 2;
+      column-gap: 2rem;
+    }
+
+    dt {
+      font-weight: bold;
+      color: #2c3e50;
+      margin-top: 1rem;
+    }
+
+    dd {
+      margin: 0 0 1rem 1rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .glossary-container dl {
+        column-count: 1;
+      }
+    }
+    
+    h1, h2 {
+      color: #1F453D;
+    }
+
+    .qa {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .qa-section {
+      margin-bottom: 2rem;
+    }
+
+    .qa-section h3 {
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+    }
+
+    .qa-section p {
+      margin: 0.2rem 0 1rem;
+    }
+  </style>
+
+
+  <div class="glossary-container">
+    <h1>Glossary of 100 Important Automotive Terms</h1>
+    <dl>
+      <dt>ABS (Anti-lock Braking System)</dt><dd>A safety system that prevents wheels from locking during braking.</dd>
+      <dt>Accelerator</dt><dd>Pedal that controls engine power by regulating fuel and air intake.</dd>
+      <dt>Air Filter</dt><dd>A device that removes dust and debris from air entering the engine.</dd>
+      <dt>Alternator</dt><dd>Converts mechanical energy into electrical energy to charge the battery.</dd>
+      <dt>Axle</dt><dd>Shaft that connects wheels and supports vehicle weight.</dd>
+      <dt>Battery</dt><dd>Stores electrical energy to start the engine and power electrical systems.</dd>
+      <dt>Bearing</dt><dd>Component that reduces friction between moving parts.</dd>
+      <dt>Brake Caliper</dt><dd>Part of disc brake system that presses brake pads on the rotor.</dd>
+      <dt>Brake Pad</dt><dd>Friction material that presses against brake rotor to slow vehicle.</dd>
+      <dt>Brake Rotor (Disc)</dt><dd>Rotating part pressed by brake pads to stop the wheel.</dd>
+      <dt>Camshaft</dt><dd>Shaft that opens and closes engine valves.</dd>
+      <dt>Carburetor</dt><dd>Device that mixes air and fuel for combustion (older engines).</dd>
+      <dt>Catalytic Converter</dt><dd>Emission control device converting harmful gases to less toxic.</dd>
+      <dt>Chassis</dt><dd>Frame that supports the vehicle body and components.</dd>
+      <dt>Clutch</dt><dd>Device that connects and disconnects the engine from transmission.</dd>
+      <dt>Combustion</dt><dd>Burning of fuel-air mixture inside engine cylinders.</dd>
+      <dt>Compression Stroke</dt><dd>Engine cycle phase where air-fuel mixture is compressed.</dd>
+      <dt>Crankshaft</dt><dd>Converts piston movement into rotational motion.</dd>
+      <dt>CV Joint (Constant Velocity Joint)</dt><dd>Allows smooth power transmission to wheels.</dd>
+      <dt>Cylinder</dt><dd>Chamber where combustion occurs.</dd>
+      <dt>Cylinder Head</dt><dd>Top part of cylinder enclosing valves and spark plugs.</dd>
+      <dt>Differential</dt><dd>Allows wheels to rotate at different speeds during turns.</dd>
+      <dt>Dipstick</dt><dd>Tool to check engine oil level.</dd>
+      <dt>Drive Shaft</dt><dd>Transmits power from transmission to differential/wheels.</dd>
+      <dt>Drum Brake</dt><dd>Brake system using brake shoes inside a drum.</dd>
+      <dt>EFI (Electronic Fuel Injection)</dt><dd>Computer-controlled fuel delivery system.</dd>
+      <dt>Engine Block</dt><dd>Main structure housing cylinders and pistons.</dd>
+      <dt>Exhaust Manifold</dt><dd>Collects exhaust gases from cylinders.</dd>
+      <dt>Fan Belt</dt><dd>Drives cooling fan and accessories from the engine.</dd>
+      <dt>Fuel Injector</dt><dd>Device that sprays fuel into combustion chamber.</dd>
+      <dt>Fuel Pump</dt><dd>Pumps fuel from tank to engine.</dd>
+      <dt>Fuel Tank</dt><dd>Stores vehicle fuel.</dd>
+      <dt>Fusible Link</dt><dd>Electrical safety device that melts to protect circuits.</dd>
+      <dt>Generator</dt><dd>Older term for alternator.</dd>
+      <dt>Headlight</dt><dd>Front light for night driving.</dd>
+      <dt>Ignition Coil</dt><dd>Converts battery voltage to high voltage for spark plugs.</dd>
+      <dt>Ignition System</dt><dd>Creates spark to ignite fuel-air mixture.</dd>
+      <dt>Injector</dt><dd>See Fuel Injector.</dd>
+      <dt>Intake Manifold</dt><dd>Distributes air to cylinders.</dd>
+      <dt>Lug Nut</dt><dd>Fastens wheel to axle.</dd>
+      <dt>Master Cylinder</dt><dd>Converts brake pedal force to hydraulic pressure.</dd>
+      <dt>Muffler</dt><dd>Reduces engine exhaust noise.</dd>
+      <dt>OBD-II (On-Board Diagnostics)</dt><dd>Standard vehicle self-diagnostic system.</dd>
+      <dt>Oil Filter</dt><dd>Removes contaminants from engine oil.</dd>
+      <dt>Oxygen Sensor</dt><dd>Measures oxygen in exhaust for fuel control.</dd>
+      <dt>Overdrive</dt><dd>Gear ratio for fuel-efficient cruising.</dd>
+      <dt>Piston</dt><dd>Moves inside cylinder to compress air-fuel mixture.</dd>
+      <dt>Power Steering</dt><dd>System that reduces steering effort.</dd>
+      <dt>Radiator</dt><dd>Cools engine coolant.</dd>
+      <dt>Rearview Mirror</dt><dd>Provides rear vision to driver.</dd>
+      <dt>Reciprocating Motion</dt><dd>Back and forth movement (e.g., piston).</dd>
+      <dt>Relay</dt><dd>Electrically operated switch.</dd>
+      <dt>Reservoir Tank</dt><dd>Stores excess fluid (coolant, brake).</dd>
+      <dt>Resistance</dt><dd>Electrical opposition to current.</dd>
+      <dt>Rotor</dt><dd>Part of ignition system producing spark.</dd>
+      <dt>Safety Glass</dt><dd>Laminated glass to protect occupants.</dd>
+      <dt>Sensor</dt><dd>Detects physical parameters (temperature, pressure).</dd>
+      <dt>Shock Absorber</dt><dd>Controls suspension movement.</dd>
+      <dt>Spark Plug</dt><dd>Produces spark to ignite fuel.</dd>
+      <dt>Starter Motor</dt><dd>Cranks engine to start.</dd>
+      <dt>Steering Column</dt><dd>Connects steering wheel to steering gear.</dd>
+      <dt>Suspension</dt><dd>System supporting vehicle and absorbing shocks.</dd>
+      <dt>Throttle</dt><dd>Controls engine power by regulating airflow.</dd>
+      <dt>Timing Belt/Chain</dt><dd>Synchronizes camshaft and crankshaft.</dd>
+      <dt>Torque</dt><dd>Rotational force produced by engine.</dd>
+      <dt>Transaxle</dt><dd>Combined transmission and differential.</dd>
+      <dt>Transmission</dt><dd>Transfers engine power to wheels with gear ratios.</dd>
+      <dt>Turbocharger</dt><dd>Forces extra air into engine for power.</dd>
+      <dt>Universal Joint</dt><dd>Flexible joint in drive shaft.</dd>
+      <dt>Valve</dt><dd>Controls intake and exhaust flow in engine.</dd>
+      <dt>Valve Spring</dt><dd>Returns valve to closed position.</dd>
+      <dt>Valve Timing</dt><dd>Synchronization of valves with piston movement.</dd>
+      <dt>Wiper Motor</dt><dd>Powers windshield wipers.</dd>
+      <dt>Wheel Alignment</dt><dd>Adjustment of wheel angles.</dd>
+      <dt>Wheel Bearing</dt><dd>Supports wheel rotation.</dd>
+      <dt>Windshield</dt><dd>Front glass protecting driver.</dd>
+      <dt>Wiring Harness</dt><dd>Bundle of electrical wires.</dd>
+      <dt>Yaw Sensor</dt><dd>Detects vehicle rotation for stability control.</dd>
+      <dt>Zinc Coating</dt><dd>Rust protection on metal parts.</dd>
+      <dt>Air Conditioning (A/C)</dt><dd>Cools vehicle interior.</dd>
+      <dt>ABS Module</dt><dd>Controls ABS system.</dd>
+      <dt>Backup Camera</dt><dd>Rear vision aid.</dd>
+      <dt>Brake Booster</dt><dd>Amplifies brake pedal force.</dd>
+      <dt>Camber</dt><dd>Wheel tilt angle.</dd>
+      <dt>Catalyst</dt><dd>Substance facilitating chemical reaction.</dd>
+      <dt>Cylinder Deactivation</dt><dd>Shutting down cylinders to save fuel.</dd>
+      <dt>Dead Reckoning</dt><dd>Navigation by estimating position.</dd>
+      <dt>Diff Lock</dt><dd>Locks differential to improve traction.</dd>
+      <dt>Drivetrain</dt><dd>All components transmitting power to wheels.</dd>
+      <dt>ECU (Engine Control Unit)</dt><dd>Computer managing engine functions.</dd>
+      <dt>Exhaust Pipe</dt><dd>Conveys exhaust gases away.</dd>
+      <dt>Fuel Economy</dt><dd>Efficiency of fuel consumption.</dd>
+      <dt>Glow Plug</dt><dd>Heats diesel engine combustion chamber.</dd>
+      <dt>Harmonic Balancer</dt><dd>Reduces engine vibrations.</dd>
+      <dt>Idle Speed</dt><dd>Engine speed at rest.</dd>
+      <dt>Knock Sensor</dt><dd>Detects engine knocking.</dd>
+      <dt>Lift Pump</dt><dd>Transfers fuel from tank to injection pump.</dd>
+      <dt>Load Sensing Valve</dt><dd>Adjusts brake pressure by load.</dd>
+      <dt>MAP Sensor</dt><dd>Measures intake pressure (Manifold Absolute Pressure).</dd>
+      <dt>Mild Hybrid</dt><dd>Vehicle with electric assist but no pure EV mode.</dd>
+    </dl>
+  </div>
+  
+  <h1>Short Questions & Answers: Automotive Systems & Functions</h1>
+
+<div style="font-family: Arial, sans-serif; background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05); color: #1F453D; line-height: 1.6; max-width: 900px; margin: auto;">
+  <h2 style="color: #1F453D;">Short Questions & Answers: Automotive Systems & Functions</h2>
+
+  <h3>1. Safety and Workshop Practices</h3>
+  <p><strong>Q:</strong> Why is PPE important in the workshop?<br><strong>A:</strong> PPE protects workers from injuries caused by chemicals, sharp objects, noise, and other hazards.</p>
+  <p><strong>Q:</strong> What are the key safety rules in an automotive workshop?<br><strong>A:</strong> Keep work area clean, use tools properly, wear PPE, follow emergency procedures, and respect equipment.</p>
+
+  <h3>2. Engine System</h3>
+  <p><strong>Q:</strong> What is the difference between SI and CI engines?<br><strong>A:</strong> SI (Spark Ignition) engines use spark plugs for ignition; CI (Compression Ignition) engines ignite fuel by compression heat.</p>
+  <p><strong>Q:</strong> What are the four strokes in a 4-stroke engine?<br><strong>A:</strong> Intake, Compression, Power (Combustion), and Exhaust.</p>
+  <p><strong>Q:</strong> What is the role of the camshaft?<br><strong>A:</strong> It controls the opening and closing of intake and exhaust valves.</p>
+
+  <h3>3. Fuel System</h3>
+  <p><strong>Q:</strong> What is the function of a fuel injector?<br><strong>A:</strong> To spray fuel into the combustion chamber in a precise amount and pattern.</p>
+  <p><strong>Q:</strong> Why is a fuel filter important?<br><strong>A:</strong> It removes impurities from fuel to protect engine components.</p>
+
+  <h3>4. Cooling System</h3>
+  <p><strong>Q:</strong> What does the thermostat do in the cooling system?<br><strong>A:</strong> Regulates coolant flow to maintain engine temperature.</p>
+  <p><strong>Q:</strong> What is the purpose of the radiator?<br><strong>A:</strong> To dissipate heat from the coolant to the outside air.</p>
+
+  <h3>5. Lubrication System</h3>
+  <p><strong>Q:</strong> Why is engine oil important?<br><strong>A:</strong> It lubricates moving parts, reduces friction, and cools the engine.</p>
+  <p><strong>Q:</strong> What does an oil filter do?<br><strong>A:</strong> Removes contaminants from engine oil.</p>
+
+  <h3>6. Starting System</h3>
+  <p><strong>Q:</strong> What is the main function of the starter motor?<br><strong>A:</strong> To crank the engine for starting.</p>
+  <p><strong>Q:</strong> How does the ignition switch work?<br><strong>A:</strong> It sends power to the starter and ignition system.</p>
+
+  <h3>7. Ignition System</h3>
+  <p><strong>Q:</strong> What is the role of the ignition coil?<br><strong>A:</strong> Converts battery voltage into high voltage for the spark plugs.</p>
+  <p><strong>Q:</strong> What causes engine misfire?<br><strong>A:</strong> Faulty spark plugs, ignition coil, or fuel delivery issues.</p>
+
+  <h3>8. Air Induction System</h3>
+  <p><strong>Q:</strong> Why is an air filter important?<br><strong>A:</strong> It prevents dust and debris from entering the engine.</p>
+  <p><strong>Q:</strong> What is throttle body’s role?<br><strong>A:</strong> Controls the amount of air entering the engine.</p>
+
+  <h3>9. Exhaust System</h3>
+  <p><strong>Q:</strong> What is the purpose of a catalytic converter?<br><strong>A:</strong> To reduce harmful emissions by converting gases to less toxic substances.</p>
+  <p><strong>Q:</strong> Why is exhaust leak dangerous?<br><strong>A:</strong> It can allow toxic gases into the passenger cabin and reduce engine efficiency.</p>
+
+  <h3>10. Engine Tune-Up</h3>
+  <p><strong>Q:</strong> What is involved in a basic SI engine tune-up?<br><strong>A:</strong> Checking ignition timing, replacing spark plugs, and adjusting carburetor or fuel injection.</p>
+  <p><strong>Q:</strong> How does diesel injector testing help?<br><strong>A:</strong> It ensures proper fuel spray and combustion.</p>
+
+  <h3>11. Powertrain and Steering</h3>
+  <p><strong>Q:</strong> What is the role of the clutch?<br><strong>A:</strong> Connects/disconnects the engine power to the transmission.</p>
+  <p><strong>Q:</strong> What does power steering do?<br><strong>A:</strong> Reduces driver effort to turn the steering wheel.</p>
+
+  <h3>12. Suspension and Alignment</h3>
+  <p><strong>Q:</strong> What is camber angle?<br><strong>A:</strong> The tilt of the wheel relative to vertical.</p>
+  <p><strong>Q:</strong> Why is wheel alignment important?<br><strong>A:</strong> Ensures proper tire wear and vehicle handling.</p>
+
+  <h3>13. Braking System</h3>
+  <p><strong>Q:</strong> How does ABS improve braking?<br><strong>A:</strong> Prevents wheel lock-up during emergency braking.</p>
+  <p><strong>Q:</strong> What is brake bleeding?<br><strong>A:</strong> Removing air from the brake hydraulic system.</p>
+
+  <h3>14. Air Conditioning (A/C)</h3>
+  <p><strong>Q:</strong> What does the refrigerant do in A/C?<br><strong>A:</strong> Absorbs heat from inside the vehicle and releases it outside.</p>
+  <p><strong>Q:</strong> Why check blower motor?<br><strong>A:</strong> To ensure proper airflow inside the cabin.</p>
+
+  <h3>15. Electrical System</h3>
+  <p><strong>Q:</strong> What does the alternator do?<br><strong>A:</strong> Charges the battery and powers electrical systems when engine runs.</p>
+  <p><strong>Q:</strong> What is a fuse?<br><strong>A:</strong> A safety device that breaks the circuit if current is too high.</p>
+
+  <h3>16. EFI System</h3>
+  <p><strong>Q:</strong> What is EFI?<br><strong>A:</strong> Electronic Fuel Injection system that controls fuel delivery.</p>
+  <p><strong>Q:</strong> Why clean fuel injectors?<br><strong>A:</strong> To maintain optimal spray pattern and engine performance.</p>
+
+  <h3>17. Charging System</h3>
+  <p><strong>Q:</strong> What components are in charging system?<br><strong>A:</strong> Battery, alternator, voltage regulator.</p>
+  <p><strong>Q:</strong> What happens if alternator fails?<br><strong>A:</strong> Battery will drain, electrical systems fail.</p>
+
+  <h3>18. LPG/CNG Systems</h3>
+  <p><strong>Q:</strong> Why convert to LPG/CNG?<br><strong>A:</strong> Lower fuel cost and emissions.</p>
+  <p><strong>Q:</strong> What safety checks are necessary?<br><strong>A:</strong> Leak tests, regulator function, and secure fittings.</p>
+
+  <h3>19. Hybrid & EV Systems</h3>
+  <p><strong>Q:</strong> What is a hybrid vehicle?<br><strong>A:</strong> Combines internal combustion engine with electric motor.</p>
+  <p><strong>Q:</strong> What is CAN bus?<br><strong>A:</strong> Communication network for vehicle electronics.</p>
+
+  <h3>20. ADAS (Advanced Driver Assistance Systems)</h3>
+  <p><strong>Q:</strong> Name one ADAS feature.<br><strong>A:</strong> Lane departure warning.</p>
+  <p><strong>Q:</strong> Why is ADAS important?<br><strong>A:</strong> Improves safety by assisting driver.</p>
+</div>
+<div style="font-family: Arial, sans-serif; background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05); color: #1F453D; line-height: 1.6; max-width: 900px; margin: auto;">
+  <h2 style="color: #1F453D;"">50 MCQ Questions and Answers: Automotive Systems</h2>
+  
+  <ol style="padding-left: 20px; color: #222;">
+    <li><strong>What does SI stand for in SI engine?</strong><br>
+      A) Spark Ignition<br>
+      B) Super Ignition<br>
+      C) Simple Ignition<br>
+      D) Safety Ignition<br>
+      <em>Answer: A</em>
+    </li><br>
+
+    <li><strong>Which component converts up/down motion into rotational motion?</strong><br>
+      A) Piston<br>
+      B) Camshaft<br>
+      C) Crankshaft<br>
+      D) Valve<br>
+      <em>Answer: C</em>
+    </li><br>
+
+    <li><strong>What is the purpose of a radiator?</strong><br>
+      A) Cool the engine oil<br>
+      B) Cool the engine coolant<br>
+      C) Heat the cabin<br>
+      D) Store fuel<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>What type of fuel does a CI engine use?</strong><br>
+      A) Gasoline<br>
+      B) Diesel<br>
+      C) LPG<br>
+      D) Electric<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>What does PPE stand for?</strong><br>
+      A) Personal Protection Equipment<br>
+      B) Personal Protective Equipment<br>
+      C) Public Protective Equipment<br>
+      D) Protective Personal Equipment<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>Which tool is used to measure engine bore?</strong><br>
+      A) Vernier Caliper<br>
+      B) Screwdriver<br>
+      C) Hammer<br>
+      D) Torque Wrench<br>
+      <em>Answer: A</em>
+    </li><br>
+
+    <li><strong>Which system controls fuel injection electronically?</strong><br>
+      A) Carburetor System<br>
+      B) EFI System<br>
+      C) Cooling System<br>
+      D) Exhaust System<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>What is the role of the alternator?</strong><br>
+      A) Store electrical energy<br>
+      B) Crank the engine<br>
+      C) Charge the battery<br>
+      D) Control ignition timing<br>
+      <em>Answer: C</em>
+    </li><br>
+
+    <li><strong>What is the function of the clutch?</strong><br>
+      A) Connect/disconnect engine to transmission<br>
+      B) Start the engine<br>
+      C) Control steering angle<br>
+      D) Charge the battery<br>
+      <em>Answer: A</em>
+    </li><br>
+
+    <li><strong>What is the main safety device that prevents wheel lock during braking?</strong><br>
+      A) ABS<br>
+      B) EBD<br>
+      C) ESC<br>
+      D) TCS<br>
+      <em>Answer: A</em>
+    </li><br>
+
+    <li><strong>What is the purpose of the catalytic converter?</strong><br>
+      A) Increase engine power<br>
+      B) Reduce harmful exhaust emissions<br>
+      C) Improve fuel economy<br>
+      D) Control engine temperature<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>Which component ignites the air-fuel mixture in an SI engine?</strong><br>
+      A) Injector<br>
+      B) Spark Plug<br>
+      C) Carburetor<br>
+      D) Valve<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>Which part controls air intake in the air induction system?</strong><br>
+      A) Fuel Injector<br>
+      B) Throttle Body<br>
+      C) Radiator<br>
+      D) Alternator<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>What is the unit that converts battery voltage to higher voltage for spark plugs?</strong><br>
+      A) Ignition Coil<br>
+      B) Starter Motor<br>
+      C) Alternator<br>
+      D) Fuse<br>
+      <em>Answer: A</em>
+    </li><br>
+
+    <li><strong>What type of transmission uses a clutch pedal and gear lever?</strong><br>
+      A) Automatic<br>
+      B) Manual<br>
+      C) CVT<br>
+      D) Dual-clutch<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>What is the purpose of wheel alignment?</strong><br>
+      A) Improve engine efficiency<br>
+      B) Prevent tire wear and improve handling<br>
+      C) Reduce fuel consumption<br>
+      D) Cool brakes<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>Which tool is commonly used to check electrical circuits?</strong><br>
+      A) Torque Wrench<br>
+      B) Multimeter<br>
+      C) Screwdriver<br>
+      D) Hammer<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>What gas is commonly used in CNG systems?</strong><br>
+      A) Propane<br>
+      B) Methane<br>
+      C) Butane<br>
+      D) Oxygen<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>What is CAN bus?</strong><br>
+      A) Communication protocol for vehicle electronics<br>
+      B) Type of brake system<br>
+      C) Engine cooling system<br>
+      D) Suspension part<br>
+      <em>Answer: A</em>
+    </li><br>
+
+    <li><strong>Which component stores electrical energy in the vehicle?</strong><br>
+      A) Alternator<br>
+      B) Battery<br>
+      C) Fuse<br>
+      D) Starter Motor<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>Which system removes heat from engine coolant?</strong><br>
+      A) Exhaust System<br>
+      B) Fuel System<br>
+      C) Cooling System<br>
+      D) Electrical System<br>
+      <em>Answer: C</em>
+    </li><br>
+
+    <li><strong>What does ABS stand for?</strong><br>
+      A) Anti-lock Braking System<br>
+      B) Automatic Braking System<br>
+      C) Anti-block System<br>
+      D) Automated Brake Safety<br>
+      <em>Answer: A</em>
+    </li><br>
+
+    <li><strong>What is the main function of an injector in a fuel system?</strong><br>
+      A) Compress fuel<br>
+      B) Spray fuel into combustion chamber<br>
+      C) Filter fuel<br>
+      D) Mix air and fuel<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>What component is responsible for starting the engine?</strong><br>
+      A) Alternator<br>
+      B) Starter Motor<br>
+      C) Ignition Coil<br>
+      D) Battery<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>What does torque wrench measure?</strong><br>
+      A) Voltage<br>
+      B) Rotation speed<br>
+      C) Force of tightening bolts<br>
+      D) Air pressure<br>
+      <em>Answer: C</em>
+    </li><br>
+
+    <li><strong>What is the main role of the muffler?</strong><br>
+      A) Increase engine power<br>
+      B) Reduce exhaust noise<br>
+      C) Filter fuel<br>
+      D) Improve cooling<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>What safety measure is required when working under a lifted vehicle?</strong><br>
+      A) Wearing PPE<br>
+      B) Using jack stands<br>
+      C) Disconnecting battery<br>
+      D) None of the above<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>Which is a common type of suspension spring?</strong><br>
+      A) Carburetor spring<br>
+      B) Leaf spring<br>
+      C) Clutch spring<br>
+      D) Ignition spring<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>Which sensor measures oxygen content in exhaust gases?</strong><br>
+      A) Throttle Position Sensor<br>
+      B) Oxygen Sensor<br>
+      C) Temperature Sensor<br>
+      D) Speed Sensor<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>What is the main benefit of hybrid vehicles?</strong><br>
+      A) Higher power output<br>
+      B) Fuel efficiency and reduced emissions<br>
+      C) Cheaper maintenance<br>
+      D) Faster acceleration<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>Which component regulates voltage from the alternator?</strong><br>
+      A) Battery<br>
+      B) Voltage Regulator<br>
+      C) Fuse<br>
+      D) Starter Motor<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>Which of the following is NOT a stroke in a 4-stroke engine?</strong><br>
+      A) Intake<br>
+      B) Compression<br>
+      C) Expansion<br>
+      D) Exhaust<br>
+      <em>Answer: C</em>
+    </li><br>
+
+    <li><strong>What is the function of the thermostat in a cooling system?</strong><br>
+      A) Control coolant flow to radiator<br>
+      B) Pump coolant<br>
+      C) Heat engine oil<br>
+      D) Start the fan<br>
+      <em>Answer: A</em>
+    </li><br>
+
+    <li><strong>Which part in the brake system converts hydraulic pressure into mechanical force?</strong><br>
+      A) Brake pads<br>
+      B) Brake caliper<br>
+      C) Master cylinder<br>
+      D) Brake disc<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>What is the function of a fuse in an electrical system?</strong><br>
+      A) Boost voltage<br>
+      B) Break circuit if overloaded<br>
+      C) Store electricity<br>
+      D) Generate current<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>What type of fuel is used in LPG systems?</strong><br>
+      A) Liquid Petroleum Gas<br>
+      B) Diesel<br>
+      C) Gasoline<br>
+      D) Methane<br>
+      <em>Answer: A</em>
+    </li><br>
+
+    <li><strong>Which component adjusts air-fuel mixture in carbureted engines?</strong><br>
+      A) Injector<br>
+      B) Carburetor<br>
+      C) Fuel pump<br>
+      D) Throttle body<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>What is the role of the power steering pump?</strong><br>
+      A) Increase engine power<br>
+      B) Assist steering effort<br>
+      C) Pump fuel<br>
+      D) Charge battery<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>Which system uses sensors to warn the driver about lane departure?</strong><br>
+      A) ABS<br>
+      B) ADAS<br>
+      C) EFI<br>
+      D) HVAC<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>What is the unit of measurement for engine displacement?</strong><br>
+      A) Liters or cubic centimeters (cc)<br>
+      B) Horsepower<br>
+      C) Torque<br>
+      D) Volts<br>
+      <em>Answer: A</em>
+    </li><br>
+
+    <li><strong>Which system is responsible for controlling the blower motor in an A/C system?</strong><br>
+      A) Cooling system<br>
+      B) HVAC system<br>
+      C) Electrical system<br>
+      D) Fuel system<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>Which sensor measures engine temperature?</strong><br>
+      A) Temperature sensor<br>
+      B) Oxygen sensor<br>
+      C) Pressure sensor<br>
+      D) Speed sensor<br>
+      <em>Answer: A</em>
+    </li><br>
+
+    <li><strong>What is the function of a differential in a vehicle?</strong><br>
+      A) Increase engine power<br>
+      B) Allow wheels to rotate at different speeds<br>
+      C) Control steering angle<br>
+      D) Cool the engine<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>Which system prevents wheel slip during acceleration?</strong><br>
+      A) ABS<br>
+      B) TCS (Traction Control System)<br>
+      C) ESC<br>
+      D) ADAS<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>What does OBD-II stand for?</strong><br>
+      A) On-Board Diagnostics II<br>
+      B) Off-Board Device II<br>
+      C) On-Bus Diagnostic System<br>
+      D) Operational Brake Device<br>
+      <em>Answer: A</em>
+    </li><br>
+
+    <li><strong>What type of energy does a battery store?</strong><br>
+      A) Mechanical energy<br>
+      B) Chemical energy<br>
+      C) Electrical energy<br>
+      D) Thermal energy<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>Which component filters air before it enters the engine?</strong><br>
+      A) Fuel filter<br>
+      B) Air filter<br>
+      C) Oil filter<br>
+      D) Radiator<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>What is a CV joint used for?</strong><br>
+      A) Electrical connection<br>
+      B) Allow power transmission while steering<br>
+      C) Fuel injection<br>
+      D) Brake linkage<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>What is the function of a torque converter?</strong><br>
+      A) Convert electrical power<br>
+      B) Connect engine to transmission in automatics<br>
+      C) Control engine timing<br>
+      D) Pump coolant<br>
+      <em>Answer: B</em>
+    </li><br>
+
+    <li><strong>What is the main advantage of CVT transmission?</strong><br>
+      A) Manual control<br>
+      B) Stepless gear ratio changes for smooth acceleration<br>
+      C) Higher horsepower<br>
+      D) Lower cost<br>
+      <em>Answer: B</em>
+    </li>
+  </ol>
+</div>
+
+
+
+<footer>
+  &copy; 2025 As Sunnah Skill Development Institute. All rights reserved.
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+
+  function toggleDropdown(event) {
+    const dropdown = event.currentTarget;
+    dropdown.classList.toggle("open");
+    event.stopPropagation();
+  }
+
+  window.addEventListener('click', function () {
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+  });
+</script>
+
+</body>
+</html>
