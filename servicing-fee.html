@@ -59,7 +59,13 @@
   justify-content: center;
 }
 </style>
-  
+  <div style="max-width: 1080px; margin: 0 auto;">
+  <div style="margin-bottom: 1rem;">
+    <button onclick="downloadPDF()" style="float: right; margin-top: 40px; margin-right: 20px; padding: 10px 16px; background-color: #2b6358; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      📄 Download PDF
+    </button>
+  </div>
+</div>
   <div class="main-content"> <!-- Main Content Area -->    
       <style>       
         .resources {
@@ -291,6 +297,20 @@
       document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
     });
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   
+  <script>
+  function downloadPDF() {
+    const element = document.querySelector('.content-container');
+    const opt = {
+      margin:       0.5,
+      filename:     'Servicing Fee.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2 },
+      jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+    html2pdf().set(opt).from(element).save();
+  }
+</script>
 </body>
 </html>
