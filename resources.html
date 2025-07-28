@@ -37,172 +37,157 @@
             <a href="daily-module.html">Daily Module</a>
           </div>
         </div>
-        <a href="resources.html"class="active">Resources</a>
+        <a href="resources.html" class="active">Resources</a>
         <a href="about.html">About</a>
       </div>
     </div>
   </nav>
-  
-<div class="main-content"> <!-- Main Content Area -->
-     <!-- Right-aligned PDF download button -->
-  <div class="download-section">
-    <a href="#" onclick="downloadPageAsPDF()">📄 Download PDF</a>
-  </div>
-      <main>
-    <div class="resources">
-  <style>
-    .resources {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #2c3e50;
-    }
 
-    .resources h1, .resources h2 {
-      color: #004080;
-      margin-bottom: 0.75rem;
-    }
-
-    .resources h1 {
-      font-size: 2rem;
-      text-align: center;
-    }
-
-    .resources h2 {
-      font-size: 1.4rem;
-      margin-top: 2rem;
-    }
-
-    .resources p {
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-
-    .resources ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .resources a {
-      color: #0073aa;
-      text-decoration: none;
-    }
-
-    .resources a:hover {
-      text-decoration: underline;
-    }
-
-    .resources .section {
-      margin-bottom: 2rem;
-    }
-    .button-group {
-  margin-top: 10px;
-  display: flex; 
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.button-group a {
-  background-color: #2b6358;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-weight: 460;
-  transition: background-color 0.3s;
-}
-
-.button-group a:hover {
-  background-color: #1e967d;
-  text-decoration: none;
-}
-  </style>
- <div class="button-group">
+  <div class="button-group">
     <a href="pre-admission.html">📘 Pre-Admission</a>
-   <a href="class-routine.html">📘  Class routine</a>
+    <a href="class-routine.html">📘 Class routine</a>
     <a href="job-sector.html">📚 Job Sector</a>    
     <a href="tools.html">🔧 Tools & eqpt</a>    
     <a href="brochure.pdf" download>📄 Brochure</a>  
     <a href="faq.html">ℹ️ FAQ</a>    
   </div>
-  <h1>📚 Training Resources</h1>
+  <style>
+  .button-group {
+  margin-top: 10px;
+  display: flex; 
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center; /* Center horizontally */
+}
+</style>
+  
+  <div class="main-content"> <!-- Main Content Area --> 
+    <div class="resources">
+      <style>
+        /* Testing-only style block for .resources */
+        .resources {
+          max-width: 1080px;
+          margin: 2rem auto;
+          padding: 2rem;
+          background-color: #ffffff;
+          border-radius: 12px;
+          box-shadow: 0 4px 5px rgba(0, 0, 0, 0.06);
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          color: #2c3e50;
+        }
 
-  <div class="section">
-    <h2>🛠 Workshop Tools & Equipment</h2>
-    <ul>
-      <li>Toolkits: Spanners, sockets, wrenches, screwdrivers</li>
-      <li>Diagnostic scanners: OBD-II, multimeter, oscilloscope</li>
-      <li>Lift systems: Hydraulic jack, 2-post lift (demo)</li>
-      <li>Workshop: Workbenches, vises, safety signs</li>
-    </ul>
+        .resources h1, .resources h2 {
+          color: #004080;
+          margin-bottom: 0.75rem;
+        }
+
+        .resources h1 {
+          font-size: 2rem;
+          text-align: center;
+        }
+
+        .resources h2 {
+          font-size: 1.4rem;
+          margin-top: 2rem;
+        }
+
+        .resources p {
+          line-height: 1.6;
+          margin-bottom: 1rem;
+        }
+
+        .resources ul {
+          list-style: disc;
+          padding-left: 1.5rem;
+          margin-bottom: 2rem;
+        }
+
+        .resources a {
+          color: #0073aa;
+          text-decoration: none;
+        }
+
+        .resources a:hover {
+          text-decoration: underline;
+        }
+
+        .resources .section {
+          margin-bottom: 2rem;
+        }
+      </style>
+
+      <h1>📚 Training Resources</h1>
+
+      <div class="section">
+        <h2>🛠 Workshop Tools & Equipment</h2>
+        <ul>
+          <li>Toolkits: Spanners, sockets, wrenches, screwdrivers</li>
+          <li>Diagnostic scanners: OBD-II, multimeter, oscilloscope</li>
+          <li>Lift systems: Hydraulic jack, 2-post lift (demo)</li>
+          <li>Workshop: Workbenches, vises, safety signs</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>📘 Training Materials</h2>
+        <ul>
+          <li>Course Booklets: Safety, Engine, Brake, Electrical, etc.</li>
+          <li>Weekly Handouts: Theoretical notes and checklists</li>
+          <li>Visual Aids: Diagrams, charts, cross-section models</li>
+          <li>Digital PDFs: <a href="#">Downloadable lesson guides</a></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>🧪 Practical Training Setup</h2>
+        <ul>
+          <li>Live Vehicle Units for each major system</li>
+          <li>Cut-away components: Engine head, gearbox, brakes</li>
+          <li>Simulators: EFI, ABS, ignition, charging system</li>
+          <li>Tools for calibration: Timing light, fuel gauge, A/C gauge</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>🧰 Safety Gear Provided</h2>
+        <ul>
+          <li>Safety Glasses & Gloves</li>
+          <li>Workshop Uniform</li>
+          <li>First Aid Kit</li>
+          <li>Fire Extinguisher Demonstration</li>
+        </ul>
+      </div>
+
+     <div class="section">
+      <h2>🌐 Additional Learning Resources</h2>
+      <ul>
+        <li><a href="https://www.howacarworks.com/">How Automobile Works</a></li>
+        <li><a href="https://www.automotivetextbook.com/">Automotive Textbook</a></li>
+        <li><a href="https://archive.org/details/car-mechanics-repairs-and-tuning-books">Car Repair Books Archive</a></li>
+        <li><a href="https://openstax.org/">OpenStax</a></li>
+      </ul>
+    </div>
+    </div>
   </div>
 
-  <div class="section">
-    <h2>📘 Training Materials</h2>
-    <ul>
-      <li>Course Booklets: Safety, Engine, Brake, Electrical, etc.</li>
-      <li>Weekly Handouts: Theoretical notes and checklists</li>
-      <li>Visual Aids: Diagrams, charts, cross-section models</li>
-      <li>Digital PDFs: <a href="#">Downloadable lesson guides</a></li>
-    </ul>
-  </div>
+  <footer>
+    &copy; 2025 As Sunnah Skill Development Institute. All rights reserved.
+  </footer>
 
-  <div class="section">
-    <h2>🧪 Practical Training Setup</h2>
-    <ul>
-      <li>Live Vehicle Units for each major system</li>
-      <li>Cut-away components: Engine head, gearbox, brakes</li>
-      <li>Simulators: EFI, ABS, ignition, charging system</li>
-      <li>Tools for calibration: Timing light, fuel gauge, A/C gauge</li>
-    </ul>
-  </div>
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
 
-  <div class="section">
-    <h2>🧰 Safety Gear Provided</h2>
-    <ul>
-      <li>Safety Glasses & Gloves</li>
-      <li>Workshop Uniform</li>
-      <li>First Aid Kit</li>
-      <li>Fire Extinguisher Demonstration</li>
-    </ul>
-  </div>
+    function toggleDropdown(event) {
+      const dropdown = event.currentTarget;
+      dropdown.classList.toggle("open");
+      event.stopPropagation();
+    }
 
-  <div class="section">
-    <h2>🌐 Additional Learning Resources</h2>
-    <ul>
-      <li><a href="https://www.howacarworks.com/">How a Car Works</a></li>
-      <li><a href="https://www.autoshop101.com/">AutoShop101 – Training Modules</a></li>
-      <li><a href="https://www.youtube.com/@EngineeringExplained">Engineering Explained – YouTube</a></li>
-      <li><a href="https://opensiuc.lib.siu.edu/auto_books/">Open Access Automotive Textbooks</a></li>
-    </ul>
-  </div>
-</div>  
-</div>
-</main>
-<footer>
-  &copy; 2025 As Sunnah Skill Development Institute. All rights reserved.
-</footer>
-
-<script>
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("active");
-  }
-
-  function toggleDropdown(event) {
-    const dropdown = event.currentTarget;
-    dropdown.classList.toggle("open");
-    event.stopPropagation();
-  }
-
-  window.addEventListener('click', function () {
-    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
-  });
-</script>
-
+    window.addEventListener('click', function () {
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+    });
+  </script>
 </body>
 </html>
