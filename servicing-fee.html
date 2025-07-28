@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Professional Automotive Technician Training</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Professional Automotive Technician Training by As Sunnah Skill Development 	Institute – a 3-month certified course to become a job-ready automotive technician.">
+  <meta name="keywords" content="automotive training, technician course, As Sunnah, vehicle diagnostics, hybrid vehicle, ADAS, CNG installation">
+  <meta name="author" content="As Sunnah Skill Development Institute">
+  <meta property="og:title" content="Professional Automotive Technician Training">
+  <meta property="og:description" content="Become a certified, job-ready technician in 3 months. Organized by As Sunnah Skill Development Institute.">
+  <meta property="og:image" content="cover-image.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="nav-container">       
+     <a href="index.html" class="site-logo">
+      <img src="logo.png" alt="Automotive" />
+    </a>  
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="course-outline.html">Course Outline</a>
+        <div class="dropdown" onclick="toggleDropdown(event)">
+          <a href="syllabus.html">Syllabus</a>
+          <div class="dropdown-content">
+            <a href="weekly-module.html">Weekly Module</a>
+            <a href="daily-module.html">Daily Module</a>
+          </div>
+        </div>
+        <a href="resources.html" class="active">Resources</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="button-group">
+    <a href="pre-admission.html">📘 Pre-Admission</a>
+    <a href="class-routine.html">📘 Class routine</a>
+    <a href="job-sector.html">📚 Job Sector</a>    
+    <a href="tools.html">🔧 Tools & eqpt</a>    
+    <a href="brochure.pdf" download>📄 Brochure</a>  
+    <a href="faq.html">ℹ️ FAQ</a>    
+  </div>
+  <style>
+  .button-group {
+  margin-top: 10px;
+  display: flex; 
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+</style>
+  
+  <div class="main-content"> <!-- Main Content Area -->    
+      <style>       
+        .resources {
+          max-width: 1080px;
+          margin: 2rem auto;
+          padding: 2rem;
+          background-color: #ffffff;
+          border-radius: 12px;
+          box-shadow: 0 0px 5px rgba(0, 0, 0, 0);
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          color: #2c3e50;
+        }
+      </style>
+   <style> 
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+    }
+    thead {
+      background-color: #4CAF50;
+      color: white;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    th:nth-child(2), td:nth-child(2) {
+      text-align: left;
+    }
+    th:not(:nth-child(2)), td:not(:nth-child(2)) {
+      text-align: center;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    tbody tr:hover {
+      background-color: #f1f1f1;
+    }
+    @media screen and (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead tr {
+        display: none;
+      }
+      td {
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+      }
+      td::before {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+      }
+      td:nth-child(1)::before { content: "Sl"; }
+      td:nth-child(2)::before { content: "Description of Work"; }
+      td:nth-child(3)::before { content: "Qty/Unit"; }
+      td:nth-child(4)::before { content: "CAR"; }
+      td:nth-child(5)::before { content: "CROSSOVER/MPV"; }
+      td:nth-child(6)::before { content: "SUV"; }
+      td:nth-child(7)::before { content: "LUXURY"; }
+    }
+  </style>
+
+
+  <div class="container">
+    <h1>Vehicle Servicing Fee</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Sl</th>
+          <th>Description of Work</th>
+          <th>Qty/Unit</th>
+          <th>CAR</th>
+          <th>CROSSOVER/MPV</th>
+          <th>SUV</th>
+          <th>LUXURY</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Vehicle Wash (Through Water Jet & Vacuum Cleaning)</td><td>1 Unit</td><td>600</td><td>800</td><td>1000</td><td>1200</td></tr>
+        <tr><td>2</td><td>Vehicle Interior Chemical Wash</td><td>1 Unit</td><td>2500</td><td>3500</td><td>4500</td><td>5500</td></tr>
+        <tr><td>3</td><td>Exterior Machine Polish with Materials</td><td>1 Unit</td><td>4500</td><td>5500</td><td>6500</td><td>7500</td></tr>
+        <tr><td>4</td><td>Full Body Int. & Ext. Machine Polish with Materials</td><td>1 Unit</td><td>6000</td><td>8000</td><td>9500</td><td>10500</td></tr>
+        <tr><td>5</td><td>General Inspection / 25 Points Check</td><td>1 PC</td><td>1000</td><td>1200</td><td>1500</td><td>2400</td></tr>
+        <tr><td>6</td><td>AC Service Charge</td><td>1 Unit</td><td>4000</td><td>6500</td><td>5500</td><td>9500</td></tr>
+        <tr><td>7</td><td>AC System Wash/Service with Chemical</td><td>1 Unit</td><td>1500</td><td>2000</td><td>2500</td><td>3500</td></tr>
+        <tr><td>8</td><td>Gear Box Replacement</td><td>1 Set</td><td>7000</td><td>9500</td><td>12500</td><td>15500</td></tr>
+        <tr><td>9</td><td>Gear Box Overhauling</td><td>1 Unit</td><td>12500</td><td>15500</td><td>15500</td><td>24500</td></tr>
+        <tr><td>10</td><td>ATF (Auto Transmission Fluid) Change</td><td>1 Unit</td><td>1200</td><td>1500</td><td>2000</td><td>3500</td></tr>
+        <tr><td>11</td><td>ATF Change by Machine</td><td>1 Unit</td><td>1800</td><td>2200</td><td>2500</td><td>4200</td></tr>
+        <tr><td>12</td><td>ATF Change with System Service</td><td>1 Unit</td><td>2500</td><td>3000</td><td>3600</td><td>5500</td></tr>
+        <tr><td>13</td><td>Axle Oil Seal Change</td><td>2 PC</td><td>1600</td><td>2000</td><td>3000</td><td>4000</td></tr>
+        <tr><td>14</td><td>ABS Module Change</td><td>1 Unit</td><td>2400</td><td>3000</td><td>3000</td><td>4500</td></tr>
+        <tr><td>15</td><td>Brake System Servicing/Pad & Shoe Replace</td><td>1 Unit</td><td>1200</td><td>1500</td><td>1700</td><td>2500</td></tr>
+        <tr><td>16</td><td>Brake Accumulator Initialization</td><td>1 Unit</td><td>5500</td><td>6500</td><td>6500</td><td>7500</td></tr>
+        <tr><td>17</td><td>Brake Disc/Drum Change</td><td>4 Unit</td><td>1400</td><td>2000</td><td>2200</td><td>3600</td></tr>
+        <tr><td>18</td><td>Brake Disc & Drum Turning/Surfacing</td><td>4 Set</td><td>1200</td><td>1400</td><td>1400</td><td>2400</td></tr>
+        <tr><td>19</td><td>Brake Master Cylinder Replacement</td><td>1 Unit</td><td>1400</td><td>2500</td><td>3000</td><td>3500</td></tr>
+        <tr><td>20</td><td>Brake Fluid Flashing/Bleeding</td><td>1 Unit</td><td>1000</td><td>1200</td><td>1500</td><td>2000</td></tr>
+        <tr><td>21</td><td>Brake Fluid Initialization</td><td>1 Unit</td><td>1800</td><td>2400</td><td>2400</td><td>3000</td></tr>
+        <tr><td>22</td><td>Brake System Overhauling</td><td>1 Unit</td><td>2500</td><td>3000</td><td>3000</td><td>4500</td></tr>
+        <tr><td>23</td><td>Camber Angle Adjustment Per Axle</td><td>1 PC</td><td>1500</td><td>2000</td><td>3000</td><td>3500</td></tr>
+        <tr><td>24</td><td>Camera Installation with Wiring</td><td>1 Set</td><td>1500</td><td>2000</td><td>2500</td><td>3500</td></tr>
+        <tr><td>25</td><td>CD Player/DVD Open & Fitting</td><td>1 Unit</td><td>500</td><td>800</td><td>1000</td><td>1200</td></tr>
+        <tr><td>26</td><td>CNG Kit Servicing</td><td>1 Unit</td><td>2500</td><td>3000</td><td>3500</td><td>N/A</td></tr>
+        <tr><td>27</td><td>CNG Tuning with Emission Test</td><td>1 Unit</td><td>1800</td><td>2000</td><td>2800</td><td>N/A</td></tr>
+        <tr><td>28</td><td>Coil Spring Replace/Spacer Installation (Front & Rear/Pair)</td><td>Per Pair</td><td>1400</td><td>2000</td><td>2000</td><td>3000</td></tr>
+        <tr><td>29</td><td>Coolant Change</td><td>1 Unit</td><td>300</td><td>350</td><td>550</td><td>850</td></tr>
+        <tr><td>30</td><td>CV Joint Boot Cover Change</td><td>2 PC</td><td>1200</td><td>1800</td><td>1800</td><td>2400</td></tr>
+        <tr><td>31</td><td>CV Joint Change</td><td>2 PC</td><td>2400</td><td>3000</td><td>3600</td><td>4500</td></tr>
+        <tr><td>32</td><td>CVT Oil Change & Calibration</td><td>1 Unit</td><td>3400</td><td>3400</td><td>3600</td><td>7500</td></tr>
+        <tr><td>33</td><td>Dash Board Open & Fitting Service Only</td><td>1 Unit</td><td>2400</td><td>3000</td><td>3600</td><td>5000</td></tr>
+        <tr><td>34</td><td>Drive Belt Replacement</td><td>1 PC</td><td>450</td><td>550</td><td>550</td><td>850</td></tr>
+        <tr><td>35</td><td>Computerized Scanning/Diagnosis</td><td>1 Set</td><td>1800</td><td>2400</td><td>2400</td><td>3500</td></tr>
+        <tr><td>36</td><td>Engine Analysis & Emission Test</td><td>1 Unit</td><td>1800</td><td>2000</td><td>2400</td><td>2400</td></tr>
+        <tr><td>37</td><td>Engine/Gearbox Mounting Replace (Each)</td><td>1 PC</td><td>600</td><td>800</td><td>850</td><td>1000</td></tr>
+        <tr><td>38</td><td>Engine Oil & filters Change</td><td>1 Unit</td><td>300</td><td>550</td><td>550</td><td>850</td></tr>
+        <tr><td>39</td><td>Engine Oil & Oil filter Change (O/S)</td><td>1 Unit</td><td>450</td><td>550</td><td>850</td><td>1200</td></tr>
+        <tr><td>40</td><td>Engine Top Overhauling/Head Gasket</td><td>1 Unit</td><td>12000</td><td>15000</td><td>19500</td><td>26500</td></tr>
+        <tr><td>41</td><td>Engine Major Overhauling</td><td>1 Unit</td><td>16500</td><td>19500</td><td>25500</td><td>32500</td></tr>
+        <tr><td>42</td><td>Engine Replace</td><td>1 Unit</td><td>12500</td><td>15500</td><td>18500</td><td>21500</td></tr>
+        <tr><td>43</td><td>Engine Tune-Up Including Emission Test</td><td>1 Set</td><td>2500</td><td>3000</td><td>3600</td><td>4500</td></tr>
+        <tr><td>44</td><td>Exhaust Manifold Open-Fitment</td><td>1 Unit</td><td>1200</td><td>1500</td><td>2000</td><td>2500</td></tr>
+        <tr><td>45</td><td>Fuel System Overhauling</td><td>1 Set</td><td>3200</td><td>4000</td><td>5500</td><td>7500</td></tr>
+        <tr><td>46</td><td>Fuel Pump & filter Change</td><td>1 Set</td><td>2400</td><td>3000</td><td>3500</td><td>5500</td></tr>
+        <tr><td>47</td><td>Fuel Tank Servicing</td><td>1 PC</td><td>2400</td><td>3000</td><td>5500</td><td>5500</td></tr>
+        <tr><td>48</td><td>Fuse Box Check & Change</td><td>1 Set</td><td>5500</td><td>6500</td><td>7500</td><td>12500</td></tr>
+        <tr><td>49</td><td>Hanger Bush Change</td><td>4 PC</td><td>2400</td><td>2800</td><td>3200</td><td>4000</td></tr>
+        <tr><td>50</td><td>Hanger Assy Change</td><td>2 PC</td><td>2400</td><td>2800</td><td>3200</td><td>4000</td></tr>
+         <tr><td>51</td><td>Head Light Assembly Change</td><td>2 PC</td><td>2400</td><td>2800</td><td>3200</td><td>4000</td></tr>
+        <tr><td>52</td><td>Front Bumper Replace/Open & Refitting</td><td>1 PC</td><td>1800</td><td>2500</td><td>3000</td><td>2500</td></tr>
+        <tr><td>53</td><td>Instrument Cluster Replace/Open & Re-Fitting</td><td>1 PC</td><td>1200</td><td>1500</td><td>1800</td><td>5500</td></tr>
+        <tr><td>54</td><td>Intake Manifold Open/Fitment</td><td>1 PC</td><td>1000</td><td>1500</td><td>2000</td><td>3000</td></tr>
+        <tr><td>55</td><td>Ignition Coil Change/Each</td><td>1 PC</td><td>2000</td><td>2500</td><td>3000</td><td>4000</td></tr>
+        <tr><td>56</td><td>Injector Servicing /Cleaning</td><td>1 Set</td><td>2200</td><td>3000</td><td>4000</td><td>6500</td></tr>
+        <tr><td>57</td><td>Injector Replacement</td><td>1 Set</td><td>1500</td><td>1800</td><td>3000</td><td>6500</td></tr>
+        <tr><td>58</td><td>Knuckle Joint Change</td><td>2 PC</td><td>1200</td><td>1500</td><td>2000</td><td>3000</td></tr>
+        <tr><td>59</td><td>Link Rod/Tie Rod/Tie Rod End Change</td><td>2 PC</td><td>2000</td><td>2400</td><td>3000</td><td>4500</td></tr>
+        <tr><td>60</td><td>Low Profile Tyre Repairing</td><td>Each</td><td>400</td><td>450</td><td>500</td><td>550</td></tr>
+        <tr><td>61</td><td>Low Profile Tyre Change Above 16''</td><td>Each</td><td>300</td><td>350</td><td>450</td><td>650</td></tr>
+        <tr><td>62</td><td>Low Profile Tyre Change Above 20''</td><td>Each</td><td>350</td><td>400</td><td>550</td><td>750</td></tr>
+        <tr><td>63</td><td>Manual Gear Box Replace</td><td>1 Unit</td><td>6500</td><td>7500</td><td>8500</td><td>10500</td></tr>
+        <tr><td>64</td><td>Mud Flap Replacement/Fitment</td><td>1 Set</td><td>400</td><td>500</td><td>800</td><td>850</td></tr>
+        <tr><td>65</td><td>Clutch System Overhauling</td><td>1 Set</td><td>6500</td><td>7500</td><td>8500</td><td>12500</td></tr>
+        <tr><td>66</td><td>Power Steering Oil Change</td><td>1 Set</td><td>1000</td><td>1200</td><td>1600</td><td>2400</td></tr>
+        <tr><td>67</td><td>Radiator Change</td><td>1 PC</td><td>6500</td><td>7500</td><td>8500</td><td>10500</td></tr>
+        <tr><td>68</td><td>Radiator Fan Motor Change</td><td>1 PC</td><td>2000</td><td>2500</td><td>3000</td><td>4200</td></tr>
+        <tr><td>69</td><td>Radiator Servicing & Flushing</td><td>1 Set</td><td>1800</td><td>2000</td><td>2400</td><td>3000</td></tr>
+        <tr><td>70</td><td>Steering Box Replacement</td><td>1 Unit</td><td>2500</td><td>3000</td><td>3000</td><td>5500</td></tr>
+        <tr><td>71</td><td>Steering Box Overhauling</td><td>1 Unit</td><td>5500</td><td>6500</td><td>7500</td><td>9500</td></tr>
+        <tr><td>72</td><td>Self-Starter Motor/Alternator Change</td><td>1 PC</td><td>1250</td><td>2500</td><td>3000</td><td>3500</td></tr>
+        <tr><td>73</td><td>Self-Starter Motor/Alternator Servicing</td><td>1 Set</td><td>2000</td><td>3000</td><td>3500</td><td>4500</td></tr>
+        <tr><td>74</td><td>Spiral Cable Change</td><td>1 Unit</td><td>1400</td><td>1600</td><td>2200</td><td>2500</td></tr>
+        <tr><td>75</td><td>Shock Absorber Replace Front</td><td>2 PC</td><td>1450</td><td>1800</td><td>2200</td><td>2800</td></tr>
+        <tr><td>76</td><td>Shock Absorber Replace Rear</td><td>2 PC</td><td>1400</td><td>1800</td><td>2000</td><td>2500</td></tr>
+        <tr><td>77</td><td>Shock Absorber Mounting Replace</td><td>2 PC</td><td>950</td><td>1200</td><td>1400</td><td>1800</td></tr>
+        <tr><td>78</td><td>Silencer Box/Catalytic Converter Replace</td><td>1 Set</td><td>2500</td><td>3000</td><td>4500</td><td>5500</td></tr>
+        <tr><td>79</td><td>Silencer Collar Replace</td><td>1 PC</td><td>1400</td><td>1800</td><td>2200</td><td>2500</td></tr>
+        <tr><td>80</td><td>Spark Plug Replace/Servicing</td><td>1 PC</td><td>800</td><td>1000</td><td>1200</td><td>1600</td></tr>
+        <tr><td>81</td><td>SRS Air Bag Replacing</td><td>1 Unit</td><td>6500</td><td>7500</td><td>9500</td><td>13500</td></tr>
+        <tr><td>82</td><td>Stabilizer Bush Change</td><td>2 PC</td><td>950</td><td>1050</td><td>1250</td><td>1450</td></tr>
+        <tr><td>83</td><td>Suspension System Overhauling</td><td>1 Unit</td><td>5500</td><td>6500</td><td>7500</td><td>8500</td></tr>
+        <tr><td>84</td><td>Suspension Test</td><td>1 Unit</td><td>1450</td><td>1850</td><td>2450</td><td>3000</td></tr>
+        <tr><td>85</td><td>Tappet Clearance Adjustment</td><td>1 Set</td><td>1200</td><td>2500</td><td>3000</td><td>4200</td></tr>
+        <tr><td>86</td><td>Tappet Cover Seal Change</td><td>1 PC</td><td>1200</td><td>1800</td><td>2400</td><td>4500</td></tr>
+        <tr><td>87</td><td>Throttle Body Servicing / Replace</td><td>1 Set</td><td>1200</td><td>1800</td><td>2000</td><td>4500</td></tr>
+        <tr><td>88</td><td>Throttle Body with EGR Servicing</td><td>1 Set</td><td>1500</td><td>2000</td><td>3000</td><td>5500</td></tr>
+        <tr><td>89</td><td>Tubeless Leak Repair</td><td>Each</td><td>250</td><td>300</td><td>300</td><td>550</td></tr>
+        <tr><td>90</td><td>Tube Replacement</td><td>Each</td><td>300</td><td>400</td><td>500</td><td>650</td></tr>
+        <tr><td>91</td><td>Tyre Change/Opening & Fitting</td><td>Each</td><td>300</td><td>400</td><td>500</td><td>650</td></tr>
+        <tr><td>92</td><td>Tyre Open/Fitment for Gel/Sealant Cleaning</td><td>Each</td><td>300</td><td>400</td><td>500</td><td>850</td></tr>
+        <tr><td>93</td><td>Tyre Inflation with Nitrogen Gas</td><td>4 PC</td><td>250</td><td>350</td><td>450</td><td>650</td></tr>
+        <tr><td>94</td><td>Tyre Rotation</td><td>4 PC</td><td>400</td><td>500</td><td>500</td><td>850</td></tr>
+        <tr><td>95</td><td>Under Chassis Inspection</td><td>1 Unit</td><td>750</td><td>1000</td><td>1200</td><td>1800</td></tr>
+        <tr><td>96</td><td>Water Pump Change</td><td>1 PC</td><td>1500</td><td>2500</td><td>3000</td><td>4500</td></tr>
+        <tr><td>97</td><td>Wheel Alignment Adjustment-3D/FR & RR</td><td>1 Unit</td><td>3000</td><td>3600</td><td>4800</td><td>6500</td></tr>
+        <tr><td>98</td><td>Wheel Alignment Check-3D/FR & RR</td><td>1 Set</td><td>1800</td><td>2400</td><td>3000</td><td>4000</td></tr>
+        <tr><td>99</td><td>Wheel Alignment Check-CCD/FR & RR</td><td>1 Set</td><td>1200</td><td>1800</td><td>2200</td><td>2400</td></tr>
+        <tr><td>100</td><td>Wheel Alignment Adjustment-CCD/FR & RR</td><td>1 Set</td><td>2000</td><td>2450</td><td>3000</td><td>4200</td></tr>
+        <tr><td>101</td><td>Wheel Balancing / Per Tyre (w/L)</td><td>1 PC</td><td>550</td><td>650</td><td>850</td><td>1200</td></tr>
+        <tr><td>102</td><td>Windshield Glass Change</td><td>1 PC</td><td>3000</td><td>3500</td><td>4500</td><td>6500</td></tr>
+        <tr><td>103</td><td>Wiper Blade Change</td><td>1 Set</td><td>1200</td><td>1400</td><td>2000</td><td>2500</td></tr>
+        <tr><td>104</td><td>Wiper Motor Change</td><td>1 PC</td><td>1500</td><td>2500</td><td>3000</td><td>4000</td></tr>
+        <tr><td>105</td><td>Partial Wiring Line Check & N/W (As per Work)</td><td>1 Unit</td><td>3000</td><td>3500</td><td>4500</td><td>5500</td></tr>
+        <tr><td>106</td><td>Wiring Check & Repairing (As per Work)</td><td>1 Set</td><td>5500</td><td>6500</td><td>8500</td><td>12500</td></tr>
+        <tr><td>107</td><td>PPI-Diesel (Package)</td><td>Per vehicle</td><td>4000</td><td>4500</td><td>5000</td><td>6000</td></tr>
+        <tr><td>108</td><td>PPI-Non Hybrid (Package)</td><td>Per vehicle</td><td>3600</td><td>4800</td><td>6000</td><td>7500</td></tr>
+        <tr><td>109</td><td>PPI-Hybrid (Package)</td><td>Per vehicle</td><td>4800</td><td>5800</td><td>6800</td><td>8500</td></tr>
+        <tr><td>110</td><td>Hybrid Battery Cooling System Service</td><td>Per vehicle</td><td>1100</td><td>2200</td><td>2800</td><td>4500</td></tr>
+        <tr><td>111</td><td>HV Battery Cell/Module Battery Check</td><td>Per Pack</td><td>2000</td><td>2400</td><td>2600</td><td>3000</td></tr>
+        <tr><td>112</td><td>HV Battery Pack Service</td><td>1 Unit</td><td>7500</td><td>9500</td><td>12500</td><td>14500</td></tr>
+        <tr><td>113</td><td>HV Battery Pack Replacement</td><td>1 Unit</td><td>5500</td><td>7800</td><td>9500</td><td>10500</td></tr>
+        <tr><td>114</td><td>HEV Inverter Cooling System Service</td><td>Per Vehicle</td><td>1500</td><td>2000</td><td>2500</td><td>3500</td></tr>
+        <tr><td>115</td><td>HEV Water Pump Open/Fitment/Replace</td><td>1 Unit</td><td>3000</td><td>3500</td><td>4000</td><td>6000</td></tr>
+        <tr><td>116</td><td>HEV Inverter Cooling Pump Open/Fitment</td><td>1 Unit</td><td>1800</td><td>2200</td><td>3000</td><td>3500</td></tr>
+        <tr><td>117</td><td>HV Equipment/Accessories Open/Fitment</td><td>Per Vehicle</td><td>4200</td><td>4800</td><td>5500</td><td>7500</td></tr>
+        <tr><td>118</td><td>HV Inverter Open/Fitment</td><td>1 Unit</td><td>2500</td><td>3000</td><td>3500</td><td>5000</td></tr>
+</tbody>
+</table>
+     </div>
+     </div>
+  <footer>
+    &copy; 2025 As Sunnah Skill Development Institute. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    function toggleDropdown(event) {
+      const dropdown = event.currentTarget;
+      dropdown.classList.toggle("open");
+      event.stopPropagation();
+    }
+
+    window.addEventListener('click', function () {
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+    });
+  </script>
+  
+</body>
+</html>
