@@ -144,116 +144,168 @@
 
   <div class="main-content">
     <h1>Professional Automotive Technician Training</h1>
-    <div class="routine">
-      <h3 class="highlight">Class Routine</h3>
+    <div class="class-routine">
+  <style>
+    .class-routine {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      padding: 20px;
+      background-color: #f5f7fa;
+    }
+    .class-routine h1 {
+      text-align: center;
+      color: #1f4e79;
+      margin-bottom: 20px;
+    }
+    .class-routine .routine-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .class-routine .routine-table th, .class-routine .routine-table td {
+      border: 1px solid #ccc;
+      padding: 10px 8px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .class-routine .routine-table th {
+      background-color: #1f4e79;
+      color: #fff;
+    }
+    .class-routine .routine-table tr:nth-child(even) {
+      background-color: #f0f4f8;
+    }
+    .class-routine .section-title {
+      font-weight: bold;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #1f4e79;
+      text-align: left;
+    }
+    .class-routine .instructor-table {
+      width: 50%;
+      margin: 0;
+      border-collapse: collapse;
+      background-color: #fff;
+    }
+    .class-routine .instructor-table th, .class-routine .instructor-table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    .class-routine .instructor-table th {
+      background-color: #eee;
+    }
+  </style>
+  <table class="routine-table">
+    <thead>
+      <tr>
+        <th>Time / Day</th>
+        <th>9:30–10:10</th>
+        <th>10:15–10:55</th>
+        <th>10:55–11:15</th>
+        <th>11:15–11:55</th>
+        <th>11:55–12:35</th>
+        <th>12:40–1:20</th>
+        <th>1:20–2:30</th>
+        <th>2:30–3:10</th>
+        <th>3:15–4:00</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Saturday</strong></td>
+        <td>Theory 101</td>
+        <td>Theory 102</td>
+        <td rowspan="6">Snacks Break</td>
+        <td>Practical 102+103</td>
+        <td>Practical 102+103</td>
+        <td>Theory 103</td>
+        <td rowspan="6">Prayer & Lunch</td>
+        <td>Practical 101+103</td>
+        <td>Practical 101+103</td>
+      </tr>
+      <tr>
+        <td><strong>Sunday</strong></td>
+        <td>Theory 102</td>
+        <td>Theory 103</td>
+        <td>Practical 101+103</td>
+        <td>Practical 101+103</td>
+        <td>Theory 101</td>
+        <td>Practical 102+103</td>
+        <td>Practical 102+103</td>
+      </tr>
+      <tr>
+        <td><strong>Monday</strong></td>
+        <td>Theory 101</td>
+        <td>Theory 103</td>
+        <td>Practical 102+103</td>
+        <td>Practical 102+103</td>
+        <td>Theory 102</td>
+        <td>Practical 101+102</td>
+        <td>Practical 101+102</td>
+      </tr>
+      <tr>
+        <td><strong>Tuesday</strong></td>
+        <td>Theory 101</td>
+        <td>Theory 102</td>
+        <td>Practical 101+102</td>
+        <td>Practical 101+102</td>
+        <td>Theory 103</td>
+        <td>Practical 102+103</td>
+        <td>Practical 102+103</td>
+      </tr>
+      <tr>
+        <td><strong>Wednesday</strong></td>
+        <td>Theory 103</td>
+        <td>Theory 101</td>
+        <td>Practical 102+103</td>
+        <td>Practical 102+103</td>
+        <td>Theory 102</td>
+        <td>Practical 101+103</td>
+        <td>Practical 101+103</td>
+      </tr>
+      <tr>
+        <td><strong>Thursday</strong></td>
+        <td>Theory 101</td>
+        <td>Theory 102</td>
+        <td>Practical 101+102</td>
+        <td>Practical 101+102</td>
+        <td>Theory 103</td>
+        <td>Practical 102+103</td>
+        <td>Practical 102+103</td>
+      </tr>
+    </tbody>
+  </table>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Time / Day</th>
-            <th>9:00–9:45</th>
-            <th>9:50–10:35</th>
-            <th>10:35–10:50</th>
-            <th>10:50–11:35</th>
-            <th>11:40–12:25</th>
-            <th>12:30–13:15</th>
-            <th>13:15–14:30</th>
-            <th>14:30–15:10</th>
-            <th>15:15–16:00</th>
-            <th>16:05–16:45</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Saturday</td>
-            <td>Theory 101</td>
-            <td>Theory 101</td>
-            <td>Snacks Break</td>
-            <td>Practical<br>102+103</td>
-            <td>Theory 101</td>
-            <td>Theory 101</td>
-            <td>Prayer & Lunch Break</td>
-            <td>Practical<br>101+103</td>
-            <td>Practical<br>101+103</td>
-            <td>Theory 101</td>
-          </tr>
-          <tr>
-            <td>Sunday</td>
-            <td>Theory 102</td>
-            <td>Theory 102</td>
-            <td>Snacks Break</td>
-            <td>Practical<br>101+103</td>
-            <td>Theory 102</td>
-            <td>Theory 102</td>
-            <td>Prayer & Lunch Break</td>
-            <td>Practical<br>101+102</td>
-            <td>Practical<br>101+102</td>
-            <td>Theory 102</td>
-          </tr>
-          <tr>
-            <td>Monday</td>
-            <td>Theory 103</td>
-            <td>Theory 103</td>
-            <td>Snacks Break</td>
-            <td>Practical<br>102+101</td>
-            <td>Theory 103</td>
-            <td>Theory 103</td>
-            <td>Prayer & Lunch Break</td>
-            <td>Practical<br>101+104</td>
-            <td>Practical<br>101+104</td>
-            <td>Theory 103</td>
-          </tr>
-          <tr>
-            <td>Tuesday</td>
-            <td>Theory 101</td>
-            <td>Theory 101</td>
-            <td>Snacks Break</td>
-            <td>Practical<br>102+103</td>
-            <td>Theory 101</td>
-            <td>Theory 101</td>
-            <td>Prayer & Lunch Break</td>
-            <td>Practical<br>102+101</td>
-            <td>Practical<br>102+101</td>
-            <td>Theory 101</td>
-          </tr>
-          <tr>
-            <td>Wednesday</td>
-            <td>Theory 103</td>
-            <td>Theory 103</td>
-            <td>Snacks Break</td>
-            <td>Practical<br>101+103</td>
-            <td>Theory 103</td>
-            <td>Theory 103</td>
-            <td>Prayer & Lunch Break</td>
-            <td>Practical<br>102+103</td>
-            <td>Practical<br>102+103</td>
-            <td>Theory 103</td>
-          </tr>
-          <tr>
-            <td>Thursday</td>
-            <td>Theory 102</td>
-            <td>Theory 102</td>
-            <td>Snacks Break</td>
-            <td>Practical<br>102+101</td>
-            <td>Theory 102</td>
-            <td>Theory 102</td>
-            <td>Prayer & Lunch Break</td>
-            <td>Practical<br>101+102</td>
-            <td>Practical<br>101+102</td>
-            <td>Theory 102</td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="section-title">Instructors & Module Codes</div>
 
-      <div class="instructor-list">
-        <h4>Instructors:</h4>
-        <ul>
-          <li>Mahfuzur Rahman Shanto (101)</li>
-          <li>Ataur Rahman (102)</li>
-          <li>Abdur Rahim (103)</li>
-        </ul>
-      </div>
-    </div>
+  <table class="instructor-table">
+    <thead>
+      <tr>
+        <th>Instructor</th>
+        <th>Code</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mahfuzur Rahman Shanto</td>
+        <td>101</td>
+      </tr>
+      <tr>
+        <td>Ataur Rahman</td>
+        <td>102</td>
+      </tr>
+      <tr>
+        <td>Abdur Rahim</td>
+        <td>103</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
   </div>
 
 <footer>
