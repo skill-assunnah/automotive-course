@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Automobile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      height: 100%;
+      width: 100%;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    header nav {
+      background-color: #1F453D;
+      color: #d2ede4;
+      padding: 1rem;
+      border-bottom: 2px solid #FFD700;
+      width: 100vw;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .site-logo img {
+      height: 40px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .nav-links a {
+      color: #d2ede4;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 8px 12px;
+    }
+    .nav-links a:hover {
+      color: #FFD700;
+    }
+    .nav-links a.active {
+      border-bottom: 2px solid #FFD700;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      flex-direction: column;
+      background-color: #2d5c51;
+      border-radius: 6px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      z-index: 10;
+    }
+    .dropdown-content a {
+      padding: 10px 20px;
+      white-space: nowrap;
+    }
+    .dropdown:hover .dropdown-content {
+      display: flex;
+    }
+    .toggle-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      font-size: 24px;
+      color: #fff;
+      display: none;
+    }
+    .toggle-btn:hover {
+      color: #FFD700;
+    }
+    .container {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      width: 100%;
+    }
+    nav.sidebar {
+      background: #355750;
+      color: white;
+      padding: 1em;
+      width: 250px;
+      overflow-y: auto;
+    }
+    nav.sidebar details {
+      margin-bottom: 10px;
+    }
+    nav.sidebar summary {
+      cursor: pointer;
+      font-weight: bold;
+      padding: 0.5em;
+      background-color: #2c4c45;
+      border-radius: 4px;
+    }
+    nav.sidebar a {
+      display: block;
+      padding: 0.5em 1em;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    nav.sidebar a:hover {
+      background: #fff3b0;
+      color: #1F453D;
+    }
+    main {
+      flex: 1;
+      padding: 1em;
+      overflow-y: auto;
+      background: #f4f6f5;
+    }
+    .page {
+      display: none;
+    }
+    .page.active {
+      display: block;
+    }
+    footer {
+      background-color: #1F453D;
+      color: #d2ede4;
+      text-align: center;
+      border-top: 2px solid #FFD700;
+      padding: 20px;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-end;
+        background-color: #1F453D;
+        position: fixed;
+        top: 82px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        z-index: 1000;
+        border-left: 1px solid #FFD700;
+        bottom: 62px;
+        overflow-y: auto;
+      }
+      .nav-links a:hover {
+        background: #fff3b0;
+        color: #1F453D;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .toggle-btn {
+        display: inline-block;
+      }
+      nav.sidebar {
+        display: none;
+      }
+    }
+    @media (min-width: 769px) {
+      .toggle-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav role="navigation" aria-label="Main navigation">
+      <div class="nav-container">
+        <a href="index.html" class="site-logo">
+          <img src="logo.png" alt="Automotive" />
+        </a>
+        <button class="toggle-btn" onclick="toggleMenu()">☰</button>
+        <div class="nav-links" id="navLinks">
+          <a href="#intro" onclick="navigate('w1d1s1')">Home</a>
+          <a href="#setup" onclick="navigate('w1d1s2')">Course Outline</a>
+          <div class="dropdown" onclick="toggleDropdown(event)">
+            <a href="#syllabus">Syllabus</a>
+            <div class="dropdown-content">
+              <a href="#weekly-module" onclick="navigate('w1d1s3')">Weekly Module</a>
+              <a href="#daily-module" onclick="navigate('w1d1s4')">Daily Module</a>
+            </div>
+          </div>
+          <a href="#resources" onclick="navigate('w1d1s5')">Resources</a>
+          <a href="#about" onclick="navigate('w1d1s6')">About</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <nav class="sidebar">
+      <details open>
+        <summary>Week 1</summary>
+        <details open>
+          <summary>Day 1</summary>
+          <a href="javascript:void(0)" onclick="navigate('w1d1s1')">Session 1</a>
+          <a href="javascript:void(0)" onclick="navigate('w1d1s2')">Session 2</a>
+          <a href="javascript:void(0)" onclick="navigate('w1d1s3')">Session 3</a>
+          <a href="javascript:void(0)" onclick="navigate('w1d1s4')">Session 4</a>
+          <a href="javascript:void(0)" onclick="navigate('w1d1s5')">Session 5</a>
+          <a href="javascript:void(0)" onclick="navigate('w1d1s6')">Session 6</a>
+          <a href="javascript:void(0)" onclick="navigate('w1d1s7')">Session 7</a>
+          <a href="javascript:void(0)" onclick="navigate('w1d1s8')">Session 8</a>
+        </details>
+      </details>
+    </nav>
+
+    <main>
+      <div id="w1d1s1" class="page active">
+        <h2>W1-Day1-Session1</h2>
+        <div class="W1D1S1">
+  <style>
+    .W1D1S1 {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      color: #222;
+    }
+    .W1D1S1 h1, .W1D1S1 h2 {
+      font-weight: bold;
+      color: #003366;
+    }
+    .W1D1S1 h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .W1D1S1 h2 {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+    .W1D1S1 p {
+      margin: 10px 0;
+    }
+    .W1D1S1 ul {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+    .W1D1S1 table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+    }
+    .W1D1S1 th, .W1D1S1 td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    .W1D1S1 th {
+      background-color: #f2f2f2;
+    }
+  </style>
+
+  <h1>Chapter 1: Workshop Safety, Ethics, and Orientation</h1>
+  <p><strong>Day 1 – Session 1:</strong> Occupational Health and Safety (OHS)</p>
+  <p><strong>Duration:</strong> 40 Minutes</p>
+  <p><strong>Type:</strong> Theory</p>
+
+  <h2>Learning Objectives</h2>
+  <p>By the end of this session, students will be able to:</p>
+  <ul>
+    <li>Understand the purpose and importance of Occupational Health and Safety (OHS) in an automotive workshop.</li>
+    <li>Identify common hazards found in automotive environments.</li>
+    <li>Recognize the technician’s legal and ethical responsibility to maintain safety.</li>
+    <li>Explain basic accident prevention practices.</li>
+  </ul>
+
+  <h2>1.1 Introduction to Safety in the Automotive Workshop</h2>
+  <p><strong>Time Allocation:</strong> 0–10 Minutes</p>
+  <p>Modern automotive workshops present a range of occupational hazards, including:</p>
+  <ul>
+    <li>Sharp hand tools and cutting equipment</li>
+    <li>Rotating machinery and lifting devices</li>
+    <li>Exposure to flammable fuels, lubricants, and solvents</li>
+    <li>Noise, heat, and electrical shock risks</li>
+  </ul>
+  <p>The purpose of OHS is to prevent injuries, protect life, and promote responsible conduct. Emphasis should be placed on the legal framework and the shared responsibility of employers, technicians, and supervisors to maintain a safe working environment.</p>
+
+  <h2>1.2 Common Workshop Hazards</h2>
+  <p><strong>Time Allocation:</strong> 10–20 Minutes</p>
+  <p>Use visual aids such as posters and hazard charts to explain:</p>
+  <table>
+    <tr>
+      <th>Hazard Type</th>
+      <th>Examples</th>
+    </tr>
+    <tr>
+      <td>Physical Hazards</td>
+      <td>Slippery floors, sharp tools, moving parts</td>
+    </tr>
+    <tr>
+      <td>Chemical Hazards</td>
+      <td>Fumes from solvents, brake cleaner, fuels</td>
+    </tr>
+    <tr>
+      <td>Fire Hazards</td>
+      <td>Fuel leaks, oil spills, exposed flames</td>
+    </tr>
+    <tr>
+      <td>Electrical Hazards</td>
+      <td>Damaged wires, open terminals</td>
+    </tr>
+    <tr>
+      <td>Noise Hazards</td>
+      <td>Power tools, compressors, grinders</td>
+    </tr>
+  </table>
+  <p>Clarify the difference between a hazard (a potential source of harm) and a risk (the chance harm occurs).</p>
+
+  <h2>1.3 Roles and Responsibilities in Workshop Safety</h2>
+  <p><strong>Time Allocation:</strong> 20–30 Minutes</p>
+  <p><strong>Employer Responsibilities:</strong></p>
+  <ul>
+    <li>Provide a safe workspace.</li>
+    <li>Ensure training and equipment maintenance.</li>
+    <li>Supply proper tools and PPE.</li>
+  </ul>
+  <p><strong>Technician Responsibilities:</strong></p>
+  <ul>
+    <li>Always follow safety protocols.</li>
+    <li>Use PPE correctly.</li>
+    <li>Report unsafe conditions or injuries immediately.</li>
+  </ul>
+  <p><strong>Supervisor Responsibilities:</strong></p>
+  <ul>
+    <li>Enforce safety standards.</li>
+    <li>Conduct regular inspections and drills.</li>
+    <li>Maintain discipline on safety practices.</li>
+  </ul>
+
+  <h2>1.4 Safety Culture and Behavior</h2>
+  <p><strong>Time Allocation:</strong> 30–35 Minutes</p>
+  <p>Instructors should stress:</p>
+  <ul>
+    <li>Safety is a mindset.</li>
+    <li>Clean-as-you-go and don’t bypass safety devices.</li>
+    <li>Positive safety behavior builds trust and professionalism.</li>
+  </ul>
+
+  <h2>1.5 Recap and Discussion</h2>
+  <p><strong>Time Allocation:</strong> 35–40 Minutes</p>
+  <p>Review Questions:</p>
+  <ol>
+    <li>What are three types of workshop hazards?</li>
+    <li>What is the difference between a hazard and a risk?</li>
+    <li>Who is responsible for enforcing safety?</li>
+  </ol>
+</div>
+
+      </div>
+      <div id="w1d1s2" class="page">
+        <h2>W1-Day1-Session2</h2>
+        <p>Content for Day 1 Session 2.</p>
+      </div>
+      <div id="w1d1s3" class="page">
+        <h2>W1-Day1-Session3</h2>
+        <p>Content for Day 1 Session 3.</p>
+      </div>
+      <div id="w1d1s4" class="page">
+        <h2>W1-Day1-Session4</h2>
+        <p>Content for Day 1 Session 4.</p>
+      </div>
+      <div id="w1d1s5" class="page">
+        <h2>W1-Day1-Session5</h2>
+        <p>Content for Day 1 Session 5.</p>
+      </div>
+      <div id="w1d1s6" class="page">
+        <h2>W1-Day1-Session6</h2>
+        <p>Content for Day 1 Session 6.</p>
+      </div>
+      <div id="w1d1s7" class="page">
+        <h2>W1-Day1-Session7</h2>
+        <p>Content for Day 1 Session 7.</p>
+      </div>
+      <div id="w1d1s8" class="page">
+        <h2>W1-Day1-Session8</h2>
+        <p>Content for Day 1 Session 8.</p>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    &copy; 2025 As Sunnah Skill Development Institute. All rights reserved.
+  </footer>
+
+  <script>
+    function navigate(id) {
+      const page = document.getElementById(id);
+      if (!page) return;
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      page.classList.add('active');
+      history.replaceState(null, '', '#' + id);
+    }
+
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      if (navLinks) navLinks.classList.toggle('active');
+    }
+
+    function toggleDropdown(event) {
+      event.stopPropagation();
+      event.currentTarget.classList.toggle('open');
+    }
+
+    window.addEventListener('popstate', () => {
+      const hash = location.hash.replace('#', '') || 'w1d1s1';
+      navigate(hash);
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = location.hash.replace('#', '') || 'w1d1s1';
+      navigate(hash);
+    });
+  </script>
+</body>
+</html>
